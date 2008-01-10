@@ -11,7 +11,7 @@ At the moment there are 7 GStreamer modules included in the schedule:
  * GStreamer FFmpeg
  * GStreamer Python Bindings
 
-Each module will see a release every 3 months. For an explanation of the freezes please see [wiki:ReleasePlanning/Freezes here].
+Each module will see a release every 3 months. For an explanation of the freezes please see [wiki:Self:ReleasePlanning/Freezes here].
 
 == Schedule ==
 ||<:> '''Week''' ||<:> '''Date''' || '''Task''' || '''Notes''' ||
