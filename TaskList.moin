@@ -1,15 +1,15 @@
 = Google SoC 2008 =
 
-[http://www.buzztard.org/index.php/GoogleSOC2007 Google SoC application from 2007]
+(for reference : [http://www.buzztard.org/index.php/GoogleSOC2007 Google SoC application from 2007])
 
 == Closed Captioning support ==
-* http://en.wikipedia.org/wiki/Closed_Captioning
-* http://thread.gmane.org/gmane.comp.video.gstreamer.devel/19727
+ * http://en.wikipedia.org/wiki/Closed_Captioning
+ * http://thread.gmane.org/gmane.comp.video.gstreamer.devel/19727
 
 == DVD Playback ==
-* http://bugzilla.gnome.org/show_bug.cgi?id=476149
+ * http://bugzilla.gnome.org/show_bug.cgi?id=476149
 
 == Ladspa, LV2 plugin bridge ==
-* http://www.ladspa.org/, http://lv2plug.in/
+ * http://www.ladspa.org/, http://lv2plug.in/
 
 == BaseClasses for Decoder,Encoders, Demuxers and Muxers ==
