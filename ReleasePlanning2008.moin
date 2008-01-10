@@ -16,13 +16,13 @@ Each module will see a release every 3 months. For an explanation of the freezes
 == Schedule ==
 ||<:> '''Week''' ||<:> '''Date''' || '''Task''' || '''Notes''' ||
 ||<-4 rowbgcolor="#dddddd"> '''January''' ||
-||<|4 : #9db8d2> '''3''' ||<|2 : #c5d2c8> January 14 || Core 0.10.15.2 pre-release tarball ||<|2> Core/Base code freeze ||
+||<|4 : #9db8d2> '''3''' ||<|2 : #c5d2c8> January 14 || Core 0.10.15.2 pre-release tarball ||<|2:#e0b6af> Core/Base code freeze ||
 || Base 0.10.15.2 pre-release tarball ||
 ||<|2 : #c5d2c8> January 17 || Core 0.10.15.3 pre-release tarball ||<|2> ''If needed'' ||
 || Base 0.10.15.3 pre-release tarball ||
 ||<|2 : #9db8d2> '''4''' ||<|2 : #c5d2c8> January 21 || Core 0.10.15.4 pre-release tarball ||<|2> ''If needed'' ||
 || Base 0.10.15.4 pre-release tarball ||
-||<|3 : #9db8d2> '''5''' ||<|2 : #c5d2c8> January 28 ||<|2> Core 0.10.16 released || Good/Bad/Ugly/FFmpeg/Python dependency freeze ||
+||<|3 : #9db8d2> '''5''' ||<|2 : #c5d2c8> January 28 ||<|2> Core 0.10.16 released ||<:#e0b6af> Good/Bad/Ugly/FFmpeg/Python dependency freeze ||
 || ''Gnome 2.21.90 tarballs'' ||
-||<: #c5d2c8> January 29 || || Core/Base code thaw ||
+||<: #c5d2c8> January 29 || ||<:#afb6e0> Core/Base code thaw ||
 ||<-4 rowbgcolor="#dddddd"> '''February''' ||
