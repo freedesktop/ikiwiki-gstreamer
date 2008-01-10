@@ -26,7 +26,7 @@ To support this, the schedule provides plugin move windows during which plugins 
 
 == Schedule ==
 ||<:> '''Week''' ||<:> '''Date''' || '''Task''' || '''Notes''' ||
-||<-4 rowbgcolor="#dddddd"> '''January''' ||
+||<-4 rowbgcolor="#dddddd"> '''January''' - ''Core/Base'' ||
 ||<|4 : #9db8d2> '''3''' ||<|2 : #c5d2c8> January 14 || Core 0.10.15.2 pre-release tarball ||<|2:#e0b6af> Core/Base code freeze ||
 || Base 0.10.15.2 pre-release tarball ||
 ||<|2 : #c5d2c8> January 17 || Core 0.10.15.3 pre-release tarball ||<|2:> ''If needed'' ||
@@ -36,7 +36,7 @@ To support this, the schedule provides plugin move windows during which plugins 
 ||<|3 : #9db8d2> '''5''' ||<|2 : #c5d2c8> January 28 ||<|2> Core 0.10.16 released ||<:#e0b6af> Good/Bad/Ugly/FFmpeg/Python dependency freeze ||
 ||<:> ''Gnome 2.21.90 tarballs'' ||
 ||<: #c5d2c8> January 29 || ||<:#afb6e0> Core/Base code thaw ||
-||<-4 rowbgcolor="#dddddd"> '''February''' ||
+||<-4 rowbgcolor="#dddddd"> '''February''' - ''Good/Bad/Ugly'' ||
 ||<|4 : #9db8d2> '''6''' ||<: #c5d2c8> February 4 || ||<:#e0e0b6> Plugin Move Window Good<->Bad<->Ugly Opens ||
 ||<|3 : #c5d2c8> February 8 || Good 0.10.6.2 pre-release tarball ||<:#e0b6af> Good/Bad/Ugly code freeze ||
 || Bad 0.10.5.2 pre-release tarball ||<:#e0e0b6> Plugin Move Window Good<->Bad<->Ugly Closes ||
@@ -44,7 +44,27 @@ To support this, the schedule provides plugin move windows during which plugins 
 ||<|3 : #9db8d2> '''7''' ||<|3: #c5d2c8> February 13 || Good 0.10.6.3 pre-release tarball ||<|3> ''If needed'' ||
 || Bad 0.10.5.3 pre-release tarball ||
 || Ugly 0.10.6.3 pre-release tarball ||
-||<|4 : #9db8d2> '''8''' ||<|3: #c5d2c8> February 18 || Good 0.10.7 released ||<|3:#afb6e0> Good/Bad/Ugly dependency thaw ||
+||<|5 : #9db8d2> '''8''' ||<|3: #c5d2c8> February 18 || Good 0.10.7 released ||<|3> ||
 || Bad 0.10.6 released ||
 || Ugly 0.10.7 released ||
+||<: #c5d2c8> February 19 || ||<:#afb6e0> Good/Bad/Ugly code & dependency thaw ||
 ||<: #c5d2c8> February 25 || || ''Gnome 2.21.92 tarballs due'' ||
+||<-4 rowbgcolor="#dddddd"> '''March''' - ''Core/Base'' ||
+||<|4 : #9db8d2> '''10''' ||<|2 : #c5d2c8> March 3 || Core 0.10.16.2 pre-release tarball ||<|2:#e0b6af> Core/Base code freeze ||
+|| Base 0.10.16.2 pre-release tarball ||
+||<|2 : #c5d2c8> March 6 || Core 0.10.16.3 pre-release tarball ||<|2:> ''If needed'' ||
+|| Base 0.10.16.3 pre-release tarball ||
+||<|2 : #9db8d2> '''11''' ||<|2 : #c5d2c8> March 10 || Core 0.10.16.4 pre-release tarball ||<|2:> ''If needed'' ||
+|| Base 0.10.16.4 pre-release tarball ||
+||<|3 : #9db8d2> '''12''' ||<|2 : #c5d2c8> March 17 || Core 0.10.17 released ||<|2:#e0b6af> Good/Bad/Ugly/FFmpeg/Python dependency freeze ||
+|| Base 0.10.17 released ||
+||<: #c5d2c8> March 18 || ||<:#afb6e0> Core/Base code thaw ||
+||<-4 rowbgcolor="#dddddd"> '''April''' - ''Good/Bad'' ||
+||<|3 : #9db8d2> '''15''' ||<: #c5d2c8> April 7 || ||<:#e0e0b6> Plugin Move Window Good<->Bad Opens ||
+||<|2 : #c5d2c8> April 11 || Good 0.10.7.2 pre-release tarball ||<:#e0b6af> Good/Bad code freeze ||
+|| Bad 0.10.6.2 pre-release tarball ||<:#e0e0b6> Plugin Move Window Good<->Bad Closes ||
+||<|2 : #9db8d2> '''16''' ||<|2: #c5d2c8> April 16 || Good 0.10.7.3 pre-release tarball ||<|2> ''If needed'' ||
+|| Bad 0.10.6.3 pre-release tarball ||
+||<|4 : #9db8d2> '''17''' ||<|2: #c5d2c8> April 21 || Good 0.10.8 released ||<|2> ||
+|| Bad 0.10.7 released ||
+||<: #c5d2c8> April 22 || ||<:#afb6e0> Good/Bad code & dependency thaw ||
