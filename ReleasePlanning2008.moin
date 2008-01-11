@@ -86,7 +86,7 @@ To support this, the schedule provides plugin move windows during which plugins 
 ||<: #c5d2c8> February 19 || ||<:#afb6e0> Good/Bad/Ugly code & dependency thaw ||
 ||<: #c5d2c8> February 25 || || ''Gnome 2.21.92 tarballs due'' ||
 ||<-4 rowbgcolor="#dddddd"> '''March''' - ''Core/Base'' ||
-||<|6 : #9db8d2> '''10''' ||<|3 : #c5d2c8> March 3 || Core 0.10.16.2 pre-release tarball ||<|3:#e0b6af> Core/Base code freeze ||
+||<|6 : #9db8d2> '''10''' ||<|3 : #c5d2c8> March 3 || Core 0.10.16.2 pre-release tarball ||<|3:#e0b6af> Core/Base/Python code freeze ||
 || Base 0.10.16.2 pre-release tarball ||
 || Python 0.10.10.2 pre-release tarball ||
 ||<|3 : #c5d2c8> March 6 || Core 0.10.16.3 pre-release tarball ||<|3:> ''If needed'' ||
@@ -98,7 +98,7 @@ To support this, the schedule provides plugin move windows during which plugins 
 ||<|4 : #9db8d2> '''12''' ||<|3 : #c5d2c8> March 17 ||<:> '''Core 0.10.17 released''' ||<|3:#e0b6af> Good/Bad/Ugly/FFmpeg dependency freeze ||
 ||<:> '''Base 0.10.17 released''' ||
 ||<:> '''Python 0.10.11 released''' ||
-||<: #c5d2c8> March 18 || ||<:#afb6e0> Core/Base code thaw ||
+||<: #c5d2c8> March 18 || ||<:#afb6e0> Core/Base/Python code thaw ||
 ||<-4 rowbgcolor="#dddddd"> '''April''' - ''Good/Bad'' ||
 ||<|3 : #9db8d2> '''15''' ||<: #c5d2c8> April 7 || ||<:#e0e0b6> Plugin Move Window Good<->Bad Opens ||
 ||<|2 : #c5d2c8> April 11 || Good 0.10.7.2 pre-release tarball ||<:#e0b6af> Good/Bad code freeze ||
@@ -112,7 +112,7 @@ To support this, the schedule provides plugin move windows during which plugins 
 ||<|4 : #9db8d2> '''19''' ||<: #c5d2c8> May 5 || ||<:#e0e0b6> Plugin Move Window Ugly<->Bad Opens ||
 ||<|3 : #c5d2c8> May 9 ||<:> Ugly 0.10.7.2 pre-release tarball ||<:#e0b6af> Ugly/FFmpeg code freeze ||
 ||<:> FFmpeg 0.10.4.2 pre-release tarball ||<:#e0e0b6> Plugin Move Window Ugly<->Bad Closes ||
-||<:> ''Bad 0.10.8.2 pre-release if needed'' || ||
+||<:> ''Bad 0.10.7.2 pre-release if needed'' || ||
 ||<|2 : #9db8d2> '''20''' ||<|2: #c5d2c8> May 14 ||<:> Ugly 0.10.7.3 pre-release tarball ||<|2> ''If needed'' ||
 ||<:> FFmpeg 0.10.4.3 pre-release tarball ||
 ||<|4 : #9db8d2> '''21''' ||<|3: #c5d2c8> May 19 ||<:> '''Ugly 0.10.8 released''' ||<|3> ||
