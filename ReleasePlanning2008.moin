@@ -57,6 +57,8 @@ To support this, the schedule provides plugin move windows during which plugins 
  * Extend the release schedule later, to cover the rest of the year.
 
 == Schedule ==
+An iCal file is available at http://gstreamer.freedesktop.org/data/gst-schedule.ics
+
 ||<:> '''Week''' ||<:> '''Date''' || '''Task''' || '''Notes''' ||
 ||<-4 rowbgcolor="#dddddd"> '''January''' - ''Core/Base'' ||
 ||<|6 : #9db8d2> '''3''' ||<|3 : #c5d2c8> January 14 || Core 0.10.15.2 pre-release tarball ||<|3:#e0b6af> Core/Base/Python code freeze ||
