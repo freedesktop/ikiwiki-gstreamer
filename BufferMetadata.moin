@@ -1,0 +1,26 @@
+We need a mechanism to transport extra data in a !GstBuffer. Unlike caps the content is likely to change for each buffer.
+
+Examples:
+ * Pan and scan (video subregion) position information
+ * interlacing markers (top field, bottom field)
+ * theora granulepos, instead of slapping it in the 'offset' field
+ * MPEG Decoding timestamps, which we currently never send along.
+ * Feature-Extraction elements can add feature data
+ * Some image capture sensors can provide histograms with the frames
+
+Ideas:
+ A. !GstStructure in !GstBuffer
+ A. !GstTaglist in !GstBuffer
+!GstStructure is also use in !GstTaglist. The structure can be hierarchical. We could require that the producer uses its element name as a root tag. This way the taglist could carry multiple data-sets identified in a unique way. Elements that can use the data need to know the name of the element that created it.
+
+Issues:
+ * Performance
+  * copying, freeing buffers need to check/handle the presence of extra metadata
+ * Transformations
+  * there might be transformation that render the data useless. e.g. if the data is a histogram, color changes invalidate it. if its a sub-region, size changes invalidate it.
+ * Mixing
+  * if we go for (B) we could use the tag merge modes
+ * Muxing
+  * using and/or dropping the data, it does not sound sensible to send it further
+ * Copies (tee)
+  * make duplicates
