@@ -5,9 +5,9 @@
 = GStreamer Wiki =
 
 This wiki serves as a scratchpad for tasks, design discussion and the like.
- * ReleasePlanning
- * DesignDiscussions
- * TaskList
+ * ReleasePlanning: schedule for code freezes and planing for dates
+ * DesignDiscussions: drafting new features
+ * TaskList: standalone tasks for anyone to take, Google SoC planning
 
 Interesting starting points:
  * RecentChanges: see where people are currently working
