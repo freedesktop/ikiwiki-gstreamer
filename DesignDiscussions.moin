@@ -4,12 +4,10 @@ Space for drafting new features.
 
 * BufferMetadata: variable extra data keept with buffers.
 
-* GstBaseParse: parser base class
-
-* GstBaseDemux: demuxer base class
-
-* GstBaseDecode: decoder base class
-
-* GstBaseMux: muxer base class
-
-* GstBaseEncode: encoder base class
+* Base classes:
+  * GstBaseParse: parser base class
+  * GstBaseDemux: demuxer base class
+  * GstBaseDecode: decoder base class
+  * GstBaseMux: muxer base class
+  * GstBaseEncode: encoder base class
+  * GstTagMux: tag muxer base class
