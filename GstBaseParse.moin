@@ -30,3 +30,5 @@ We need a base class for general parsers as most current parsers share a lot of 
 === Discussion: ===
 
 Is something missing or not optimal?
+
+It might make sense to have a way to let subclasses specify the minimal frame size necessary to read timestamp and other useful information and then let them implement a parse_frame_minimal() method that can be used for building the seek table in pull mode.
