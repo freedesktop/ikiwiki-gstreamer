@@ -4,10 +4,14 @@
 #pragma section-numbers off
 = GStreamer Wiki =
 
-This wiki serves as a scratchpad for tasks, design discussion and the like.
+This wiki serves as a scratchpad for tasks, design discussions and the like.
  * ReleasePlanning: schedule for code freezes and planing for dates
  * DesignDiscussions: drafting new features
  * TaskList: standalone tasks for anyone to take, Google SoC planning
+ * SubmittingPatches: where and how to submit patches
+
+General documentation about GStreamer libraries and plugins can be found on the [http://gstreamer.freedesktop.org/documentation/ GStreamer Documentation Page]
+--------------------------------------------
 
 Interesting starting points:
  * RecentChanges: see where people are currently working
@@ -16,15 +20,7 @@ Interesting starting points:
  * SyntaxReference: quick access to wiki syntax
  * SiteNavigation: get an overview over this site and what it contains
 
+--------------------------------------------
 
-== How to use this site ==
-
-A Wiki is a collaborative site, anyone can contribute and share:
- * Edit any page by pressing '''[[GetText(Edit)]]''' at the top or the bottom of the page 
- * Create a link to another page with joined capitalized words (like WikiSandBox) or with {{{["quoted words in brackets"]}}}
- * Search for page titles or text within pages using the search box at the top of any page
- * See HelpForBeginners to get you going, HelpContents for all help pages.
-
-To learn more about what a WikiWikiWeb is, read about MoinMoin:WhyWikiWorks and the MoinMoin:WikiNature. Also, consult the HelpMiscellaneous/FrequentlyAskedQuestions page. 
-
-This wiki is powered by MoinMoin.
+How to use this site:
+ * HowToUseThisSite: how to use this site
