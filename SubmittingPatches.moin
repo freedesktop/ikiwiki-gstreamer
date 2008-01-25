@@ -1,0 +1,96 @@
+== Submitting Patches ==
+
+=== Where ===
+
+Please submit patches for GStreamer in [http://bugzilla.gnome.org GNOME bugzilla]:
+ * you will need to create a GNOME bugzilla account if you don't have one yet (yep, that's just how it is, sorry for the inconvenience)
+ * create a new bug if there is no bug report for this issue yet; [http://gstreamer.freedesktop.org/bugs/ This page] has shortcuts for the major components
+ * once you have created a bug you can attach your patch(es), see below for more details
+ * if your patch is an enhancement or new API, please set your bug's severity to 'enhancement'
+ * if your patch is against a specific plugin or element, prefix the Summary with `[element-name]` or `[plugin-name]` and keep the rest of the description as short and precise as possible. Example: ''[id3demux] add support for WCOP frame''. This makes sure developers looking through the [http://bugzilla.gnome.org/buglist.cgi?product=GStreamer&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=NEEDINFO&bug_status=REOPENED&form_name=query list of open bugs] can quickly identify what your bug is about; if your text is too long and only contains fill words at the beginning, the important information will be cut off and not show up in the list view.
+ * create separate bugs for separate issues
+
+Please do not submit patches on the gstreamer-devel mailing list. Patches submitted on the mailing list are most likely going to be ignored or simply overlooked.
+
+Please also do not attach patches to already-existing bugs unless they are directly relevant to the issue, ie. do not attach patches to already-existing bugs that are only vaguely related to your issue.
+
+
+=== How ===
+
+You should prepare patches against a current CVS checkout, if possible at all. Patches against the current stable release of the module in question ''may'' be acceptable as well if the plugin/code hasn't changed much since then, but if it has chances are that you will be asked to provide an updated patch against CVS.
+
+If you have created a new plugin, please submit a patch that adds it to gst-plugins-bad (including configure.ac and the various Makefile.am modififications and all new files).
+
+==== General information on how we like our patches ====
+
+Please always submit patches in 'unified context' format to make sure they are human-readable. You can achieve this by passing the '-u' option to diff or cvs diff. Additionally, it would be quite helpful if you could also pass the '-p' option, which adds useful information to each individual patch chunk (such as the C function name). This makes patches much easier to review.
+
+You can make CVS use these options automatically by putting them into your ~/.cvsrc file, like this (on Linux/*nix):
+
+{{{
+$ echo 'diff -u -p' >> ~/.cvsrc
+}}}
+
+And while you're setting up your ~/.cvsrc file, you usually also want this:
+
+{{{
+$ echo 'up -dP' >> ~/.cvsrc
+}}}
+
+Please make sure your patches are as terse and precise as possible. Do not include 'clean-ups' or non-functional changes, since they distract from the real changes and make things harder to review (if you feel there are things to clean-up, please submit the clean-ups as a separate patch that does not contain any functional changes).
+
+Try to stick to the GStreamer coding style (run [http://webcvs.freedesktop.org/gstreamer/gstreamer/tools/gst-indent?view=markup gst-indent] over your .c or .cpp files, but not the header files, if you want your code auto-indented before making the patch).
+
+Please do not include a ChangeLog entry with your patch (feel free to suggest a wording for the ChangeLog entry in the bug report though).
+
+
+==== Creating a diff of a single file ====
+
+{{{
+$ cvs diff -u -p path/to/file.c > mypatch.diff
+}}}
+
+or, if you are not working within a CVS checkout (you should!):
+
+{{{
+$ diff -u -p gst-plugins-foo-0.10.n-original/path/to/file.c gst-plugins-foo-0.10.n-modified/path/to/file.c > mypatch.diff
+}}}
+
+
+==== Creating a diff of multiple files or a whole directory ====
+
+{{{
+$ cvs diff -u -p gst/foodemux/file1.c gst/foodemux/file1.h > foodemuxpatch.diff
+}}}
+
+If you specify a directory, 'cvs diff' will create a patch for all modified files in the directory and all sub-directories:
+
+{{{
+$ cvs diff -u -p gst/foodemux/ > foodemuxpatch.diff
+}}}
+
+The same goes for diff (note the -r option):
+
+{{{
+$ diff -u -p -r gst-plugins-foo-0.10.n-original/gst/foodemux/ gst-plugins-foo-0.10.n-modified/gst/foodemux/ > mypatch.diff
+}}}
+
+==== Include new files in a patch ====
+
+If you are using an anonymous CVS checkout, 'cvs diff' won't take into account newly-added files, and you don't have permission to 'cvs add' new files. There are two things you can do in this case:
+ * use the 'cvsdo' tool from the 'cvsutils' package: {{{
+cvsdo add path/to/  # only needed if this is a new directory
+cvsdo add path/to/newfile.c /path/to/newfile.h
+cvsdo diff -u -p /path/to > mypatch.diff
+}}}
+ * add/append the new files manually to the patch: {{{
+cvs diff -u -p configure.ac gst/Makefile.am > mypatch.diff
+diff -N /dev/null gst/newdir/Makefile.am >> mypatch.diff
+diff -N /dev/null gst/newdir/newfile.c >> mypatch.diff
+diff -N /dev/null gst/newdir/newfile.h >> mypatch.diff
+}}}
+
+
+=== What to do after you have submitted your patch ===
+
+Most of all, please be patient.  We try to review patches as quickly as possible, but there is such a high turnaround of bugs, patches and feature requests that it is not always possible to tend to them all as quickly as we'd like. This is especially true for completely new plugins. If you haven't gotten any response at all for a while, feel free to 'ping' us by posting a quick follow-up comment to the bug or finding us on IRC (many developers actively track changes in bugzilla via e-mail, so a follow-up comment will usually be noticed).
