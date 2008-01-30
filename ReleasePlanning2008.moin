@@ -74,6 +74,8 @@ An iCal file is available at http://gstreamer.freedesktop.org/data/gst-schedule.
 ||<:> '''Base 0.10.16 released''' ||<:> ''Gnome 2.21.90 tarballs'' ||
 ||<:> '''Python 0.10.10 released''' || ||
 ||<: #c5d2c8> January 29 || ||<:#afb6e0> Core/Base/Python code thaw ||
+||<|2 : #9db8d2> '''5''' ||<|2 : #c5d2c8> January 30 || '''Core 0.10.17 released unexpectedly''' ||<|2:> ||
+|| '''Base 0.10.17 suddenly appears''' ||
 ||<-4 rowbgcolor="#dddddd"> '''February''' - ''Good/Bad/Ugly'' ||
 ||<|4 : #9db8d2> '''6''' ||<: #c5d2c8> February 4 || ||<:#e0e0b6> Plugin Move Window Good<->Bad<->Ugly Opens ||
 ||<|3 : #c5d2c8> February 8 || Good 0.10.6.2 pre-release tarball ||<:#e0b6af> Good/Bad/Ugly code freeze ||
@@ -88,17 +90,17 @@ An iCal file is available at http://gstreamer.freedesktop.org/data/gst-schedule.
 ||<: #c5d2c8> February 19 || ||<:#afb6e0> Good/Bad/Ugly code & dependency thaw ||
 ||<: #c5d2c8> February 25 || || ''Gnome 2.21.92 tarballs due'' ||
 ||<-4 rowbgcolor="#dddddd"> '''March''' - ''Core/Base'' ||
-||<|6 : #9db8d2> '''10''' ||<|3 : #c5d2c8> March 3 || Core 0.10.16.2 pre-release tarball ||<|3:#e0b6af> Core/Base/Python code freeze ||
-|| Base 0.10.16.2 pre-release tarball ||
+||<|6 : #9db8d2> '''10''' ||<|3 : #c5d2c8> March 3 || Core 0.10.17.2 pre-release tarball ||<|3:#e0b6af> Core/Base/Python code freeze ||
+|| Base 0.10.17.2 pre-release tarball ||
 || Python 0.10.10.2 pre-release tarball ||
-||<|3 : #c5d2c8> March 6 || Core 0.10.16.3 pre-release tarball ||<|3:> ''If needed'' ||
-|| Base 0.10.16.3 pre-release tarball ||
+||<|3 : #c5d2c8> March 6 || Core 0.10.17.3 pre-release tarball ||<|3:> ''If needed'' ||
+|| Base 0.10.17.3 pre-release tarball ||
 || Python 0.10.10.3 pre-release tarball ||
-||<|3 : #9db8d2> '''11''' ||<|3 : #c5d2c8> March 10 || Core 0.10.16.4 pre-release tarball ||<|3:> ''If needed'' ||
-|| Base 0.10.16.4 pre-release tarball ||
+||<|3 : #9db8d2> '''11''' ||<|3 : #c5d2c8> March 10 || Core 0.10.17.4 pre-release tarball ||<|3:> ''If needed'' ||
+|| Base 0.10.17.4 pre-release tarball ||
 || Python 0.10.10.4 pre-release tarball ||
-||<|4 : #9db8d2> '''12''' ||<|3 : #c5d2c8> March 17 ||<:> '''Core 0.10.17 released''' ||<|3:#e0b6af> Good/Bad/Ugly/FFmpeg dependency freeze ||
-||<:> '''Base 0.10.17 released''' ||
+||<|4 : #9db8d2> '''12''' ||<|3 : #c5d2c8> March 17 ||<:> '''Core 0.10.18 released''' ||<|3:#e0b6af> Good/Bad/Ugly/FFmpeg dependency freeze ||
+||<:> '''Base 0.10.18 released''' ||
 ||<:> '''Python 0.10.11 released''' ||
 ||<: #c5d2c8> March 18 || ||<:#afb6e0> Core/Base/Python code thaw ||
 ||<-4 rowbgcolor="#dddddd"> '''April''' - ''Good/Bad'' ||
