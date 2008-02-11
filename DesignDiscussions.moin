@@ -11,3 +11,5 @@ Space for drafting new features.
   * GstBaseMux: muxer base class
   * GstBaseEncode: encoder base class
   * GstTagMux: tag muxer base class
+
+ * SampleBin: bin for game and event sounds
