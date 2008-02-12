@@ -73,3 +73,8 @@ gst_sample_bin_play_sound(!GstsampleBin *sbin, glong clip_id, gdouble volume, gd
  * add and remove as part of ref/unref and internal sample/memory management
  * playsound as a method of a sample object, with more state control?: start/stop (as props?)
 -- MarcAndreLureau [[DateTime(2008-02-12T08:47:20Z)]]
+
+ * why mixing as a separate components? it will use adder
+ * the rationale for background is, that we need something to keep adder running, and background would automatically loop on eos (segmented seek)
+ * I want volume and panorama be parameters of play action. then e.g. you can play the same sound at different volumes or pan-positions
+-- StefanKost [[DateTime(2008-02-12T09:20:43Z)]]
