@@ -63,3 +63,13 @@ glong gst_sample_bin_remove_sound(!GstsampleBin *sbin, glong clip_id);
 
 gst_sample_bin_play_sound(!GstsampleBin *sbin, glong clip_id, gdouble volume, gdouble pan);
   Play the sound clip with the given volume and panorama position.
+
+
+= Comments =
+
+ * can we consider mixing as a separate functionnality?
+ * background could be considered as a regular sample
+ * a sample as a (mini)object, shareable in different contexts (refcount), and with attached (dynamic?) properties (vol,pan?,loop,name..)  
+ * add and remove as part of ref/unref and internal sample/memory management
+ * playsound as a method of a sample object, with more state control?: start/stop (as props?)
+-- MarcAndreLureau [[DateTime(2008-02-12T08:47:20Z)]]
