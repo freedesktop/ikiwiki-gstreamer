@@ -1,0 +1,27 @@
+== GStreamer 0.11 ==
+
+This page is a somewhat random collection of things to look at for 0.11. More can be found in gstreamer/docs/random/ and gstreamer/docs/design/
+
+"0.11" describes a future development version of GStreamer where API and ABI changes can (and will) happen. There is no timeline yet for when 0.11 will happen. There is still a lot more that can be achieved with the current 0.10 API.
+
+It is expected that the transition from 0.10 to 0.11/0.12 will be much easier on application and plugin developers than the transition from 0.8 to 0.10 was.
+
+=== core ===
+
+==== tags ====
+
+ * maybe tag messages/events should work similarly to how eos works, ie. tag readers don't post tags on the bugs themselves, but just send them downstream in form of events and only the sinks post tag messages? This fixes timing problems when tags change mid-stream like with icydemux - if there's buffering between icydemux and the sink the player will get the new tags while the old song is still playing
+ * GST_TAG_LANGUAGE_CODE: use ISO-639-2 instead of ISO-639-1. Enforce this. Provide 639-1 => 639-2 table in libgsttag (ideally we'd require iso-codes and provide language_name=>code and code=>language_name functions too).
+ * add GST_TAG_LANGUAGE for freeform language description, if setter doesn't know the code
+
+==== miscellaneous ====
+
+ * get rid of the abomination that is GstImplementsInterface
+
+=== gst-plugins-base ===
+
+==== libraries ====
+
+ * merge libgstcdda into libgstaudio
+ * merge audio bits from libgstinterfaces into libgstaudio
+ * merge video bits from libgstinterfaces into libgstvideo
