@@ -17,6 +17,8 @@ It is expected that the transition from 0.10 to 0.11/0.12 will be much easier on
 ==== miscellaneous ====
 
  * get rid of the abomination that is GstImplementsInterface
+ * we need to be strict and clear about where URIs are used and where filenames and enforce both
+ * need to fix and document assumptions about filename encodings, in accordance with GLib (ie: on win32: should always be utf8, *nix: bunch of bytes, no particular encoding with extras/exceptions)
 
 === gst-plugins-base ===
 
@@ -25,3 +27,4 @@ It is expected that the transition from 0.10 to 0.11/0.12 will be much easier on
  * merge libgstcdda into libgstaudio
  * merge audio bits from libgstinterfaces into libgstaudio
  * merge video bits from libgstinterfaces into libgstvideo
+ * change GstPropertyProbe to be more useful and generic and move into core(?). I would be good if a probe could return multiple things, e.g. a "device" probe could return description strings in addition to the various devices found (so we can get rid of the silly device-name thing we do currently)
