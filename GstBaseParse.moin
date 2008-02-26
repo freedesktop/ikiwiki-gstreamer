@@ -1,5 +1,7 @@
 We need a base class for general parsers as most current parsers share a lot of rather complex code.
 
+Implementation has started at [http://bugzilla.gnome.org/show_bug.cgi?id=518857 bug 518857].
+
 === Features: ===
 
  * Keeping synchronization and splitting into complete frames that the subclass handles
