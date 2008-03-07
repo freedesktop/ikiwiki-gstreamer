@@ -6,4 +6,22 @@
  * ["MHEGSupport"]: Project to create elements for parsing and rendering MHEG content in DVB.
  * ["IXMF"]: Project to create decoder and/or encoder for the IXMF audio format
 
+== Closed Captioning support ==
+ * http://en.wikipedia.org/wiki/Closed_Captioning
+ * http://thread.gmane.org/gmane.comp.video.gstreamer.devel/19727
+
+== DVD Playback ==
+ * http://bugzilla.gnome.org/show_bug.cgi?id=476149
+
+== Ladspa, LV2 plugin bridge ==
+ * http://www.ladspa.org/, http://lv2plug.in/
+
+== BaseClasses for Decoder,Encoders, Demuxers and Muxers ==
+ * [:DesignDiscussions:Design Drafts] and implementation for some have been started
+
+== More Liboil usage ==
+ * liboil is library for optimized inner loops
+ * it could be [:MoreLibOilUsage:used more often in gstreamer]
+
+
 Back to ["TaskList"] 
