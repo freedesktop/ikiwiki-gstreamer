@@ -4,5 +4,6 @@
  * ["MXFMuxerDemuxer"]: Project to create a Muxer and Demuxer for the important MXF container format
  * ["QuicktimeMP4Muxer"]: Project to create a muxer for MPEG4/Quicktime container format
  * ["MHEGSupport"]: Project to create elements for parsing and rendering MHEG content in DVB.
+ * ["IXMF"]: Project to create decoder and/or encoder for the IXMF audio format
 
 Back to ["TaskList"] 
