@@ -10,5 +10,6 @@
  * ["LADSPA"]: Create a Ladspa version 2 bridge and clean up LADSPA plugin
  * ["MoreBaseClases"]: Create baseclases for decoders, encoders, demuxers and muxers
  * ["MoreLibOil"]: Improve use of Liboil in GStreamer
+ * ["ImprovedMMS"]: Write a new (and better) MMS protocol plugin 
 
 Back to ["TaskList"] 
