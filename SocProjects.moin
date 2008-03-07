@@ -6,6 +6,10 @@
  * ["MHEGSupport"]: Project to create elements for parsing and rendering MHEG content in DVB.
  * ["IXMF"]: Project to create decoder and/or encoder for the IXMF audio format
  * ["Closed Captioning support"]
+ * ["DVD Playback"]: Project to finish GStreamer's DVD support.
+ * ["LADSPA"]: Create a Ladspa version 2 bridge and clean up LADSPA plugin
+ * ["MoreBaseClases"]: Create baseclases for decoders, encoders, demuxers and muxers
+ * ["MoreLibOil"]: Improve use of Liboil in GStreamer
 
 == DVD Playback ==
  * http://bugzilla.gnome.org/show_bug.cgi?id=476149
