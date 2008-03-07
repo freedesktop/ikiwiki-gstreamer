@@ -1,0 +1,13 @@
+= IXMF Decoding and Encoding =
+
+== Background ==
+The computer gaming industry has defined a new audio format primarily targeted for us within games. It would
+be a big step forward for GStreamer in terms of being considered for game use if we support this format.
+
+== Resources ==
+
+ * http://www.iasig.org/wg/ixwg/index.shtml - Specification of the format and more information
+
+'''Mentor: Christian Schaller - Uraeus on IRC'''
+
+Back to ["TaskList"] 
