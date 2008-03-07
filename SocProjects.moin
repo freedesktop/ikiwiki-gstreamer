@@ -5,10 +5,7 @@
  * ["QuicktimeMP4Muxer"]: Project to create a muxer for MPEG4/Quicktime container format
  * ["MHEGSupport"]: Project to create elements for parsing and rendering MHEG content in DVB.
  * ["IXMF"]: Project to create decoder and/or encoder for the IXMF audio format
-
-== Closed Captioning support ==
- * http://en.wikipedia.org/wiki/Closed_Captioning
- * http://thread.gmane.org/gmane.comp.video.gstreamer.devel/19727
+ * ["Closed Captioning support"]
 
 == DVD Playback ==
  * http://bugzilla.gnome.org/show_bug.cgi?id=476149
