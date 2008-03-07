@@ -13,3 +13,4 @@
  * http://www.ladspa.org/, http://lv2plug.in/
 
 == BaseClasses for Decoder,Encoders, Demuxers and Muxers ==
+ * [:DesignDiscussions:Design Drafts] and implementation for some have been started
