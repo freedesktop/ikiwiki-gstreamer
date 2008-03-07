@@ -11,18 +11,4 @@
  * ["MoreBaseClases"]: Create baseclases for decoders, encoders, demuxers and muxers
  * ["MoreLibOil"]: Improve use of Liboil in GStreamer
 
-== DVD Playback ==
- * http://bugzilla.gnome.org/show_bug.cgi?id=476149
-
-== Ladspa, LV2 plugin bridge ==
- * http://www.ladspa.org/, http://lv2plug.in/
-
-== BaseClasses for Decoder,Encoders, Demuxers and Muxers ==
- * [:DesignDiscussions:Design Drafts] and implementation for some have been started
-
-== More Liboil usage ==
- * liboil is library for optimized inner loops
- * it could be [:MoreLibOilUsage:used more often in gstreamer]
-
-
 Back to ["TaskList"] 
