@@ -1,3 +1,6 @@
 = Google SoC 2008 =
  * SocProjects: List of suggested Summer of Code projects
  * SocManagement: Overview of involved people
+
+= Other Tasks =
+ * ["MoreBaseClases"]: Create baseclases for decoders, encoders, demuxers and muxers
