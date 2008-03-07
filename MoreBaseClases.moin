@@ -2,10 +2,15 @@
 
 == Background ==
 
+One major improvment of the 0.10 series was the use of baseclasses. All plugins were derived directly from GstElement in the 0.8 series. In 0.10 there are still several use cases where base classes would be beneficial. The task consist of studying existing elements and refactoring common functionality into a baseclass. Ideally unit tests are written along to ensure the implementation is correct.
+
+ * GstBaseParse: parser base class
+ * GstBaseDemux: demuxer base class
+ * GstBaseDecode: decoder base class
+ * GstBaseMux: muxer base class
+ * GstBaseEncode: encoder base class
+ * GstTagMux: tag muxer base class
+
 == Resources ==
-
- * [:DesignDiscussions:Design Drafts] and implementation for some have been started
-
-'''Mentor: Need Mentor - Add yourself'''
 
 Back to ["TaskList"]  
