@@ -14,3 +14,7 @@
 
 == BaseClasses for Decoder,Encoders, Demuxers and Muxers ==
  * [:DesignDiscussions:Design Drafts] and implementation for some have been started
+
+== More Liboil usage ==
+ * liboil is library for optimized inner loops
+ * it could be [:MoreLibOilUsage:used more often in gstreamer]
