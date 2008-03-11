@@ -9,6 +9,7 @@
  * ["DVD Playback"]: Project to finish GStreamer's DVD support.
  * ["LADSPA"]: Create a Ladspa version 2 bridge and clean up LADSPA plugin
  * ["MoreLibOil"]: Improve use of Liboil in GStreamer
- * ["ImprovedMMS"]: Write a new (and better) MMS protocol plugin 
+ * ["ImprovedMMS"]: Write a new (and better) MMS protocol plugin
+ * ["EncodingProfiles"]: Utility library for encoding profiles
 
 Back to ["TaskList"] 
