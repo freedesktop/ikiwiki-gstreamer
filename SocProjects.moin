@@ -1,6 +1,4 @@
 = List of Summer of Code proposals for students =
-
-
  * ["MXFMuxerDemuxer"]: Project to create a Muxer and Demuxer for the important MXF container format
  * ["QuicktimeMP4Muxer"]: Project to create a muxer for MPEG4/Quicktime container format
  * ["MHEGSupport"]: Project to create elements for parsing and rendering MHEG content in DVB.
@@ -8,9 +6,9 @@
  * ["Closed Captioning support"]: Subtitles for the hearing impaired
  * ["DVD Playback"]: Project to finish GStreamer's DVD support.
  * ["LADSPA"]: Create a Ladspa version 2 bridge and clean up LADSPA plugin
- * ["MoreLibOil"]: Improve use of Liboil in GStreamer
+ * MoreLibOil: Improve use of Liboil in GStreamer
  * ["ImprovedMMS"]: Write a new (and better) MMS protocol plugin
- * ["EncodingProfiles"]: Utility library for encoding profiles
+ * EncodingProfiles: Utility library for encoding profiles
  * ["LiboilJIT"]: Liboil JIT compiler for SIMD instructions
-
-Back to ["TaskList"] 
+ * ["Pitivi"]: Improve Pitivi
+Back to TaskList
