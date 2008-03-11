@@ -11,5 +11,6 @@
  * ["MoreLibOil"]: Improve use of Liboil in GStreamer
  * ["ImprovedMMS"]: Write a new (and better) MMS protocol plugin
  * ["EncodingProfiles"]: Utility library for encoding profiles
+ * ["LiboilJIT"]: Liboil JIT compiler for SIMD instructions
 
 Back to ["TaskList"] 
