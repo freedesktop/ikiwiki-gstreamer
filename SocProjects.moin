@@ -11,4 +11,5 @@
  * EncodingProfiles: Utility library for encoding profiles
  * ["LiboilJIT"]: Liboil JIT compiler for SIMD instructions
  * ["Pitivi"]: Improve Pitivi
+ * ["BetterTagReadingWriting"]: Improve tag reading a writing capabilities.
 Back to TaskList
