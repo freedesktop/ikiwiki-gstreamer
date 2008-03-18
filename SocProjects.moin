@@ -12,6 +12,17 @@
  * ["LiboilJIT"]: Liboil JIT compiler for SIMD instructions
  * ["Pitivi"]: Improve Pitivi
  * ["BetterTagReadingWriting"]: Improve tag reading a writing capabilities.
+
+= Other Organizations =
+
+Other organizations that have project ideas related to GStreamer:
+
+ * [http://code.google.com/soc/2008/dirac/about.html] Dirac and Schrödinger
+ * [http://code.google.com/soc/2008/ffmpeg/about.html] FFmpeg
+ * [http://code.google.com/soc/2008/gnome/about.html] GNOME
+ * [http://code.google.com/soc/2008/xiph/about.html] Xiph.org
+
+
 Back to TaskList
 
 ----
