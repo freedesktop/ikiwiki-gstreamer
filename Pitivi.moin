@@ -4,6 +4,17 @@ Pitivi has a very basic UI for the moment, but it could be improved. ([http://ww
 
 The main thing that should be improved is the (simple) timeline (video effects/transition support)
 
+== Resources ==
+
+ * http://pitivi.sf.net
+
+== Skills needed ==
+ * Python programming
+
+'''Mentor: Edward Hervey aka Bilboed on IRC '''
+
+Back to ["TaskList"] 
+
 ----
 ["CategoryGSOC2008"]
 CategoryTasks
