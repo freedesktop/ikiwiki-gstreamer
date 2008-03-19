@@ -14,6 +14,7 @@
  * ["FarsightPlugins"]: Farsight 2 plugins for proprietary IM protocols
  * ["RubyGstreamer"]: Make the ruby gstreamer bindings rock
  * ["New Audiocd reader plugin"]: We need a new LGPL licensed audiocd reader plugin for GStreamer
+ * ["GstEditor"] : Finish the Python based Gst-Editor
 
 = Other Organizations =
 
