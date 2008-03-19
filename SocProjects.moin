@@ -7,13 +7,13 @@
  * ["DVD Playback"]: Project to finish GStreamer's DVD support.
  * ["LADSPA"]: Create a Ladspa version 2 bridge and clean up LADSPA plugin
  * MoreLibOil: Improve use of Liboil in GStreamer
- * ["ImprovedMMS"]: Write a new (and better) MMS protocol plugin
  * EncodingProfiles: Utility library for encoding profiles
  * ["LiboilJIT"]: Liboil JIT compiler for SIMD instructions
  * ["Pitivi"]: Improve Pitivi
  * ["BetterTagReadingWriting"]: Improve tag reading a writing capabilities.
  * ["FarsightPlugins"]: Farsight 2 plugins for proprietary IM protocols
  * ["RubyGstreamer"]: Make the ruby gstreamer bindings rock
+ * ["New Audiocd reader plugin"]: We need a new LGPL licensed audiocd reader plugin for GStreamer
 
 = Other Organizations =
 
