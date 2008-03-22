@@ -23,6 +23,8 @@ It is expected that the transition from 0.10 to 0.11/0.12 will be much easier on
 
 === gst-plugins-base ===
 
+ * gnomevfssrc/giosrc: default to iradio-mode=true and remove all iradio-* properties (same in souphttpsrc, neonhttpsrc etc.); post iradio tags on the bus
+
 ==== libraries ====
 
  * merge libgstcdda into libgstaudio
