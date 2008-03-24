@@ -1,4 +1,4 @@
-The Application
+= How to write the Application =
 
 Once the students applications period has opened, you have to submit your application on Google's Summer of Code website. Your application must be written in English. It should contain a detailed description of your project proposal. You should consider answering questions such as:
 
@@ -12,3 +12,8 @@ Once the students applications period has opened, you have to submit your applic
     * Why are you interested in improving GStreamer? 
 
 Don't just answer these questions, use your imagination and try to be clear. Don't forget to show enthusiasm. Please try to use correct English if possible. The selection committee understands that not all applicants speak English as their first language. In fact, many GStreamer community members speak English as their second or third language!
+
+Back to TaskList
+
+----
+["CategoryGSOC2008"]
