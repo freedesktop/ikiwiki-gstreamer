@@ -1,0 +1,17 @@
+= Write plugins to support sRTP (and maybe zRTP)  =
+
+== Background ==
+
+GStreamer now has a great RTP plugin. One of the major missing features is Secure RTP, and the related infrastructure to manage keys and other such things. The first task would be to implement some kind of element to implement RFC 3711 and integrate it into Farsight2. Then other related protocols like zRTP can be implemented.
+
+== Resources ==
+
+http://tools.ietf.org/html/rfc3711
+http://farsight.freedesktop.org
+
+'''Mentor: Olivier Crête - Tester on IRC''' 
+
+Back to ["TaskList"]  
+
+----
+["CategoryGSOC2008"] CategoryTasks
