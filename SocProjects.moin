@@ -17,6 +17,7 @@
  * ["GstEditor"] : Finish the Python based Gst-Editor
  * ["MPEG2Mux"] : Finish and improve GStreamer mpeg TS (and PS?) muxer
  * ["SrtpSupport"] : Add plugin to support Secure RTP
+ * ["JokosherLove"] : Fix GStreamer issues to make Jokosher LUGRadio ready
 
 = Other Organizations =
 
