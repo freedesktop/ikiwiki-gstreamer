@@ -16,6 +16,7 @@
  * ["New Audiocd reader plugin"]: We need a new LGPL licensed audiocd reader plugin for GStreamer
  * ["GstEditor"] : Finish the Python based Gst-Editor
  * ["MPEG2Mux"] : Finish and improve GStreamer mpeg TS (and PS?) muxer
+ * ["SrtpSupport"] : Add plugin to support Secure RTP
 
 = Other Organizations =
 
