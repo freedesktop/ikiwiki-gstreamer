@@ -2,16 +2,26 @@
 
 Pitivi has a very basic UI for the moment, but it could be improved. ([http://www.pitivi.org/wiki/Roadmap])
 
-The main thing that should be improved is the (simple) timeline (video effects/transition support)
+Amongst the things to be done which are high priority:
+
+ * Fade-in/-out
+ * Transitions (fade + smpte)
+ * Titling
+ * Picture support
+ * Improve the simple and advanced timeline widgets (maybe switch to a canvasing system like goocanvas)
+ * ...
 
 == Resources ==
 
  * http://pitivi.sf.net
 
 == Skills needed ==
- * Python programming
+ * Python
+ * GTK
+ * Student needs to know how to use GStreamer, plugin creation knowledge would be handy too
+ * Knowledge about video-editing
 
-'''Mentor: Edward Hervey aka Bilboed on IRC '''
+'''Mentor: Edward Hervey (PiTiVi author) aka bilboed on IRC '''
 
 Back to ["TaskList"] 
 
