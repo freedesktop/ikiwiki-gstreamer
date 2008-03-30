@@ -10,26 +10,23 @@
  * EncodingProfiles: Utility library for encoding profiles
  * ["LiboilJIT"]: Liboil JIT compiler for SIMD instructions
  * ["Pitivi"]: Improve Pitivi
- * ["BetterTagReadingWriting"]: Improve tag reading a writing capabilities.
- * ["FarsightPlugins"]: Farsight 2 plugins for proprietary IM protocols
- * ["RubyGstreamer"]: Make the ruby gstreamer bindings rock
+ * BetterTagReadingWriting: Improve tag reading a writing capabilities.
+ * FarsightPlugins: Farsight 2 plugins for proprietary IM protocols
+ * RubyGstreamer: Make the ruby gstreamer bindings rock
  * ["New Audiocd reader plugin"]: We need a new LGPL licensed audiocd reader plugin for GStreamer
- * ["GstEditor"] : Finish the Python based Gst-Editor
+ * GstEditor : Finish the Python based Gst-Editor
  * ["MPEG2Mux"] : Finish and improve GStreamer mpeg TS (and PS?) muxer
- * ["SrtpSupport"] : Add plugin to support Secure RTP
- * ["JokosherLove"] : Fix GStreamer issues to make Jokosher LUGRadio ready
-
+ * SrtpSupport : Add plugin to support Secure RTP
+ * JokosherLove : Fix GStreamer issues to make Jokosher LUGRadio ready
+ * [:TamasKorodi/IVC multichannel grabber card support:IVC_multichannel_grabber_card_support] : Adding IVC Multichanel grabber card support
 = Other Organizations =
-
 Other organizations that have project ideas related to GStreamer:
 
- * [http://code.google.com/soc/2008/dirac/about.html] Dirac and Schrödinger
- * [http://code.google.com/soc/2008/ffmpeg/about.html] FFmpeg
- * [http://code.google.com/soc/2008/gnome/about.html] GNOME
- * [http://code.google.com/soc/2008/xiph/about.html] Xiph.org
-
-
+ * http://code.google.com/soc/2008/dirac/about.html Dirac and Schrödinger
+ * http://code.google.com/soc/2008/ffmpeg/about.html FFmpeg
+ * http://code.google.com/soc/2008/gnome/about.html GNOME
+ * http://code.google.com/soc/2008/xiph/about.html Xiph.org
 Back to TaskList
 
 ----
-["CategoryGSOC2008"]
+ . ["CategoryGSOC2008"]
