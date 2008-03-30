@@ -1,0 +1,3 @@
+'''IVC multichannel grabber card support'''
+
+I'd like to write a Gstreamer sorce filter element for multichannel IVC grabber cards. It will support the multichannel input of these cards. The element will have multiple source pads. Each pad will provide one video stream from the grabber card's channels.
