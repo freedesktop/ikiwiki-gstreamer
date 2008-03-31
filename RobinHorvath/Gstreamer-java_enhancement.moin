@@ -1,3 +1,12 @@
-- gstreamer-java enhancement :
-    - swt video player
-- gstreamer and gstreamer-java windows port
+ * We'd like to do the video part of Gstreamer (which seems not so heavily maintain as the audio part) be production ready. Move as many code to good as possible. Made many Valgrind and other tests both for memory leak and other types of errors to fix.
+
+ * Gstreamer has nice, well written and working Java binding [http://code.google.com/p/gstreamer-java/]. 
+   It'd be useful to enhance it's functionality, finish and always keep up-to-date it's interface
+   with the actual Gstreamer implementation. At the same time the current binding has swing 
+   components for video and other GUI related components. 
+   It'd be useful to add SWT components:
+  * full featured SWT VideoComponent,
+  * implement all the current swing component in SWT,
+  * enhance it to be able to create GUI application with SWT and Gstreamer in Java without write any SWT or Gstreamer specific components.
+
+ * Gstreamer and Gstreamer-Java Mac OS and Windows port. We'd like to use Gstreamer on all of the 3 main OS (Linux, Windows, Mac OS). Only recently (Songbird) made some deep effort into the Mac OS and Windows port. We'd like to help them, test it and do as much Mac OS and Windows porting as possible. At the same time make a MinGW cross-compile build environment to be able to build Windows (and may be Mac OS) Gstreamer binaries on Linux.
