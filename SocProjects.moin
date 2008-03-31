@@ -18,8 +18,8 @@
  * ["MPEG2Mux"] : Finish and improve GStreamer mpeg TS (and PS?) muxer
  * SrtpSupport : Add plugin to support Secure RTP
  * JokosherLove : Fix GStreamer issues to make Jokosher LUGRadio ready
- * [:TamasKorodi/IVC multichannel grabber card support:IVC_multichannel_grabber_card_support] : Adding IVC Multichanel grabber card support
- * [:RobinHorvath/Gstreamer-java enhancement:Gstreamer-java enhancement] : GStreamer-java enhancement ( SWT video player ), gstreamer and gstreamer-java windows port
+ * [:TamasKorodi/IVC multichannel grabber card support:Multichannel_grabber_card_support] : Multichannel video grabber card support and more baseclasses
+ * [:RobinHorvath/Gstreamer-java enhancement:Gstreamer-Java enhancement] : GStreamer Java binding enhancement, Gstreamer and Gstreamer-Java Mac OS and Windows port
 = Other Organizations =
 Other organizations that have project ideas related to GStreamer:
 
