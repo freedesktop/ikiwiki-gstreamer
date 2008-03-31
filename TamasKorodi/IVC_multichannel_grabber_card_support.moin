@@ -1,3 +1,23 @@
-'''IVC multichannel grabber card support'''
+'''Multichannel video grabber card support and more baseclasses'''
 
-I'd like to write a Gstreamer sorce filter element for multichannel IVC grabber cards. It will support the multichannel input of these cards. The element will have multiple source pads. Each pad will provide one video stream from the grabber card's channels.
+Currently there are many (video) frame grabber cards and encoder/decoder cards 
+(mpeg-4, h.264 etc.). Most of the grabber cards have more analog (BNC)
+input channel. 
+
+Some of them use bttv chip(s) which is supported by the Linux
+kernel by default so one can use them as a v4l or v4l2 video source. But only
+for one channel which makes this solution mostly unusable. You can select the
+source channel but you can't change it (or at least in Gstreamer you should 4x25/sec 
+stop and play the stream). 
+
+There are frame grabber cards which has not v4l(2) driver but it's own Linux (Windows)
+kernel driver. In this case you should have to write a Gstreamer source element anyway.
+The same true for video decoder/encoder cards and such frame grabber card which
+gives encoded (mpeg-4, h.264 etc.) streams.
+
+It'd be useful to create good base classes and framework for these type of cards.
+So generally we need such video source elements which have more output pads which
+are the grabbed and/or encoded streams each pad will provide one video stream
+from the grabber card's channels or such video source elements which has one 
+output pad but they use a common kernel module and/or video device card and can work
+together.
