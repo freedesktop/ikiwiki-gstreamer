@@ -16,4 +16,4 @@ Space for drafting new features.
  * GstControllerSynchronization
  * Gtk widget library in gst-plugins-base:
   * VideoWidget: General Gtk video widget
-  * EncodingProfilesUI: Encoding profiles UI for editing, selecting, etc of encoding profiles
+  * EncodingProfilesUi: Encoding profiles UI for editing, selecting, etc of encoding profiles
