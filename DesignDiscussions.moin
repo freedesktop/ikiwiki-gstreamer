@@ -14,3 +14,6 @@ Space for drafting new features.
 
  * SampleBin: bin for game and event sounds
  * GstControllerSynchronization
+ * Gtk widget library in gst-plugins-base:
+  * VideoWidget: General Gtk video widget
+  * EncodingProfilesUI: Encoding profiles UI for editing, selecting, etc of encoding profiles
