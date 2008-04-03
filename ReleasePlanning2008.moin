@@ -104,6 +104,8 @@ An iCal file is available at http://gstreamer.freedesktop.org/data/gst-schedule.
 ||<:> '''Python 0.10.11 released''' ||
 ||<: #c5d2c8> March 18 || ||<:#afb6e0> Core/Base/Python code thaw ||
 ||<-4 rowbgcolor="#dddddd"> '''April''' - ''Good/Bad'' ||
+||<|2 : #9db8d2> '''14''' ||<|2 : #c5d2c8> April 4 || '''Core 0.10.19 released unexpectedly''' ||<|2:> ||
+|| '''Base 0.10.19 suddenly appears''' ||
 ||<|3 : #9db8d2> '''15''' ||<: #c5d2c8> April 7 || ||<:#e0e0b6> Plugin Move Window Good<->Bad Opens ||
 ||<|2 : #c5d2c8> April 11 || Good 0.10.7.2 pre-release tarball ||<:#e0b6af> Good/Bad code freeze ||
 || Bad 0.10.6.2 pre-release tarball ||<:#e0e0b6> Plugin Move Window Good<->Bad Closes ||
