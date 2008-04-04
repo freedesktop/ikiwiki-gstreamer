@@ -21,3 +21,16 @@ are the grabbed and/or encoded streams each pad will provide one video stream
 from the grabber card's channels or such video source elements which has one 
 output pad but they use a common kernel module and/or video device card and can work
 together.
+
+Timeline I would like to follow:
+April, May:
+Be familiar with the gstreamer framework and the plugin writers manual it's structure, coding convention and style. Read and understand the current code.
+
+Jun:
+Read and understand the hardware grabber card's docs and it's working, starting with the IVC-100 card (bttv chip).
+
+July:
+Write a 4 channel source element for IVC-400 card with a base element which can be used as a base class for all other grabber card (ie. multi channel input element).
+
+August:
+Write source elements (using the above base element) for other grabber cards (other cards probably will be: Comart's: HiCap, XeCap; Hikvision's 40xxhci)
