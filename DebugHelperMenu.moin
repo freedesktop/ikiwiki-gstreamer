@@ -1,0 +1,22 @@
+The idea is to provide a reusable menu widget that applications can plug into their menu bar in debug builds. 
+
+== Actions ==
+The widget would have pre-defines actions.
+ * dump pipeline graph
+ * dump pipeline graph and show
+ * dump details
+   * caps
+   * ...
+ * ---
+ * category log levels
+   * gstreamer
+     * GST_XXX
+       * WARNING, INFO, DEBUG, LOG
+   * application
+     * <name>
+       * WARNING, INFO, DEBUG, LOG
+
+== API ==
+The menu widget has some extra properties:
+  * GstPipeline *pipleine
+  * gchar *debug-categories (as ',' separated list of names)
