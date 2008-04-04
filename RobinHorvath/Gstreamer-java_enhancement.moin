@@ -11,3 +11,19 @@
   * implement all the current swing component in SWT,
   * enhance the Java bindings to be cross platform,
   * enhance it to be able to create GUI application with SWT and Gstreamer in Java without write any SWT or Gstreamer specific components.
+
+The timeline:
+
+April, May:
+Be familiar with the gstreamer and gstremaer-java framework it's 
+structure, coding convention and style. Read and understand the current code. Look at the current swing implementations.
+
+Jun:
+Write the SWT component for gstreamer-java and enhance gstreamer-java's functionality with all requested feature.
+
+July:
+Communicate with the gstreamer-devel list and the Songbird developers to understand the Windows and Mac OS port, it's working and the actual 
+state of the port.
+
+August:
+Fix all known bug and port all remaining plugins and libs to Windows and Mac OS.
