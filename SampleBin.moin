@@ -51,7 +51,7 @@ For good performance we should add gap handling to the adder.
 
 == API ==
 
-{{{#!c
+{{{
 gchar* !GstSampleBin::background-music-uri, rw, default=NULL
 // Set an uri to a media file that will be played in a loop. If %NULL silence is used.
 
