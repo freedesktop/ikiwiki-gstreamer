@@ -7,17 +7,25 @@ Event sounds and in-game sounds are usually relaive short audio clips (<2sec).
 Having them predecoded would allow to trigger them more or less immediately.
 We could do that by getting a filedescriptor from fileno(tmpfile()) / mkstemp("...XXXXXX")
 and using that with:
+{{{
 gnomevfssrc ! decodebin ! capsfilter ! fdsink sync=false
+}}}
 
 When playing, we would use:
+{{{
 fdsrc ! capsfilter ! volume ! audiopanorama ! adder
+}}}
 
 For uncached sounds we can use:
+{{{
 gnomevfssrc ! decodebin ! volume ! audiopanorama ! adder
+}}}
 
 When doing the cache on demand, we can do:
-gnomevfssrc ! decodebin ! tee ! queue ! capsfilter ! fdsink sync=false
-  queue ! volume ! audiopanorama ! adder
+{{{
+gnomevfssrc ! decodebin ! tee name=t ! queue ! capsfilter ! fdsink sync=false
+t. queue ! volume ! audiopanorama ! adder
+}}}
 
 Each pipeline-fragment should be implemented as a bin.
 
@@ -43,11 +51,12 @@ For good performance we should add gap handling to the adder.
 
 == API ==
 
+{{{#!c
 gchar* !GstSampleBin::background-music-uri, rw, default=NULL
-  Set an uri to a media file that will be played in a loop. If %NULL silence is used.
+// Set an uri to a media file that will be played in a loop. If %NULL silence is used.
 
 gdouble !GstSampleBin::background-music-volume, rw, default=1.0
-  Volume level for background music, unused if there is no background music
+// Volume level for background music, unused if there is no background music
 
 
 typedef enum {
@@ -57,14 +66,14 @@ typedef enum {
 } !GstSampleBinCacheMode;
 
 glong gst_sample_bin_add_sound(!GstsampleBin *sbin,const gchar *uri, !GstSampleBinCacheMode cache_mode);
-  Set a sound sample clip and eventually preload. Returns a clip-id.
+// Set a sound sample clip and eventually preload. Returns a clip-id.
 
 glong gst_sample_bin_remove_sound(!GstsampleBin *sbin, glong clip_id);
-  Remove a sound-clip. All clips are removed when destroying.
+// Remove a sound-clip. All clips are removed when destroying.
 
 gst_sample_bin_play_sound(!GstsampleBin *sbin, glong clip_id, gdouble volume, gdouble pan);
-  Play the sound clip with the given volume and panorama position.
-
+// Play the sound clip with the given volume and panorama position.
+}}}
 
 = Comments =
 
