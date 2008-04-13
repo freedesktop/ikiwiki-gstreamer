@@ -4,8 +4,9 @@ Event sounds and games need a convinience api to trigger short sound snippets.
 == Concepts ==
 === Caching ===
 Event sounds and in-game sounds are usually relaive short audio clips (<2sec).
-Having them predecoded would allow to trigger them more or less immediately. We
-could do that by getting a filedescriptor from tmpfile() and using that with:
+Having them predecoded would allow to trigger them more or less immediately.
+We could do that by getting a filedescriptor from fileno(tmpfile()) / mkstemp("...XXXXXX")
+and using that with:
 gnomevfssrc ! decodebin ! capsfilter ! fdsink sync=false
 
 When playing, we would use:
