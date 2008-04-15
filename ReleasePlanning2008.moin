@@ -129,7 +129,7 @@ An iCal file is available at http://gstreamer.freedesktop.org/data/gst-schedule.
 ||<: #c5d2c8> May 20 || ||<:#afb6e0> Ugly/FFmpeg code & dependency thaw ||
 ||< : #9db8d2> '''22''' ||<: #c5d2c8> May 26 || || ''Gnome 2.22.2 tarballs due'' ||
 ||<-4 rowbgcolor="#dddddd"> '''June''' - ''Core/Base'' ||
-||<|6 : #9db8d2> '''23''' ||<|4 : #c5d2c8> June 2 || Core 0.10.19.2 pre-release tarball ||<|3:#e0b6af> Core/Base/Python code freeze ||
+||<|7 : #9db8d2> '''23''' ||<|4 : #c5d2c8> June 2 || Core 0.10.19.2 pre-release tarball ||<|3:#e0b6af> Core/Base/Python code freeze ||
 || Base 0.10.19.2 pre-release tarball ||
 || Python 0.10.11.2 pre-release tarball ||
 || || ''Gnome 2.23.3 tarballs due'' ||
