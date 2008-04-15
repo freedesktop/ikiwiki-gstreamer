@@ -125,3 +125,17 @@ An iCal file is available at http://gstreamer.freedesktop.org/data/gst-schedule.
 ||<:> '''FFmpeg 0.10.5 released''' ||
 ||<:> ''Bad 0.10.8 released maybe'' ||
 ||<: #c5d2c8> May 20 || ||<:#afb6e0> Ugly/FFmpeg code & dependency thaw ||
+||<-4 rowbgcolor="#dddddd"> '''June''' - ''Core/Base'' ||
+||<|6 : #9db8d2> '''23''' ||<|3 : #c5d2c8> June 2 || Core 0.10.19.2 pre-release tarball ||<|3:#e0b6af> Core/Base/Python code freeze ||
+|| Base 0.10.19.2 pre-release tarball ||
+|| Python 0.10.11.2 pre-release tarball ||
+||<|3 : #c5d2c8> June 5 || Core 0.10.19.3 pre-release tarball ||<|3:> ''If needed'' ||
+|| Base 0.10.19.3 pre-release tarball ||
+|| Python 0.10.11.3 pre-release tarball ||
+||<|3 : #9db8d2> '''24''' ||<|3 : #c5d2c8> June 9 || Core 0.10.19.4 pre-release tarball ||<|3:> ''If needed'' ||
+|| Base 0.10.19.4 pre-release tarball ||
+|| Python 0.10.11.4 pre-release tarball ||
+||<|4 : #9db8d2> '''25''' ||<|3 : #c5d2c8> June 16 ||<:> '''Core 0.10.20 released''' ||<|3:#e0b6af> Good/Bad/Ugly/FFmpeg dependency freeze ||
+||<:> '''Base 0.10.20 released''' ||
+||<:> '''Python 0.10.12 released''' ||
+||<: #c5d2c8> June 17 || ||<:#afb6e0> Core/Base/Python code thaw ||
