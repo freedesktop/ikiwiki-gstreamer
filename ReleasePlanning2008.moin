@@ -111,31 +111,36 @@ An iCal file is available at http://gstreamer.freedesktop.org/data/gst-schedule.
 || Bad 0.10.6.2 pre-release tarball ||<:#e0e0b6> Plugin Move Window Good<->Bad Closes ||
 ||<|2 : #9db8d2> '''16''' ||<|2: #c5d2c8> April 16 || Good 0.10.7.3 pre-release tarball ||<|2> ''If needed'' ||
 || Bad 0.10.6.3 pre-release tarball ||
-||<|3 : #9db8d2> '''17''' ||<|2: #c5d2c8> April 21 ||<:> '''Good 0.10.8 released''' ||<|2> ''Bad branched for optional 'Plugin Moves' release ||
+||<|4 : #9db8d2> '''17''' ||<|2: #c5d2c8> April 21 ||<:> '''Good 0.10.8 released''' ||<|2> ''Bad branched for optional 'Plugin Moves' release'' ||
 ||<:> '''Bad 0.10.7 released''' ||
+||<: #c5d2c8> April 21 || || ''Gnome 2.23.1 tarballs due'' ||
 ||<: #c5d2c8> April 22 || ||<:#afb6e0> Good/Bad code & dependency thaw ||
 ||<-4 rowbgcolor="#dddddd"> '''May''' - ''Ugly/FFmpeg & (optional) Bad'' ||
 ||<|4 : #9db8d2> '''19''' ||<: #c5d2c8> May 5 || ||<:#e0e0b6> Plugin Move Window Ugly<->Bad Opens ||
 ||<|3 : #c5d2c8> May 9 ||<:> Ugly 0.10.7.2 pre-release tarball ||<:#e0b6af> Ugly/FFmpeg code freeze ||
 ||<:> FFmpeg 0.10.4.2 pre-release tarball ||<:#e0e0b6> Plugin Move Window Ugly<->Bad Closes ||
 ||<:> ''Bad 0.10.7.2 pre-release if needed'' || ||
-||<|2 : #9db8d2> '''20''' ||<|2: #c5d2c8> May 14 ||<:> Ugly 0.10.7.3 pre-release tarball ||<|2> ''If needed'' ||
+||<|3 : #9db8d2> '''20''' ||<|1: #c5d2c8> May 12 || || ''Gnome 2.23.2 tarballs due'' ||
+||<|2: #c5d2c8> May 14 ||<:> Ugly 0.10.7.3 pre-release tarball ||<|2> ''If needed'' ||
 ||<:> FFmpeg 0.10.4.3 pre-release tarball ||
 ||<|4 : #9db8d2> '''21''' ||<|3: #c5d2c8> May 19 ||<:> '''Ugly 0.10.8 released''' ||<|3> ||
 ||<:> '''FFmpeg 0.10.5 released''' ||
 ||<:> ''Bad 0.10.8 released maybe'' ||
 ||<: #c5d2c8> May 20 || ||<:#afb6e0> Ugly/FFmpeg code & dependency thaw ||
+||< : #9db8d2> '''22''' ||<: #c5d2c8> May 26 || || ''Gnome 2.22.2 tarballs due'' ||
 ||<-4 rowbgcolor="#dddddd"> '''June''' - ''Core/Base'' ||
-||<|6 : #9db8d2> '''23''' ||<|3 : #c5d2c8> June 2 || Core 0.10.19.2 pre-release tarball ||<|3:#e0b6af> Core/Base/Python code freeze ||
+||<|6 : #9db8d2> '''23''' ||<|4 : #c5d2c8> June 2 || Core 0.10.19.2 pre-release tarball ||<|3:#e0b6af> Core/Base/Python code freeze ||
 || Base 0.10.19.2 pre-release tarball ||
 || Python 0.10.11.2 pre-release tarball ||
+|| || ''Gnome 2.23.3 tarballs due'' ||
 ||<|3 : #c5d2c8> June 5 || Core 0.10.19.3 pre-release tarball ||<|3:> ''If needed'' ||
 || Base 0.10.19.3 pre-release tarball ||
 || Python 0.10.11.3 pre-release tarball ||
 ||<|3 : #9db8d2> '''24''' ||<|3 : #c5d2c8> June 9 || Core 0.10.19.4 pre-release tarball ||<|3:> ''If needed'' ||
 || Base 0.10.19.4 pre-release tarball ||
 || Python 0.10.11.4 pre-release tarball ||
-||<|4 : #9db8d2> '''25''' ||<|3 : #c5d2c8> June 16 ||<:> '''Core 0.10.20 released''' ||<|3:#e0b6af> Good/Bad/Ugly/FFmpeg dependency freeze ||
+||<|5 : #9db8d2> '''25''' ||<|4 : #c5d2c8> June 16 ||<:> '''Core 0.10.20 released''' ||<|3:#e0b6af> Good/Bad/Ugly/FFmpeg dependency freeze ||
 ||<:> '''Base 0.10.20 released''' ||
 ||<:> '''Python 0.10.12 released''' ||
+|| || ''Gnome 2.23.4 tarballs due'' ||
 ||<: #c5d2c8> June 17 || ||<:#afb6e0> Core/Base/Python code thaw ||
