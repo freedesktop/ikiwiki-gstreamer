@@ -1,8 +1,8 @@
 = GStreamer release schedule for 2008 =
-
 In the past, GStreamer releases have been a bit haphazard, with a tendency for some modules to go a long time without seeing a release. The goal of this schedule is to provide regular releases of all modules and to help people plan their development more easily by knowing in advance when releases are going to occur.
 
 At the moment there are 7 GStreamer modules included in the schedule:
+
  * GStreamer Core
  * GStreamer Base Plugins
  * GStreamer Good Plugins
@@ -10,17 +10,15 @@ At the moment there are 7 GStreamer modules included in the schedule:
  * GStreamer Ugly Plugins
  * GStreamer FFmpeg
  * GStreamer Python Bindings
-
 Modules not included:
- * Gnonlin - released by Edward Hervey as he sees fit
- * GStreamer OpenGL support - doesn't exist yet :) 
 
-Each module will see a release every 3 months. For an explanation of the freezes please see [wiki:Self:ReleasePlanning/Freezes here].
+ * Gnonlin - released by Edward Hervey as he sees fit
+ * GStreamer OpenGL support - doesn't exist yet :)
+Each module will see a release every 3 months. For an explanation of the freezes please see [:ReleasePlanning/Freezes:here].
 
 The cycle starts with of out-of-pattern releases of Core/Base/Python and then Good/Bad/Ugly together because all modules urgently need releases. After that, it should be possible to follow a regular pattern of Core/Base/Python then Good/Bad then Ugly/FFmpeg. The Ugly/FFmpeg release might include a second Bad release if needed due to plugin moves. See the [#PluginMoves Plugin Moves] section.
 
 == Release procedure for Core/Base/Python ==
-
 The release procedure is to freeze the modules, and then make a series of pre-release tarballs. 2 weeks later, the final release is done. At the discretion of the release manager, this may happen after only one week if no bugs are found, and we can all go to the pub.
 
 The modules thaw the day after the final release, just in case a paper bag release is needed.
@@ -30,7 +28,6 @@ The modules thaw the day after the final release, just in case a paper bag relea
  * Day 7: Make 3rd pre-releases if any new blocker bugs have been identified and fixed.
  * Day 14: Release new version. Good/Bad/Ugly/FFmpeg are now dependency frozen.
  * Day 15: Code thaw for Core/Base/Python.
-
 == Release procedure for plugin modules ==
 Plugin module releases begin with a plugin move window (4 days), then freeze and pre-releases begin. 2 weeks later the final release is done. At the discretion of the release manager, this may happen after only one week if no bugs are found.
 
@@ -41,12 +38,12 @@ Code & dependency freezes end the day after the final release.
  * Day 9: Make 2nd pre-releases if any blocker bugs have been identified and fixed.
  * Day 14: Release new versions
  * Day 15: Code and dependency thaw for the newly released modules.
-
 Additionally, when Good/Bad are released (together), the Bad module is branched so that later a 2nd option 'plugin moves' release of Bad can be done simultaneously with Ugly ''if needed''
 
 We may vary the schedule to skip an FFmpeg release from time to time if it seems that nothing exciting has been changed, since releases of FFmpeg require a lot of testing, since it includes so many codecs.
 
 [[Anchor(PluginMoves)]]
+
 == Plugin Moves ==
 From time to time, plugins improve in quality sufficiently to warrant moving them from Bad to Good or Bad to Ugly (or sometimes vice versa in cases of neglect). Such plugin moves require simultaneous releases of the modules involved so that we never ship tarballs with conflicting installed plugins.
 
@@ -55,92 +52,90 @@ To support this, the schedule provides plugin move windows during which plugins 
 === TODO ===
  * Add notes for KDE release/freeze schedules?
  * Extend the release schedule later, to cover the rest of the year.
-
 == Schedule ==
 An iCal file is available at http://gstreamer.freedesktop.org/data/gst-schedule.ics
-
-||<:> '''Week''' ||<:> '''Date''' || '''Task''' || '''Notes''' ||
-||<-4 rowbgcolor="#dddddd"> '''January''' - ''Core/Base'' ||
-||<|6 : #9db8d2> '''3''' ||<|3 : #c5d2c8> January 14 || Core 0.10.15.2 pre-release tarball ||<|3:#e0b6af> Core/Base/Python code freeze ||
+||<style="text-align: center;"> '''Week''' ||<style="text-align: center;"> '''Date''' || '''Task''' || '''Notes''' ||
+||||||||<rowbgcolor="#dddddd"> '''January''' - ''Core/Base'' ||
+||<bgcolor="#9db8d2" style="text-align: center;" |6> '''3''' ||<bgcolor="#c5d2c8" style="text-align: center;" |3> January 14 || Core 0.10.15.2 pre-release tarball ||<bgcolor="#e0b6af" style="text-align: center;" |3> Core/Base/Python code freeze ||
 || Base 0.10.15.2 pre-release tarball ||
 || Python 0.10.9.2 pre-release tarball ||
-||<|3 : #c5d2c8> January 17 || Core 0.10.15.3 pre-release tarball ||<|3:> ''If needed'' ||
+||<bgcolor="#c5d2c8" style="text-align: center;" |3> January 17 || Core 0.10.15.3 pre-release tarball ||<style="text-align: center;" |3> ''If needed'' ||
 || Base 0.10.15.3 pre-release tarball ||
 || Python 0.10.9.3 pre-release tarball ||
-||<|3 : #9db8d2> '''4''' ||<|3 : #c5d2c8> January 21 || Core 0.10.15.4 pre-release tarball ||<|3:> ''If needed'' ||
+||<bgcolor="#9db8d2" style="text-align: center;" |3> '''4''' ||<bgcolor="#c5d2c8" style="text-align: center;" |3> January 21 || Core 0.10.15.4 pre-release tarball ||<style="text-align: center;" |3> ''If needed'' ||
 || Base 0.10.15.4 pre-release tarball ||
 || Python 0.10.9.4 pre-release tarball ||
-||<|4 : #9db8d2> '''5''' ||<|3 : #c5d2c8> January 28 ||<:> '''Core 0.10.16 released''' ||<:#e0b6af> Good/Bad/Ugly/FFmpeg dependency freeze ||
-||<:> '''Base 0.10.16 released''' ||<:> ''Gnome 2.21.90 tarballs'' ||
-||<:> '''Python 0.10.10 released''' || ||
-||<: #c5d2c8> January 29 || ||<:#afb6e0> Core/Base/Python code thaw ||
-||<|2 : #9db8d2> '''5''' ||<|2 : #c5d2c8> January 30 || '''Core 0.10.17 released unexpectedly''' ||<|2:> ||
+||<bgcolor="#9db8d2" style="text-align: center;" |4> '''5''' ||<bgcolor="#c5d2c8" style="text-align: center;" |3> January 28 ||<style="text-align: center;"> '''Core 0.10.16 released''' ||<bgcolor="#e0b6af" style="text-align: center;"> Good/Bad/Ugly dependency freeze ||
+||<style="text-align: center;"> '''Base 0.10.16 released''' ||<style="text-align: center;"> ''Gnome 2.21.90 tarballs'' ||
+||<style="text-align: center;"> '''Python 0.10.10 released''' || ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> January 29 || ||<bgcolor="#afb6e0" style="text-align: center;"> Core/Base/Python code thaw ||
+||<bgcolor="#9db8d2" style="text-align: center;" |2> '''5''' ||<bgcolor="#c5d2c8" style="text-align: center;" |2> January 30 || '''Core 0.10.17 released unexpectedly''' ||<style="text-align: center;" |2> ||
 || '''Base 0.10.17 suddenly appears''' ||
-||<-4 rowbgcolor="#dddddd"> '''February''' - ''Good/Bad/Ugly'' ||
-||<|4 : #9db8d2> '''6''' ||<: #c5d2c8> February 4 || ||<:#e0e0b6> Plugin Move Window Good<->Bad<->Ugly Opens ||
-||<|3 : #c5d2c8> February 8 || Good 0.10.6.2 pre-release tarball ||<:#e0b6af> Good/Bad/Ugly code freeze ||
-|| Bad 0.10.5.2 pre-release tarball ||<:#e0e0b6> Plugin Move Window Good<->Bad<->Ugly Closes ||
+||||||||<rowbgcolor="#dddddd"> '''February''' - ''Good/Bad/Ugly'' ||
+||<bgcolor="#9db8d2" style="text-align: center;" |4> '''6''' ||<bgcolor="#c5d2c8" style="text-align: center;"> February 4 || ||<bgcolor="#e0e0b6" style="text-align: center;"> Plugin Move Window Good<->Bad<->Ugly Opens ||
+||<bgcolor="#c5d2c8" style="text-align: center;" |3> February 8 || Good 0.10.6.2 pre-release tarball ||<bgcolor="#e0b6af" style="text-align: center;"> Good/Bad/Ugly code freeze ||
+|| Bad 0.10.5.2 pre-release tarball ||<bgcolor="#e0e0b6" style="text-align: center;"> Plugin Move Window Good<->Bad<->Ugly Closes ||
 || Ugly 0.10.6.2 pre-release tarball || ||
-||<|3 : #9db8d2> '''7''' ||<|3: #c5d2c8> February 13 || Good 0.10.6.3 pre-release tarball ||<|3> ''If needed'' ||
+||<bgcolor="#9db8d2" style="text-align: center;" |3> '''7''' ||<bgcolor="#c5d2c8" style="text-align: center;" |3> February 13 || Good 0.10.6.3 pre-release tarball ||<style="text-align: center;" |3> ''If needed'' ||
 || Bad 0.10.5.3 pre-release tarball ||
 || Ugly 0.10.6.3 pre-release tarball ||
-||<|5 : #9db8d2> '''8''' ||<|3: #c5d2c8> February 18 ||<:> '''Good 0.10.7 released''' ||<|3> ||
-||<:> '''Bad 0.10.6 released''' ||
-||<:> '''Ugly 0.10.7 released''' ||
-||<: #c5d2c8> February 19 || ||<:#afb6e0> Good/Bad/Ugly code & dependency thaw ||
-||<: #c5d2c8> February 25 || || ''Gnome 2.21.92 tarballs due'' ||
-||<-4 rowbgcolor="#dddddd"> '''March''' - ''Core/Base'' ||
-||<|6 : #9db8d2> '''10''' ||<|3 : #c5d2c8> March 3 || Core 0.10.17.2 pre-release tarball ||<|3:#e0b6af> Core/Base/Python code freeze ||
+||<bgcolor="#9db8d2" style="text-align: center;" |5> '''8''' ||<bgcolor="#c5d2c8" style="text-align: center;" |3> February 18 ||<style="text-align: center;"> '''Good 0.10.7 released''' ||<style="text-align: center;" |3> ||
+||<style="text-align: center;"> '''Bad 0.10.6 released''' ||
+||<style="text-align: center;"> '''Ugly 0.10.7 released''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> February 19 || ||<bgcolor="#afb6e0" style="text-align: center;"> Good/Bad/Ugly code & dependency thaw ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> February 25 || || ''Gnome 2.21.92 tarballs due'' ||
+||||||||<rowbgcolor="#dddddd"> '''March''' - ''Core/Base'' ||
+||<bgcolor="#9db8d2" style="text-align: center;" |6> '''10''' ||<bgcolor="#c5d2c8" style="text-align: center;" |3> March 3 || Core 0.10.17.2 pre-release tarball ||<bgcolor="#e0b6af" style="text-align: center;" |3> Core/Base/Python code freeze ||
 || Base 0.10.17.2 pre-release tarball ||
 || Python 0.10.10.2 pre-release tarball ||
-||<|3 : #c5d2c8> March 6 || Core 0.10.17.3 pre-release tarball ||<|3:> ''If needed'' ||
+||<bgcolor="#c5d2c8" style="text-align: center;" |3> March 6 || Core 0.10.17.3 pre-release tarball ||<style="text-align: center;" |3> ''If needed'' ||
 || Base 0.10.17.3 pre-release tarball ||
 || Python 0.10.10.3 pre-release tarball ||
-||<|3 : #9db8d2> '''11''' ||<|3 : #c5d2c8> March 10 || Core 0.10.17.4 pre-release tarball ||<|3:> ''If needed'' ||
+||<bgcolor="#9db8d2" style="text-align: center;" |3> '''11''' ||<bgcolor="#c5d2c8" style="text-align: center;" |3> March 10 || Core 0.10.17.4 pre-release tarball ||<style="text-align: center;" |3> ''If needed'' ||
 || Base 0.10.17.4 pre-release tarball ||
 || Python 0.10.10.4 pre-release tarball ||
-||<|4 : #9db8d2> '''12''' ||<|3 : #c5d2c8> March 17 ||<:> '''Core 0.10.18 released''' ||<|3:#e0b6af> Good/Bad/Ugly/FFmpeg dependency freeze ||
-||<:> '''Base 0.10.18 released''' ||
-||<:> '''Python 0.10.11 released''' ||
-||<: #c5d2c8> March 18 || ||<:#afb6e0> Core/Base/Python code thaw ||
-||<-4 rowbgcolor="#dddddd"> '''April''' - ''Good/Bad'' ||
-||<|2 : #9db8d2> '''14''' ||<|2 : #c5d2c8> April 4 || '''Core 0.10.19 released unexpectedly''' ||<|2:> ||
+||<bgcolor="#9db8d2" style="text-align: center;" |4> '''12''' ||<bgcolor="#c5d2c8" style="text-align: center;" |3> March 17 ||<style="text-align: center;"> '''Core 0.10.18 released''' ||<bgcolor="#e0b6af" style="text-align: center;" |3> Good/Bad/Ugly dependency freeze ||
+||<style="text-align: center;"> '''Base 0.10.18 released''' ||
+||<style="text-align: center;"> '''Python 0.10.11 released''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> March 18 || ||<bgcolor="#afb6e0" style="text-align: center;"> Core/Base/Python code thaw ||
+||||||||<rowbgcolor="#dddddd"> '''April''' - ''Good/Bad'' ||
+||<bgcolor="#9db8d2" style="text-align: center;" |2> '''14''' ||<bgcolor="#c5d2c8" style="text-align: center;" |2> April 4 || '''Core 0.10.19 released unexpectedly''' ||<style="text-align: center;" |2> ||
 || '''Base 0.10.19 suddenly appears''' ||
-||<|3 : #9db8d2> '''15''' ||<: #c5d2c8> April 7 || ||<:#e0e0b6> Plugin Move Window Good<->Bad Opens ||
-||<|2 : #c5d2c8> April 11 || Good 0.10.7.2 pre-release tarball ||<:#e0b6af> Good/Bad code freeze ||
-|| Bad 0.10.6.2 pre-release tarball ||<:#e0e0b6> Plugin Move Window Good<->Bad Closes ||
-||<|2 : #9db8d2> '''16''' ||<|2: #c5d2c8> April 16 || Good 0.10.7.3 pre-release tarball ||<|2> ''If needed'' ||
+||<bgcolor="#9db8d2" style="text-align: center;" |3> '''15''' ||<bgcolor="#c5d2c8" style="text-align: center;"> April 7 || ||<bgcolor="#e0e0b6" style="text-align: center;"> Plugin Move Window Good<->Bad Opens ||
+||<bgcolor="#c5d2c8" style="text-align: center;" |2> April 11 || Good 0.10.7.2 pre-release tarball ||<bgcolor="#e0b6af" style="text-align: center;"> Good/Bad code freeze ||
+|| Bad 0.10.6.2 pre-release tarball ||<bgcolor="#e0e0b6" style="text-align: center;"> Plugin Move Window Good<->Bad Closes ||
+||<bgcolor="#9db8d2" style="text-align: center;" |2> '''16''' ||<bgcolor="#c5d2c8" style="text-align: center;" |2> April 16 || Good 0.10.7.3 pre-release tarball ||<style="text-align: center;" |2> ''If needed'' ||
 || Bad 0.10.6.3 pre-release tarball ||
-||<|4 : #9db8d2> '''17''' ||<|2: #c5d2c8> April 21 ||<:> '''Good 0.10.8 released''' ||<|2> ''Bad branched for optional 'Plugin Moves' release'' ||
-||<:> '''Bad 0.10.7 released''' ||
-||<: #c5d2c8> April 21 || || ''Gnome 2.23.1 tarballs due'' ||
-||<: #c5d2c8> April 22 || ||<:#afb6e0> Good/Bad code & dependency thaw ||
-||<-4 rowbgcolor="#dddddd"> '''May''' - ''Ugly/FFmpeg & (optional) Bad'' ||
-||<|4 : #9db8d2> '''19''' ||<: #c5d2c8> May 5 || ||<:#e0e0b6> Plugin Move Window Ugly<->Bad Opens ||
-||<|3 : #c5d2c8> May 9 ||<:> Ugly 0.10.7.2 pre-release tarball ||<:#e0b6af> Ugly/FFmpeg code freeze ||
-||<:> FFmpeg 0.10.4.2 pre-release tarball ||<:#e0e0b6> Plugin Move Window Ugly<->Bad Closes ||
-||<:> ''Bad 0.10.7.2 pre-release if needed'' || ||
-||<|3 : #9db8d2> '''20''' ||<|1: #c5d2c8> May 12 || || ''Gnome 2.23.2 tarballs due'' ||
-||<|2: #c5d2c8> May 14 ||<:> Ugly 0.10.7.3 pre-release tarball ||<|2> ''If needed'' ||
-||<:> FFmpeg 0.10.4.3 pre-release tarball ||
-||<|4 : #9db8d2> '''21''' ||<|3: #c5d2c8> May 19 ||<:> '''Ugly 0.10.8 released''' ||<|3> ||
-||<:> '''FFmpeg 0.10.5 released''' ||
-||<:> ''Bad 0.10.8 released maybe'' ||
-||<: #c5d2c8> May 20 || ||<:#afb6e0> Ugly/FFmpeg code & dependency thaw ||
-||< : #9db8d2> '''22''' ||<: #c5d2c8> May 26 || || ''Gnome 2.22.2 tarballs due'' ||
-||<-4 rowbgcolor="#dddddd"> '''June''' - ''Core/Base'' ||
-||<|7 : #9db8d2> '''23''' ||<|4 : #c5d2c8> June 2 || Core 0.10.19.2 pre-release tarball ||<|3:#e0b6af> Core/Base/Python code freeze ||
+||<bgcolor="#9db8d2" style="text-align: center;" |4> '''17''' ||<bgcolor="#c5d2c8" style="text-align: center;" |2> April 21 ||<style="text-align: center;"> '''Good 0.10.8 released''' ||<style="text-align: center;" |2> ''Bad branched for optional 'Plugin Moves' release'' ||
+||<style="text-align: center;"> '''Bad 0.10.7 released''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> April 21 || || ''Gnome 2.23.1 tarballs due'' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> April 22 || ||<bgcolor="#afb6e0" style="text-align: center;"> Good/Bad code & dependency thaw ||
+||||||||<rowbgcolor="#dddddd"> '''May''' - ''Ugly/FFmpeg & (optional) Bad'' ||
+||<bgcolor="#9db8d2" style="text-align: center;" |4> '''19''' ||<bgcolor="#c5d2c8" style="text-align: center;"> May 5 || ||<bgcolor="#e0e0b6" style="text-align: center;"> Plugin Move Window Ugly<->Bad Opens ||
+||<bgcolor="#c5d2c8" style="text-align: center;" |3> May 9 ||<style="text-align: center;"> Ugly 0.10.7.2 pre-release tarball ||<bgcolor="#e0b6af" style="text-align: center;"> Ugly/FFmpeg code freeze ||
+||<style="text-align: center;"> FFmpeg 0.10.3.2 pre-release tarball ||<bgcolor="#e0e0b6" style="text-align: center;"> Plugin Move Window Ugly<->Bad Closes ||
+||<style="text-align: center;"> ''Bad 0.10.7.2 pre-release if needed'' || ||
+||<bgcolor="#9db8d2" style="text-align: center;" |3> '''20''' ||<bgcolor="#c5d2c8" style="text-align: center;" |1> May 12 || || ''Gnome 2.23.2 tarballs due'' ||
+||<bgcolor="#c5d2c8" style="text-align: center;" |2> May 14 ||<style="text-align: center;"> Ugly 0.10.7.3 pre-release tarball ||<style="text-align: center;" |2> ''If needed'' ||
+||<style="text-align: center;"> FFmpeg 0.10.3.3 pre-release tarball ||
+||<bgcolor="#9db8d2" style="text-align: center;" |4> '''21''' ||<bgcolor="#c5d2c8" style="text-align: center;" |3> May 19 ||<style="text-align: center;"> '''Ugly 0.10.8 released''' ||<style="text-align: center;" |3> ||
+||<style="text-align: center;"> '''FFmpeg 0.10.4 released''' ||
+||<style="text-align: center;"> ''Bad 0.10.8 released maybe'' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> May 20 || ||<bgcolor="#afb6e0" style="text-align: center;"> Ugly/FFmpeg code & dependency thaw ||
+||<bgcolor="#9db8d2" style="text-align: center;"> '''22''' ||<bgcolor="#c5d2c8" style="text-align: center;"> May 26 || || ''Gnome 2.22.2 tarballs due'' ||
+||||||||<rowbgcolor="#dddddd"> '''June''' - ''Core/Base'' ||
+||<bgcolor="#9db8d2" style="text-align: center;" |7> '''23''' ||<bgcolor="#c5d2c8" style="text-align: center;" |4> June 2 || Core 0.10.19.2 pre-release tarball ||<bgcolor="#e0b6af" style="text-align: center;" |3> Core/Base/Python code freeze ||
 || Base 0.10.19.2 pre-release tarball ||
 || Python 0.10.11.2 pre-release tarball ||
 || || ''Gnome 2.23.3 tarballs due'' ||
-||<|3 : #c5d2c8> June 5 || Core 0.10.19.3 pre-release tarball ||<|3:> ''If needed'' ||
+||<bgcolor="#c5d2c8" style="text-align: center;" |3> June 5 || Core 0.10.19.3 pre-release tarball ||<style="text-align: center;" |3> ''If needed'' ||
 || Base 0.10.19.3 pre-release tarball ||
 || Python 0.10.11.3 pre-release tarball ||
-||<|3 : #9db8d2> '''24''' ||<|3 : #c5d2c8> June 9 || Core 0.10.19.4 pre-release tarball ||<|3:> ''If needed'' ||
+||<bgcolor="#9db8d2" style="text-align: center;" |3> '''24''' ||<bgcolor="#c5d2c8" style="text-align: center;" |3> June 9 || Core 0.10.19.4 pre-release tarball ||<style="text-align: center;" |3> ''If needed'' ||
 || Base 0.10.19.4 pre-release tarball ||
 || Python 0.10.11.4 pre-release tarball ||
-||<|5 : #9db8d2> '''25''' ||<|4 : #c5d2c8> June 16 ||<:> '''Core 0.10.20 released''' ||<|3:#e0b6af> Good/Bad/Ugly/FFmpeg dependency freeze ||
-||<:> '''Base 0.10.20 released''' ||
-||<:> '''Python 0.10.12 released''' ||
+||<bgcolor="#9db8d2" style="text-align: center;" |5> '''25''' ||<bgcolor="#c5d2c8" style="text-align: center;" |4> June 16 ||<style="text-align: center;"> '''Core 0.10.20 released''' ||<bgcolor="#e0b6af" style="text-align: center;" |3> Good/Bad/Ugly/FFmpeg dependency freeze ||
+||<style="text-align: center;"> '''Base 0.10.20 released''' ||
+||<style="text-align: center;"> '''Python 0.10.12 released''' ||
 || || ''Gnome 2.23.4 tarballs due'' ||
-||<: #c5d2c8> June 17 || ||<:#afb6e0> Core/Base/Python code thaw ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> June 17 || ||<bgcolor="#afb6e0" style="text-align: center;"> Core/Base/Python code thaw ||
