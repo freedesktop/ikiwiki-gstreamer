@@ -10,7 +10,7 @@ However there are some problems with this element ( or with the fact that there 
  * with previous restriction your element needs to be LGPL.
 
 == Solution ==
-A bin element that chooses the correct CC element's out of the available elements. All application/pipeline developers can depend on this element for the CC job, like they now depend on playbin/decodebin. Maybe playbin and/or decodebin can use this element too. In that sense a application will maybe use the ffmpegcolorspace element but not really hard link it anymore and take away some design restrictions and allow new CC elements just by adding/removing elements.
+A bin element that chooses the correct CC element's out of the available elements. All application/pipeline developers can depend on this element for the CC job, like they now depend on playbin/decodebin for playing/decoding media. Maybe playbin and/or decodebin can use this element too. In that sense an application can use the ffmpegcolorspace element without hard linking it and take away some design restrictions and allow new CC just by adding/removing elements.
 
 === Features ===
  * Application or pipeline developers don't need to choose there preferred CC element anymore.
