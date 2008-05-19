@@ -7,6 +7,7 @@ Examples:
  * MPEG Decoding timestamps, which we currently never send along.
  * Feature-Extraction elements can add feature data
  * Some image capture sensors can provide histograms with the frames
+ * packet priority and timeout could be used by network plugins (such as DCCP) to send more important packets when congestion is detected.
 
 Ideas:
  A. !GstStructure in !GstBuffer
