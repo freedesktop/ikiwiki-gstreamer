@@ -13,6 +13,7 @@ It is expected that the transition from 0.10 to 0.11/0.12 will be much easier on
  * maybe tag messages/events should work similarly to how eos works, ie. tag readers don't post tags on the bugs themselves, but just send them downstream in form of events and only the sinks post tag messages? This fixes timing problems when tags change mid-stream like with icydemux - if there's buffering between icydemux and the sink the player will get the new tags while the old song is still playing
  * GST_TAG_LANGUAGE_CODE: use ISO-639-2 instead of ISO-639-1. Enforce this. Provide 639-1 => 639-2 table in libgsttag (ideally we'd require iso-codes and provide language_name=>code and code=>language_name functions too).
  * add GST_TAG_LANGUAGE for freeform language description, if setter doesn't know the code
+ * we don't really have a way to distinguish transient/non-transient/fixed/non-fixed tags, ie. those which apply to the stream as a whole and are more or less fixed and those that only temporarily apply to the stream or parts of the stream (such as: per-video-frame metadata, current average bitrate for VBR streams etc.); there will be more occasions where we will want to be able to distinguish these and/or choose different delivery mechanisms; posting tag messages 30-times a second may not be ideal, for example
 
 ==== miscellaneous ====
 
@@ -20,6 +21,13 @@ It is expected that the transition from 0.10 to 0.11/0.12 will be much easier on
  * we need to be strict and clear about where URIs are used and where filenames and enforce both
  * need to fix and document assumptions about filename encodings, in accordance with GLib (ie: on win32: should always be utf8, *nix: bunch of bytes, no particular encoding with extras/exceptions)
  * use GstStructure in plugin- and element-descriptions to provide extensibility without breaking things
+ * refcount-dependent writability/mutability of buffers/queries/structures is very awkward for language bindings (e.g. C++) 
+ * ideally our _new() functions are no more than a thin wrapper around g_object_new() (much better for bindings)
+ * get rid of GST_FORMAT_DEFAULT (replace with GST_FORMAT_FRAME or GST_FORMAT_SAMPLE or whatever if need be)
+ * Query API: get rid of the whole query-format-may-change thing, it's awkward API and not used anywhere (nor really necessary, is it?)
+ * split gst_launch_parse() into separate library, doesn't really need to be in core
+ * rewrite parse_launch in C (if we don't do it now, we'll never be able to do it, since it'll be impossible to rewrite it from scratch and maintain the exact same behaviour; is the current code really maintainable? How many people understand it?)
+
 
 === gst-plugins-base ===
 
