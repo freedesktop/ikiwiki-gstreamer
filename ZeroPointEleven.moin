@@ -15,6 +15,7 @@ It is expected that the transition from 0.10 to 0.11/0.12 will be much easier on
  * add GST_TAG_LANGUAGE for freeform language description, if setter doesn't know the code
  * we don't really have a way to distinguish transient/non-transient/fixed/non-fixed tags, ie. those which apply to the stream as a whole and are more or less fixed and those that only temporarily apply to the stream or parts of the stream (such as: per-video-frame metadata, current average bitrate for VBR streams etc.); there will be more occasions where we will want to be able to distinguish these and/or choose different delivery mechanisms; posting tag messages 30-times a second may not be ideal, for example
 
+
 ==== miscellaneous ====
 
  * get rid of the abomination that is GstImplementsInterface
@@ -26,8 +27,8 @@ It is expected that the transition from 0.10 to 0.11/0.12 will be much easier on
  * get rid of GST_FORMAT_DEFAULT (replace with GST_FORMAT_FRAME or GST_FORMAT_SAMPLE or whatever if need be)
  * Query API: get rid of the whole query-format-may-change thing, it's awkward API and not used anywhere (nor really necessary, is it?)
  * split gst_launch_parse() into separate library, doesn't really need to be in core
- * rewrite parse_launch in C (if we don't do it now, we'll never be able to do it, since it'll be impossible to rewrite it from scratch and maintain the exact same behaviour; is the current code really maintainable? How many people understand it?)
-
+ * rewrite parse_launch in C? (if we don't do it now, we'll never be able to do it, since it'll be impossible to rewrite it from scratch and maintain the exact same behaviour; is the current code really maintainable? How many people understand it?)
+ * GstBufferClass needs padding
 
 === gst-plugins-base ===
 
