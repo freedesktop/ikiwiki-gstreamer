@@ -85,6 +85,13 @@ It might be better to implement this using a 'current-video' property and some d
 '''Status'''
 Not started.
 
+=== Playbin2 Integration ===
+'''Description'''
+Make sure that playbin2 also includes the integration hotness that's been/going to be in playbin.
+
+'''Status'''
+Not started
+
 === Alternate display modes ===
 '''Description'''
 Implement 4:3 display modes eventually: Pan & Scan, Letterbox. Pan & Scan in particular needs cooperation from the mpeg video decoder, as they currently don't output the required information. Letterbox support involves downscaling the video vertically and inserting black. The only reason to do this is that some DVDs provide subtitles that display in the 'black letterbox' area instead of over the video. It's pretty low priority - on computers, it's usual to always display only in widescreen mode, and do letterboxing by not filling the whole screen.
