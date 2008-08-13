@@ -94,6 +94,7 @@ Not started.
 
 === Other ===
 * Make DURATION reporting in ''rsndvdsrc'' synchronised with the display, to avoid wackiness. At the moment, it's quite common to report (for example) that the 'current' duration is 10 seconds when playing a 30 second intro sequence, because the virtual machine has already entered the 'next' program and ''rsndvdsrc'' is reporting the duration from that. The correct fix for this is probably to have ''rsndvdsrc'' wait on the clock before ending a program, but it'll be tricky to get that right in the face of state changes (can't wait on the clock in PAUSED) and to avoid stuttering when the pipeline drains out. It might be easier to just implement the next point:
+
 * Shorten playbin queues in 'DVD mode'. There's no need to have 3 seconds of output buffers in playbin for ResinDVD - 2-3 video frames is more than sufficient buffering to avoid underflows, because ''rsndvdbin'' contains a multiqueue on the video and audio streams already. Making the amount of buffering shorter also means that the 'end' of the pipeline is much closer to playing the same position as the 'start' of the pipeline, which lessens the window where the virtual machine and the sinks might be playing in different program chains on the DVD.
 
 There are probably still other things that need implementing, and plenty of bugs to fix. Fill in the to TODO list as you find them.
