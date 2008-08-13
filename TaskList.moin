@@ -5,6 +5,6 @@
 
 = Other Tasks =
  * ["MoreBaseClases"]: Create baseclases for decoders, encoders, demuxers and muxers
-
+ * DvdPlayback: Ongoing work on ResinDVD to suppport full DVD playback.
 ----
 CategoryTasks
