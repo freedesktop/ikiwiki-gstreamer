@@ -1,0 +1,86 @@
+#format wiki
+#language en
+
+= DVD Playback =
+
+Information about ongoing work on the ResinDVD components to support full featured DVD playback. The ResinDVD components are currently in gst-plugins-bad, and as of 13 August 2008 require CVS of gst-plugins-base to have working menu support via playbin in Totem, etc.
+
+[[TableOfContents(2)]]
+== Overview ==
+ResinDVD consists of a single registered element: rsndvdbin. This element produces 3 pads: decoded video, decoded audio and a DVD subpicture.
+
+Internally, the bin contains some private elements that implement:
+ * Source element - ''rsndvdsrc''. libdvdnav based source element that handles the Virtual Machine operations and data reading.
+ * Demuxer - ''rsndvddemux''. Communicates with the source. Unpacks buffers and outputs a bunch of pads with the the video stream and all the audio + subpicture streams.
+ * Stream selectors - ''rsnstreamselector''. A modified copy of the stream selector from playbin. There are 2 - one for audio, and one for subpictures. The output from each is the currently selected encoded audio stream or subpicture stream.
+ * Audio stream 'munger' - ''rsnaudiomunge''. Massages the decoded audio stream to fill in gaps by producing silence, or to clip discontinuous audio when switching streams and produce a smooth continuous output stream.
+ * Video stream 'munger' - ''rsnparsetter''. Overrides caps on the video stream where necessary, as DVD's sometimes produce 4:3 video streams that should be stretched to 16:9. Eventually will also implement pan & scan operations/scaling for 4:3 display of 16:9 source materials.
+
+In addition, rsndvdbin uses multiqueue to buffer the video and audio streams (not the subpictures, because the dvdspu element handles that) and decodebin2 to actually decode the video and audio.
+
+== TODO ==
+A list of known items that still require implementing, and some status.
+
+=== Stream Selection ===
+'''Description'''
+
+Implement switching of audio and subpicture streams.
+
+Also, this means extending playbin to support ResinDVD stream switching. ''rsndvdbin'' only exposes a single audio and subpicture pad, and will handle the stream switching internally. Playbin currently expects that multiple streams are exposed via multiple output pads from the source and that it will be in charge of the switching. In the Resin case, we need playbin to act as a proxy to ''rsndvdbin'' and allow ''rsndvdbin'' to implement the stream switching. I think the way to do this is:
+ * Add a current-subpicture property to playbin
+ * Add current-audio and current-subpicture properties on rsndvdbin and ''rsndvdsrc''.
+ * Make playbin proxy audio/subpicture stream changes to the source element if it provides current-audio and current-subpicture properties.
+ * Make the current-audio and current-video subpicture properties on ''rsndvdbin'' proxy through to ''rsndvdsrc''
+ * Make ''rsndvdsrc'' implement changes of the audio/subpicture stream by informing libdvdnav about it and sending an event downstream so that the stream selectors change input pads.
+
+Furthermore, we need the playbin streaminfo property to reflect the available streams inside the ''rsndvdbin'', probably by providing a stream-info property on ''rsndvdbin'' and having playbin include streams in there in the set it outputs to players.
+
+''' Status '''
+thaytan has some local changes to send an event downstream from ''rsndvdsrc'' and handle it in ''rsnstreamselector'' so that the subpicture and audio tracks can change when commanded to by DVD menu operations. It needs more work.
+ 
+=== Player UI integration ===
+'''Description'''
+
+Extend GStreamer so that it provides the set of operations needed to allow players to full support DVD features. Primarily, this means providing an API for executing operations like:
+ * Jump to DVD Root/Title/Angle/Subpicture/Audio/Part menus
+ * Switch Angle to 'n' - desirable to have an API for exposing the presence of multi-angle and number of angles, and notifying when it changes. Properties on playbin? Expose via the 'current-video' property as per 'Stream Switching'?
+ * Skip to next/previous Chapter and Title
+ * Others?
+
+'''Status'''
+Not started
+
+=== Switching Audio Decoder Bin ===
+'''Description'''
+Implement a bin which has a single input pad. When the incoming stream type changes (A52 to DTS to LPCM for e.g.), it needs to direct the stream to an appropriate audio decoder instance and then feed the output from the correct audio decoder. At the moment, all that's implemented is plugging a single decodebin2 in place of where this new ''rsnaudiodec'' element should be. Using a single decodebin2 instance means that the audio stream type can't change, so we are restricted to only playing A/52 streams.
+
+'''Status'''
+Not started
+
+=== Audio Munger ===
+'''Description'''
+Extend ''rsnaudiomunge'' to support:
+ * Rendering silence buffers into gaps in more formats, to avoid unnecessary caps changes in the output.
+ * Mark rendered silence buffers with the 'GAP' flag for a slight efficiency improvement
+ * When streams switch, there might be overlapping audio timestamps that should be clipped away to produce a smooth output stream.
+
+'''Status'''
+Not started.
+
+=== Seeking ===
+'''Description'''
+
+'''Status'''
+
+=== Multi-angle ===
+'''Description'''
+
+'''Status'''
+
+=== Alternate display modes ===
+'''Description'''
+
+'''Status'''
+
+=== Other ===
+There are probably still other things that need implementing, and plenty of bugs to fix. Fill in the to TODO list as you find them.
