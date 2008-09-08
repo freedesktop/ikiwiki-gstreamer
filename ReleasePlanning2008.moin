@@ -1,5 +1,5 @@
 = GStreamer release schedule for 2008 July - Dec =
-Release schedule for the 2nd half of 2008. See [:ReleasePlanning2008-1] for the first half.
+Release schedule for the 2nd half of 2008. See ["ReleasePlanning2008-1"] for the first half.
 
 == Summary Schedule ==
 This is the quick summary of the releases for the next 6 months. See below for the full schedule
@@ -8,14 +8,15 @@ This is the quick summary of the releases for the next 6 months. See below for t
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Jul 28 || Good 0.10.9, Bad 0.10.8 release ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Aug 8 || '''Ugly/FFmpeg/Bad freeze. 4 day plugin window opens''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Aug 22 || Ugly 0.10.9, FFmpeg 0.10.5, Bad 0.10.9 (if needed) release ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Sep 1 || '''Core/Base/Python freeze.''' ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Sep 15 || Core 0.10.21, Base 0.10.21, Python 0.10.13 release ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Sep 9 || '''Core/Base/Python freeze.''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Sep 22 || Core 0.10.21, Base 0.10.21, Python 0.10.13 release ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Oct 6 || '''Good/Bad freeze. 4 day plugin window opens''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Oct 20 || Good 0.10.10, Bad 0.10.10 release ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Nov 3 || '''Ugly/FFmpeg/Bad freeze. 4 day plugin window opens''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Nov 17 || Ugly 0.10.10, FFmpeg 0.10.6, Bad 0.10.11 (if needed) release ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Dec 1 || '''Core/Base/Python freeze.''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Dec 15 || Core 0.10.22, Base 0.10.22, Python 0.10.14 release ||
+
 
 == Process ==
 At the moment there are 7 GStreamer modules included in the schedule:
@@ -71,7 +72,7 @@ To support this, the schedule provides plugin move windows during which plugins 
 == Schedule ==
 An (current incomplete) iCal file is available at http://gstreamer.freedesktop.org/data/gst-schedule.ics
 ||<style="text-align: center;"> '''Week''' ||<style="text-align: center;"> '''Date''' || '''Task''' || '''Notes''' ||
-||||||||<rowbgcolor="#dddddd"> '''July''' - ''Good/Bad'' ||
+||||||||<rowbgcolor="#dddddd"style="text-align: center;"> '''July''' - ''Good/Bad'' ||
 ||<bgcolor="#9db8d2" style="text-align: center;" |3> '''28''' ||<bgcolor="#c5d2c8" style="text-align: center;"> Jul 14 || ||<bgcolor="#e0e0b6" style="text-align: center;"> Plugin Move Window Good<->Bad Opens ||
 ||<bgcolor="#c5d2c8" style="text-align: center;" |2> Jul 18 || Good 0.10.8.2 pre-release tarball ||<bgcolor="#e0b6af" style="text-align: center;"> Good/Bad code freeze ||
 || Bad 0.10.7.2 pre-release tarball ||<bgcolor="#e0e0b6" style="text-align: center;"> Plugin Move Window Good<->Bad Closes ||
@@ -79,10 +80,10 @@ An (current incomplete) iCal file is available at http://gstreamer.freedesktop.o
 || Bad 0.10.7.3 pre-release tarball ||
 ||<bgcolor="#9db8d2" style="text-align: center;" |5> '''30''' ||<bgcolor="#c5d2c8" style="text-align: center;" |2> Jul 28 || Good 0.10.8.4 pre-release tarball ||<style="text-align: center;" |2> ''If needed'' ||
 || Bad 0.10.7.4 pre-release tarball ||
-||<bgcolor="#c5d2c8" style="text-align: center;" |2> Jul 31 ||<style="text-align: center;"> '''Good 0.10.9 released''' ||<style="text-align: center;" |2>||
+||<bgcolor="#c5d2c8" style="text-align: center;" |2> Jul 31 ||<style="text-align: center;"> '''Good 0.10.9 released''' ||<style="text-align: center;" |2> ||
 ||<style="text-align: center;"> '''Bad 0.10.8 released''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Aug 1 || ||<bgcolor="#afb6e0" style="text-align: center;"> Good/Bad code & dependency thaw ||
-||||||||<rowbgcolor="#dddddd"> '''August''' - ''Ugly/FFmpeg & (optional) Bad'' ||
+||||||||<rowbgcolor="#dddddd"style="text-align: center;"> '''August''' - ''Ugly/FFmpeg & (optional) Bad'' ||
 ||<bgcolor="#9db8d2" style="text-align: center;" |4> '''32''' ||<bgcolor="#c5d2c8" style="text-align: center;"> Aug 4 || ||<bgcolor="#e0e0b6" style="text-align: center;"> Plugin Move Window Ugly<->Bad Opens ||
 ||<bgcolor="#c5d2c8" style="text-align: center;" |3> Aug 8 ||<style="text-align: center;"> Ugly 0.10.8.2 pre-release tarball ||<bgcolor="#e0b6af" style="text-align: center;"> Ugly/FFmpeg code freeze ||
 ||<style="text-align: center;"> FFmpeg 0.10.4.2 pre-release tarball ||<bgcolor="#e0e0b6" style="text-align: center;"> Plugin Move Window Ugly<->Bad Closes ||
@@ -93,3 +94,18 @@ An (current incomplete) iCal file is available at http://gstreamer.freedesktop.o
 ||<style="text-align: center;"> '''FFmpeg 0.10.5 released''' ||
 ||<style="text-align: center;"> ''Bad 0.10.9 released maybe'' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Aug 19 || ||<bgcolor="#afb6e0" style="text-align: center;"> Ugly/FFmpeg code & dependency thaw ||
+||||||||<rowbgcolor="#dddddd"style="text-align: center;"> '''June''' - ''Core/Base'' ||
+||<bgcolor="#9db8d2" style="text-align: center;" |7> '''37''' ||<bgcolor="#c5d2c8" style="text-align: center;" |4> Sep 9 || Core 0.10.20.2 pre-release tarball ||<bgcolor="#e0b6af" style="text-align: center;" |3> Core/Base/Python code freeze ||
+|| Base 0.10.20.2 pre-release tarball ||
+|| Python 0.10.12.2 pre-release tarball ||
+|| || ''Gnome 2.23.3 tarballs due'' ||
+||<bgcolor="#c5d2c8" style="text-align: center;" |3> Sep 12 || Core 0.10.20.3 pre-release tarball ||<style="text-align: center;" |3> ''If needed'' ||
+|| Base 0.10.20.3 pre-release tarball ||
+|| Python 0.10.12.3 pre-release tarball ||
+||<bgcolor="#9db8d2" style="text-align: center;" |3> '''38''' ||<bgcolor="#c5d2c8" style="text-align: center;" |3> Sep 15 || Core 0.10.20.4 pre-release tarball ||<style="text-align: center;" |3> ''If needed'' ||
+|| Base 0.10.20.4 pre-release tarball ||
+|| Python 0.10.12.4 pre-release tarball ||
+||<bgcolor="#9db8d2" style="text-align: center;" |4> '''39''' ||<bgcolor="#c5d2c8" style="text-align: center;" |3> Sep 22 ||<style="text-align: center;"> '''Core 0.10.21 released''' ||<bgcolor="#e0b6af" style="text-align: center;" |3> Good/Bad/Ugly/FFmpeg dependency freeze ||
+||<style="text-align: center;"> '''Base 0.10.21 released''' ||
+||<style="text-align: center;"> '''Python 0.10.13 released''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Sep 23 || ||<bgcolor="#afb6e0" style="text-align: center;"> Core/Base/Python code thaw ||
