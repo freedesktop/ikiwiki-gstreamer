@@ -2,9 +2,13 @@
 #format wiki
 #language en
 #pragma section-numbers off
+
 = GStreamer Wiki =
 
 This wiki serves as a scratchpad for tasks, design discussions and the like.
+
+== General ==
+
  * ReleasePlanning: schedule for code freezes and planning for dates
  * DesignDiscussions: drafting new features
  * TaskList: standalone tasks for anyone to take, Google SoC planning
@@ -12,16 +16,16 @@ This wiki serves as a scratchpad for tasks, design discussions and the like.
  * ["Tutorials"] : links to external tutorials
  * SubmittingPatches: where and how to submit patches
  General documentation about GStreamer libraries and plugins can be found on the [http://gstreamer.freedesktop.org/documentation/ GStreamer Documentation Page]
---------------------------------------------
 
-Interesting starting points:
+== Starting points ==
+
  * RecentChanges: see where people are currently working
  * WikiSandBox: feel free to change this page and experiment with editing
  * FindPage: search or browse the database in various ways
  * SyntaxReference: quick access to wiki syntax
  * SiteNavigation: get an overview over this site and what it contains
+ * HowToCompileForEmbedded: tips about how to do compile GStreamer for embedded devices
 
---------------------------------------------
+== Random ==
 
-How to use this site:
- * HowToUseThisSite: how to use this site
+ * HowToUseThisSite: help about this wiki
