@@ -137,12 +137,10 @@ An (current incomplete) iCal file is available at http://gstreamer.freedesktop.o
 ||<bgcolor="#c5d2c8" style="text-align: center;" |3> Dec 4 || Core 0.10.21.3 pre-release tarball ||<style="text-align: center;" |3> ''If needed'' ||
 || Base 0.10.21.3 pre-release tarball ||
 || Python 0.10.13.3 pre-release tarball ||
-||<bgcolor="#9db8d2" style="text-align: center;" |3> '''50''' ||<bgcolor="#c5d2c8" style="text-align: center;" |3>Dec 8
-|| Core 0.10.21.4 pre-release tarball ||<style="text-align: center;" |3> ''If needed'' ||
+||<bgcolor="#9db8d2" style="text-align: center;" |3> '''50''' ||<bgcolor="#c5d2c8" style="text-align: center;" |3>Dec 8 || Core 0.10.21.4 pre-release tarball ||<style="text-align: center;" |3> ''If needed'' ||
 || Base 0.10.21.4 pre-release tarball ||
 || Python 0.10.13.4 pre-release tarball ||
 ||<bgcolor="#9db8d2" style="text-align: center;" |4> '''51''' ||<bgcolor="#c5d2c8" style="text-align: center;" |3> Dec 15 ||<style="text-align: center;"> '''Core 0.10.22 released''' ||<bgcolor="#e0b6af" style="text-align: center;" |3> Good/Bad/Ugly/FFmpeg dependency freeze ||
 ||<style="text-align: center;"> '''Base 0.10.22 released''' ||
 ||<style="text-align: center;"> '''Python 0.10.14 released''' ||
-||<bgcolor="#c5d2c8" style="text-align: center;">Dec 16
-|| ||<bgcolor="#afb6e0" style="text-align: center;"> Core/Base/Python code thaw ||
+||<bgcolor="#c5d2c8" style="text-align: center;">Dec 16 || ||<bgcolor="#afb6e0" style="text-align: center;"> Core/Base/Python code thaw ||
