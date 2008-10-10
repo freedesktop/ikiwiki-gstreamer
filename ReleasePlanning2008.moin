@@ -115,11 +115,13 @@ An (current incomplete) iCal file is available at http://gstreamer.freedesktop.o
 || Bad 0.10.8.2 pre-release tarball ||<bgcolor="#e0e0b6" style="text-align: center;"> Plugin Move Window Good<->Bad Closes ||
 ||<bgcolor="#9db8d2" style="text-align: center;" |2> '''42''' ||<bgcolor="#c5d2c8" style="text-align: center;" |2> Oct 15 || Good 0.10.10.3 pre-release tarball ||<style="text-align: center;" |2> ''If needed'' ||
 || Bad 0.10.8.3 pre-release tarball ||
-||<bgcolor="#9db8d2" style="text-align: center;" |3> '''43''' ||<bgcolor="#c5d2c8" style="text-align: center;" |2>Oct 20 ||<style="text-align: center;"> '''Good 0.10.11 released''' ||<style="text-align: center;" |2> ||
+||<bgcolor="#9db8d2" style="text-align: center;" |4> '''43''' ||<bgcolor="#c5d2c8" style="text-align: center;" |3>Oct 20 ||<style="text-align: center;"> '''Good 0.10.11 released''' ||<style="text-align: center;" |2> ||
 ||<style="text-align: center;"> '''Bad 0.10.9 released''' ||
+||<style="text-align: center;"> ''Gnome 2.24.1 tarballs due'' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Oct 21 || ||<bgcolor="#afb6e0" style="text-align: center;"> Good/Bad code & dependency thaw ||
 ||||||||<bgcolor="#dddddd" style="text-align: center;"> '''November''' - ''Ugly/FFmpeg & (optional) Bad'' ||
-||<bgcolor="#9db8d2" style="text-align: center;" |4> '''45''' ||<bgcolor="#c5d2c8" style="text-align: center;"> Nov 3 || ||<bgcolor="#e0e0b6" style="text-align: center;"> Plugin Move Window Ugly<->Bad Opens ||
+||<bgcolor="#9db8d2" style="text-align: center;" |5> '''45''' ||<bgcolor="#c5d2c8" style="text-align: center;" |2> Nov 3 || ||<bgcolor="#e0e0b6" style="text-align: center;"> Plugin Move Window Ugly<->Bad Opens ||
+|| ||<style="text-align: center;"> ''Gnome 2.25.1 tarballs due'' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;" |3> Nov 7 ||<style="text-align: center;"> Ugly 0.10.9.2 pre-release tarball ||<bgcolor="#e0b6af" style="text-align: center;"> Ugly/FFmpeg code freeze ||
 ||<style="text-align: center;"> FFmpeg 0.10.5.2 pre-release tarball ||<bgcolor="#e0e0b6" style="text-align: center;"> Plugin Move Window Ugly<->Bad Closes ||
 ||<style="text-align: center;"> ''Bad 0.10.9.2 pre-release if needed'' || ||
@@ -133,14 +135,15 @@ An (current incomplete) iCal file is available at http://gstreamer.freedesktop.o
 ||<bgcolor="#9db8d2" style="text-align: center;" |7> '''49''' ||<bgcolor="#c5d2c8" style="text-align: center;" |4> Dec 1 || Core 0.10.21.2 pre-release tarball ||<bgcolor="#e0b6af" style="text-align: center;" |3> Core/Base/Python code freeze ||
 || Base 0.10.21.2 pre-release tarball ||
 || Python 0.10.13.2 pre-release tarball ||
-|| || ''Gnome 2.23.3 tarballs due'' ||
+|| || ''Gnome 2.25.2 tarballs due'' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;" |3> Dec 4 || Core 0.10.21.3 pre-release tarball ||<style="text-align: center;" |3> ''If needed'' ||
 || Base 0.10.21.3 pre-release tarball ||
 || Python 0.10.13.3 pre-release tarball ||
 ||<bgcolor="#9db8d2" style="text-align: center;" |3> '''50''' ||<bgcolor="#c5d2c8" style="text-align: center;" |3>Dec 8 || Core 0.10.21.4 pre-release tarball ||<style="text-align: center;" |3> ''If needed'' ||
 || Base 0.10.21.4 pre-release tarball ||
 || Python 0.10.13.4 pre-release tarball ||
-||<bgcolor="#9db8d2" style="text-align: center;" |4> '''51''' ||<bgcolor="#c5d2c8" style="text-align: center;" |3> Dec 15 ||<style="text-align: center;"> '''Core 0.10.22 released''' ||<bgcolor="#e0b6af" style="text-align: center;" |3> Good/Bad/Ugly/FFmpeg dependency freeze ||
+||<bgcolor="#9db8d2" style="text-align: center;" |5> '''51''' ||<bgcolor="#c5d2c8" style="text-align: center;" |4> Dec 15 ||<style="text-align: center;"> '''Core 0.10.22 released''' ||<bgcolor="#e0b6af" style="text-align: center;" |3> Good/Bad/Ugly/FFmpeg dependency freeze ||
 ||<style="text-align: center;"> '''Base 0.10.22 released''' ||
 ||<style="text-align: center;"> '''Python 0.10.14 released''' ||
+|| || ''Gnome 2.25.3 tarballs due'' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;">Dec 16 || ||<bgcolor="#afb6e0" style="text-align: center;"> Core/Base/Python code thaw ||
