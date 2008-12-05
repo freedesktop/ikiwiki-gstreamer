@@ -2,7 +2,11 @@
 
 Space for drafting new features.
 
- * BufferMetadata: variable extra data keept with buffers.
+ * Core:
+  * BufferMetadata: variable extra data keept with buffers.
+  * NewCapsFields: discuss new caps fields
+  * GstControllerSynchronization: ???
+
  * Base classes:
   * GstBaseParse: parser base class
   * GstBaseDemux: demuxer base class
@@ -11,10 +15,11 @@ Space for drafting new features.
   * GstBaseEncode: encoder base class
   * GstTagMux: tag muxer base class
 
- * SampleBin: bin for game and event sounds
- * GstControllerSynchronization
- * Gtk widget library in gst-plugins-base:
+ * Bins:
+  * SampleBin: bin for game and event sounds
+  * ColorSpaceBin: a bin for colorspace conversion
+
+ * (Gtk) widget library in gst-plugins-base:
   * VideoWidget: General Gtk video widget
   * EncodingProfilesUi: Encoding profiles UI for editing, selecting, etc of encoding profiles
   * DebugHelperMenu: Menu to add to menu bar in debug version
- * ColorSpaceBin: a bin for colorspace conversion
