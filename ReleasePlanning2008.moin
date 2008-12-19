@@ -14,8 +14,6 @@ This is the quick summary of the releases for the next 6 months. See below for t
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Oct 20 || Good 0.10.10, Bad 0.10.10 release ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Nov 3 || '''Ugly/FFmpeg/Bad freeze. 4 day plugin window opens''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Nov 17 || Ugly 0.10.10, FFmpeg 0.10.6, Bad 0.10.11 (if needed) release ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Dec 1 || '''Core/Base/Python freeze.''' ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Dec 15 || Core 0.10.22, Base 0.10.22, Python 0.10.14 release ||
 
 
 == Process ==
@@ -131,19 +129,3 @@ An (current incomplete) iCal file is available at http://gstreamer.freedesktop.o
 ||<style="text-align: center;"> '''FFmpeg 0.10.6 released''' ||
 ||<style="text-align: center;"> ''Bad 0.10.10 released maybe'' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Nov 18 || ||<bgcolor="#afb6e0" style="text-align: center;"> Ugly/FFmpeg code & dependency thaw ||
-||||||||<bgcolor="#dddddd" style="text-align: center;">  '''December'''- ''Core/Base'' ||
-||<bgcolor="#9db8d2" style="text-align: center;" |7> '''49''' ||<bgcolor="#c5d2c8" style="text-align: center;" |4> Dec 1 || Core 0.10.21.2 pre-release tarball ||<bgcolor="#e0b6af" style="text-align: center;" |3> Core/Base/Python code freeze ||
-|| Base 0.10.21.2 pre-release tarball ||
-|| Python 0.10.13.2 pre-release tarball ||
-|| || ''Gnome 2.25.2 tarballs due'' ||
-||<bgcolor="#c5d2c8" style="text-align: center;" |3> Dec 4 || Core 0.10.21.3 pre-release tarball ||<style="text-align: center;" |3> ''If needed'' ||
-|| Base 0.10.21.3 pre-release tarball ||
-|| Python 0.10.13.3 pre-release tarball ||
-||<bgcolor="#9db8d2" style="text-align: center;" |3> '''50''' ||<bgcolor="#c5d2c8" style="text-align: center;" |3>Dec 8 || Core 0.10.21.4 pre-release tarball ||<style="text-align: center;" |3> ''If needed'' ||
-|| Base 0.10.21.4 pre-release tarball ||
-|| Python 0.10.13.4 pre-release tarball ||
-||<bgcolor="#9db8d2" style="text-align: center;" |5> '''51''' ||<bgcolor="#c5d2c8" style="text-align: center;" |4> Dec 15 ||<style="text-align: center;"> '''Core 0.10.22 released''' ||<bgcolor="#e0b6af" style="text-align: center;" |3> Good/Bad/Ugly/FFmpeg dependency freeze ||
-||<style="text-align: center;"> '''Base 0.10.22 released''' ||
-||<style="text-align: center;"> '''Python 0.10.14 released''' ||
-|| || ''Gnome 2.25.3 tarballs due'' ||
-||<bgcolor="#c5d2c8" style="text-align: center;">Dec 16 || ||<bgcolor="#afb6e0" style="text-align: center;"> Core/Base/Python code thaw ||
