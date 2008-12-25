@@ -19,7 +19,7 @@ It is expected that the transition from 0.10 to 0.11/0.12 will be much easier on
 ==== miscellaneous ====
 
  * get rid of the abomination that is GstImplementsInterface
- * clean up macros in interface headers, should be GST_FO_BAR_GET_INTERFACE, not _GET_IFACE or _GET_CLASS (or at least be consistent)
+ * clean up macros in interface headers, should be GST_FO_BAR_GET_INTERFACE, not _GET_IFACE or _GET_CLASS (or at least be consistent); also, interface structures should not be called GstFooBarClass
  * we need to be strict and clear about where URIs are used and where filenames and enforce both
  * need to fix and document assumptions about filename encodings, in accordance with GLib (ie: on win32: should always be utf8, *nix: bunch of bytes, no particular encoding with extras/exceptions)
  * use GstStructure in plugin- and element-descriptions to provide extensibility without breaking things
