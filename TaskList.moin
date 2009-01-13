@@ -4,7 +4,7 @@
  * SocManagement: Overview of involved people
 
 = Other Tasks =
- * ["MoreBaseClases"]: Create baseclases for decoders, encoders, demuxers and muxers
+ * [[MoreBaseClases]]: Create baseclases for decoders, encoders, demuxers and muxers
  * DvdPlayback: Ongoing work on ResinDVD to suppport full DVD playback.
 ----
 CategoryTasks
