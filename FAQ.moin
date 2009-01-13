@@ -1,13 +1,13 @@
 ##acl MoinPagesEditorGroup:read,write,delete,revert All:read
 #format wiki
 #language en
-[[TableOfContents(2)]]
+<<TableOfContents(2)>>
 
 = General =
 
 == I wrote a new plugin/element and I would like it to be included in GStreamer, how to proceed? ==
 
-See ["SubmittingPatches"].
+See [[SubmittingPatches]].
 
 == It is hard to give unique names to elements I create, is there no better way to do this? ==
 
@@ -31,7 +31,7 @@ The problem is that the pipeline will deadlock without queues: When the demuxer/
 
 == When capturing from a video and/or audio source, how to make recording stop correctly? ==
 
-Since (live) video and audio sources provide an endless stream of data until you stop them, some special steps are needed.  These are outlined in the documentation of [http://gstreamer.freedesktop.org/data/doc/gstreamer/head/gstreamer-libs/html/GstBaseSrc.html GstBaseSrc] under the section "Controlled shutdown of live sources in applications".
+Since (live) video and audio sources provide an endless stream of data until you stop them, some special steps are needed.  These are outlined in the documentation of [[http://gstreamer.freedesktop.org/data/doc/gstreamer/head/gstreamer-libs/html/GstBaseSrc.html|GstBaseSrc]] under the section "Controlled shutdown of live sources in applications".
 
 == How to read raw audio or video content from a file? ==
 
@@ -51,7 +51,7 @@ If the GStreamer plugin is installed properly, you have to force a registry upda
 rm -fv ~/.gstreamer-0.10/registry*
 }}}
 
-Unfortunately this step is needed everytime the set of LADSPA modules/libvisual plugins changes.  [http://bugzilla.gnome.org/show_bug.cgi?id=350477 Bug #350477] is keeping track of this issue.
+Unfortunately this step is needed everytime the set of LADSPA modules/libvisual plugins changes.  [[http://bugzilla.gnome.org/show_bug.cgi?id=350477|Bug #350477]] is keeping track of this issue.
 
 = gst-python =
 
