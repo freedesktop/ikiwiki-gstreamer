@@ -1,5 +1,5 @@
 = GStreamer release schedule for 2008 July - Dec =
-Release schedule for the 2nd half of 2008. See ["ReleasePlanning2008-1"] for the first half.
+Release schedule for the 2nd half of 2008. See [[ReleasePlanning2008-1]] for the first half.
 
 == Summary Schedule ==
 This is the quick summary of the releases for the next 6 months. See below for the full schedule
@@ -30,9 +30,9 @@ Modules not included:
 
  * Gnonlin - released by Edward Hervey as he sees fit
  * GStreamer OpenGL support - doesn't exist yet :)
-Each module will see a release every 3 months. For an explanation of the freezes please see [:ReleasePlanning/Freezes:here].
+Each module will see a release every 3 months. For an explanation of the freezes please see [[ReleasePlanning/Freezes|here]].
 
-The cycle starts with of out-of-pattern releases of Core/Base/Python and then Good/Bad/Ugly together because all modules urgently need releases. After that, it should be possible to follow a regular pattern of Core/Base/Python then Good/Bad then Ugly/FFmpeg. The Ugly/FFmpeg release might include a second Bad release if needed due to plugin moves. See the [#PluginMoves Plugin Moves] section.
+The cycle starts with of out-of-pattern releases of Core/Base/Python and then Good/Bad/Ugly together because all modules urgently need releases. After that, it should be possible to follow a regular pattern of Core/Base/Python then Good/Bad then Ugly/FFmpeg. The Ugly/FFmpeg release might include a second Bad release if needed due to plugin moves. See the [[#PluginMoves|Plugin Moves]] section.
 
 == Release procedure for Core/Base/Python ==
 The release procedure is to freeze the modules, and then make a series of pre-release tarballs. 2 weeks later, the final release is done. At the discretion of the release manager, this may happen after only one week if no bugs are found, and we can all go to the pub.
@@ -58,7 +58,7 @@ Additionally, when Good/Bad are released (together), the Bad module is branched 
 
 We may vary the schedule to skip an FFmpeg release from time to time if it seems that nothing exciting has been changed, since releases of FFmpeg require a lot of testing, since it includes so many codecs.
 
-[[Anchor(PluginMoves)]]
+<<Anchor(PluginMoves)>>
 
 == Plugin Moves ==
 From time to time, plugins improve in quality sufficiently to warrant moving them from Bad to Good or Bad to Ugly (or sometimes vice versa in cases of neglect). Such plugin moves require simultaneous releases of the modules involved so that we never ship tarballs with conflicting installed plugins.
