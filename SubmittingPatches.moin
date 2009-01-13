@@ -2,12 +2,12 @@
 
 === Where ===
 
-Please submit patches for GStreamer in [http://bugzilla.gnome.org GNOME bugzilla]:
+Please submit patches for GStreamer in [[http://bugzilla.gnome.org|GNOME bugzilla]]:
  * you will need to create a GNOME bugzilla account if you don't have one yet (yep, that's just how it is, sorry for the inconvenience)
- * create a new bug if there is no bug report for this issue yet; [http://gstreamer.freedesktop.org/bugs/ This page] has shortcuts for the major components
+ * create a new bug if there is no bug report for this issue yet; [[http://gstreamer.freedesktop.org/bugs/|This page]] has shortcuts for the major components
  * once you have created a bug you can attach your patch(es), see below for more details
  * if your patch is an enhancement or new API, please set your bug's severity to 'enhancement'
- * if your patch is against a specific plugin or element, prefix the Summary with `[element-name]` or `[plugin-name]` and keep the rest of the description as short and precise as possible. Example: ''[id3demux] add support for WCOP frame''. This makes sure developers looking through the [http://bugzilla.gnome.org/buglist.cgi?product=GStreamer&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=NEEDINFO&bug_status=REOPENED&form_name=query list of open bugs] can quickly identify what your bug is about; if your text is too long and only contains fill words at the beginning, the important information will be cut off and not show up in the list view.
+ * if your patch is against a specific plugin or element, prefix the Summary with `[element-name]` or `[plugin-name]` and keep the rest of the description as short and precise as possible. Example: ''[id3demux] add support for WCOP frame''. This makes sure developers looking through the [[http://bugzilla.gnome.org/buglist.cgi?product=GStreamer&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=NEEDINFO&bug_status=REOPENED&form_name=query|list of open bugs]] can quickly identify what your bug is about; if your text is too long and only contains fill words at the beginning, the important information will be cut off and not show up in the list view.
  * create separate bugs for separate issues
 
 Please do not submit patches on the gstreamer-devel mailing list. Patches submitted on the mailing list are most likely going to be ignored or simply overlooked.
@@ -39,7 +39,7 @@ $ echo 'up -dP' >> ~/.cvsrc
 
 Please make sure your patches are as terse and precise as possible. Do not include 'clean-ups' or non-functional changes, since they distract from the real changes and make things harder to review (if you feel there are things to clean-up, please submit the clean-ups as a separate patch that does not contain any functional changes).
 
-Try to stick to the GStreamer coding style (run [http://webcvs.freedesktop.org/gstreamer/gstreamer/tools/gst-indent?view=markup gst-indent] over your .c or .cpp files, but not the header files, if you want your code auto-indented before making the patch).
+Try to stick to the GStreamer coding style (run [[http://webcvs.freedesktop.org/gstreamer/gstreamer/tools/gst-indent?view=markup|gst-indent]] over your .c or .cpp files, but not the header files, if you want your code auto-indented before making the patch).
 
 Please do not include a ChangeLog entry with your patch (feel free to suggest a wording for the ChangeLog entry in the bug report though).
 
