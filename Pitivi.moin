@@ -1,6 +1,6 @@
-[http://pitivi.org PiTiVi] is an open source video editor.
+[[http://pitivi.org|PiTiVi]] is an open source video editor.
 
-Pitivi has a very basic UI for the moment, but it could be improved. ([http://www.pitivi.org/wiki/Roadmap])
+Pitivi has a very basic UI for the moment, but it could be improved. ([[http://www.pitivi.org/wiki/Roadmap]])
 
 Amongst the things to be done which are high priority:
 
@@ -23,8 +23,8 @@ Amongst the things to be done which are high priority:
 
 '''Mentor: Edward Hervey (PiTiVi author) aka bilboed on IRC '''
 
-Back to ["TaskList"] 
+Back to [[TaskList]] 
 
 ----
-["CategoryGSOC2008"]
+[[CategoryGSOC2008]]
 CategoryTasks
