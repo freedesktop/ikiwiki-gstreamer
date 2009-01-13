@@ -12,10 +12,10 @@ This wiki serves as a scratchpad for tasks, design discussions and the like.
  * ReleasePlanning: schedule for code freezes and planning for dates
  * DesignDiscussions: drafting new features
  * TaskList: standalone tasks for anyone to take, Google SoC planning
- * ["FAQ"]: frequently asked questions
- * ["Tutorials"] : links to external tutorials
+ * [[FAQ]]: frequently asked questions
+ * [[Tutorials]] : links to external tutorials
  * SubmittingPatches: where and how to submit patches
- General documentation about GStreamer libraries and plugins can be found on the [http://gstreamer.freedesktop.org/documentation/ GStreamer Documentation Page]
+ General documentation about GStreamer libraries and plugins can be found on the [[http://gstreamer.freedesktop.org/documentation/|GStreamer Documentation Page]]
 
 == Starting points ==
 
