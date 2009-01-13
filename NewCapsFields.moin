@@ -3,7 +3,7 @@
 Should parsers parse codec_data and put it on the caps. Then we could negotiate profile and level of e.g. mpeg4/h263, h264. 
 
 == h264 ==
-See [https://sourceforge.net/mailarchive/forum.php?thread_name=1228234535.18691.30.camel%40metal&forum_name=gstreamer-devel this thread].
+See [[https://sourceforge.net/mailarchive/forum.php?thread_name=1228234535.18691.30.camel%40metal&forum_name=gstreamer-devel|this thread]].
 Proposal is to add another field to video/x-h264. I don't think we can use systemstream={true/false} here, should we use h264packing={length-prefixed,startcode-delimmited} as a enum (are there more variants).
 
 Affected elements:
