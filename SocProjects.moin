@@ -1,26 +1,26 @@
 = List of Summer of Code project ideas for students =
- * ["MXFMuxerDemuxer"]: Project to create a Muxer and Demuxer for the important MXF container format
- * ["QuicktimeMP4Muxer"]: Project to create a muxer for MPEG4/Quicktime container format
- * ["MHEGSupport"]: Project to create elements for parsing and rendering MHEG content in DVB.
- * ["IXMF"]: Project to create decoder and/or encoder for the IXMF audio format
- * ["Closed Captioning support"]: Subtitles for the hearing impaired
- * ["DVD Playback"]: Project to finish GStreamer's DVD support.
- * ["LADSPA"]: Create a Ladspa version 2 bridge and clean up LADSPA plugin
+ * [[MXFMuxerDemuxer]]: Project to create a Muxer and Demuxer for the important MXF container format
+ * [[QuicktimeMP4Muxer]]: Project to create a muxer for MPEG4/Quicktime container format
+ * [[MHEGSupport]]: Project to create elements for parsing and rendering MHEG content in DVB.
+ * [[IXMF]]: Project to create decoder and/or encoder for the IXMF audio format
+ * [[Closed_Captioning_support]]: Subtitles for the hearing impaired
+ * [[DVD_Playback]]: Project to finish GStreamer's DVD support.
+ * [[LADSPA]]: Create a Ladspa version 2 bridge and clean up LADSPA plugin
  * MoreLibOil: Improve use of Liboil in GStreamer
  * EncodingProfiles: Utility library for encoding profiles
- * ["LiboilJIT"]: Liboil JIT compiler for SIMD instructions
- * ["Pitivi"]: Improve Pitivi
+ * [[LiboilJIT]]: Liboil JIT compiler for SIMD instructions
+ * [[Pitivi]]: Improve Pitivi
  * BetterTagReadingWriting: Improve tag reading a writing capabilities.
  * FarsightPlugins: Farsight 2 plugins for proprietary IM protocols
  * RubyGstreamer: Make the ruby gstreamer bindings rock
- * ["New Audiocd reader plugin"]: We need a new LGPL licensed audiocd reader plugin for GStreamer
+ * [[New_Audiocd_reader_plugin]]: We need a new LGPL licensed audiocd reader plugin for GStreamer
  * GstEditor : Finish the Python based Gst-Editor
- * ["MPEG2Mux"] : Finish and improve GStreamer mpeg TS (and PS?) muxer
+ * [[MPEG2Mux]] : Finish and improve GStreamer mpeg TS (and PS?) muxer
  * SrtpSupport : Add plugin to support Secure RTP
  * JokosherLove : Fix GStreamer issues to make Jokosher LUGRadio ready
- * [:TamasKorodi/IVC multichannel grabber card support:Multichannel_grabber_card_support] : Multichannel video grabber card support and more baseclasses
- * [:RobinHorvath/Gstreamer-java enhancement:Gstreamer-Java enhancement] : GStreamer Java binding enhancement, GStreamer and GStreamer-Java Mac OS and Windows port
- * ["MediaTrans"] : Media transcoding services (encoding profiles, helper-lib and dialogs)
+ * [[TamasKorodi/IVC_multichannel_grabber_card_support|Multichannel_grabber_card_support]] : Multichannel video grabber card support and more baseclasses
+ * [[RobinHorvath/Gstreamer-java_enhancement|Gstreamer-Java enhancement]] : GStreamer Java binding enhancement, GStreamer and GStreamer-Java Mac OS and Windows port
+ * [[MediaTrans]] : Media transcoding services (encoding profiles, helper-lib and dialogs)
 = Other Organizations =
 Other organizations that have project ideas related to GStreamer:
 
@@ -31,4 +31,4 @@ Other organizations that have project ideas related to GStreamer:
 Back to TaskList
 
 ----
- . ["CategoryGSOC2008"]
+ . [[CategoryGSOC2008]]
