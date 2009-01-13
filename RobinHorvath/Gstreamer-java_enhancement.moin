@@ -2,7 +2,7 @@
 
  * Gstreamer and Gstreamer-Java Mac OS and Windows port. We'd like to use Gstreamer on all of the 3 main OS (Linux, Windows, Mac OS). Only recently (Songbird) made some deep effort into the Mac OS and Windows port. We'd like to help them, test it and do as much Mac OS and Windows porting as possible. At the same time make a MinGW cross-compile build environment to be able to build Windows (and may be Mac OS) Gstreamer binaries on Linux.
 
- * Gstreamer has nice, well written and working Java binding [http://code.google.com/p/gstreamer-java/]. 
+ * Gstreamer has nice, well written and working Java binding [[http://code.google.com/p/gstreamer-java/]]. 
    It'd be useful to enhance it's functionality, finish and always keep up-to-date it's interface
    with the actual Gstreamer implementation. At the same time the current binding has swing 
    components for video and other GUI related components. 
