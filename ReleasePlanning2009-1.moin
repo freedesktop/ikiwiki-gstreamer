@@ -32,7 +32,7 @@ Modules not included:
 
  * Gnonlin - released by Edward Hervey as he sees fit
  * GStreamer OpenGL support - doesn't exist yet :)
-Each module will see a release every 3 months. For an explanation of the freezes please see [:ReleasePlanning/Freezes:here].
+Each module will see a release every 3 months. For an explanation of the freezes please see [[ReleasePlanning/Freezes|here]].
 
 == Release procedure for Core/Base/Python ==
 The release procedure is to freeze the modules, and then make a series of pre-release tarballs. 2 weeks later, the final release is done. At the discretion of the release manager, this may happen after only one week if no bugs are found, and we can all go to the pub.
@@ -59,7 +59,7 @@ Additionally, when Good/Bad are released (together), the Bad module is branched 
 
 We may vary the schedule to skip an FFmpeg release from time to time if it seems that nothing exciting has been changed, since releases of FFmpeg require a lot of testing due to the quantity of codecs.
 
-[[Anchor(PluginMoves)]]
+<<Anchor(PluginMoves)>>
 
 == Plugin Moves ==
 From time to time, plugins improve in quality sufficiently to warrant moving them from Bad to Good or Bad to Ugly (or sometimes vice versa in cases of neglect). Such plugin moves require simultaneous releases of the modules involved so that we never ship tarballs with conflicting installed plugins.
