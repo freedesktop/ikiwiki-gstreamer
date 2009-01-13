@@ -18,4 +18,4 @@ July: Write a 4 channel source element for IVC-400 card with a base element whic
 August: Write source elements (using the above base element) for other grabber cards (other cards probably will be: Comart's: HiCap, XeCap; Hikvision's 40xxhci)
 
 ----
- . ["CategoryGSOC2008"]
+ . [[CategoryGSOC2008]]
