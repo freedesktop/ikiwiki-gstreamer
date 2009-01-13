@@ -5,7 +5,7 @@
 
 Information about ongoing work on the ResinDVD components to support full featured DVD playback. The ResinDVD components are currently in gst-plugins-bad, and as of 13 August 2008 require CVS of gst-plugins-base to have working menu support via playbin in Totem, etc.
 
-[[TableOfContents(3)]]
+<<TableOfContents(3)>>
 == Overview ==
 ResinDVD consists of a single registered element: rsndvdbin. This element produces 3 pads: decoded video, decoded audio and a DVD subpicture.
 
