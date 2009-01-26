@@ -65,14 +65,14 @@ Extend ''rsnaudiomunge'' to support:
  * When streams switch, there might be overlapping audio timestamps that should be clipped away to produce a smooth output stream.
 
 '''Status'''
-Not started.
+In progress
 
 === Seeking ===
 '''Description'''
 ''rsndvdsrc'' needs to support more seek formats: TIME, Title, Chapter. Especially TIME based seeking, as that is what most players need in order to implement the seek bar.
  
 '''Status'''
-Not started.
+Time based seeking partially implemented - works for PGC's with a time-seek table, which is usually only the main movie.
 
 === Multi-angle ===
 '''Description'''
