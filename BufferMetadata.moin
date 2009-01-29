@@ -7,12 +7,14 @@ Examples:
  * MPEG Decoding timestamps, which we currently never send along.
  * Feature-Extraction elements can add feature data
  * Some image capture sensors can provide histograms with the frames
+   * Some formats (mpeg-ts from HDV cameras) provide date/gain/shutter-speed/scene-change at a regular interval but not for every frame (around 10 times per second).
  * packet priority and timeout could be used by network plugins (such as DCCP) to send more important packets when congestion is detected.
 
 Ideas:
  A. !GstStructure in !GstBuffer
  A. !GstTaglist in !GstBuffer
  A. syncronized downstream events
+ A. Store GstStructures in GstIndex
 
 !GstStructure is also use in !GstTaglist. The structure can be hierarchical. We could require that the producer uses its element name as a root tag. This way the taglist could carry multiple data-sets identified in a unique way. Elements that can use the data need to know the name of the element that created it.
 
