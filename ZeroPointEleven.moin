@@ -31,6 +31,7 @@ It is expected that the transition from 0.10 to 0.11/0.12 will be much easier on
  * rewrite parse_launch in C? (if we don't do it now, we'll never be able to do it, since it'll be impossible to rewrite it from scratch and maintain the exact same behaviour; is the current code really maintainable? How many people understand it?)
  * GstBufferClass needs padding
  * GST_STATE_TRANSITION() makes a GstStateChange, rename either of them (probably easier to rename GstStateChange to GstStateTransition, than renaming all the macros).
+ * gst_preset_{load|save} should have a GError * argument.
 
 === gst-plugins-base ===
 
