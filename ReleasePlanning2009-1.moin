@@ -89,13 +89,11 @@ An iCal file is available at http://gstreamer.freedesktop.org/data/gst-schedule.
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Jan 20 || ||<bgcolor="#afb6e0" style="text-align: center;"> Core/Base/Python code thaw ||
 ||||||||<rowbgcolor="#dddddd"> '''February''' - ''Good/Bad'' ||
 ||<bgcolor="#9db8d2" style="text-align: center;" |3> '''6''' ||<bgcolor="#c5d2c8" style="text-align: center;"> February 2 || ||<bgcolor="#e0e0b6" style="text-align: center;"> Plugin Move Window Good<->Bad Opens ||
-||<bgcolor="#c5d2c8" style="text-align: center;" |2> Feb 6 || Good 0.10.11.2 pre-release tarball ||<bgcolor="#e0b6af" style="text-align: center;"> Good/Bad code freeze ||
-|| Bad 0.10.10.2 pre-release tarball ||<bgcolor="#e0e0b6" style="text-align: center;"> Plugin Move Window Good<->Bad Closes ||
-||<bgcolor="#9db8d2" style="text-align: center;" |2> '''7''' ||<bgcolor="#c5d2c8" style="text-align: center;" |2> Feb 11 || Good 0.10.11.3 pre-release tarball ||<style="text-align: center;" |2> ''If needed'' ||
-|| Bad 0.10.10.3 pre-release tarball ||
-||<bgcolor="#9db8d2" style="text-align: center;" |3> '''8''' ||<bgcolor="#c5d2c8" style="text-align: center;" |2> Feb 16 ||<style="text-align: center;"> '''Good 0.10.12 released''' ||<style="text-align: center;" |2> ||
-||<style="text-align: center;"> '''Bad 0.10.11 released''' ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> February 17 || ||<bgcolor="#afb6e0" style="text-align: center;"> Good/Bad code & dependency thaw ||
+||<bgcolor="#c5d2c8" style="text-align: center;" |2> Feb 6   || Good 0.10.13.2 pre-release tarball ||<bgcolor="#e0b6af" style="text-align: center;"> Good code freeze ||
+|| ||<bgcolor="#e0e0b6" style="text-align: center;"> Plugin Move Window Good<->Bad Closes ||
+||<bgcolor="#9db8d2" style="text-align: center;"> '''7''' ||<bgcolor="#c5d2c8" style="text-align: center;"> Feb 11 || Good 0.10.13.3 pre-release tarball ||<style="text-align: center;"> ''If needed'' ||
+||<bgcolor="#9db8d2" style="text-align: center;" |2> '''8''' ||<bgcolor="#c5d2c8" style="text-align: center;"> Feb 16 ||<style="text-align: center;"> '''Good 0.10.14 released''' ||||
+||<bgcolor="#c5d2c8" style="text-align: center;"> February 17 || ||<bgcolor="#afb6e0" style="text-align: center;"> Good code & dependency thaw ||
 ||||||||<rowbgcolor="#dddddd"> '''March''' - ''Ugly/FFmpeg & (optional) Bad'' ||
 ||<bgcolor="#9db8d2" style="text-align: center;" |4> '''10''' ||<bgcolor="#c5d2c8" style="text-align: center;"> Mar 2 || ||<bgcolor="#e0e0b6" style="text-align: center;"> Plugin Move Window Ugly<->Bad Opens ||
 ||<bgcolor="#c5d2c8" style="text-align: center;" |3> Mar 6 ||<style="text-align: center;"> Ugly 0.10.10.2 pre-release tarball ||<bgcolor="#e0b6af" style="text-align: center;"> Ugly/FFmpeg code freeze ||
