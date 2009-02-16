@@ -16,7 +16,6 @@
  * [[New_Audiocd_reader_plugin]]: We need a new LGPL licensed audiocd reader plugin for GStreamer
  * GstEditor : Finish the Python based Gst-Editor
  * [[MPEG2Mux]] : Finish and improve GStreamer mpeg TS (and PS?) muxer
- * SrtpSupport : Add plugin to support Secure RTP
  * JokosherLove : Fix GStreamer issues to make Jokosher LUGRadio ready
  * [[TamasKorodi/IVC_multichannel_grabber_card_support|Multichannel_grabber_card_support]] : Multichannel video grabber card support and more baseclasses
  * [[RobinHorvath/Gstreamer-java_enhancement|Gstreamer-Java enhancement]] : GStreamer Java binding enhancement, GStreamer and GStreamer-Java Mac OS and Windows port
