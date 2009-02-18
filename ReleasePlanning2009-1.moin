@@ -8,15 +8,15 @@ This is the quick summary of the releases for the next 6 months. See below for t
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Jan 5 || '''Core/Base/Python/Bad freeze.''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Jan 19 || Core 0.10.22, Base 0.10.22, Python 0.10.14 Bad 0.10.10 release ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Feb 2 || '''Good/Bad freeze. 4 day plugin window opens''' ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Feb 16 || Good 0.10.12, Bad 0.10.11 release ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Feb 16 || Good 0.10.12 release (no Bad release this time, since it was released recently and there were no plugin moves) ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Mar 2 || '''Ugly/FFmpeg/Bad freeze. 4 day plugin window opens''' ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Mar 16 || Ugly 0.10.11, FFmpeg 0.10.7, Bad 0.10.12 (if needed) release ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Mar 16 || Ugly 0.10.11, FFmpeg 0.10.7, Bad 0.10.11 (if needed) release ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Apr 6 || '''Core/Base/Python freeze.''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Apr 20 || Core 0.10.23, Base 0.10.23, Python 0.10.15 release ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> May 4 || '''Good/Bad freeze. 4 day plugin window opens''' ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> May 18 || Good 0.10.13, Bad 0.10.13 release ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> May 18 || Good 0.10.13, Bad 0.10.12 release ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Jun 1 || '''Ugly/FFmpeg/Bad freeze. 4 day plugin window opens''' ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> June 15 || Ugly 0.10.12, FFmpeg 0.10.8, Bad 0.10.14 (if needed) release ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> June 15 || Ugly 0.10.12, FFmpeg 0.10.8, Bad 0.10.13 (if needed) release ||
 
 == Process ==
 At the moment there are 7 GStreamer modules included in the schedule:
@@ -98,13 +98,13 @@ An iCal file is available at http://gstreamer.freedesktop.org/data/gst-schedule.
 ||<bgcolor="#9db8d2" style="text-align: center;" |4> '''10''' ||<bgcolor="#c5d2c8" style="text-align: center;"> Mar 2 || ||<bgcolor="#e0e0b6" style="text-align: center;"> Plugin Move Window Ugly<->Bad Opens ||
 ||<bgcolor="#c5d2c8" style="text-align: center;" |3> Mar 6 ||<style="text-align: center;"> Ugly 0.10.10.2 pre-release tarball ||<bgcolor="#e0b6af" style="text-align: center;"> Ugly/FFmpeg code freeze ||
 ||<style="text-align: center;"> FFmpeg 0.10.6.2 pre-release tarball ||<bgcolor="#e0e0b6" style="text-align: center;"> Plugin Move Window Ugly<->Bad Closes ||
-||<style="text-align: center;"> ''Bad 0.10.11.2 pre-release if needed'' || ||
+||<style="text-align: center;"> ''Bad 0.10.10.2 pre-release if needed'' || ||
 ||<bgcolor="#9db8d2" style="text-align: center;" |3> '''11''' ||<bgcolor="#c5d2c8" style="text-align: center;" |3> Mar 11 ||<style="text-align: center;"> Ugly 0.10.10.3 pre-release tarball ||<style="text-align: center;" |3> ''If needed'' ||
 ||<style="text-align: center;"> FFmpeg 0.10.6.3 pre-release tarball ||
-||<style="text-align: center;"> Bad 0.10.11.3 pre-release tarball ||
+||<style="text-align: center;"> Bad 0.10.10.3 pre-release tarball ||
 ||<bgcolor="#9db8d2" style="text-align: center;" |4> '''12''' ||<bgcolor="#c5d2c8" style="text-align: center;" |3> Mar 16 ||<style="text-align: center;"> '''Ugly 0.10.11 released''' ||<style="text-align: center;" |3> ||
 ||<style="text-align: center;"> '''FFmpeg 0.10.7 released''' ||
-||<style="text-align: center;"> ''Bad 0.10.12 released maybe'' ||
+||<style="text-align: center;"> ''Bad 0.10.11 released maybe'' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Mar 17 || ||<bgcolor="#afb6e0" style="text-align: center;"> Ugly/FFmpeg code & dependency thaw ||
 ||||||||<rowbgcolor="#dddddd"> '''April''' - ''Core/Base/Python'' ||
 ||<bgcolor="#9db8d2" style="text-align: center;" |6> '''14''' ||<bgcolor="#c5d2c8" style="text-align: center;" |3> Apr 6 || Core 0.10.22.2 pre-release tarball ||<bgcolor="#e0b6af" style="text-align: center;" |3> Core/Base/Python code freeze ||
