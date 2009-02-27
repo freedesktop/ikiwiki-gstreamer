@@ -13,7 +13,6 @@
  * RubyGstreamer: Make the ruby gstreamer bindings rock
  * GstEditor : Finish the Python based Gst-Editor
  * [[MPEG2Mux]] : Finish and improve GStreamer mpeg TS (and PS?) muxer
- * JokosherLove : Fix GStreamer issues to make Jokosher LUGRadio ready
  * [[TamasKorodi/IVC_multichannel_grabber_card_support|Multichannel_grabber_card_support]] : Multichannel video grabber card support and more baseclasses
  * [[RobinHorvath/Gstreamer-java_enhancement|Gstreamer-Java enhancement]] : GStreamer Java binding enhancement, GStreamer and GStreamer-Java Mac OS and Windows port
  * [[MediaTrans]] : Media transcoding services (encoding profiles, helper-lib and dialogs)
