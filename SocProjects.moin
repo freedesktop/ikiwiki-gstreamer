@@ -16,6 +16,7 @@
  * [[TamasKorodi/IVC_multichannel_grabber_card_support|Multichannel_grabber_card_support]] : Multichannel video grabber card support and more baseclasses
  * [[RobinHorvath/Gstreamer-java_enhancement|Gstreamer-Java enhancement]] : GStreamer Java binding enhancement, GStreamer and GStreamer-Java Mac OS and Windows port
  * [[MediaTrans]] : Media transcoding services (encoding profiles, helper-lib and dialogs)
+ * gstreamer-sharp : Finish/improve the C# GStreamer bindings at http://anonsvn.mono-project.com/viewvc/branches/abock/gstreamer-sharp/
 = Other Organizations =
 Other organizations that have project ideas related to GStreamer:
 
