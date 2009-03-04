@@ -17,7 +17,7 @@
   * [[MediaTrans]] : Media transcoding services (encoding profiles, helper-lib and dialogs)
   * EncodingProfiles: Utility library for encoding profiles
   * BetterTagReadingWriting: Improve tag reading and writing capabilities.
-  * [XMPMetadata] support: Add generic XMP metadata library and implement for some pugins
+  * [[XMPMetadata]] support: Add generic XMP metadata library and implement for some pugins
  * bindings
   * RubyGstreamer: Make the ruby gstreamer bindings rock
   * [[RobinHorvath/Gstreamer-java_enhancement|Gstreamer-Java enhancement]] : GStreamer Java binding enhancement, GStreamer and GStreamer-Java Mac OS and Windows port
