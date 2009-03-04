@@ -12,8 +12,6 @@
   * GstEditor : Finish the Python based Gst-Editor
  * framework
   * [[Closed_Captioning_support]]: Subtitles for the hearing impaired
-  * MoreLibOil: Improve use of Liboil in GStreamer
-  * [[LiboilJIT]]: Liboil JIT compiler for SIMD instructions (StefanKost: orc?)
   * [[TamasKorodi/IVC_multichannel_grabber_card_support|Multichannel_grabber_card_support]] : Multichannel video grabber card support and more baseclasses
   * [[MediaTrans]] : Media transcoding services (encoding profiles, helper-lib and dialogs)
   * EncodingProfiles: Utility library for encoding profiles
