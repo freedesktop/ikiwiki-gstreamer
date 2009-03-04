@@ -1,22 +1,27 @@
 = List of Summer of Code project ideas for students =
 
- * [[MHEGSupport]]: Project to create elements for parsing and rendering MHEG content in DVB.
- * [[IXMF]]: Project to create decoder and/or encoder for the IXMF audio format
- * [[Closed_Captioning_support]]: Subtitles for the hearing impaired
- * [[LADSPA]]: Create a Ladspa version 2 bridge and clean up LADSPA plugin
- * MoreLibOil: Improve use of Liboil in GStreamer
- * EncodingProfiles: Utility library for encoding profiles
- * [[LiboilJIT]]: Liboil JIT compiler for SIMD instructions
- * [[Pitivi]]: Improve Pitivi
- * BetterTagReadingWriting: Improve tag reading and writing capabilities.
- * FarsightPlugins: Farsight 2 plugins for proprietary IM protocols
- * RubyGstreamer: Make the ruby gstreamer bindings rock
- * GstEditor : Finish the Python based Gst-Editor
- * [[MPEG2Mux]] : Finish and improve GStreamer mpeg TS (and PS?) muxer
- * [[TamasKorodi/IVC_multichannel_grabber_card_support|Multichannel_grabber_card_support]] : Multichannel video grabber card support and more baseclasses
- * [[RobinHorvath/Gstreamer-java_enhancement|Gstreamer-Java enhancement]] : GStreamer Java binding enhancement, GStreamer and GStreamer-Java Mac OS and Windows port
- * [[MediaTrans]] : Media transcoding services (encoding profiles, helper-lib and dialogs)
- * gstreamer-sharp : Finish/improve the C# GStreamer bindings at http://anonsvn.mono-project.com/viewvc/branches/abock/gstreamer-sharp/
+ * plugins
+  * [[MHEGSupport]]: Project to create elements for parsing and rendering MHEG content in DVB.
+  * [[IXMF]]: Project to create decoder and/or encoder for the IXMF audio format
+  * [[LADSPA]]: Create a Ladspa version 2 bridge and clean up LADSPA plugin
+  * [[MPEG2Mux]] : Finish and improve GStreamer mpeg TS (and PS?) muxer
+  * FarsightPlugins: Farsight 2 plugins for proprietary IM protocols
+ * applications
+  * [[Pitivi]]: Improve Pitivi
+  * GstEditor : Finish the Python based Gst-Editor
+ * framework
+  * [[Closed_Captioning_support]]: Subtitles for the hearing impaired
+  * MoreLibOil: Improve use of Liboil in GStreamer
+  * [[LiboilJIT]]: Liboil JIT compiler for SIMD instructions (StefanKost: orc?)
+  * [[TamasKorodi/IVC_multichannel_grabber_card_support|Multichannel_grabber_card_support]] : Multichannel video grabber card support and more baseclasses
+  * [[MediaTrans]] : Media transcoding services (encoding profiles, helper-lib and dialogs)
+  * EncodingProfiles: Utility library for encoding profiles
+  * BetterTagReadingWriting: Improve tag reading and writing capabilities.
+  * [XMPMetadata] support: Add generic XMP metadata library and implement for some pugins
+ * bindings
+  * RubyGstreamer: Make the ruby gstreamer bindings rock
+  * [[RobinHorvath/Gstreamer-java_enhancement|Gstreamer-Java enhancement]] : GStreamer Java binding enhancement, GStreamer and GStreamer-Java Mac OS and Windows port
+  * gstreamer-sharp : Finish/improve the C# GStreamer bindings at http://anonsvn.mono-project.com/viewvc/branches/abock/gstreamer-sharp/
 = Other Organizations =
 Other organizations that have project ideas related to GStreamer:
 
