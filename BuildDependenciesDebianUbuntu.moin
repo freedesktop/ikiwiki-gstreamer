@@ -1,0 +1,13 @@
+= Build Dependencies Debian and Ubuntu =
+
+These should do the trick:
+{{{
+sudo apt-get build-dep gstreamer0.10-plugins-base gstreamer0.10-plugins-good gstreamer0.10-plugins-ugly gstreamer0.10-plugins-bad
+}}}
+
+You will need to make sure the deb-src lines are enabled in your {{{/etc/apt/sources.list}}} file.
+
+On Ubuntu you might try these as well in addition to the above:
+{{{
+sudo apt-get build-dep gstreamer0.10-plugins-ugly-multiverse gtreamer0.10-plugins-bad-multivers
+}}}
