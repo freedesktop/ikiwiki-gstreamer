@@ -1,0 +1,47 @@
+= GLib Version Requirement =
+
+GLib is GStreamer's main dependency.
+
+We want to make use of new GLib API over time (and benefit from bug fixes of course), but we also don't want to make life unnecessarily difficult for developers, users and system integrators who want to deploy a newer version of GStreamer than the one that is shipped with their distro/system by requiring a bleeding edge version of GLib. So a balance has to be struck.
+
+Keeping things predictable is likely to be valuable for system integrators and anyone else deploying GStreamer or GStreamer-based applications, and keeping things moving forward slowly but certainly without requiring endless discussions whenever someone wants to bump the requirement is likely to benefit developers.
+
+To this effect, the proposed (and, dare I say, generally accepted amongst developers) solution was something along these lines:
+
+=== The Policy ===
+
+  * whenever we release core/base, we look into bumping the GLib requirement for core/base (ie. right *after* the core/base release, not for the release itself)
+  * we then look at all (stable) GLib 2.N.1 releases that are older than ~12 months, and pick the highest N. That's our new GLIB_REQ then.
+  * plugin modules should follow the GLib requirement of their core/base requirement (highest wins) or make plugins which require a newer version optional 
+
+This will roughly result in a schedule like this:
+
+=== Estimated GLib requirement of core/base versions ===
+
+(this is based on the original proposal to check after each release; Mike suggested to only check after every second release, but that doesn't really seem to change that much in practice)
+
+ * '''0.10.23''', scheduled for release around 20-Apr-2009: GLib 2.14
+ * check glib req in Apr 2009 => 2.16 
+ * '''0.10.24''', scheduled for release around xx-Jul-2009: GLib 2.16
+ * check glib req in July 2009 => 2.16
+ * '''0.10.25''', scheduled for release around xx-Oct-2009: GLib 2.16
+ * check glib req in October 2009 => 2.18
+ * '''0.10.26''', scheduled for release around xx-Jan-2010: GLib 2.18
+ * check glib req in Jan 2010 => 2.18 
+ * '''0.10.27''', scheduled for release around xx-Apr-2010: GLib 2.18
+ * check glib req in Apr 2010 => 2.20
+ * '''0.10.28''', scheduled for release around xx-Jul-2010: GLib 2.20
+
+===  GLib major versions release dates (for reference) ===
+
+ * '''2.12.1''': 22-Jul-2006
+ * '''2.14.1''': 16-Sep-2007
+ * '''2.16.1''': 11-Mar-2008
+ * '''2.18.1''': 18-Sep-2008
+ * '''2.20.1''': xx-Apr-2009 (?)
+ * '''2.22.1''': ?
+
+=== See Also ===
+
+ * http://article.gmane.org/gmane.comp.video.gstreamer.devel/24023 and previous threads on the GLib requirement
+ * discussions and comments on IRC (not archived)
