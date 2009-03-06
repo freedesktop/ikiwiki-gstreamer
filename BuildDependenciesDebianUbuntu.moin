@@ -9,5 +9,5 @@ You will need to make sure the deb-src lines are enabled in your {{{/etc/apt/sou
 
 On Ubuntu you might try these as well in addition to the above:
 {{{
-sudo apt-get build-dep gstreamer0.10-plugins-ugly-multiverse gtreamer0.10-plugins-bad-multivers
+sudo apt-get build-dep gstreamer0.10-plugins-ugly-multiverse gtreamer0.10-plugins-bad-multiverse
 }}}
