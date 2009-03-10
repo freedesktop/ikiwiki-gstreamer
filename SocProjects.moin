@@ -7,6 +7,7 @@
   * [[MPEG2Mux]] : Finish and improve GStreamer mpeg TS (and PS?) muxer
   * FarsightPlugins: Farsight 2 plugins for proprietary IM protocols
   * ASF muxer and payloaders: Write an ASF muxer (or port the existing 0.8 code, but writing a new one from scratch is probably easier and likely to result in better code)
+  * [[PluginsForEditing]]: Wrapping much-needed audio/video filters as gstreamer plugins.
  * applications
   * [[Pitivi]]: Improve Pitivi
   * GstEditor : Finish the Python based Gst-Editor
