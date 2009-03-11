@@ -8,6 +8,7 @@
   * FarsightPlugins: Farsight 2 plugins for proprietary IM protocols
   * ASF muxer and payloaders: Write an ASF muxer (or port the existing 0.8 code, but writing a new one from scratch is probably easier and likely to result in better code)
   * [[PluginsForEditing]]: Wrapping much-needed audio/video filters as gstreamer plugins.
+  * VDPAU & VA plugins : Wrap GPU-accelerated decoder/filter libraries. See [[http://bugzilla.gnome.org/show_bug.cgi?id=561225|#561225]] for the generic idea. 
  * applications
   * [[Pitivi]]: Improve Pitivi
   * GstEditor : Finish the Python based Gst-Editor
