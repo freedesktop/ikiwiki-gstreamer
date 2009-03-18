@@ -16,8 +16,7 @@
  * framework
   * [[Closed_Captioning_support]]: Subtitles for the hearing impaired
   * [[TamasKorodi/IVC_multichannel_grabber_card_support|Multichannel_grabber_card_support]] : Multichannel video grabber card support and more baseclasses
-  * [[MediaTrans]] : Media transcoding services (encoding profiles, helper-lib and dialogs)
-  * EncodingProfiles: Utility library for encoding profiles
+  * EncodingProfiles: Utility library for encoding profiles (see also [[MediaTrans|Media transcoding services]])
   * BetterTagReadingWriting: Improve tag reading and writing capabilities.
   * [[XMPMetadata]] support: Add generic XMP metadata library and implement for some pugins
  * bindings
