@@ -22,6 +22,7 @@
  * bindings
   * [[RobinHorvath/Gstreamer-java_enhancement|Gstreamer-Java enhancement]] : GStreamer Java binding enhancement, GStreamer and GStreamer-Java Mac OS and Windows port
   * [[GStreamerSharp|gstreamer-sharp]] : Finish/improve the GStreamer C# bindings
+  * [[IPP VC1 encoder]]: Write VC1 encoder using Intel IPP
 
 = Other Organizations =
 Other organizations that have project ideas related to GStreamer:
