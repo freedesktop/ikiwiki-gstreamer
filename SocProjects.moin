@@ -8,7 +8,8 @@
   * FarsightPlugins: Farsight 2 plugins for proprietary IM protocols
   * ASF muxer and payloaders: Write an ASF muxer (or port the existing 0.8 code, but writing a new one from scratch is probably easier and likely to result in better code)
   * [[PluginsForEditing]]: Wrapping much-needed audio/video filters as gstreamer plugins.
-  * VDPAU & VA plugins : Wrap GPU-accelerated decoder/filter libraries. See [[http://bugzilla.gnome.org/show_bug.cgi?id=561225|#561225]] for the generic idea. 
+  * VDPAU & VA plugins : Wrap GPU-accelerated decoder/filter libraries. See [[http://bugzilla.gnome.org/show_bug.cgi?id=561225|#561225]] for the generic idea.
+  * [[IPP VC1 encoder]]: Write VC1 encoder using Intel IPP
   * AviSynth wrapper : Write a wrapper plugin for [[http://avisynth.org/|AviSynth]] in order to be able to load/compile avisynth filters and use them in gstreamer pipelines.
  * applications
   * [[Pitivi]]: Improve Pitivi
@@ -22,8 +23,7 @@
  * bindings
   * [[RobinHorvath/Gstreamer-java_enhancement|Gstreamer-Java enhancement]] : GStreamer Java binding enhancement, GStreamer and GStreamer-Java Mac OS and Windows port
   * [[GStreamerSharp|gstreamer-sharp]] : Finish/improve the GStreamer C# bindings
-  * [[IPP VC1 encoder]]: Write VC1 encoder using Intel IPP
-
+  
 = Other Organizations =
 Other organizations that have project ideas related to GStreamer:
 
