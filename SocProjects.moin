@@ -4,7 +4,7 @@
   * [[MHEGSupport]]: Project to create elements for parsing and rendering MHEG content in DVB.
   * [[IXMF]]: Project to create decoder and/or encoder for the IXMF audio format
   * [[LADSPA]]: Create a Ladspa version 2 bridge and clean up LADSPA plugin
-  * [[MPEG2PSMux]] : Finish GStreamer mpeg TS muxer and write a PS muxer
+  * [[MPEG2Mux]] : Finish GStreamer mpeg TS muxer and write a PS muxer
   * [[AMR encoder and decoder]] : Create plugins for GStreamer to encode and decode AMR
   * FarsightPlugins: Farsight 2 plugins for proprietary IM protocols
   * ASF muxer and payloaders: Write an ASF muxer (or port the existing 0.8 code, but writing a new one from scratch is probably easier and likely to result in better code)
