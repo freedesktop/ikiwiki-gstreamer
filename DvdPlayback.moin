@@ -42,14 +42,14 @@ Currently, it's supported to send an internal event from ''rsndvdsrc'' and handl
 '''Description'''
 
 Extend GStreamer so that it provides the set of operations needed to allow players to full support DVD features. Primarily, this means providing an API for executing operations like:
- * Jump to DVD Root/Title/Angle/Subpicture/Audio/Part menus
- * Switch Angle to 'n' - desirable to have an API for exposing the presence of multi-angle and number of angles, and notifying when it changes. Properties on playbin? Expose via the 'current-video' property as per 'Stream Switching'?
- * Skip to next/previous Chapter and Title
+ * --(Jump to DVD Root/Title/Angle/Subpicture/Audio/Part menus)-- '''DONE'''
+ * --(Switch Angle to 'n' - desirable to have an API for exposing the presence of multi-angle and number of angles, and notifying when it changes. Properties on playbin? Expose via the 'current-video' property as per 'Stream Switching'?)-- '''DONE'''
+ * --(Skip to next/previous Chapter and Title)-- '''DONE'''
  * Others?
 
 '''Status'''
 Skip to next chapter/title are supported by seeking to in custom formats 'chapter' and 'title'.
-Jumping to menus and angle switching are in progress - see http://cgit.freedesktop.org/~thaytan/gst-plugins-base/
+Jumping to menus and angle supported via GstNavigation extensions.
 
 === Switching Audio Decoder Bin ===
 '''Description'''
@@ -84,14 +84,14 @@ Previous attempts at DVD playback support have implemented this using a seek in 
 It might be better to implement this using a 'current-video' property and some dummy entries in the stream-info array.
 
 '''Status'''
-In progress via extensions to the GstNavigation interface - see http://cgit.freedesktop.org/~thaytan/gst-plugins-base/
+Implemented via extensions to the GstNavigation interface in gst-plugins-base 0.10.23.
 
 === Playbin2 Integration ===
 '''Description'''
-Make sure that playbin2 also includes the integration hotness that's been/going to be in playbin.
+Make sure that playbin2 supports the same feature set as playbin.
 
 '''Status'''
-In progress - working, with some small bugs.
+In progress. Working with some small bugs such as playbin2 selecting the systemclock instead of the audio clock.
 
 === Alternate display modes ===
 '''Description'''
@@ -103,8 +103,6 @@ Not started.
 === Other ===
 * Make DURATION reporting in ''rsndvdsrc'' synchronised with the display, to avoid wackiness. At the moment, it's quite common to report (for example) that the 'current' duration is 10 seconds when playing a 30 second intro sequence, because the virtual machine has already entered the 'next' program and ''rsndvdsrc'' is reporting the duration from that. The correct fix for this is probably to have ''rsndvdsrc'' wait on the clock before ending a program, but it'll be tricky to get that right in the face of state changes (can't wait on the clock in PAUSED) and to avoid stuttering when the pipeline drains out. It might be easier to just implement the next point:
 
-* Shorten playbin queues in 'DVD mode'. There's no need to have 3 seconds of output buffers in playbin for ResinDVD - 2-3 video frames is more than sufficient buffering to avoid underflows, because ''rsndvdbin'' contains a multiqueue on the video and audio streams already. Making the amount of buffering shorter also means that the 'end' of the pipeline is much closer to playing the same position as the 'start' of the pipeline, which lessens the window where the virtual machine and the sinks might be playing in different program chains on the DVD.
-
-In progress in http://cgit.freedesktop.org/~thaytan/gst-plugins-base/
+* --(Shorten playbin queues in 'DVD mode'. There's no need to have 3 seconds of output buffers in playbin for ResinDVD - 2-3 video frames is more than sufficient buffering to avoid underflows, because ''rsndvdbin'' contains a multiqueue on the video and audio streams already. Making the amount of buffering shorter also means that the 'end' of the pipeline is much closer to playing the same position as the 'start' of the pipeline, which lessens the window where the virtual machine and the sinks might be playing in different program chains on the DVD.)-- '''DONE'''
 
 There are probably still other things that need implementing, and plenty of bugs to fix. Fill in the to TODO list as you find them.
