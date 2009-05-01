@@ -3,7 +3,7 @@
 To create the higher level device profiles we start from the XML format defined in the Arista transcoder. There are a few changes in the XML example below though from what Arista does today. First of all we replace all element names with GStreamer Caps and secondly we replace all element attribute settings with
 preset calls. Finally we expand the XML format to include all allowed choices for a given device, so that the application can offer the user other valid choices if they want to. Many GStreamer Caps are listed in the GstreamerCaps list.
 
-{{s
+{{{
 <?xml version="1.0"?>
 
 <device>
@@ -19,20 +19,22 @@ preset calls. Finally we expand the XML format to include all allowed choices fo
     <default>Normal</default>
     
     <preset>
-        <name>Low</name>
-        <container></container>
+        <name>Low</name> # This is a low quality output setting
+        <container>video/quicktime,variant=apple</container>
         <extension>m4v</extension>
         <audio>
-            <name>faac</name>
-            <passes>
-                <pass>bitrate=96000 profile=LC</pass>
-            </passes>
+            <name>audio/mpeg,mpegversion=4</name>
+            <presets>
+                <preset>ipod_baseline</preset> # this will call a preset which sets something like 'profile=LC'
+                <preset>ipod_low</preset> # this will call a preset which sets something like 'bitrate=96000'
+            </presets>
             <channels>1, 2</channels>
         </audio>
         <video>
-            <name>x264enc</name>
-            <passes>
-                <pass>pass=qual quantizer=27 subme=4 cabac=0 threads=0</pass>
+            <name>video/x-h264</name>
+            <presets>
+                <preset>ipod_baseline</preset> # This will call a preset with values like: 'cabac=0'
+                <preset>ipod_low</preset> # This will add the values of 'pass=qual quantizer=27 subme=4 threads=0'
             </passes> 
             <width>320, 640</width>
             <height>240, 480</height>
@@ -41,20 +43,22 @@ preset calls. Finally we expand the XML format to include all allowed choices fo
     </preset>
     <preset>
         <name>Normal</name>
-        <container>ffmux_mp4</container>
+        <container>video/quicktime,variant=apple</container>
         <extension>m4v</extension>
         <audio>
-            <name>faac</name>
-            <passes>
-                <pass>bitrate=128000 profile=LC</pass>
-            </passes>
+            <name>audio/mpeg,mpegversion=4</name>
+            <presets>
+                <preset>ipod_baseline</preset> # this will call a preset which sets something like 'profile=LC'
+                <preset>ipod_normal</preset> # this will call a preset which sets something like 'bitrate=128000'
+            </presets>
             <channels>1, 2</channels>
         </audio>
         <video>
-            <name>x264enc</name>
-            <passes>
-                <pass>pass=qual quantizer=21 me=umh subme=6 ref=3 cabac=0 threads=0</pass>
-            </passes>
+            <name>video/x-h264</name>
+            <presets>
+                <preset>ipod_baseline</preset> # This will call a preset with values like: 'cabac=0'
+                <preset>ipod_normal</preset> # will call a preset with values like 'pass=qual quantizer=21 me=umh subme=6 ref=3 threads=0'
+            </presets>
             <width>320, 640</width>
             <height>240, 480</height>
             <rate>1, 30</rate>
