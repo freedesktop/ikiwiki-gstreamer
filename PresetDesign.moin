@@ -37,7 +37,7 @@ subme=4
 threads=0
 }}}
 
-This file, using the GKeyFile format lists a few attribute values for H264 encoding using x264enc. The name for the one profile in this file is 'just-an-example'. The name can be anything and one thing we will look at further in these pages in a naming standard for presets when done in relation to 
+This file, using the GKeyFile format lists a few attribute values for H264 encoding using x264enc. The name for the one profile in this file is 'ipod_baseline'. The name can be anything and one thing we will look at further in these pages in a naming standard for presets when done in relation to 
 hardware devices, like Nokia 800/810, Playstation Portable, iPod and so on. The important thing to remember is that if 'just-an-example' is our 'iPod' profile we could create an 'iPod' profile for another H264 encoder too, and the application developer would know that no matter what encoder the user got,
 but using the iPod profile we can ensure the files work on an iPod.
 
