@@ -2,7 +2,7 @@ Presets are a fairly straightforward idea conceptually, but have lot of practica
 levels of presets we are trying to put together and discuss some of the practical implications.
 
 '''GStreamer presets interface''';
-Design details and more on the GStreamer presets interface can be found on the BuzzTard [[http://www.buzztard.org/index.php/Preset_handling_interface|Present Interface]] pages.
+Design details and more on the GStreamer presets interface can be found on the Buzztard [[http://www.buzztard.org/index.php/Preset_handling_interface|Present Interface]] pages.
 
 There are multiple goals of the GStreamer presets interface, among them to function as a higher level abstraction for setting
 attribute values for elements which does the same thing, but with different implementations. For example we can have multiple
