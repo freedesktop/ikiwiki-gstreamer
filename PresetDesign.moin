@@ -53,4 +53,7 @@ print dingdong
 
 
 '''Device level presets''';
-The GStreamer presets described above takes care 
+
+The GStreamer presets described above takes care of settings on a per element basis. But there are quite a lot of values that doesn't 
+make sense to set in this level and we also need to combine the element based presets to a device level preset in order to have a preset
+for encoding a video for a iPod for instance. We look at that on the DeviceProfile: page.
