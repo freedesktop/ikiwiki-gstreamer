@@ -42,7 +42,7 @@ hardware devices, like Nokia 800/810, Playstation Portable, iPod and so on. The 
 by using the iPod profile we can ensure the files work on an iPod.
 
 One of the hard problems which these profiles do not solve is of course the problem of creating optimal files versus files that 'work'. First of all what is optimal is of course subjective, but even so the tradeoffs you do with one encoder might not be reproducible with another, so you will get different results 
-depending on different encoders. In these pages we will aim at creating presets which are known to work well for various devices based on what people already do out there, to make the presets work well on the devices in question, creating presets which aim at producing close to identical output with different encoder implementations it outside of our scope.
+depending on different encoders. In these pages we will aim at creating presets which are known to work well for various devices based on what people already do out there, to make the presets work well on the devices in question. Creating presets which aim at producing close to identical output with different encoder implementations it outside of our scope.
 
 If an application encounters multiple encoders of the same type in a GStreamer application we recommend the following ordering of them:
 with preset
