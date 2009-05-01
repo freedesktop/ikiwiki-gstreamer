@@ -33,7 +33,9 @@ This list is not complete, but lists some of the unique caps identifies in GStre
 'audio/x-vorbis' 
 'audio/x-gsm'
 }}}
-== Container caps == 
+
+== Container Caps == 
+
 {{{
 'audio/x-wav' 
 'video/x-matroska'
