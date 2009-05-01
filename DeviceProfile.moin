@@ -68,3 +68,5 @@ The presets called in this XML file is discussed in PresetDesign
     </preset>
 </device>
 }}}
+
+The general idea here is that you combine two presets for each device profile. One is the baseline profile which contains the minimum values to create files that work on a given device. While the second preset it a more quality oriented preset which lets the user choose between low, normal (and possibly high) quality parameters. One question which needs further thought it how to deal with variations within a device type, maybe 'iPod' is to generic for instance. We could also add another gstreamer preset for varation values if needed.
