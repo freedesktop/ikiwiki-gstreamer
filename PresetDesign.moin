@@ -15,15 +15,27 @@ changed for different elements. Lets look at an example preset (usually presets 
 version=0.10
 element-name=GstX264Enc
 
-# see http://mewiki.project357.com/wiki/X264_Settings for x264 properties
-
-# lower default bitrate
-# turn of cabac for devices that do not support main-profile
-[just-an-example]
-_meta/comment=use for mobile pocket video player
-_meta/device=pocketvideo
-bitrate=1024
+[ipod_baseline]
+_meta/comment=baseline preset for iPods
+_meta/device=iPod
 cabac=false
+
+[ipod_low]
+_meta/comment=low quality presets for iPods
+pass=qual
+quantizer=21
+me=umh
+subme=6
+ref=3
+threads=0
+
+[ipod_normal]
+_meta/comment=normal quality preset for iPods
+pass=qual
+quantizer=27
+subme=4
+cabac=0
+threads=0
 }}}
 
 This file, using the GKeyFile format lists a few attribute values for H264 encoding using x264enc. The name for the one profile in this file is 'just-an-example'. The name can be anything and one thing we will look at further in these pages in a naming standard for presets when done in relation to 
