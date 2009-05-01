@@ -25,4 +25,4 @@ Space for drafting new features.
   * DebugHelperMenu: Menu to add to menu bar in debug version
 
  * Presets
-  * Combining GStreamer element presets with devices
+  * PresetDesign: Combining GStreamer element presets with devices
