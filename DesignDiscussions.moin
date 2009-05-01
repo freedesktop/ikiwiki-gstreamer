@@ -23,3 +23,6 @@ Space for drafting new features.
   * VideoWidget: General Gtk video widget
   * EncodingProfilesUi: Encoding profiles UI for editing, selecting, etc of encoding profiles
   * DebugHelperMenu: Menu to add to menu bar in debug version
+
+ * Presets
+  * Combining GStreamer element presets with devices
