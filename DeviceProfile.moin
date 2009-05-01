@@ -1,9 +1,9 @@
 = Device Profiles =
 
 To create the higher level device profiles we start from the XML format defined in the Arista transcoder. There are a few changes in the XML example below though from what Arista does today. First of all we replace all element names with GStreamer Caps and secondly we replace all element attribute settings with
-preset calls. Finally we expand the XML format to include all allowed choices for a given device, so that the application can offer the user other valid choices if they want to. Many GStreamer Caps are listed in the GStreamerCapsList:
+preset calls. Finally we expand the XML format to include all allowed choices for a given device, so that the application can offer the user other valid choices if they want to. Many GStreamer Caps are listed in the GstreamerCaps list.
 
-{{{
+{{s
 <?xml version="1.0"?>
 
 <device>
