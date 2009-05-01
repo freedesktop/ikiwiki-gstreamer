@@ -34,7 +34,6 @@ _meta/comment=normal quality preset for iPods
 pass=qual
 quantizer=27
 subme=4
-cabac=0
 threads=0
 }}}
 
