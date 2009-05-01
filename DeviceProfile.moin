@@ -11,7 +11,7 @@ The presets called in this XML file is discussed in PresetDesign
 <device>
     <make>Apple</make>
     <model>iPod</model>
-    <description>H.264/AAC for Apple iPod / iPhone</description>
+    <description>Profile for Apple iPod / iPhone</description>
     <author>
         <name>Joe Example</name>
         <email>mr.example@example.org</email>
