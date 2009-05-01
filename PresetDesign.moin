@@ -1,0 +1,56 @@
+Presets are a fairly straightforward idea conceptually, but have lot of practical issues with them. These pages are meant to outline the various 
+levels of presets we are trying to put together and discuss some of the practical implications.
+
+'''GStreamer presets interface''';
+Design details and more on the GStreamer presets interface can be found on the BuzzTard [[http://www.buzztard.org/index.php/Preset_handling_interface|Present Interface]] pages.
+
+There are multiple goals of the GStreamer presets interface, among them to function as a higher level abstraction for setting
+attribute values for elements which does the same thing, but with different implementations. For example we can have multiple
+Dirac encoders which all output Dirac video, but due to the implementation details they do not share the same properties. So an 
+application developer can not rely on that the properties working well with one implementation will work with another. The presets 
+interface tries to solve this by allowing the elements to define presets which can be called the same, but which has different properties
+changed for different elements. Lets look at an example preset (usually presets are stored in /usr/share/gstreamer-0.10/presets):
+{{{
+[_presets_]
+version=0.10
+element-name=GstX264Enc
+
+# see http://mewiki.project357.com/wiki/X264_Settings for x264 properties
+
+# lower default bitrate
+# turn of cabac for devices that do not support main-profile
+[just-an-example]
+_meta/comment=use for mobile pocket video player
+_meta/device=pocketvideo
+bitrate=1024
+cabac=false
+}}}
+
+This file, using the GKeyFile format lists a few attribute values for H264 encoding using x264enc. The name for the one profile in this file is 'just-an-example'. The name can be anything and one thing we will look at further in these pages in a naming standard for presets when done in relation to 
+hardware devices, like Nokia 800/810, Playstation Portable, iPod and so on. The important thing to remember is that if 'just-an-example' is our 'iPod' profile we could create an 'iPod' profile for another H264 encoder too, and the application developer would know that no matter what encoder the user got,
+but using the iPod profile we can ensure the files work on an iPod.
+
+One of the hard problems which these profiles do not solve is of course the problem of creating optimal files versus files that 'work'. First of all what is optimal is of course subjective, but even so the tradeoffs you do with one encoder might not be reproducible with another, so you will get different results 
+depending on different encoders. In these pages we will aim at creating presets which are known to work well for various devices based on what people already do out there, to make the presets work well on the devices in question, creating presets which aim at producing close to identical output with different encoder implementations it outside of our scope.
+
+If an application encounters multiple encoders of the same type in a GStreamer application we recommend the following ordering of them:
+with preset
+highest rank
+Random
+
+This means if only one encoder got the preset you are looking for you pick that. If more than one or none of the encoders got presets, then you sort on 
+the GStreamer factory Rank value of the encoder. If more than one encoder got a preset and a rank or neither of those, then you just choose at random.
+The application developer can of course in the case where no presets exists, hardcode property values for a known encoder, but we recommend that in such
+situations, making a patch to add presets support to the element in question and adding the wanted preset file is the best long term solution.
+
+The python psuedo code below shows how to load this preset onto the x264enc element. The print statement below would simply return True if the preset 
+exists. So in your code you just load the preset(s) you want onto the element(s) you want start your pipeline. To figure out which presets exist, looking at the files in /usr/share/gstreamer-0.10/presets is probably the easiest solution.
+{{{
+element = gst.element_factory_make("x264enc")       
+dingdong = element.load_preset("just-an-example")
+print dingdong
+}}}
+
+
+'''Device level presets''';
+The GStreamer presets described above takes care 
