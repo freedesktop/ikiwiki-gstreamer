@@ -1,9 +1,9 @@
 = Device Profiles =
 
-To create the higher level device profiles we start from the XML format defined in the Arista transcoder. There are a few changes in the XML example below though from what Arista does today. First of all we replace all element names with GStreamer Caps and secondly we replace all element attribute settings with
+To create the higher level device profiles we start from the XML format defined in the [[http://programmer-art.org/projects/arista-transcoder|Arista]] transcoder. There are a few changes in the XML example below though from what Arista does today. First of all we replace all element names with GStreamer Caps and secondly we replace all element attribute settings with
 preset calls. Finally we expand the XML format to include all allowed choices for a given device, so that the application can offer the user other valid choices if they want to. Many GStreamer Caps are listed in the GstreamerCaps list.
 
-The presets called in this XML file is discussed in PresetDesign
+The presets called in this XML file in each pass are discussed in PresetDesign
 
 {{{
 <?xml version="1.0"?>
@@ -26,18 +26,21 @@ The presets called in this XML file is discussed in PresetDesign
         <extension>m4v</extension>
         <audio>
             <name>audio/mpeg,mpegversion=4</name>
-            <presets>
-                <preset>ipod_baseline</preset> # this will call a preset which sets something like 'profile=LC'
-                <preset>ipod_low</preset> # this will call a preset which sets something like 'bitrate=96000'
-            </presets>
+            <passes>
+                <pass>
+                    quality_low,profile_low_complexity
+                </pass>
+            </passes>
             <channels>1, 2</channels>
         </audio>
         <video>
             <name>video/x-h264</name>
-            <presets>
-                <preset>ipod_baseline</preset> # This will call a preset with values like: 'cabac=0'
-                <preset>ipod_low</preset> # This will add the values of 'pass=qual quantizer=27 subme=4 threads=0'
-            </passes> 
+            <passes>
+                <pass>
+                    quality_low,profile_baseline
+                </pass>
+            </passes>
+            </passes>
             <width>320, 640</width>
             <height>240, 480</height>
             <rate>1, 25</rate>
@@ -49,18 +52,20 @@ The presets called in this XML file is discussed in PresetDesign
         <extension>m4v</extension>
         <audio>
             <name>audio/mpeg,mpegversion=4</name>
-            <presets>
-                <preset>ipod_baseline</preset> # this will call a preset which sets something like 'profile=LC'
-                <preset>ipod_normal</preset> # this will call a preset which sets something like 'bitrate=128000'
-            </presets>
+            <passes>
+                <pass>
+                    quality_normal,profile_low_complexity
+                </pass>
+            </passes>
             <channels>1, 2</channels>
         </audio>
         <video>
             <name>video/x-h264</name>
-            <presets>
-                <preset>ipod_baseline</preset> # This will call a preset with values like: 'cabac=0'
-                <preset>ipod_normal</preset> # will call a preset with values like 'pass=qual quantizer=21 me=umh subme=6 ref=3 threads=0'
-            </presets>
+            <passes>
+                <pass>
+                    quality_normal,profile_baseline
+                </pass>
+            </passes>
             <width>320, 640</width>
             <height>240, 480</height>
             <rate>1, 30</rate>
@@ -69,4 +74,10 @@ The presets called in this XML file is discussed in PresetDesign
 </device>
 }}}
 
-The general idea here is that you combine two presets for each device profile. One is the baseline profile which contains the minimum values to create files that work on a given device. While the second preset it a more quality oriented preset which lets the user choose between low, normal (and possibly high) quality parameters. One question which needs further thought it how to deal with variations within a device type, maybe 'iPod' is to generic for instance. We could also add another gstreamer preset for varation values if needed.
+The general idea here is that you can combine any number of GStreamer element presets to build the device output. They are set in the order specified (e.g. if quality_normal sets bframes=3 and then you set profile_baseline which sets bframes=0, you will get bframes=0, so it's always a good idea to put quality values before codec profile values).
+
+Using this simple format the presets for PSP, Nokia devices, the computer, etc are almost identical to the above and require no further modifications to the element presets.
+
+One question which needs further thought it how to deal with variations within a device type, maybe 'iPod' is too generic for instance. We could also add another gstreamer preset for varation values if needed.
+
+Also - what about handling multiple passes - the above can handle it by defining more <pass> elements but we'd need element profiles like e.g. 'quality_normal_2pass' and I guess setting a bitrate.
