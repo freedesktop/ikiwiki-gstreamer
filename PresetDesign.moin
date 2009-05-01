@@ -39,7 +39,7 @@ threads=0
 
 This file, using the GKeyFile format lists a few attribute values for H264 encoding using x264enc. The name for the one profile in this file is 'ipod_baseline'. The name can be anything and one thing we will look at further in these pages in a naming standard for presets when done in relation to 
 hardware devices, like Nokia 800/810, Playstation Portable, iPod and so on. The important thing to remember is that we could create an 'ipod_baseline' profile for another H264 encoder too, and the application developer would know that no matter what encoder the user got,
-but using the iPod profile we can ensure the files work on an iPod.
+by using the iPod profile we can ensure the files work on an iPod.
 
 One of the hard problems which these profiles do not solve is of course the problem of creating optimal files versus files that 'work'. First of all what is optimal is of course subjective, but even so the tradeoffs you do with one encoder might not be reproducible with another, so you will get different results 
 depending on different encoders. In these pages we will aim at creating presets which are known to work well for various devices based on what people already do out there, to make the presets work well on the devices in question, creating presets which aim at producing close to identical output with different encoder implementations it outside of our scope.
