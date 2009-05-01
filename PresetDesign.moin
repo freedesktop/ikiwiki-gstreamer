@@ -15,13 +15,31 @@ changed for different elements. Lets look at an example preset (usually presets 
 version=0.10
 element-name=GstX264Enc
 
-[ipod_baseline]
-_meta/comment=baseline preset for iPods
-_meta/device=iPod
+[profile_baseline]
+_meta/comment=Baseline Profile
+bframes=0
 cabac=false
+dct8x8=false
 
-[ipod_low]
-_meta/comment=low quality presets for iPods
+[profile_main]
+_meta/comment=Main Profile
+cabac=true
+dct8x8=false
+
+[profile_high]
+_meta/comment=High Profile
+cabac=true
+dct8x8=true
+
+[quality_low]
+_meta/comment=Low quality
+pass=qual
+quantizer=27
+subme=4
+threads=0
+
+[quality_normal]
+_meta/comment=Normal quality
 pass=qual
 quantizer=21
 me=umh
@@ -29,28 +47,39 @@ subme=6
 ref=3
 threads=0
 
-[ipod_normal]
-_meta/comment=normal quality preset for iPods
+[quality_high]
+_meta/comment=High quality
 pass=qual
-quantizer=27
+quantizer=18
+me=umh
+subme=6
+ref=3
+threads=0
+
+[quality_live]
+_meta/comment=Live source
+pass=cbr
+bitrate=2048
+me=hex
 subme=4
 threads=0
 }}}
 
-This file, using the GKeyFile format lists a few attribute values for H264 encoding using x264enc. The name for the one profile in this file is 'ipod_baseline'. The name can be anything and one thing we will look at further in these pages in a naming standard for presets when done in relation to 
-hardware devices, like Nokia 800/810, Playstation Portable, iPod and so on. The important thing to remember is that we could create an 'ipod_baseline' profile for another H264 encoder too, and the application developer would know that no matter what encoder the user got,
-by using the iPod profile we can ensure the files work on an iPod.
+This file, using the GKeyFile format lists a few attribute values for H264 encoding using x264enc. The name for the one profile in this file is 'profile_baseline'. The name can be anything and one thing we will look at further in these pages in a naming standard for presets when done in relation to 
+hardware devices, like Nokia 800/810, Playstation Portable, iPod and so on. The important thing to remember is that we could create an 'profile_baseline' profile for another H264 encoder too, and the application developer would know that no matter what encoder the user got,
+by using the Baseline Profile we can know the output will be H.264 Baseline. If a device needs more fine-grained options then a special preset can be made for it, and these devices should be listed somewhere publicly for new encoder developers.
 
 One of the hard problems which these profiles do not solve is of course the problem of creating optimal files versus files that 'work'. First of all what is optimal is of course subjective, but even so the tradeoffs you do with one encoder might not be reproducible with another, so you will get different results 
 depending on different encoders. In these pages we will aim at creating presets which are known to work well for various devices based on what people already do out there, to make the presets work well on the devices in question. Creating presets which aim at producing close to identical output with different encoder implementations it outside of our scope.
 
 If an application encounters multiple encoders of the same type in a GStreamer application we recommend the following ordering of them:
-with preset
-highest rank
-Random
+
+ * with preset
+ * highest rank
+ * first in list or first alphabetically (please not random)
 
 This means if only one encoder got the preset you are looking for you pick that. If more than one or none of the encoders got presets, then you sort on 
-the GStreamer factory Rank value of the encoder. If more than one encoder got a preset and a rank or neither of those, then you just choose at random.
+the GStreamer factory Rank value of the encoder. If more than one encoder got a preset and a rank or neither of those, then you just choose the first (by whatever ordering algorithm).
 The application developer can of course in the case where no presets exists, hardcode property values for a known encoder, but we recommend that in such
 situations, making a patch to add presets support to the element in question and adding the wanted preset file is the best long term solution.
 
@@ -58,7 +87,7 @@ The python psuedo code below shows how to load this preset onto the x264enc elem
 exists. So in your code you just load the preset(s) you want onto the element(s) you want start your pipeline. To figure out which presets exist, looking at the files in /usr/share/gstreamer-0.10/presets is probably the easiest solution.
 {{{
 element = gst.element_factory_make("x264enc")       
-dingdong = element.load_preset("ipod_baseline")
+dingdong = element.load_preset("profile_baseline")
 print dingdong
 }}}
 
