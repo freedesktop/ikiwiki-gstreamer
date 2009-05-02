@@ -40,7 +40,6 @@ The presets called in this XML file in each pass are discussed in PresetDesign
                     quality_low,profile_baseline
                 </pass>
             </passes>
-            </passes>
             <width>320, 640</width>
             <height>240, 480</height>
             <rate>1, 25</rate>
