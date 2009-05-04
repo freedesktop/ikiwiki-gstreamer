@@ -15,30 +15,30 @@ changed for different elements. Lets look at an example preset (usually presets 
 version=0.10
 element-name=GstX264Enc
 
-[profile_baseline]
+[Profile Baseline]
 _meta/comment=Baseline Profile
 bframes=0
 cabac=false
 dct8x8=false
 
-[profile_main]
+[Profile Main]
 _meta/comment=Main Profile
 cabac=true
 dct8x8=false
 
-[profile_high]
+[Profile High]
 _meta/comment=High Profile
 cabac=true
 dct8x8=true
 
-[quality_low]
+[Quality Low]
 _meta/comment=Low quality
 pass=qual
 quantizer=27
 subme=4
 threads=0
 
-[quality_normal]
+[Quality Normal]
 _meta/comment=Normal quality
 pass=qual
 quantizer=21
@@ -47,7 +47,7 @@ subme=6
 ref=3
 threads=0
 
-[quality_high]
+[Quality High]
 _meta/comment=High quality
 pass=qual
 quantizer=18
@@ -56,7 +56,7 @@ subme=6
 ref=3
 threads=0
 
-[quality_live]
+[Quality Live]
 _meta/comment=Live source
 pass=cbr
 bitrate=2048
