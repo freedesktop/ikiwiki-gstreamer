@@ -28,7 +28,7 @@ The presets called in this XML file in each pass are discussed in PresetDesign
             <name>audio/mpeg,mpegversion=4</name>
             <passes>
                 <pass>
-                    quality_low,profile_low_complexity
+                    Quality Low, Profile Low Complexity
                 </pass>
             </passes>
             <channels>1, 2</channels>
@@ -37,7 +37,7 @@ The presets called in this XML file in each pass are discussed in PresetDesign
             <name>video/x-h264</name>
             <passes>
                 <pass>
-                    quality_low,profile_baseline
+                    Quality Low, Profile Baseline
                 </pass>
             </passes>
             <width>320, 640</width>
@@ -53,7 +53,7 @@ The presets called in this XML file in each pass are discussed in PresetDesign
             <name>audio/mpeg,mpegversion=4</name>
             <passes>
                 <pass>
-                    quality_normal,profile_low_complexity
+                    Quality Normal,Profile Low Complexity
                 </pass>
             </passes>
             <channels>1, 2</channels>
@@ -62,7 +62,7 @@ The presets called in this XML file in each pass are discussed in PresetDesign
             <name>video/x-h264</name>
             <passes>
                 <pass>
-                    quality_normal,profile_baseline
+                    Quality Normal, Profile Baseline
                 </pass>
             </passes>
             <width>320, 640</width>
