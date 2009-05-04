@@ -80,3 +80,6 @@ Using this simple format the presets for PSP, Nokia devices, the computer, etc a
 One question which needs further thought it how to deal with variations within a device type, maybe 'iPod' is too generic for instance. We could also add another gstreamer preset for varation values if needed.
 
 Also - what about handling multiple passes - the above can handle it by defining more <pass> elements but we'd need element profiles like e.g. 'quality_normal_2pass' and I guess setting a bitrate.
+
+We also need to come up with a nice, but hopefully not to verbose way of including information about all supported codecs and containers formats in addition 
+to our recommended one.
