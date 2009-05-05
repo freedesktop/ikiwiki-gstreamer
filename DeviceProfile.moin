@@ -20,54 +20,56 @@ The presets called in this XML file in each pass are discussed in PresetDesign
     <icon>file://ipod.svg</icon>
     <default>Normal</default>
     
-    <profile>
-        <name>Low</name> # This is a low quality output setting
-        <container>video/quicktime,variant=apple</container>
-        <extension>m4v</extension>
-        <audio>
-            <name>audio/mpeg,mpegversion=4</name>
-            <presets>
-                <preset>Quality Low</preset>
-                <preset>Profile Low Complexity</preset>
-             </presets>
-            <channels>1, 2</channels>
-        </audio>
-        <video>
-            <name>video/x-h264</name>
+    <profiles>
+        <profile>
+            <name>Low</name> # This is a low quality output setting
+            <container>video/quicktime,variant=apple</container>
+            <extension>m4v</extension>
+            <audio>
+                <name>audio/mpeg,mpegversion=4</name>
                 <presets>
-                    <preset>Pass 2</preset>
                     <preset>Quality Low</preset>
+                    <preset>Profile Low Complexity</preset>
+                 </presets>
+                <channels>1, 2</channels>
+            </audio>
+            <video>
+                <name>video/x-h264</name>
+                    <presets>
+                        <preset>Pass 2</preset>
+                        <preset>Quality Low</preset>
+                        <preset>Profile Baseline</preset>
+                    </presets>
+                </passes>
+                <width>320, 640</width>
+                <height>240, 480</height>
+                <rate>1, 25</rate>
+            </video>
+        </profile>
+        <profile>
+            <name>Normal</name>
+            <container>video/quicktime,variant=apple</container>
+            <extension>m4v</extension>
+            <audio>
+                <name>audio/mpeg,mpegversion=4</name>
+                <presets>
+                    <preset>Quality Normal</preset>
+                    <preset>Profile Low Complexity</preset> 
+                </presets>
+                <channels>1, 2</channels>
+            </audio>
+            <video>
+                <name>video/x-h264</name>
+                <presets>
+                    <preset>Quality Normal</preset>
                     <preset>Profile Baseline</preset>
                 </presets>
-            </passes>
-            <width>320, 640</width>
-            <height>240, 480</height>
-            <rate>1, 25</rate>
-        </video>
-    </profile>
-    <profile>
-        <name>Normal</name>
-        <container>video/quicktime,variant=apple</container>
-        <extension>m4v</extension>
-        <audio>
-            <name>audio/mpeg,mpegversion=4</name>
-            <presets>
-                <preset>Quality Normal</preset>
-                <preset>Profile Low Complexity</preset> 
-            </presets>
-            <channels>1, 2</channels>
-        </audio>
-        <video>
-            <name>video/x-h264</name>
-            <presets>
-                <preset>Quality Normal</preset>
-                <preset>Profile Baseline</preset>
-            </presets>
-            <width>320, 640</width>
-            <height>240, 480</height>
-            <rate>1, 30</rate>
-        </video>
-    </profile>
+                <width>320, 640</width>
+                <height>240, 480</height>
+                <rate>1, 30</rate>
+            </video>
+        </profile>
+    </profiles>
 </device>
 }}}
 
