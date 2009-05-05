@@ -9,7 +9,7 @@ attribute values for elements which does the same thing, but with different impl
 Dirac encoders which all output Dirac video, but due to the implementation details they do not share the same properties. So an 
 application developer can not rely on that the properties working well with one implementation will work with another. The presets 
 interface tries to solve this by allowing the elements to define presets which can be called the same, but which has different properties
-changed for different elements. Lets look at an example preset (usually presets are stored in /usr/share/gstreamer-0.10/presets):
+changed for different elements. Lets look at an example preset (shipped presets are stored in /usr/share/gstreamer-0.10/presets, users own presets are stored under ~/.gstreamer-0.10/presets, if both exist, both are loaded and the user ones override the system wide ones):
 {{{
 [_presets_]
 version=0.10
