@@ -36,10 +36,12 @@ The presets called in this XML file in each pass are discussed in PresetDesign
         <video>
             <name>video/x-h264</name>
                 <pass>
-                   Pass 1
+                   <preset>Pass 1</preset>
                 </pass>
                 <pass>
-                    Pass 2, Quality Low, Profile Baseline
+                    <preset>Pass 2</preset>
+                    <preset>Quality Low</preset>
+                    <preset>Profile Baseline</preset>
                 </pass>
             </passes>
             <width>320, 640</width>
