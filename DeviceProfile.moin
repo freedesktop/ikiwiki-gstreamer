@@ -67,7 +67,7 @@ The presets called in this XML file in each pass are discussed in PresetDesign
             <height>240, 480</height>
             <rate>1, 30</rate>
         </video>
-    </profiles>
+    </profile>
 </device>
 }}}
 
@@ -89,19 +89,3 @@ To reach the archive [[http://mail.gnome.org/archives/gnome-multimedia/2009-May/
 
 Comments on the proposal should be sent there. The comments below will be moved to the mailing list and removed from 
 the wiki. So do not add more comments here.
-
-=== from Mike Smith ===
-
-The use of two different basic syntaxes (GKeyFile and XML) seems like unnecessary complexity. 
-
-You're suggesting using caps to describe encoder/muxer output, and then applying presets to a selected item. However, presets apply _only_ to specific elements, so that doesn't work at all.
-
-You provide no way to indicate what things are user-selectable - e.g. within these profiles, the user should be able to adjust bitrate, etc. But this isn't represented anywhere.
-
-I have no understanding of the passes section; it doesn't make any sense to me.
-
-The syntax of the various tags like channels is undefined. Probably we should just adopt gstreamer caps syntax, so you'd have something like {{{ 
-<channels>[1,6]</channels> or <channels>{1,2,6}</channels>
-}}}
-
-Not sure what else needs work yet.
