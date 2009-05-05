@@ -101,3 +101,20 @@ The syntax of the various tags like channels is undefined. Probably we should ju
 }}}
 
 Not sure what else needs work yet.
+
+=== from Stefan Kost ===
+
+Totally agree with Mike regarding the devce capabilities. What about even {{{
+video/x-h264, width=[320, 640], height=[240, 480], framerate=(fraction)1/30
+}}}
+
+Also agree that xml feature are slight overkill here. The purpose of the device profile is to describe the suggested format and limmitation for a certain device.
+
+On IRC I was suggesting to also take os-versions into account, so that we end up with profiles like this: {{{
+PC.WindowsXP      // use avi with mpeg4 and mp3
+PC.WindowsVista   // use asf with wmv and wma
+PC.Linux          // use ogg with theora and vorbis
+N8x0.Maemo4       // use avi with mpeg4 and mp3
+N8x0.Maemo5       // use mp4 with h264 and aac
+}}}
+It could be consided to have a unversioned fallback (N8x0 that even could be a symlink incase someone does not know the version).
