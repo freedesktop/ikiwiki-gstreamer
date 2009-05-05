@@ -8,12 +8,21 @@ There are multiple goals of the GStreamer presets interface, among them to funct
 attribute values for elements which does the same thing, but with different implementations. For example we can have multiple
 Dirac encoders which all output Dirac video, but due to the implementation details they do not share the same properties. So an 
 application developer can not rely on that the properties working well with one implementation will work with another. The presets 
-interface tries to solve this by allowing the elements to define presets which can be called the same, but which has different properties
+interface tries to solve this by allowing the elements to define presets which can be named the same, but which has different properties
 changed for different elements. Lets look at an example preset (shipped presets are stored in /usr/share/gstreamer-0.10/presets, users own presets are stored under ~/.gstreamer-0.10/presets, if both exist, both are loaded and the user ones override the system wide ones):
 {{{
 [_presets_]
 version=0.10
 element-name=GstX264Enc
+
+[Pass 1]
+pass=pass1
+
+[Pass 2]
+pass=pass2
+
+[Pass 3]
+pass=pass3
 
 [Profile Baseline]
 _meta/comment=Baseline Profile
@@ -65,9 +74,13 @@ subme=4
 threads=0
 }}}
 
-This file, using the GKeyFile format lists a few attribute values for H264 encoding using x264enc. The name for the one profile in this file is 'Profile Baseline'. The name can be anything (its what a ui would show to the user) and one thing we will look at further in these pages in a naming standard for presets when done in relation to 
-hardware devices, like Nokia 800/810, Playstation Portable, iPod and so on. The important thing to remember is that we could create an 'profile_baseline' profile for another H264 encoder too, and the application developer would know that no matter what encoder the user got,
+This file, using the GKeyFile format lists a few attribute values for H264 encoding using x264enc. The name for the one profile in this file is 'Profile Baseline'. The name can be anything (its what a ui would show to the user) and one thing we will look at further in these pages in a naming standard for presets when done in relation to hardware devices, like Nokia 800/810, Playstation Portable, iPod and so on. The important thing to remember is that we could create an 'profile_baseline' profile for another H264 encoder too, and the application developer would know that no matter what encoder the user got,
 by using the Baseline Profile we can know the output will be H.264 Baseline. If a device needs more fine-grained options then a special preset can be made for it, and these devices should be listed somewhere publicly for new encoder developers.
+
+Things we know we want defined in as presets are official profiles of a codec like Main, Low Complexity and so on. If a codec can be encoded in multiple
+passes those too should be a set of presets. And we want human readable quality rankings. The last is in some sense the hardest as it is a mostly subjective rank. 
+
+Be aware that presets stack, so we should make sure no preset crash with another one for a given codec as we can instead stack them to give us what we need. 
 
 One of the hard problems which these profiles do not solve is of course the problem of creating optimal files versus files that 'work'. First of all what is optimal is of course subjective, but even so the tradeoffs you do with one encoder might not be reproducible with another, so you will get different results 
 depending on different encoders. In these pages we will aim at creating presets which are known to work well for various devices based on what people already do out there, to make the presets work well on the devices in question. Creating presets which aim at producing close to identical output with different encoder implementations it outside of our scope.
