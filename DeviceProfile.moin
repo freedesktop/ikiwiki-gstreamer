@@ -35,9 +35,11 @@ The presets called in this XML file in each pass are discussed in PresetDesign
         </audio>
         <video>
             <name>video/x-h264</name>
-            <passes>
                 <pass>
-                    Quality Low, Profile Baseline
+                   Pass 1
+                </pass>
+                <pass>
+                    Pass 2, Quality Low, Profile Baseline
                 </pass>
             </passes>
             <width>320, 640</width>
@@ -53,10 +55,7 @@ The presets called in this XML file in each pass are discussed in PresetDesign
             <name>audio/mpeg,mpegversion=4</name>
             <passes>
                 <pass>
-                   Pass 1
-                </pass>
-                <pass>
-                    Pass 2, Quality Normal,Profile Low Complexity
+                    Quality Normal,Profile Low Complexity
                 </pass>
             </passes>
             <channels>1, 2</channels>
