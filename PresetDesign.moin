@@ -14,11 +14,7 @@ changed for different elements. Lets look at an example preset (shipped presets 
 The most important part of this page is to define a dictionary for how to write these preset files. The current practice is to include the following elements
 if available. 
 
-1. Official profiles. A lot of codecs have official profiles like Profile Baseline, Profile Main, Profile Extended as an example of some of the
-   profiles defined for H264 as shown below. Codecs without any official profiles should not define such here. The names of these profiles are the 
-   same as the official names, with the first letter of each word capitalized. We do not use underscores or dashes in the profile names, whitespaces are
-   fine. As you see here and with the Quality profiles below, we put the generic word first, cause it makes things a bit easier in terms of parsing for
-   these values.
+1. Official profiles. A lot of codecs have official profiles like Profile Baseline, Profile Main, Profile Extended as an example of some of the profiles defined for H264 as shown below. Codecs without any official profiles should not define such here. The names of these profiles are the same as the official names, with the first letter of each word capitalized. We do not use underscores or dashes in the profile names, whitespaces are fine. As you see here and with the Quality profiles below, we put the generic word first, cause it makes things a bit easier in terms of parsing for these values.
 
 2. Quality levels. We define 3 quality level profiles, Quality Low,Quality Normal and Quality High. All codecs should define this. Since it is a subjective value try to choose values for these presets you feel would match the existing ones or google for 'best practice' examples. These three profiles should only be named Low, Normal and High.
 
