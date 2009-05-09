@@ -1,9 +1,8 @@
 = Device Profiles =
 
-To create the higher level device profiles we start from the XML format defined in the [[http://programmer-art.org/projects/arista-transcoder|Arista]] transcoder. There are a few changes in the XML example below though from what Arista does today. First of all we replace all element names with GStreamer Caps and secondly we replace all element attribute settings with
-preset calls. Finally we expand the XML format to include all allowed choices for a given device, so that the application can offer the user other valid choices if they want to. Many GStreamer Caps are listed in the GstreamerCaps list.
+To create the higher level device profiles we start from the XML format defined in the [[http://programmer-art.org/projects/arista-transcoder|Arista]] transcoder. There are a few changes in the XML example below though from what Arista does today. First of all we replace all element names with GStreamer Caps and secondly we replace all element attribute settings with preset calls. Finally we expand the XML format to include all allowed choices for a given device, so that the application can offer the user other valid choices if they want to. Many GStreamer Caps are listed in the GstreamerCaps list.
 
-The presets called in this XML file in each pass are discussed in PresetDesign
+To try to keep the discussion clear we always refer to these files as 'profiles' and the element specific GStreamer files as 'presets'. The presets called in this XML file in each pass are discussed in PresetDesign
 
 {{{
 <?xml version="1.0"?>
@@ -73,9 +72,9 @@ The presets called in this XML file in each pass are discussed in PresetDesign
 </device>
 }}}
 
-The general idea here is that you can combine any number of GStreamer element presets to build the device output. They are set in the order specified (e.g. if quality_normal sets bframes=3 and then you set profile_baseline which sets bframes=0, you will get bframes=0, so it's always a good idea to put quality values before codec profile values).
+The general idea here is that you can combine any number of GStreamer element presets to build the device profile. They are set in the order specified (e.g. if quality_normal sets bframes=3 and then you set profile_baseline which sets bframes=0, you will get bframes=0, so it's always a good idea to put quality values before codec profile values).
 
-Using this simple format the presets for PSP, Nokia devices, the computer, etc are almost identical to the above and require no further modifications to the element presets.
+Using this simple format the profiles for PSP, Nokia devices, the computer, etc are almost identical to the above and require no further modifications to the element presets.
 
 One question which needs further thought it how to deal with variations within a device type, maybe 'iPod' is too generic for instance. We could also add another gstreamer preset for varation values if needed.
 
