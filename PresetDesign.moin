@@ -9,7 +9,24 @@ attribute values for elements which does the same thing, but with different impl
 Dirac encoders which all output Dirac video, but due to the implementation details they do not share the same properties. So an 
 application developer can not rely on that the properties working well with one implementation will work with another. The presets 
 interface tries to solve this by allowing the elements to define presets which can be named the same, but which has different properties
-changed for different elements. Lets look at an example preset (shipped presets are stored in /usr/share/gstreamer-0.10/presets, users own presets are stored under ~/.gstreamer-0.10/presets, if both exist, both are loaded and the user ones override the system wide ones):
+changed for different elements. Lets look at an example preset (shipped presets are stored in /usr/share/gstreamer-0.10/presets, users own presets are stored under ~/.gstreamer-0.10/presets, if both exist, both are loaded and the user ones override the system wide ones).
+
+The most important part of this page is to define a dictionary for how to write these preset files. The current practice is to include the following elements
+if available. 
+
+1. Official profiles. A lot of codecs have official profiles like Profile Baseline, Profile Main, Profile Extended as an example of some of the
+   profiles defined for H264 as shown below. Codecs without any official profiles should not define such here. The names of these profiles are the 
+   same as the official names, with the first letter of each word capitalized. We do not use underscores or dashes in the profile names, whitespaces are
+   fine. As you see here and with the Quality profiles below, we put the generic word first, cause it makes things a bit easier in terms of parsing for
+   these values.
+
+2. Quality levels. We define 3 quality level profiles, Quality Low,Quality Normal and Quality High. All codecs should define this. Since it is a subjective value try to choose values for these presets you feel would match the existing ones or google for 'best practice' examples. These three profiles should only be named Low, Normal and High.
+
+3. Passes. If the codecs support multipass encoding the various passes should be defined here. These profiles should be named  - Pass X - with X being replaced for each level of multipass encoding offered.
+
+4. Custom presets. We want to try to avoid these as far as possible, but in some cases we might not be able to get the output we need by combining the above
+   profiles. In that case you are allowed to create a special profile to address that, like WeirdPhoneXYZ - which sets bitrate to the only allowed value for Weird phone XYZ for example. Such profiles should be submitted into bugzilla and have had some discussion before getting added though.
+
 {{{
 [_presets_]
 version=0.10
@@ -64,21 +81,11 @@ me=umh
 subme=6
 ref=3
 threads=0
-
-[Quality Live]
-_meta/comment=Live source
-pass=cbr
-bitrate=2048
-me=hex
-subme=4
-threads=0
 }}}
 
-This file, using the GKeyFile format lists a few attribute values for H264 encoding using x264enc. The name for the one profile in this file is 'Profile Baseline'. The name can be anything (its what a ui would show to the user) and one thing we will look at further in these pages in a naming standard for presets when done in relation to hardware devices, like Nokia 800/810, Playstation Portable, iPod and so on. The important thing to remember is that we could create an 'profile_baseline' profile for another H264 encoder too, and the application developer would know that no matter what encoder the user got,
-by using the Baseline Profile we can know the output will be H.264 Baseline. If a device needs more fine-grained options then a special preset can be made for it, and these devices should be listed somewhere publicly for new encoder developers.
-
-Things we know we want defined in as presets are official profiles of a codec like Main, Low Complexity and so on. If a codec can be encoded in multiple
-passes those too should be a set of presets. And we want human readable quality rankings. The last is in some sense the hardest as it is a mostly subjective rank. 
+This file, using the GKeyFile format lists a few attribute values for H264 encoding using x264enc.The important thing to remember is that we could create 
+a 'Profile Baseline' for another H264 encoder also, and the application developer would know that no matter what encoder ended up being used on a specific
+users computer, by using the Profile Baseline preset she can know the output will be H.264 Baseline compliant. If a device needs more fine-grained options then a special preset can be made for it, and these devices should be listed somewhere publicly for new encoder developers.
 
 Be aware that presets stack, so we should make sure no preset crash with another one for a given codec as we can instead stack them to give us what we need. 
 
@@ -89,12 +96,10 @@ If an application encounters multiple encoders of the same type in a GStreamer a
 
  * with preset
  * highest rank
- * first in list or first alphabetically (please not random)
+ * whatever is found
 
 This means if only one encoder got the preset you are looking for you pick that. If more than one or none of the encoders got presets, then you sort on 
-the GStreamer factory Rank value of the encoder. If more than one encoder got a preset and a rank or neither of those, then you just choose the first (by whatever ordering algorithm).
-The application developer can of course in the case where no presets exists, hardcode property values for a known encoder, but we recommend that in such
-situations, making a patch to add presets support to the element in question and adding the wanted preset file is the best long term solution.
+the GStreamer factory Rank value of the encoder. If more than one encoder got a preset and a rank or neither of those, then you just choose the first (by whatever ordering algorithm). The application developer can of course in the case where no presets exists, hardcode property values for a known encoder, but we recommend that in such situations, making a patch to add presets support to the element in question and adding the wanted preset file is the best long term solution.
 
 The python psuedo code below shows how to load this preset onto the x264enc element. The print statement below would simply return True if the preset 
 exists. So in your code you just load the preset(s) you want onto the element(s) you want start your pipeline. To figure out which presets exist, looking at the files in /usr/share/gstreamer-0.10/presets is probably the easiest solution.
