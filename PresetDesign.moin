@@ -100,7 +100,7 @@ The python psuedo code below shows how to load this preset onto the x264enc elem
 exists. So in your code you just load the preset(s) you want onto the element(s) you want start your pipeline. To figure out which presets exist, looking at the files in /usr/share/gstreamer-0.10/presets is probably the easiest solution.
 {{{
 element = gst.element_factory_make("x264enc")       
-dingdong = element.load_preset("profile_baseline")
+dingdong = element.load_preset("Profile Baseline")
 print dingdong
 }}}
 
