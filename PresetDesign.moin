@@ -20,8 +20,7 @@ if available.
 
 3. Passes. If the codecs support multipass encoding the various passes should be defined here. These profiles should be named  - Pass X - with X being replaced for each level of multipass encoding offered.
 
-4. Custom presets. We want to try to avoid these as far as possible, but in some cases we might not be able to get the output we need by combining the above
-   profiles. In that case you are allowed to create a special profile to address that, like WeirdPhoneXYZ - which sets bitrate to the only allowed value for Weird phone XYZ for example. Such profiles should be submitted into bugzilla and have had some discussion before getting added though.
+4. Custom presets. We want to try to avoid these as far as possible, but in some cases we might not be able to get the output we need by combining the above profiles. In that case you are allowed to create a special profile to address that, like WeirdPhoneXYZ - which sets bitrate to the only allowed value for Weird phone XYZ for example. Such profiles should be submitted into bugzilla and have had some discussion before getting added though.
 
 {{{
 [_presets_]
