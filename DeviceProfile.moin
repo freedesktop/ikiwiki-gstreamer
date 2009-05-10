@@ -31,6 +31,7 @@ To try to keep the discussion clear we always refer to these files as 'profiles'
                     <preset>Profile Low Complexity</preset>
                  </presets>
                 <channels>1, 2</channels>
+                <audiorate>44100</audiorate>
             </audio>
             <video>
                 <name>video/x-h264</name>
@@ -56,6 +57,7 @@ To try to keep the discussion clear we always refer to these files as 'profiles'
                     <preset>Profile Low Complexity</preset> 
                 </presets>
                 <channels>1, 2</channels>
+                <audiorate>44100</audiorate>
             </audio>
             <video>
                 <name>video/x-h264</name>
