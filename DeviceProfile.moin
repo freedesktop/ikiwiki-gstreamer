@@ -35,12 +35,13 @@ To try to keep the discussion clear we always refer to these files as 'profiles'
             </audio>
             <video>
                 <name>video/x-h264</name>
+                <border>N</border>
+                <passes>1</passes>
                     <presets>
                         <preset>Pass 2</preset>
                         <preset>Quality Low</preset>
                         <preset>Profile Baseline</preset>
                     </presets>
-                </passes>
                 <width>320, 640</width>
                 <height>240, 480</height>
                 <rate>1, 25</rate>
@@ -61,6 +62,8 @@ To try to keep the discussion clear we always refer to these files as 'profiles'
             </audio>
             <video>
                 <name>video/x-h264</name>
+                <border>N</border>
+                <passes>2</passes> # Number of passes in multipass encoding
                 <presets>
                     <preset>Quality Normal</preset>
                     <preset>Profile Baseline</preset>
