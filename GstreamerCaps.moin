@@ -9,15 +9,14 @@ This list is not complete, but lists some of the unique caps identifies in GStre
 'audio/x-flac' 
 'audio/x-alaw' 
 'audio/x-speex' 
-'audio/mpeg,mpegversion=1,layer=3' 
 'audio/x-ac3' 
 'audio/x-alac' 
 'audio/mpeg,mpegversion=1,layer=2' 
 'audio/x-nellymoser' 
 'audio/x-gst_ff-sonic' 
 'audio/x-gst_ff-sonicls'
-'audio/x-wma,wmaversion=1' 
-'audio/x-wma,wmaversion=2' 
+'audio/x-wma,wmaversion=1' # This is WMA7
+'audio/x-wma,wmaversion=2' # This is WMA8
 'audio/x-dpcm,layout=roq' 
 'audio/x-adpcm,layout=adx' 
 'audio/x-adpcm,layout=g726' 
@@ -26,10 +25,10 @@ This list is not complete, but lists some of the unique caps identifies in GStre
 'audio/x-adpcm,layout=microsoft' 
 'audio/x-adpcm,layout=swf' 
 'audio/x-adpcm,layout=yamaha' 
-'audio/mpeg,mpegversion=4' 
-'audio/mpeg,mpegversion=1,layer=3' 
+'audio/mpeg,mpegversion=4'         # This is aac
+'audio/mpeg,mpegversion=1,layer=3' # This is mp3
 'audio/x-celt' 
-'audio/mpeg,mpegversion=[4, 2]' 
+'audio/mpeg,mpegversion=[4, 2]'  # This is aac
 'audio/x-vorbis' 
 'audio/x-gsm'
 }}}
@@ -62,7 +61,7 @@ This list is not complete, but lists some of the unique caps identifies in GStre
 'video/x-dirac' 
 'image/png' 
 'image/jpeg' 
-'video/x-smoke' 
+'video/x-smoke' # mjpeg variant developed by Wim Taymans
 'video/x-asus,asusversion=1'
 'video/x-asus,asusversion=2'
 'image/bmp' 
@@ -71,7 +70,7 @@ This list is not complete, but lists some of the unique caps identifies in GStre
 'video/x-ffv,ffvversion=1' 
 'video/x-gst_ff-ffvhuff' 
 'video/x-flash-screen' 
-'video/x-flash-video,flvversion=1' 
+'video/x-flash-video,flvversion=1' # This is Sorenson variation of h263+ also known as s263
 'video/x-h261' 
 'video/x-h263,variant=itu,h263version=h263'
 'video/x-h263,variant=itu,h263version=h263p' 
@@ -80,7 +79,7 @@ This list is not complete, but lists some of the unique caps identifies in GStre
 'image/jpeg' 
 'video/mpeg,mpegversion=1' 
 'video/mpeg,mpegversion=2'
-'video/mpeg,mpegversion=4' 
+'video/mpeg,mpegversion=4' # This is MPEG4 Part2
 'video/x-msmpeg,msmpegversion=41' 
 'video/x-msmpeg,msmpegversion=42' 
 'video/x-msmpeg,msmpegversion=43' 
