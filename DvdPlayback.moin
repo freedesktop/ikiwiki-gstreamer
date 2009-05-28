@@ -37,26 +37,13 @@ Furthermore, we need the playbin streaminfo property to reflect the available st
 
 ''' Status '''
 Currently, it's supported to send an internal event from ''rsndvdsrc'' and handle it in ''rsnstreamselector'' so that the subpicture and audio tracks can change when commanded to by DVD menu operations. This needs more work, to expose the stream info to players, so it can be changed from their menus.
- 
-=== Player UI integration ===
-'''Description'''
-
-Extend GStreamer so that it provides the set of operations needed to allow players to full support DVD features. Primarily, this means providing an API for executing operations like:
- * --(Jump to DVD Root/Title/Angle/Subpicture/Audio/Part menus)-- '''DONE'''
- * --(Switch Angle to 'n' - desirable to have an API for exposing the presence of multi-angle and number of angles, and notifying when it changes. Properties on playbin? Expose via the 'current-video' property as per 'Stream Switching'?)-- '''DONE'''
- * --(Skip to next/previous Chapter and Title)-- '''DONE'''
- * Others?
-
-'''Status'''
-Skip to next chapter/title are supported by seeking to in custom formats 'chapter' and 'title'.
-Jumping to menus and angle supported via GstNavigation extensions.
 
 === Switching Audio Decoder Bin ===
 '''Description'''
 Implement a bin which has a single input pad. When the incoming stream type changes (A52 to DTS to LPCM for e.g.), it needs to direct the stream to an appropriate audio decoder instance and then feed the output from the correct audio decoder. At the moment, all that's implemented is plugging a single decodebin2 in place of where this new ''rsnaudiodec'' element should be. Using a single decodebin2 instance means that the audio stream type can't change, so we are restricted to only playing A/52 streams.
 
 '''Status'''
-Not started
+underway - slomo is working on this
 
 === Audio Munger ===
 '''Description'''
@@ -75,24 +62,6 @@ In progress
 '''Status'''
 Time based seeking partially implemented - works for PGC's with a time-seek table, which is usually only the main movie.
 
-=== Multi-angle ===
-'''Description'''
-Provide a way to change angles.
-
-Previous attempts at DVD playback support have implemented this using a seek in a custom format, which works but has no notification mechanism to inform the application when the number of available angles changes, or when the current angle is changed automatically by the VM.
-
-It might be better to implement this using a 'current-video' property and some dummy entries in the stream-info array.
-
-'''Status'''
-Implemented via extensions to the GstNavigation interface in gst-plugins-base 0.10.23.
-
-=== Playbin2 Integration ===
-'''Description'''
-Make sure that playbin2 supports the same feature set as playbin.
-
-'''Status'''
-In progress. Working with some small bugs such as playbin2 selecting the systemclock instead of the audio clock.
-
 === Alternate display modes ===
 '''Description'''
 Implement 4:3 display modes eventually: Pan & Scan, Letterbox. Pan & Scan in particular needs cooperation from the mpeg video decoder, as they currently don't output the required information. Letterbox support involves downscaling the video vertically and inserting black. The only reason to do this is that some DVDs provide subtitles that display in the 'black letterbox' area instead of over the video. It's pretty low priority - on computers, it's usual to always display only in widescreen mode, and do letterboxing by not filling the whole screen.
@@ -103,6 +72,4 @@ Not started.
 === Other ===
 * Make DURATION reporting in ''rsndvdsrc'' synchronised with the display, to avoid wackiness. At the moment, it's quite common to report (for example) that the 'current' duration is 10 seconds when playing a 30 second intro sequence, because the virtual machine has already entered the 'next' program and ''rsndvdsrc'' is reporting the duration from that. The correct fix for this is probably to have ''rsndvdsrc'' wait on the clock before ending a program, but it'll be tricky to get that right in the face of state changes (can't wait on the clock in PAUSED) and to avoid stuttering when the pipeline drains out. It might be easier to just implement the next point:
 
-* --(Shorten playbin queues in 'DVD mode'. There's no need to have 3 seconds of output buffers in playbin for ResinDVD - 2-3 video frames is more than sufficient buffering to avoid underflows, because ''rsndvdbin'' contains a multiqueue on the video and audio streams already. Making the amount of buffering shorter also means that the 'end' of the pipeline is much closer to playing the same position as the 'start' of the pipeline, which lessens the window where the virtual machine and the sinks might be playing in different program chains on the DVD.)-- '''DONE'''
-
-There are probably still other things that need implementing, and plenty of bugs to fix. Fill in the to TODO list as you find them.
+There are probably still other things that need implementing, and bugs to fix. Fill in the to TODO list as you find them.
