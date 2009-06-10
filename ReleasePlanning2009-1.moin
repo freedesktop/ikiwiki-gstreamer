@@ -3,7 +3,7 @@
 Release schedule for the 1st half of 2009.
 
 == Summary Schedule ==
-This is the quick summary of the releases for the next 6 months. See below for the full schedule
+This is the quick summary of the releases for the 6 months January 2009 - June 2009. See below for the full schedule
 ||<style="text-align: center;"> '''Date''' || '''Task''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Jan 5 || '''Core/Base/Python/Bad freeze.''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Jan 19 || Core 0.10.22, Base 0.10.22, Python 0.10.14 Bad 0.10.10 release ||
