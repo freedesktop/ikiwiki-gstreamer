@@ -1,5 +1,7 @@
 == Submitting Patches ==
 
+||<#FFFF00> '''FIXME: update patch instructions for git''' ||
+
 === Where ===
 
 Please submit patches for GStreamer in [[http://bugzilla.gnome.org|GNOME bugzilla]]:
