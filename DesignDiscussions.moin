@@ -5,7 +5,6 @@ Space for drafting new features.
  * Core:
   * BufferMetadata: variable extra data keept with buffers.
   * NewCapsFields: discuss new caps fields
-  * GstControllerSynchronization: ???
 
  * Base classes:
   * GstBaseParse: parser base class
