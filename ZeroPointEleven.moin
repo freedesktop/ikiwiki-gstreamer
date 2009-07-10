@@ -41,6 +41,10 @@ It is expected that the transition from 0.10 to 0.11/0.12 will be much easier on
 === gst-plugins-base ===
 
  * gnomevfssrc/giosrc: default to iradio-mode=true and remove all iradio-* properties (same in souphttpsrc, neonhttpsrc etc.); post iradio tags on the bus
+ * application/x-ogm-{video|audio|sub} => audio/x-ogm, video/x-ogm, subtitle/x-ogm
+ * fix subparse/subtitle caps to subtitle/x-*
+ * fix qtdemux/mp4/m4a/3gp caps detection/typefinding
+ * fix ogg typefinding to match new mime/media types
 
 ==== libraries ====
 
@@ -49,4 +53,3 @@ It is expected that the transition from 0.10 to 0.11/0.12 will be much easier on
  * merge video bits from libgstinterfaces into libgstvideo
  * change GstPropertyProbe to be more useful and generic and move into core(?). I would be good if a probe could return multiple things, e.g. a "device" probe could return description strings in addition to the various devices found (so we can get rid of the silly device-name thing we do currently)
  * GstMixer is not thread-safe at all; return newly-allocated lists with ref'ed objects etc.; make GstMixerTrack derive from GstObject instead of GObject (so we can lock easily, and set the mixer as parent object); make functions return failure/success
- * caps: fix subparse/subtitle caps to subtitle/x-*
