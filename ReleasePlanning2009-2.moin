@@ -5,8 +5,8 @@ Release schedule for the 1st half of 2009.
 == Summary Schedule ==
 This is the quick summary of the releases for the 6 months June 2009 - December 2009. See below for the full schedule
 ||<style="text-align: center;"> '''Date''' || '''Task''' ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Jul 13 || '''Core/Base/Python/Bad freeze.''' ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Jul 27|| Core 0.10.24, Base 0.10.24, Python 0.10.16 (Bad 0.10.14 release maybe) ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Jul 14 || '''Core/Base/Python freeze.''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Jul 30|| Core 0.10.24, Base 0.10.24, Python 0.10.16 ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Aug 3 || '''Good/Bad freeze. 4 day plugin window opens''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Aug 17 || Good 0.10.16 release (Bad 0.10.15 maybe) ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Sep 7 || '''Ugly/FFmpeg/Bad freeze. 4 day plugin window opens''' ||
@@ -69,23 +69,19 @@ To support this, the schedule provides plugin move windows during which plugins 
 == Schedule ==
 ||<style="text-align: center;"> '''Week''' ||<style="text-align: center;"> '''Date''' || '''Task''' || '''Notes''' ||
 ||||||||<rowbgcolor="#dddddd"> '''January''' - ''Core/Base'' ||
-||<bgcolor="#9db8d2" style="text-align: center;" |8> '''29''' ||<bgcolor="#c5d2c8" style="text-align: center;" |4> Jul 13 || Core 0.10.23.2 pre-release tarball ||<bgcolor="#e0b6af" style="text-align: center;" |4> Core/Base/Python/Bad code freeze ||
+||<bgcolor="#9db8d2" style="text-align: center;" |6> '''29''' ||<bgcolor="#c5d2c8" style="text-align: center;" |3> Jul 14 || Core 0.10.23.2 pre-release tarball ||<bgcolor="#e0b6af" style="text-align: center;" |3> Core/Base/Python/Bad code freeze ||
 || Base 0.10.23.2 pre-release tarball ||
 || Python 0.10.15.2 pre-release tarball ||
-|| Bad 0.10.13.2 pre-release tarball ||
-||<bgcolor="#c5d2c8" style="text-align: center;" |4> Jul 16 || Core 0.10.23.3 pre-release tarball ||<style="text-align: center;" |4> ''If needed'' ||
+||<bgcolor="#c5d2c8" style="text-align: center;" |3> Jul 19 || Core 0.10.23.3 pre-release tarball ||<style="text-align: center;" |3> ''If needed'' ||
 || Base 0.10.23.3 pre-release tarball ||
 || Python 0.10.15.3 pre-release tarball ||
-|| Bad 0.10.13.3 pre-release tarball ||
-||<bgcolor="#9db8d2" style="text-align: center;" |4> '''30''' ||<bgcolor="#c5d2c8" style="text-align: center;" |4> Jul 20 || Core 0.10.23.4 pre-release tarball ||<style="text-align: center;" |4> ''If needed'' ||
+||<bgcolor="#9db8d2" style="text-align: center;" |3> '''30''' ||<bgcolor="#c5d2c8" style="text-align: center;" |3> Jul 24 || Core 0.10.23.4 pre-release tarball ||<style="text-align: center;" |3> ''If needed'' ||
 || Base 0.10.23.4 pre-release tarball ||
 || Python 0.10.15.4 pre-release tarball ||
-|| Bad 0.10.13.4 pre-release tarball ||
-||<bgcolor="#9db8d2" style="text-align: center;" |5> '''31''' ||<bgcolor="#c5d2c8" style="text-align: center;" |4> Jul 27 ||<style="text-align: center;"> '''Core 0.10.24 released''' ||<bgcolor="#e0b6af" style="text-align: center;"> Good/Bad/Ugly dependency freeze ||
+||<bgcolor="#9db8d2" style="text-align: center;" |4> '''31''' ||<bgcolor="#c5d2c8" style="text-align: center;" |3> Jul 30 ||<style="text-align: center;"> '''Core 0.10.24 released''' ||<bgcolor="#e0b6af" style="text-align: center;"> Good/Bad/Ugly dependency freeze ||
 ||<style="text-align: center;"> '''Base 0.10.24 released''' || ||
 ||<style="text-align: center;"> '''Python 0.10.16 released''' || ||
-||<style="text-align: center;"> '''Bad 0.10.14 released''' || ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Jul 28 || ||<bgcolor="#afb6e0" style="text-align: center;"> Core/Base/Python code thaw ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Jul 31 || ||<bgcolor="#afb6e0" style="text-align: center;"> Core/Base/Python code thaw ||
 ||||||||<rowbgcolor="#dddddd"> '''August''' - ''Good/Bad'' ||
 ||<bgcolor="#9db8d2" style="text-align: center;" |3> '''32''' ||<bgcolor="#c5d2c8" style="text-align: center;">Aug 3 || ||<bgcolor="#e0e0b6" style="text-align: center;"> Plugin Move Window Good<->Bad Opens ||
 ||<bgcolor="#c5d2c8" style="text-align: center;" |2>Aug 7 || Good 0.10.15.2 pre-release tarball ||<bgcolor="#e0b6af" style="text-align: center;"> Good/Bad code freeze ||
