@@ -14,3 +14,8 @@ On Ubuntu you might try these as well in addition to the above:
 {{{
 sudo apt-get build-dep gstreamer0.10-plugins-ugly-multiverse gtreamer0.10-plugins-bad-multiverse
 }}}
+
+For gst-plugins-gl:
+{{{
+sudo apt-get install libglew1.5-dev libpng12-dev
+}}}
