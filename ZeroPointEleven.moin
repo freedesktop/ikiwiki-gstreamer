@@ -37,6 +37,7 @@ It is expected that the transition from 0.10 to 0.11/0.12 will be much easier on
  * add GError * arguments to all synchronous API that may fail, so you get automatic exceptions for bindings (Tim: imho metadata annotation to throw an exception on FALSE/NULL returns would be sufficient, but it was categorically stated that this is the wrong approach and GError is the expected way to report exceptions)
  * Define what codec_data should mean for each format, try to be as consistent as possible.
  * base controller functionality in GstObject, only have the controlsources in a lib
+ * unit tests shouldn't use check symbols directly
 
 === gst-plugins-base ===
 
