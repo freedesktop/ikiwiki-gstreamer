@@ -7,15 +7,19 @@ This is the quick summary of the releases for the 6 months June 2009 - December 
 ||<style="text-align: center;"> '''Date''' || '''Task''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Jul 14 || '''Core/Base/Python freeze.''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Jul 30|| Core 0.10.24, Base 0.10.24, Python 0.10.16 ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Aug 3 || '''Good/Bad freeze. 4 day plugin window opens''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Aug 3 || 4 day Good <-> Bad plugin move window opens ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Aug 7 || '''Good/Bad freeze''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Aug 17 || Good 0.10.16 release (Bad 0.10.15 maybe) ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Sep 7 || '''Ugly/FFmpeg/Bad freeze. 4 day plugin window opens''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Sep 7 || 4 day Ugly <-> Bad plugin move window opens ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Sep 11 || '''Ugly/FFmpeg/Bad freeze. plugin move window closes''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Sep 21 || Ugly 0.10.13, FFmpeg 0.10.9, Bad 0.10.16 (if needed) release ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Oct 5 || '''Core/Base/Python freeze.''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Oct 19 || Core 0.10.25, Base 0.10.25, Python 0.10.17 release ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Nov 2 || '''Good/Bad freeze. 4 day plugin window opens''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Nov 2 || 4 day Good <-> Bad plugin move window opens ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Nov 6 || '''Good/Bad freeze. 4 day plugin window closes''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Nov 16 || Good 0.10.17, Bad 0.10.17 release ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Dec 7 || '''Ugly/FFmpeg/Bad freeze. 4 day plugin window opens''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Dec 7 || 4 day Ugly <-> Bad plugin window opens ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Dec 11 || '''Ugly/FFmpeg/Bad freeze. 4 day plugin move window closes''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Dec 21 || Ugly 0.10.14, FFmpeg 0.10.10, Bad 0.10.18 (if needed) release ||
 
 == Process ==
