@@ -20,10 +20,10 @@ This will roughly result in a schedule like this:
 
 (this is based on the original proposal to check after each release; Mike suggested to only check after every second release, but that doesn't really seem to change that much in practice)
 
- * '''0.10.23''', scheduled for release around 20-Apr-2009: GLib 2.14
+ * '''0.10.23''', released around 20-Apr-2009: GLib 2.14
  * check glib req in Apr 2009 => 2.16 
- * '''0.10.24''', scheduled for release around xx-Jul-2009: GLib 2.16
- * check glib req in July 2009 => 2.16
+ * '''0.10.24''', released around 04-Aug-2009: GLib 2.16
+ * check glib req in Aug 2009 => 2.16
  * '''0.10.25''', scheduled for release around xx-Oct-2009: GLib 2.16
  * check glib req in October 2009 => 2.18
  * '''0.10.26''', scheduled for release around xx-Jan-2010: GLib 2.18
@@ -33,6 +33,8 @@ This will roughly result in a schedule like this:
  * '''0.10.28''', scheduled for release around xx-Jul-2010: GLib 2.20
 
 ===  GLib major versions release dates (for reference) ===
+
+[[ftp://ftp.gnome.org/pub/GNOME/sources/glib/|(glib source directory on ftp.gnome.org)]]
 
  * '''2.12.1''': 22-Jul-2006
  * '''2.14.1''': 16-Sep-2007
