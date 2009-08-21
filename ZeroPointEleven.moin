@@ -27,7 +27,7 @@ Registry API needs to change a bit; we should rely less on structures and hide m
  * GST_TAG_LANGUAGE_CODE: use ISO-639-2 instead of ISO-639-1. Enforce this. Provide 639-1 => 639-2 table in libgsttag (ideally we'd require iso-codes and provide language_name=>code and code=>language_name functions too).
  * add GST_TAG_LANGUAGE for freeform language description, if setter doesn't know the code
  * we don't really have a way to distinguish transient/non-transient/fixed/non-fixed tags, ie. those which apply to the stream as a whole and are more or less fixed and those that only temporarily apply to the stream or parts of the stream (such as: per-video-frame metadata, current average bitrate for VBR streams etc.); there will be more occasions where we will want to be able to distinguish these and/or choose different delivery mechanisms; posting tag messages 30-times a second may not be ideal, for example
-
+ * API and design for rewriting/filtering tags: pretty hard to do right now, and we don't have API to make a GstTagSetter e.g. remove certain tags (other than reading the tags first and then setting new tags with REPLACE_ALL mode, but that's problematic and inconvenient if you want to change the tags on the fly, since you'd have to hook up event handlers in the streaming thread etc. etc. - it's all either impossible or very inconvenient currently)
 
 ==== miscellaneous ====
 
