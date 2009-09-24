@@ -13,6 +13,11 @@ There was a meeting discussing Gstreamer 1.0 at the Gran Canaria Desktop Summit 
 
 === core ===
 
+==== caps ====
+
+ * need way to handle e.g. width=[16,1024] with multiples of 8, or at least make e.g. videoscale ! videoenc negotiate right in cases like that
+ * need way to make clear whether a codec is strictly fixed framerate or not, so people don't feed e.g. variable framerate video into theoraenc (or just make those do what videorate does automagically behind the scenes?)
+
 ==== buffers ====
 
 see gstreamer/docs/design/draft-buffer2.txt
