@@ -43,7 +43,7 @@ Currently, it's supported to send an internal event from ''rsndvdsrc'' and handl
 Implement a bin which has a single input pad. When the incoming stream type changes (A52 to DTS to LPCM for e.g.), it needs to direct the stream to an appropriate audio decoder instance and then feed the output from the correct audio decoder. At the moment, all that's implemented is plugging a single decodebin2 in place of where this new ''rsnaudiodec'' element should be. Using a single decodebin2 instance means that the audio stream type can't change, so we are restricted to only playing A/52 streams.
 
 '''Status'''
-underway - slomo is working on this
+DONE
 
 === Audio Munger ===
 '''Description'''
@@ -61,6 +61,7 @@ In progress
  
 '''Status'''
 Time based seeking partially implemented - works for PGC's with a time-seek table, which is usually only the main movie.
+Chapter/Title seeking DONE
 
 === Alternate display modes ===
 '''Description'''
