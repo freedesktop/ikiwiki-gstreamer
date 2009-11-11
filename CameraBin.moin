@@ -1,5 +1,7 @@
 = CameraBin TODO =
 
+At some point we'd like to move camerabin to gst-plugins-good. CameraBin already has unit tests and documentation. It is currently in use on Nokia N900 and is considered for cheese. This page lists things that should be done before declaring it stable.
+
 == Planned Changes ==
 
 === camerasource baseclass ===
@@ -25,3 +27,8 @@ Lock settings, take various shots with some settings changed, merge single image
 
 === effect preview ===
 When adding effects to imagebin or videobin, we might want to get a preview on viewfiner for those too.
+
+
+----
+
+TODO: add more from http://live.gnome.org/Cheese/ThreeZero?action=AttachFile&do=get&target=cheese-threezero-meeting.log
