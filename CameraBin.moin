@@ -1,0 +1,27 @@
+= CameraBin TODO =
+
+== Planned Changes ==
+
+=== camerasource baseclass ===
+The embedded side has complex camera drivers that offer more functionality that classic v4l2. E.g. they might have parallel outputs at the same time. The idea here is to make a more complex camerasource api. This could be implemented as a linux-camerasource, reusing what we have in camerabin, or be implemented on top of a different api providing these features as a monolithic block.
+
+=== dataflow ===
+Right now (2009.11.11) we have a link from videobin back to viewfinder to so what we record. When we do the camerasource baseclass, we should move the input-selector to the linux implementation. Then we would have 3 modes:
+ * viewfinder
+ * imagecapture (keeps viewfinder running)
+ * videocapture (keeps viewfinder running)
+This is important for the cases where one has analyzers in e.g. the viewfinder-slot to get continous analysis results in videorecording or continous shooting.
+
+=== focusing ===
+We need more focus mode. Right now the API can start AF and get a signal when AF is done. There are also camera subsystems providing continous focusing, where we would just lock the AF on half press, adjust frame and shot.
+
+=== continous shooting ===
+Improve camerabin to do serial shooting as long as shutter is pressed.
+
+=== bracketing ===
+Lock settings, take various shots with some settings changed, merge single images with some filter.
+
+== Open Items ==
+
+=== effect preview ===
+When adding effects to imagebin or videobin, we might want to get a preview on viewfiner for those too.
