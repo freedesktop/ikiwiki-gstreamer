@@ -27,6 +27,9 @@ Improve camerabin to do serial shooting as long as shutter is pressed.
 === bracketing ===
 Lock settings, take various shots with some settings changed, merge single images with some filter.
 
+=== recording timestamps ===
+Try pushing a newsegment to videobin, instead of rebasing timestamps with a buffer-probe.
+
 == Open Items ==
 
 === effect preview ===
