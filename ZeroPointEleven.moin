@@ -20,7 +20,7 @@ There was a meeting discussing Gstreamer 1.0 at the Gran Canaria Desktop Summit 
 
 ==== buffers ====
 
-see gstreamer/docs/design/draft-buffer2.txt
+see [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/design/draft-buffer2.txt|gstreamer/docs/design/draft-buffer2.txt]]
 
 ==== registry ====
 
