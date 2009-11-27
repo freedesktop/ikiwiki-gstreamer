@@ -1,28 +1,28 @@
 = CameraBin TODO =
 
-At some point we'd like to move camerabin to gst-plugins-good. CameraBin already has unit tests and documentation. It is currently in use on Nokia N900 and is considered for cheese. This page lists things that should be done before declaring it stable.
+At some point we'd like to move CameraBin to gst-plugins-good. CameraBin already has unit tests and documentation. It is currently in use on Nokia N900 and is considered for cheese. This page lists things that should be done before declaring it stable.
 
 == Planned Changes ==
 
-=== camerasource api ===
-The embedded side has complex camera drivers that offer more functionality that classic v4l2. E.g. they might have parallel outputs at the same time. The idea here is to make a more complex camerasource api. This could be implemented as a linux-camerasource (as a bin), reusing what we have in camerabin, or be implemented on top of a different api providing these features as a monolithic block (e.g. gst-omx based camerasrc). See [[attachment:CameraBin.png]].
+=== camera-source api ===
+The embedded side has complex camera drivers that offer more functionality that classic v4l2. E.g. they might have parallel outputs at the same time. The idea here is to make a more complex camerasource api. This could be implemented as a linux-camera-source (as a bin), reusing what we have in CameraBin, or be implemented on top of a different api providing these features as a monolithic block (e.g. gst-omx based camera-source). See [[attachment:CameraBin.png]].
 
 I don't see how we could use a baseclass or interface easily here though. What we want is
  * 3 pads: image, viewfinder, video
  * mandatory interfaces?
 
 === dataflow ===
-Right now (2009.11.11) we have a link from videobin back to viewfinder to so what we record. When we do the camerasource baseclass, we should move the input-selector to the linux implementation. Then we would have 3 modes:
+Right now (2009.11.11) we have a link from videobin back to viewfinder to so what we record. When we do the camera-source baseclass, we should move the input-selector to the Linux implementation. Then we would have 3 modes:
  * viewfinder
  * imagecapture (keeps viewfinder running)
  * videocapture (keeps viewfinder running)
-This is important for the cases where one has analyzers in e.g. the viewfinder-slot to get continous analysis results in videorecording or continous shooting.
+This is important for the cases where one has analyzers in e.g. the viewfinder-slot to get continuous analysis results in videorecording or continuous shooting.
 
 === focusing ===
-We need more focus mode. Right now the API can start AF and get a signal when AF is done. There are also camera subsystems providing continous focusing, where we would just lock the AF on half press, adjust frame and shot.
+We need more focus mode. Right now the API can start AF and get a signal when AF is done. There are also camera subsystems providing continuous focusing, where we would just lock the AF on half press, adjust frame and shot.
 
-=== continous shooting ===
-Improve camerabin to do serial shooting as long as shutter is pressed.
+=== continuous shooting ===
+Improve CameraBin to do serial shooting as long as shutter is pressed.
 
 === bracketing ===
 Lock settings, take various shots with some settings changed, merge single images with some filter.
@@ -33,7 +33,7 @@ Try pushing a newsegment to videobin, instead of rebasing timestamps with a buff
 == Open Items ==
 
 === effect preview ===
-When adding effects to imagebin or videobin, we might want to get a preview on viewfiner for those too.
+When adding effects to imagebin or videobin, we might want to get a preview on viewfinder for those too.
 
 
 ----
