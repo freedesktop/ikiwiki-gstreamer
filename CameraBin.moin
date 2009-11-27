@@ -5,7 +5,7 @@ At some point we'd like to move camerabin to gst-plugins-good. CameraBin already
 == Planned Changes ==
 
 === camerasource api ===
-The embedded side has complex camera drivers that offer more functionality that classic v4l2. E.g. they might have parallel outputs at the same time. The idea here is to make a more complex camerasource api. This could be implemented as a linux-camerasource (as a bin), reusing what we have in camerabin, or be implemented on top of a different api providing these features as a monolithic block (e.g. gst-omx based camerasrc).
+The embedded side has complex camera drivers that offer more functionality that classic v4l2. E.g. they might have parallel outputs at the same time. The idea here is to make a more complex camerasource api. This could be implemented as a linux-camerasource (as a bin), reusing what we have in camerabin, or be implemented on top of a different api providing these features as a monolithic block (e.g. gst-omx based camerasrc). See [[attachment:CameraBin.png]].
 
 I don't see how we could use a baseclass or interface easily here though. What we want is
  * 3 pads: image, viewfinder, video
