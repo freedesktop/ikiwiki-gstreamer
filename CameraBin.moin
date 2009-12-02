@@ -11,9 +11,10 @@ The embedded side has complex camera drivers that offer more functionality that 
 
 {{attachment:CameraBin.png}}.
 
-I don't see how we could use a baseclass or interface easily here though. What we want is
- * 3 pads: image, viewfinder, video
+This should be done as a baseclass (subclassing a GstBin), with the following features:
+ * 3 pads: image, viewfinder, video (as GstGhostpads)
  * mandatory interfaces to proxy (photography, colorbalance, ...)?
+If a potential camera src is already monoloithic and simillar to this (e.g. a omx-cam-src), one just maps and links the features.
 
 === dataflow ===
 Right now (2009.11.11) we have a link from videobin back to viewfinder to so what we record. When we do the camera-source baseclass, we should move the input-selector to the Linux implementation. Then we would have 3 modes:
