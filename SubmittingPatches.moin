@@ -19,7 +19,7 @@ Please also do not attach patches to already-existing bugs unless they are direc
 
 You should prepare patches against a current git checkout, if possible at all. Patches against the current stable release of the module in question ''may'' be acceptable as well if the plugin/code hasn't changed much since then, but if it has, chances are that you will be asked to provide an updated patch against the git repository.
 
-If you have created a new plugin, please submit a patch that adds it to gst-plugins-bad (including configure.ac and the various Makefile.am modififications and all new files).
+If you have created a new plugin, please submit a patch that adds it to gst-plugins-bad (including configure.ac and the various Makefile.am modifications and all new files).
 
 ==== General information on how we like our patches ====
 
