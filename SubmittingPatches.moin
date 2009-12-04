@@ -1,10 +1,8 @@
 == Submitting Patches ==
 
-||<#FFFF00> '''FIXME: update patch instructions for git''' ||
-
 === Where ===
 
-Please submit patches for GStreamer in [[http://bugzilla.gnome.org|GNOME bugzilla]]:
+Please submit patches for GStreamer in [[https://bugzilla.gnome.org|GNOME bugzilla]]:
  * you will need to create a GNOME bugzilla account if you don't have one yet (yep, that's just how it is, sorry for the inconvenience)
  * create a new bug if there is no bug report for this issue yet; [[http://gstreamer.freedesktop.org/bugs/|This page]] has shortcuts for the major components
  * once you have created a bug you can attach your patch(es), see below for more details
@@ -19,25 +17,13 @@ Please also do not attach patches to already-existing bugs unless they are direc
 
 === How ===
 
-You should prepare patches against a current CVS checkout, if possible at all. Patches against the current stable release of the module in question ''may'' be acceptable as well if the plugin/code hasn't changed much since then, but if it has chances are that you will be asked to provide an updated patch against CVS.
+You should prepare patches against a current CVS checkout, if possible at all. Patches against the current stable release of the module in question ''may'' be acceptable as well if the plugin/code hasn't changed much since then, but if it has chances are that you will be asked to provide an updated patch against the git repository.
 
 If you have created a new plugin, please submit a patch that adds it to gst-plugins-bad (including configure.ac and the various Makefile.am modififications and all new files).
 
 ==== General information on how we like our patches ====
 
-Please always submit patches in 'unified context' format to make sure they are human-readable. You can achieve this by passing the '-u' option to diff or cvs diff. Additionally, it would be quite helpful if you could also pass the '-p' option, which adds useful information to each individual patch chunk (such as the C function name). This makes patches much easier to review.
-
-You can make CVS use these options automatically by putting them into your ~/.cvsrc file, like this (on Linux/*nix):
-
-{{{
-$ echo 'diff -u -p' >> ~/.cvsrc
-}}}
-
-And while you're setting up your ~/.cvsrc file, you usually also want this:
-
-{{{
-$ echo 'up -dP' >> ~/.cvsrc
-}}}
+Please always submit patches in 'unified context' format to make sure they are human-readable. This is the default if you are using 'git diff' or 'git format-patch' to create a patch.  Otherwise, you can achieve this by passing the '-u' option to diff. Additionally, it would be quite helpful if you could also pass the '-p' option, which adds useful information to each individual patch chunk (such as the C function name). This makes patches much easier to review.
 
 Please make sure your patches are as terse and precise as possible. Do not include 'clean-ups' or non-functional changes, since they distract from the real changes and make things harder to review (if you feel there are things to clean-up, please submit the clean-ups as a separate patch that does not contain any functional changes).
 
@@ -46,13 +32,13 @@ Try to stick to the GStreamer coding style (run [[http://webcvs.freedesktop.org/
 Please do not include a ChangeLog entry with your patch (feel free to suggest a wording for the ChangeLog entry in the bug report though).
 
 
-==== Creating a diff of a single file ====
+==== Creating a diff of a single file from local changes ====
 
 {{{
-$ cvs diff -u -p path/to/file.c > mypatch.diff
+$ git diff path/to/file.c > mypatch.diff
 }}}
 
-or, if you are not working within a CVS checkout (you should!):
+or, if you are not working within a git repository (you should!):
 
 {{{
 $ diff -u -p gst-plugins-foo-0.10.n-original/path/to/file.c gst-plugins-foo-0.10.n-modified/path/to/file.c > mypatch.diff
@@ -62,13 +48,13 @@ $ diff -u -p gst-plugins-foo-0.10.n-original/path/to/file.c gst-plugins-foo-0.10
 ==== Creating a diff of multiple files or a whole directory ====
 
 {{{
-$ cvs diff -u -p gst/foodemux/file1.c gst/foodemux/file1.h > foodemuxpatch.diff
+$ git diff gst/foodemux/file1.c gst/foodemux/file1.h > foodemuxpatch.diff
 }}}
 
-If you specify a directory, 'cvs diff' will create a patch for all modified files in the directory and all sub-directories:
+If you specify a directory, 'git diff' will create a patch for all modified files in the directory and all sub-directories:
 
 {{{
-$ cvs diff -u -p gst/foodemux/ > foodemuxpatch.diff
+$ git diff gst/foodemux/ > foodemuxpatch.diff
 }}}
 
 The same goes for diff (note the -r option):
@@ -77,19 +63,37 @@ The same goes for diff (note the -r option):
 $ diff -u -p -r gst-plugins-foo-0.10.n-original/gst/foodemux/ gst-plugins-foo-0.10.n-modified/gst/foodemux/ > mypatch.diff
 }}}
 
-==== Include new files in a patch ====
+==== Create a diff from a git commit ====
 
-If you are using an anonymous CVS checkout, 'cvs diff' won't take into account newly-added files, and you don't have permission to 'cvs add' new files. There are two things you can do in this case:
- * use the 'cvsdo' tool from the 'cvsutils' package: {{{
-cvsdo add path/to/  # only needed if this is a new directory
-cvsdo add path/to/newfile.c /path/to/newfile.h
-cvsdo diff -u -p /path/to > mypatch.diff
+Working with a git repository is generally easier if you commit your changes locally.  Unlike CVS, where commiting your changes is synonymous with sending those changes to the central repository, git has a two-stage commit process: commit the changes locally, then separately push those changes to a central repository.  This allows developers to have the benefits of change control without needing write access to the central repository.
+
+To commit changes locally, use the 'git add' and 'git commit' commands.  You can add several times on various files, and then commit them all together.  For example:
+
+{{{
+$ git add file1.c
+$ git add file2.c file3.h
+$ git commit
 }}}
- * add/append the new files manually to the patch: {{{
-cvs diff -u -p configure.ac gst/Makefile.am > mypatch.diff
-diff -N /dev/null gst/newdir/Makefile.am >> mypatch.diff
-diff -N /dev/null gst/newdir/newfile.c >> mypatch.diff
-diff -N /dev/null gst/newdir/newfile.h >> mypatch.diff
+
+The commit command will allow you to write a commit message.  GStreamer developers generally use 'pluginname: short description of changes', a blank line, and then potentially several lines of detailed information about the changes.
+
+To modify a commit, including adding new files, you can use 'git commit --amend'.
+
+Once you have committed changes, and want to pull new changes from the central GStreamer repository, use 'git pull --rebase'.  The '--rebase' option causes git to replay your changes on top of any changes that you pull from the central repository.
+
+To create a nicely formatted patch from the most recent commit, use:
+
+{{{
+$ git format-patch -n1
+}}}
+
+Attaching a patch that is in this form to a bugzilla bug makes applying and merging the patch much easier for another developers that reviews your patch.
+
+If you haven't used git before, it would be a good idea to tell it who you are:
+
+{{{
+$ git config --global user.name "George S. Treamer"
+$ git config --global user.email "gstreamer@gmail.com"
 }}}
 
 
