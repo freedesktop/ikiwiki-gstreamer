@@ -79,6 +79,7 @@ see [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/design/draft-buf
  * use consistent parsed/framed field in caps (framed vs. parsed etc.)
  * be stricter about parsed/framed requirements (esp. for decoders), ie. require a parser by default for most framed formats (or just have parser libraries so all plugins can easily parse stuff themselves as and when required)
  * be smarter/more concise about framerates in caps? e.g. when transcoding from a variable frame rate codec to e.g. theora, we should either error out or be able to warn if there's no videorate between decoder+encoder, or theoraenc (and any other encoders that need it) should do the videorate stuff internally (taking into account disconts in the input if needed). Same for audiorate+audio encoders? (see e.g. bug 590859)
+ * put more info into caps so it can be negotiated, e.g. the various h264 formats/framings
 
 === gst-plugins-good ===
 
