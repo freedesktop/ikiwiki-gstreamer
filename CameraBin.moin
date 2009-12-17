@@ -42,7 +42,7 @@ When adding effects to imagebin or videobin, we might want to get a preview on v
 
 
 === isp internal effects and effect selection ===
-Right now camerabin offers slots for setting effects on each of the imagebin, viewfinderbin and videobin. Some ISPs (image signal processor) come with internal effects (e.g. videostabilisation). We need a new interface on the camerasrc to enumerate and (de)activate effects on any of the data-paths. Ideally we get a gobject proxy for isp internal effects, so that a camera ui can set a gstreamer plugin as an effect and link the ui to the gobject properties or activate a isp internal effect and connect the ui to the provided gobject.
+Right now camerabin offers slots for setting effects on each of the imagebin, viewfinderbin and videobin. Some ISPs (image signal processor) come with internal effects (e.g. videostabilisation). We need a new interface on the camerasrc to enumerate and (de)activate effects on any of the data-paths. Ideally we get a gobject proxy for isp internal effects, so that a camera ui can set a gstreamer plugin as an effect and link the ui to the gobject properties or activate a isp internal effect and connect the ui to the provided gobject. The effect parameters should not be added to GstPhotography to avoid it growing unbounded. GstPhotography is for capture settings. This is needed for post processing effects.
  
 ----
 
