@@ -36,7 +36,10 @@ We need more focus mode. Right now the API can start AF and get a signal when AF
 Improve CameraBin to do serial shooting as long as shutter is pressed.
 
 === bracketing ===
-Lock settings, take various shots with some settings changed, merge single images with some filter.
+Lock settings, take various shots with some settings changed, merge single images with some filter. We can use the GstController for scheduling the parameter changes. Some issues with that though:
+* the camerabin pipeline is always running - we need a newsegment on the image capture pipeline, so that timestamps start with zero
+* the camerasrc is a live-src, thus it is hard to align the control-changes with frame times
+* v4l2 has no api yet to do timestamped CID changes
 
 === recording timestamps ===
 Try pushing a newsegment to videobin, instead of rebasing timestamps with a buffer-probe.
