@@ -23,6 +23,12 @@ Right now (2009.11.11) we have a link from videobin back to viewfinder to so wha
  * videocapture (keeps viewfinder running)
 This is important for the cases where one has analyzers in e.g. the viewfinder-slot to get continuous analysis results in videorecording or continuous shooting.
 
+Open items here:
+ * we might need a videoscaler element after input-selector for the viewfinder output
+ * in still capture mode we might want to set the queue in the still image camera source output to "leaky" and block its src pad. We would only unblock the on shutter press for the seleccted amount of images (burstmode). We could also use videorate or even a specialized videogate element here. What the element should do:
+   * only let n frames through (n=0...)
+   * drop frames to produce a certain output rate
+
 === focusing ===
 We need more focus mode. Right now the API can start AF and get a signal when AF is done. There are also camera subsystems providing continuous focusing, where we would just lock the AF on half press, adjust frame and shot.
 
@@ -38,11 +44,12 @@ Try pushing a newsegment to videobin, instead of rebasing timestamps with a buff
 == Open Items ==
 
 === effect preview ===
-When adding effects to imagebin or videobin, we might want to get a preview on viewfinder for those too.
-
+When adding effects to imagebin or videobin, we might want to get a preview on viewfinder for those too. We either need to apply certain effect in the source already or add them twice.
 
 === isp internal effects and effect selection ===
-Right now camerabin offers slots for setting effects on each of the imagebin, viewfinderbin and videobin. Some ISPs (image signal processor) come with internal effects (e.g. videostabilisation). We need a new interface on the camerasrc to enumerate and (de)activate effects on any of the data-paths. Ideally we get a gobject proxy for isp internal effects, so that a camera ui can set a gstreamer plugin as an effect and link the ui to the gobject properties or activate a isp internal effect and connect the ui to the provided gobject. The effect parameters should not be added to GstPhotography to avoid it growing unbounded. GstPhotography is for capture settings. This is needed for post processing effects.
+Right now camerabin offers slots for setting effects on each of the imagebin, viewfinderbin and videobin. Some ISPs (image signal processor) come with internal effects (e.g. videostabilisation). Effect settings should then be exposed as gobject properties on the camera source, so that a camera ui can set a gstreamer plugin as an effect and link the ui to the gobject properties or activate the isp internal effect and connect the ui to the properties of that.
+
+The effect parameters should not be added to GstPhotography to avoid it growing unbounded. GstPhotography is for capture settings. This is needed for post processing effects.
  
 ----
 
