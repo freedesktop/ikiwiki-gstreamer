@@ -33,7 +33,7 @@ Open items here:
 We need more focus mode. Right now the API can start AF and get a signal when AF is done. There are also camera subsystems providing continuous focusing, where we would just lock the AF on half press, adjust frame and shot.
 
 === continuous shooting ===
-Improve CameraBin to do serial shooting as long as shutter is pressed.
+We would set the queue to leaky and block the capture pad. In contrast to single capture mode, we would keep capture-setting frozen and let a frame through, each time the capture button is pressed.
 
 === bracketing ===
 Lock settings, take various shots with some settings changed, merge single images with some filter. We can use the GstController for scheduling the parameter changes. Some issues with that though:
