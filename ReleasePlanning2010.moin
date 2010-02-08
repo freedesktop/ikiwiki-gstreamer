@@ -8,11 +8,12 @@ This is the quick summary of the releases for the first few months of 2010:
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Jan 18 || '''Core/Base/Good freeze''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Feb  1 || Ugly <-> Bad plugin move window opens ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Feb  8 || '''Core 0.10.26, Base 0.10.26, Good 0.10.18 release''' ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Feb  8 || '''Ugly/Bad/ffmpeg freeze, Good still frozen''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Feb  8 || '''Ugly/Bad/ffmpeg freeze, Core/Base/Good still frozen''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Feb  9 || Good <-> Ugly and Good <-> Bad plugin move window opens ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Feb 10 || '''Core/Base thaw, Good/Ugly/Bad/ffmpeg still frozen''' ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Feb 22 || '''Good 0.10.19, Ugly 0.10.14, Bad 0.10.18, gst-ffmpeg 0.10.10 release''' ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Feb 24 || '''Good/Ugly/Bad/ffmpeg thaw''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Feb 10 || Base <-> Bad plugin move window opens ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Feb 10 || '''Core/Base/Good/Ugly/Bad/ffmpeg still frozen''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Feb 22 || '''Core 0.10.27, Base 0.10.27, Good 0.10.19, Ugly 0.10.14, Bad 0.10.18, gst-ffmpeg 0.10.10 release''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Feb 24 || '''Core/Base/Good/Ugly/Bad/ffmpeg thaw''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
 
 == Process ==
