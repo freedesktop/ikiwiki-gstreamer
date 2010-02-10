@@ -1,25 +1,18 @@
 = List of Summer of Code project ideas for students =
 
  * plugins
-  * [[MHEGSupport]]: Project to create elements for parsing and rendering MHEG content in DVB.
   * [[IXMF]]: Project to create decoder and/or encoder for the IXMF audio format
-  * [[LADSPA]]: Create a Ladspa version 2 bridge and clean up LADSPA plugin
-  * [[MPEG2Mux]] : Finish GStreamer mpeg TS muxer and write a PS muxer
   * [[AMR encoder and decoder]] : Create plugins for GStreamer to encode and decode AMR
   * FarsightPlugins: Farsight 2 plugins for proprietary IM protocols
-  * ASF muxer and payloaders: Write an ASF muxer (or port the existing 0.8 code, but writing a new one from scratch is probably easier and likely to result in better code)
   * [[PluginsForEditing]]: Wrapping much-needed audio/video filters as gstreamer plugins.
   * VDPAU & VA plugins : Wrap GPU-accelerated decoder/filter libraries. See [[http://bugzilla.gnome.org/show_bug.cgi?id=561225|#561225]] for the generic idea.
-  * [[IPP VC1 encoder]]: Write VC1 encoder using Intel IPP
-  * AviSynth wrapper : Write a wrapper plugin for [[http://avisynth.org/|AviSynth]] in order to be able to load/compile avisynth filters and use them in gstreamer pipelines.
+
  * applications
   * [[Pitivi]]: Improve Pitivi
   * GstEditor : Finish the Python based Gst-Editor
  * framework
   * [[Closed_Captioning_support]]: Subtitles for the hearing impaired
   * [[TamasKorodi/IVC_multichannel_grabber_card_support|Multichannel_grabber_card_support]] : Multichannel video grabber card support and more baseclasses
-  * EncodingProfiles: Utility library for encoding profiles (see also [[MediaTrans|Media transcoding services]])
-  * BetterTagReadingWriting: Improve tag reading and writing capabilities.
   * [[XMPMetadata]] support: Add generic XMP metadata library and implement for some pugins
  * bindings
   * [[RobinHorvath/Gstreamer-java_enhancement|Gstreamer-Java enhancement]] : GStreamer Java binding enhancement, GStreamer and GStreamer-Java Mac OS and Windows port
@@ -28,11 +21,10 @@
 = Other Organizations =
 Other organizations that have project ideas related to GStreamer:
 
- * http://code.google.com/soc/2008/dirac/about.html Dirac and Schrödinger
- * http://code.google.com/soc/2008/ffmpeg/about.html FFmpeg
- * http://code.google.com/soc/2008/gnome/about.html GNOME
- * http://code.google.com/soc/2008/xiph/about.html Xiph.org
+ * http://code.google.com/soc/2010/ffmpeg/about.html FFmpeg
+ * http://code.google.com/soc/2010/gnome/about.html GNOME
+ * http://code.google.com/soc/2010/xiph/about.html Xiph.org
 Back to TaskList
 
 ----
- . [[CategoryGSOC2008]]
+ . [[CategoryGSOC2010]]
