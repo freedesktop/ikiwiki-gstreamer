@@ -3,7 +3,6 @@
  * plugins
   * [[IXMF]]: Project to create decoder and/or encoder for the IXMF audio format
   * [[AMR encoder and decoder]] : Write an encoder for AMR WB
-  * FarsightPlugins: Farsight 2 plugins for proprietary IM protocols
   * [[PluginsForEditing]]: Wrapping much-needed audio/video filters as gstreamer plugins.
   * VDPAU & VA plugins : Wrap GPU-accelerated decoder/filter libraries. See [[http://bugzilla.gnome.org/show_bug.cgi?id=561225|#561225]] for the generic idea.
 
