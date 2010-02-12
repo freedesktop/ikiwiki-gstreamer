@@ -26,8 +26,8 @@ This will roughly result in a schedule like this:
  * check glib req in Aug 2009 => 2.16
  * '''0.10.25''', release around 02-Oct-2009: GLib 2.16
  * check glib req in October 2009 => 2.18
- * '''0.10.26''', scheduled for release around xx-Jan-2010: GLib 2.18
- * check glib req in Jan 2010 => 2.18 
+ * '''0.10.26''', scheduled for release around 10-Feb-2010: GLib 2.18
+ * check glib req in Feb 2010 => 2.18 
  * '''0.10.27''', scheduled for release around xx-Apr-2010: GLib 2.18
  * check glib req in Apr 2010 => 2.20
  * '''0.10.28''', scheduled for release around xx-Jul-2010: GLib 2.20
