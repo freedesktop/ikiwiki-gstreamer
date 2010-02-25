@@ -14,6 +14,7 @@
   * [[XMPMetadata]] support: Add generic XMP metadata library and implement for some pugins
   * [[TopicBasedDocumentation]]: Merge a most of Application writers manaual and Plugin writers Guide to api docs and start a topic based guide 
   * [[GeneratedFormatTestdata]]: Generate robustness testdata for demuxer/parser tests
+  * [[Video3DSupport]]: Make GStreamer ready for stereoscopic video
  * bindings
   * [[RobinHorvath/Gstreamer-java_enhancement|Gstreamer-Java enhancement]] : GStreamer Java binding enhancement, GStreamer and GStreamer-Java Mac OS and Windows port
   * [[GStreamerSharp|gstreamer-sharp]] : Finish/improve the GStreamer C# bindings
