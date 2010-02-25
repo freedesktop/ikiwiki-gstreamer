@@ -1,0 +1,27 @@
+= Video 3D support =
+
+== Background ==
+3D Video is one of the bzzwords in home entertainment this year. TV and projectros get 3D ready. Blueray has 3D support. HDMI got blueray support (in 1.4a). There are 3D still image cameras [1]
+
+== Task ==
+Videostreams in GStreamer need to be enhanced to support interleaving for stereoscopic video. Right now we have flags for interlaced video only [2]. 3D video can be packges as interlaced or side by side. In the case of side by side, it can be left/right or top/bottom packing. Left/right is popular for images as it also allows parallel or cross-eyed viewing. Top/bottom is more efficient as one can process the video without strides.
+
+Once the video buffer metadata flags have been agreed on and added, we need conversion plugins:
+ * video3d-interleave: take two input streams of same caps and produce a 3D stream with correct buffer metadata according to variant selected via element property
+ * video3d-deinterleave: take a 3D videostream and split into two separate streams
+ * video3d-anaglyph: mix-down a 3D stream to a anaglyph rendering (red-green or red-cyan)
+
+As a result of the GSoc project it would be nice to be able to capture from two same v4l2 cameras and show the result as anaglyph video on the screen.
+
+== Resources ==
+
+ # [[http://www.fujifilm.com/products/3d/camera/finepix_real3dw1/specifications/index.html|FinePix REAL 3D W1]]
+ # [[http://gstreamer.freedesktop.org/data/doc/gstreamer/head/gst-plugins-base-libs/html/gst-plugins-base-libs-gstvideo.html#GST-VIDEO-BUFFER-TFF:CAPS|Video Buffer Flags]]
+
+'''Mentor: Stefan Kost - ensonic on IRC''' (others welcome)
+
+Back to [[TaskList]]  
+
+----
+[[CategoryGSOC2010]]
+CategoryTasks
