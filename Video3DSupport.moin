@@ -1,10 +1,10 @@
 = Video 3D support =
 
 == Background ==
-3D Video is one of the bzzwords in home entertainment this year. TV and projectors get 3D ready. Blueray has 3D support  (via H264 MVC [1]). HDMI got 3D support (in 1.4a [2]). There are 3D still image cameras [3].
+3D Video is one of the buzzwords in home entertainment this year. TV and projectors get 3D ready. Blueray has 3D support  (via H264 MVC [1]). HDMI got 3D support (in 1.4a [2]). There are 3D still image cameras [3].
 
 == Task ==
-Videostreams in GStreamer need to be enhanced to support interleaving for stereoscopic video. Right now we have flags for interlaced video only [4]. 3D video can be packges as interlaced or side by side. In the case of side by side, it can be left/right or top/bottom packing. Left/right is popular for images as it also allows parallel or cross-eyed viewing. Top/bottom is more efficient as one can process the video without strides.
+Videostreams in GStreamer need to be enhanced to support interleaving for stereoscopic video. Right now we have flags for interlaced video only [4]. 3D video can be packaged as interlaced or side by side. In the case of side by side, it can be left/right or top/bottom packing. Left/right is popular for images as it also allows parallel or cross-eyed viewing. Top/bottom is more efficient as one can process the video without strides.
 
 Once the video buffer metadata flags have been agreed on and added, we need conversion plugins:
  * video3d-interleave: take two input streams of same caps and produce a 3D stream with correct buffer metadata according to variant selected via element property
