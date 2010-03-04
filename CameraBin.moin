@@ -53,7 +53,10 @@ When adding effects to imagebin or videobin, we might want to get a preview on v
 Right now camerabin offers slots for setting effects on each of the imagebin, viewfinderbin and videobin. Some ISPs (image signal processor) come with internal effects (e.g. videostabilisation). Effect settings should then be exposed as gobject properties on the camera source, so that a camera ui can set a gstreamer plugin as an effect and link the ui to the gobject properties or activate the isp internal effect and connect the ui to the properties of that.
 
 The effect parameters should not be added to GstPhotography to avoid it growing unbounded. GstPhotography is for capture settings. This is needed for post processing effects.
- 
+
+=== highspeed capture ===
+We might need a videorate element infront of the viewfinder bin to reduce the framerate there.
+
 ----
 
 TODO: add more from http://live.gnome.org/Cheese/ThreeZero?action=AttachFile&do=get&target=cheese-threezero-meeting-log.txt
