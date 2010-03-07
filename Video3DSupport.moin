@@ -13,6 +13,8 @@ Once the video buffer metadata flags have been agreed on and added, we need conv
 
 As a result of the GSoc project it would be nice to be able to capture from two same v4l2 cameras and show the result as anaglyph video on the screen.
 
+Another idea would be to write a 2d to 3d converter plugin based on the avisynth script [5].
+
 == Resources ==
 
  1. [[http://en.wikipedia.org/wiki/Multiview_Video_Coding|H264 Multi View Coding (MVC)]]
@@ -20,6 +22,7 @@ As a result of the GSoc project it would be nice to be able to capture from two 
  1. [[http://www.fujifilm.com/products/3d/camera/finepix_real3dw1/specifications/index.html|FinePix REAL 3D W1]]
  1. [[http://gstreamer.freedesktop.org/data/doc/gstreamer/head/gst-plugins-base-libs/html/gst-plugins-base-libs-gstvideo.html#GST-VIDEO-BUFFER-TFF:CAPS|Video Buffer Flags]]
  1. [[http://en.wikipedia.org/wiki/Category:Stereoscopy|Stereoscopy @ Wikipedia]]
+ 1. [[http://3dvision-blog.com/2d-to-3d-realtime-video-conversion-with-avisynth-v0-2b/|2d to 3d converter]]
 
 '''Mentor: Stefan Kost - ensonic on IRC''' (others welcome)
 
