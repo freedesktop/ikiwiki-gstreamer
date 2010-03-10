@@ -3,7 +3,7 @@
 Proposed release schedule / roadmap for the year 2010.
 
 == Summary Schedule ==
-This is the quick summary of the releases for the first few months of 2010:
+This is a tentative schedule for releases for the first few months of 2010:
 ||<style="text-align: center;"> '''Date''' || '''Task''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Jan 18 || '''Core/Base/Good freeze''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Feb  1 || Ugly <-> Bad plugin move window opens ||
@@ -16,6 +16,24 @@ This is the quick summary of the releases for the first few months of 2010:
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Mar 9 || '''Core 0.10.28, Base 0.10.28, Good 0.10.21 release''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Mar 9 || '''Core/Base/Good/Ugly/Bad/ffmpeg thaw''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Apr 9  || '''Core/Base freeze''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Apr 23 || '''Core 0.10.29, Base 0.10.29 release''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Apr 24 || '''Core/Base thaw''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> May  7  || '''Good/Ugly freeze''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> May 21 || '''Good 0.10.22, Ugly 0.10.15 release''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> May 22 || '''Good/Ugly thaw''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Jun 11 || '''Good/Bad freeze''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Jun 25 || '''Good 0.10.23, Bad 0.10.19 release''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Jun 26 || '''Good/Bad thaw''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Jul  9 || '''Core/Base freeze''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Jul 23 || '''Core 0.10.30, Base 0.10.30 release''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Jul 24 || '''Core/Base thaw''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
+
+gst-ffmpeg, gst-python, and gnonlin releases may be done in any of these cycles as well.
 
 == Process ==
 At the moment there are 7 GStreamer modules included in the schedule:
