@@ -1,19 +1,22 @@
 = Extending Jokosher's Telepathy Support =
 
- Currently Jokosher has some support for making use of the telepathy VoIP framework, however this is not fully integrated and as such isn't very useful. 
+Currently Jokosher has some support for making use of the telepathy VoIP framework, however this is not fully integrated and as such isn't very useful. 
 
 === Finish existing integration work ===
 
- At the moment Jokosher has the ability to place calls to Google Talk contacts, however this isn't yet hooked into the instruments pipeline so the calls are not recorded. It should be relatively simple to finish this work, however some time needs to be spent working out the most elegant way to acheive this without negatively effecting normal audio input.
+At the moment Jokosher has the ability to place calls to Google Talk contacts, however this isn't yet hooked into the instruments pipeline so the calls are not recorded. It should be relatively simple to finish this work, however some time needs to be spent working out the most elegant way to acheive this without negatively effecting normal audio input.
 
- Currently only Google Talk contacts are support for VoIP calls, this should be extended to include general XMPP and SIP clients as well (and possibly other protocols as well).
+Currently only Google Talk contacts are support for VoIP calls, this should be extended to include general XMPP and SIP clients as well (and possibly other protocols as well).
 
 === Extend telepathy support to enable the use of tubes ===
 
-    
+The existing telepathy support deals only with placing VoIP calls, this should be extended to allow for tubes sessions to be created. In the future this will allow for collaborative editing features, such features are likely to be too big to be covered by this project but if the student has time at the end of the project this can be investigated by them further.
 
 === Make use of tubes to synchronise high quality audio ===
 
+Once tubes support is added it should be possible to synchronise high quality locally recorded audio between two Jokosher clients. 
+
+For example: Bob and Alice are in different towns and wish to record a podcast, both a running Jokosher. Bob places a call to Alice through Jokosher and they have their discussion via VoIP. While this is happening both Bob and Alice's versions of Jokosher are recording high quality FLAC audio of the local side of the conversation, once the recording is finished this high quality audio is synchronised between the two systems replacing the lower quality "live" VoIP recording.
 
 == Resources ==
 
