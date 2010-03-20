@@ -1,0 +1,33 @@
+= Extending Jokosher's Telepathy Support =
+
+ Currently Jokosher has some support for making use of the telepathy VoIP framework, however this is not fully integrated and as such isn't very useful. 
+
+=== Finish existing integration work ===
+
+ At the moment Jokosher has the ability to place calls to Google Talk contacts, however this isn't yet hooked into the instruments pipeline so the calls are not recorded. It should be relatively simple to finish this work, however some time needs to be spent working out the most elegant way to acheive this without negatively effecting normal audio input.
+
+ Currently only Google Talk contacts are support for VoIP calls, this should be extended to include general XMPP and SIP clients as well (and possibly other protocols as well).
+
+=== Extend telepathy support to enable the use of tubes ===
+
+    
+
+=== Make use of tubes to synchronise high quality audio ===
+
+
+== Resources ==
+
+ * http://www.jokosher.org
+ * http://telepathy.freedesktop.org
+
+== Skills Desired ==
+
+ * Python
+ * GTK
+ * GStreamer
+ * Telepathy
+
+'''Mentor: Michael Sheldon (Elleo) or Laszlo Pandy (laszlok)'''
+
+
+Back to SocProjects
