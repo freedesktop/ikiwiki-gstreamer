@@ -20,7 +20,7 @@ It should be possible to open a dedicated score editor window for detailed score
 
 It might be helpful to look at existing score editors such as MuseScore, however only a small subset of the features offered by such applications would be necessary for this project.
 
-An alternative solution might be to see if it would be possible to launch an instance of MuseScore and have it report changes via dbus or similar (either updating the MusicXML or triggering a reload of the MusicXML). This would likely involve co-ordination with the MuseScore project as the student would likely need to modify MuseScore to provide this sort of information to external applications.
+An alternative solution might be to see if it would be possible to launch an instance of MuseScore and have it report changes via dbus or similar (either updating the MusicXML or triggering a reload of the MusicXML). This would likely involve co-ordination with the MuseScore project as the student would probably need to modify MuseScore to provide this sort of information to external applications.
 
 == Resources ==
 
