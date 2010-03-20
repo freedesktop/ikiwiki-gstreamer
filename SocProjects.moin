@@ -6,6 +6,7 @@
   * VDPAU & VA plugins : Wrap GPU-accelerated decoder/filter libraries. See [[http://bugzilla.gnome.org/show_bug.cgi?id=561225|#561225]] for the generic idea.
  * applications
   * [[Pitivi]]: Improve Pitivi
+  * JokosherTelepathy - Extend Jokosher's telepathy support to allow for recording of VoIP calls and add support for tubes.
  * framework
   * [[Closed_Captioning_support]]: Subtitles for the hearing impaired
   * [[TamasKorodi/IVC_multichannel_grabber_card_support|Multichannel_grabber_card_support]] : Multichannel video grabber card support and more baseclasses
