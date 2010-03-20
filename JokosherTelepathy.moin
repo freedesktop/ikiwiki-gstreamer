@@ -16,7 +16,7 @@ The existing telepathy support deals only with placing VoIP calls, this should b
 
 Once tubes support is added it should be possible to synchronise high quality locally recorded audio between two Jokosher clients. 
 
-For example: Bob and Alice are in different towns and wish to record a podcast, both a running Jokosher. Bob places a call to Alice through Jokosher and they have their discussion via VoIP. While this is happening both Bob and Alice's versions of Jokosher are recording high quality FLAC audio of the local side of the conversation, once the recording is finished this high quality audio is synchronised between the two systems replacing the lower quality "live" VoIP recording.
+For example: Bob and Alice are in different towns and wish to record a podcast, both are running Jokosher. Bob places a call to Alice through Jokosher and they have their discussion via VoIP. While this is happening both Bob and Alice's versions of Jokosher are recording high quality FLAC audio of the local side of the conversation, once the recording is finished this high quality audio is synchronised between the two systems replacing the lower quality "live" VoIP recording.
 
 == Resources ==
 
