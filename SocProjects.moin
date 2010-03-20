@@ -7,6 +7,7 @@
  * applications
   * [[Pitivi]]: Improve Pitivi
   * JokosherTelepathy - Extend Jokosher's telepathy support to allow for recording of VoIP calls and add support for tubes.
+  * JokosherScoreEditing - Add support for displaying and editing musical scores within Jokosher.
  * framework
   * [[Closed_Captioning_support]]: Subtitles for the hearing impaired
   * [[TamasKorodi/IVC_multichannel_grabber_card_support|Multichannel_grabber_card_support]] : Multichannel video grabber card support and more baseclasses
