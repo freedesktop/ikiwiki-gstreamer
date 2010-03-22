@@ -1,14 +1,14 @@
 [[http://pitivi.org|PiTiVi]] is an open source video editor.
 
-Pitivi has a very basic UI for the moment, but it could be improved. ([[http://www.pitivi.org/wiki/Roadmap]])
+The current status of PiTiVi, what's done and what needs to be done is detailed on the pitivi wiki ([[http://www.pitivi.org/wiki/Roadmap]])
 
 Amongst the things to be done which are high priority:
 
- * Fade-in/-out
- * Transitions (fade + smpte)
  * Titling
- * Picture support
- * Improve the simple and advanced timeline widgets (maybe switch to a canvasing system like goocanvas)
+ * Capture
+ * Effects
+ * Fade-in/-out # currently partially done in git
+ * Transitions (fade + smpte) # currently partially done in git
  * ...
 
 == Resources ==
