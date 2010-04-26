@@ -13,3 +13,7 @@ Extra interfaces for audio plugins + a few plugin using them. Contains a wrapper
 A group of GStreamer plugins allowing for easy integration of OpenCV computer vision and image processing techniques with GStreamer applications.
  * http://github.com/Elleo/gst-opencv
  * https://www.ohloh.net/p/gst-opencv
+
+= pocketsphinx =
+Speech recognition plugin based on CMU sphinx.
+ * http://cmusphinx.sourceforge.net/wiki/gstreamer
