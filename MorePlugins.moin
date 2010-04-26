@@ -1,0 +1,15 @@
+Links to external gstreamer plugin modules (in alphabetical order) :
+
+= gladstone =
+GladSToNe is an educational tool for learning about hi-performance audio handling for real-time transmissions. The goal of the project is to use the open source model to improve the psycho acoustics, noise shaping and speed of audio transmissions over IP. Contains a G729 codec plugin.
+ * http://code.google.com/p/gladstone/
+ * http://www.ohloh.net/p/gladstone
+
+= gst-buzztard =
+Extra interfaces for audio plugins + a few plugin using them. Contains a wrapper for buzz-machine plugins.
+ * http://buzztard.svn.sourceforge.net/viewvc/buzztard/trunk/gst-buzztard/
+
+= gst-opencv =
+A group of GStreamer plugins allowing for easy integration of OpenCV computer vision and image processing techniques with GStreamer applications.
+ * http://github.com/Elleo/gst-opencv
+ * https://www.ohloh.net/p/gst-opencv
