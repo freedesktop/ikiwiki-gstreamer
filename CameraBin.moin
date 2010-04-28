@@ -15,7 +15,7 @@ This should be done as a baseclass (subclassing a GstBin), with the following fe
  * 3 static source pads: image, viewfinder, video (as GstGhostpads)
  * 2 sometimes source pads: image_preview, video_preview
  * mandatory interfaces to proxy (photography, colorbalance, ...)?
-If a potential camera src is already monolithic and similar to this (e.g. a omx-cam-src), one just maps and links the features. This would be the potential hierarchy:
+This would be the potential class hierarchy:
 {{{
 GstBin
   GstBaseCameraSrc
@@ -24,7 +24,7 @@ GstBin
     ...
 }}}
 If the actual camera plugin is already implemented extending e.g. GstPushSrc, then one would still subclass a new element from GstBaseCameraSrc and
-insert the GstPushSrc based camera element there. In the most simple case the wrapper proxies gibject properties and links the internal element pads to the bins ghostpads.
+insert the GstPushSrc based camera element there. In the most simple case the wrapper for a powerful hardware based camera source proxies gobject properties and links the internal element pads to the bins ghostpads. We would definitely want to have a GstSimpleV4l2CameraSrc as a reference implementation and also providing legacy/fallback support.
 
 === dataflow ===
 Right now (2009.11.11) we have a link from videobin back to viewfinder to so what we record. When we do the camera-source baseclass, we should move the input-selector to the GstSimpleV4l2CameraSrc implementation or even get rid of the selectors and provide paralell dataflow if needed.
