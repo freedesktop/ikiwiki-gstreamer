@@ -7,24 +7,30 @@ At some point we'd like to move CameraBin to gst-plugins-good. CameraBin already
 == Planned Changes ==
 
 === camera-source api ===
-The embedded side has complex camera drivers that offer more functionality that classic v4l2. E.g. they might have parallel outputs at the same time. The idea here is to make a more complex camerasource api. This could be implemented as a linux-camera-source (as a bin), reusing what we have in CameraBin, or be implemented on top of a different api providing these features as a monolithic block (e.g. gst-omx based camera-source).
+The embedded world has complex camera drivers that offer more functionality that classic v4l2. E.g. they might have parallel outputs at the same time. The idea here is to make a more complex camerasource api. This could be implemented as a linux-camera-source (as a bin), reusing what we have in CameraBin, or be implemented on top of a different api providing these features as a monolithic block (e.g. gst-omx based camera-source).
 
 {{attachment:CameraBin.png}}.
 
 This should be done as a baseclass (subclassing a GstBin), with the following features:
- * 3 pads: image, viewfinder, video (as GstGhostpads)
+ * 3 static source pads: image, viewfinder, video (as GstGhostpads)
+ * 2 sometimes source pads: image_preview, video_preview
  * mandatory interfaces to proxy (photography, colorbalance, ...)?
-If a potential camera src is already monoloithic and simillar to this (e.g. a omx-cam-src), one just maps and links the features.
+If a potential camera src is already monolithic and similar to this (e.g. a omx-cam-src), one just maps and links the features. This would be the potential hierarchy:
+{{{
+GstBin
+  GstBaseCameraSrc
+    GstSimpleV4l2CameraSrc
+    GstOmxCameraSrc
+    ...
+}}}
+If the actual camera plugin is already implemented extending e.g. GstPushSrc, then one would still subclass a new element from GstBaseCameraSrc and
+insert the GstPushSrc based camera element there. In the most simple case the wrapper proxies gibject properties and links the internal element pads to the bins ghostpads.
 
 === dataflow ===
-Right now (2009.11.11) we have a link from videobin back to viewfinder to so what we record. When we do the camera-source baseclass, we should move the input-selector to the Linux implementation. Then we would have 3 modes:
- * viewfinder
- * imagecapture (keeps viewfinder running)
- * videocapture (keeps viewfinder running)
-This is important for the cases where one has analyzers in e.g. the viewfinder-slot to get continuous analysis results in videorecording or continuous shooting.
+Right now (2009.11.11) we have a link from videobin back to viewfinder to so what we record. When we do the camera-source baseclass, we should move the input-selector to the GstSimpleV4l2CameraSrc implementation or even get rid of the selectors and provide paralell dataflow if needed.
+Keeping the viewfinder active is important for the cases where one has analyzers in e.g. the viewfinder-slot to get continuous analysis results in videorecording or continuous shooting.
 
 Open items here:
- * we might need a videoscaler element after input-selector for the viewfinder output
  * in still capture mode we might want to set the queue in the still image camera source output to "leaky" and block its src pad. We would only unblock the on shutter press for the seleccted amount of images (burstmode). We could also use videorate or even a specialized videogate element here. What the element should do:
    * only let n frames through (n=0...)
    * drop frames to produce a certain output rate
@@ -38,7 +44,7 @@ We would set the queue to leaky and block the capture pad. In contrast to single
 === bracketing ===
 Lock settings, take various shots with some settings changed, merge single images with some filter. We can use the !GstController for scheduling the parameter changes. Some issues with that though:
  * the camerabin pipeline is always running - we need a newsegment on the image capture pipeline, so that timestamps start with zero
- * the camerasrc is a live-src, thus it is hard to align the control-changes with frame times
+ * the camerasrc is a live-src, thus it is hard to align the control-changes with frame times ( see [[https://bugzilla.gnome.org/show_bug.cgi?id=610338|bug 610338]] and [[https://bugzilla.gnome.org/show_bug.cgi?id=616173|bug 616173]]).
  * v4l2 has no api yet to do timestamped CID changes
 
 === recording timestamps ===
