@@ -17,8 +17,8 @@ This is a tentative schedule for releases for the first few months of 2010:
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Mar 9 || '''Core/Base/Good/Ugly/Bad/ffmpeg thaw''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Apr 9  || '''Core/Base/Good freeze''' ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Apr 23 || '''Core 0.10.29, Base 0.10.29, Good 0.10.22 release''' ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Apr 24 || '''Core/Base/Good thaw''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Apr 28 || '''Core 0.10.29, Base 0.10.29, Good 0.10.22 release''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Apr 29 || '''Core/Base/Good thaw''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> May  7  || '''Good/Ugly/Bad freeze''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> May 21 || '''Good 0.10.23, Ugly 0.10.15, Bad 0.10.19 release''' ||
