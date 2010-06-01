@@ -24,9 +24,9 @@ This is a tentative schedule for releases for the first few months of 2010:
 ||<bgcolor="#c5d2c8" style="text-align: center;"> May 31 || '''Good 0.10.23, Ugly 0.10.15, Bad 0.10.19 release''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Jun 1 || '''Good/Ugly/Bad thaw''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Jun 14 || '''Core/Base/Good freeze''' ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Jun 25 || '''Core 0.10.30, Base 0.10.30, Good 0.10.24 release''' ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Jun 26 || '''Core/Base/Good thaw''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Jun 14 || '''Core/Base/Good/gst-ffmpeg freeze''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Jun 25 || '''Core 0.10.30, Base 0.10.30, Good 0.10.24, gst-ffmpeg 0.10.11 release''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Jun 26 || '''Core/Base/Good/gst-ffmpeg thaw''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Jul  9 || '''Good/Ugly/Bad freeze''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Jul 23 || '''Good 0.10.25, Ugly 0.10.16, Bad 0.10.20 release''' ||
