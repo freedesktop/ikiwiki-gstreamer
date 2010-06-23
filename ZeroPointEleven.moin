@@ -57,6 +57,7 @@ see [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/design/draft-buf
  * Define what codec_data should mean for each format, try to be as consistent as possible.
  * base controller functionality in GstObject, only have the controlsources in a lib
  * unit tests shouldn't use check symbols directly
+ * Clean up the GstBus API (add_watch can only be called once), maybe add a return value to "sync-message", etc.. Maybe depcreate add_watch in favor of "message" ?
 
 === gst-plugins-base ===
 
