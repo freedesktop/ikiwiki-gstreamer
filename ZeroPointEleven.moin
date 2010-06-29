@@ -58,6 +58,9 @@ see [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/design/draft-buf
  * base controller functionality in GstObject, only have the controlsources in a lib
  * unit tests shouldn't use check symbols directly
  * Clean up the GstBus API (add_watch can only be called once), maybe add a return value to "sync-message", etc.. Maybe depcreate add_watch in favor of "message" ?
+ * remove unversioned gst-foo? (Causes people problems when debugging with gdb/valgrind, and what's the point in having them if the API / pipeline syntax / element names change from major version to major version, so that they're incompatible between major versions anyway?)
+ * remove gst-xmlinspect (people should just use pygst or whatever to inspect the registry)
+ * remove gst-xmllaunch
 
 === gst-plugins-base ===
 
