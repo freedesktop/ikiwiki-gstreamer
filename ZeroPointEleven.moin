@@ -17,6 +17,11 @@ There was a meeting discussing Gstreamer 1.0 at the Gran Canaria Desktop Summit 
 
  * need way to handle e.g. width=[16,1024] with multiples of 8, or at least make e.g. videoscale ! videoenc negotiate right in cases like that
  * need way to make clear whether a codec is strictly fixed framerate or not, so people don't feed e.g. variable framerate video into theoraenc (or just make those do what videorate does automagically behind the scenes?)
+ * Make GstStructure and GstCaps 100% opaque, so we can change the implementation details
+ * maybe even internalise the GValue usage and provide explicit API to get/set structure fields:
+   * more discoverable, less confusing (GValue seems to confuse people in a caps/structure context)
+   * in practice we only allow/handle a few selected types, so may just as well make that more explicit, and the API nicer
+   * can keep using GValue internally, but are free to change the implementation if something better comes along (e.g. GVariant, or something home-grown)
 
 ==== buffers ====
 
@@ -61,6 +66,10 @@ see [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/design/draft-buf
  * remove unversioned gst-foo? (Causes people problems when debugging with gdb/valgrind, and what's the point in having them if the API / pipeline syntax / element names change from major version to major version, so that they're incompatible between major versions anyway?)
  * remove gst-xmlinspect (people should just use pygst or whatever to inspect the registry)
  * remove gst-xmllaunch
+ * libgstcheck: prefix all functions and symbols. Have a wrapping layer that's 100% GStreamer, including environment variables etc.
+   * that's just for sanity, check's symbols were mostly exposed by accident
+   * magic global symbols aren't very nice API ('buffers')
+   * so we can put in another implementation / our own implementation of unit tests instead of using check if we want to
 
 === gst-plugins-base ===
 
