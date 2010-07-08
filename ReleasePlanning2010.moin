@@ -24,13 +24,13 @@ This is a tentative schedule for releases for the first few months of 2010:
 ||<bgcolor="#c5d2c8" style="text-align: center;"> May 31 || '''Good 0.10.23, Ugly 0.10.15, Bad 0.10.19 release''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Jun 1 || '''Good/Ugly/Bad thaw''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Jun 20 || '''Core/Base/Good/gst-ffmpeg/-gl freeze''' ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Jul 1 || '''Core 0.10.30, Base 0.10.30, Good 0.10.24, gst-ffmpeg 0.10.11, gst-plugins-gl 0.10.2 release''' ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Jul 3 || '''Core/Base/Good/gst-ffmpeg/gl thaw''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Jun 20 || '''Core/Base/Good/gst-ffmpeg/gst-python''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Jul 11 || '''Core 0.10.30, Base 0.10.30, Good 0.10.24, gst-ffmpeg 0.10.11, gst-python 0.10.19 release''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Jul 13 || '''Core/Base/Good/gst-ffmpeg/gst-python thaw''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Jul  9 || '''Good/Ugly/Bad freeze''' ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Jul 23 || '''Good 0.10.25, Ugly 0.10.16, Bad 0.10.20 release''' ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Jul 24 || '''Good/Ugly/Bad thaw''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Jul 23 || '''Good/Ugly/Bad/-gl freeze''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Aug  6 || '''Good 0.10.25, Ugly 0.10.16, Bad 0.10.20, plugins-gl 0.10.2 release''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Aug  7 || '''Good/Ugly/Bad/-gl thaw''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
 
 gst-ffmpeg, gst-python, and gnonlin releases may be done in any of these cycles as well.
