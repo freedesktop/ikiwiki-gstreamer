@@ -15,8 +15,9 @@ Space for drafting new features.
   * GstTagMux: tag muxer base class
 
  * Bins:
-  * SampleBin: bin for game and event sounds
+  * CameraBin : still and video camera capture
   * ColorSpaceBin: a bin for colorspace conversion
+  * SampleBin: bin for game and event sounds
 
  * (Gtk) widget library in gst-plugins-base:
   * VideoWidget: General Gtk video widget
