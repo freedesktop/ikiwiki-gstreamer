@@ -5,6 +5,7 @@ Space for drafting new features.
  * Core:
   * BufferMetadata: variable extra data keept with buffers.
   * NewCapsFields: discuss new caps fields
+  * NewGstVideo: discuss replacement for gst-libs/gst/video API for caps parsing/building of raw yuv/rgb types
 
  * Base classes:
   * GstBaseParse: parser base class
