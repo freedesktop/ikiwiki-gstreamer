@@ -1,0 +1,32 @@
+Collection of thoughts on new raw video caps and utility API for building/parsing these caps.
+
+The caps themselves (to replace {{{video/x-raw-{yuv,rgb,gray,etc} }}}) should support:
+ * stride
+ * interlaced buffer layout possibilities
+ * stereo buffer layout possibilities
+ * combinations of the above
+
+And should be flexible enough to support addition of new features later.  Which means some way to negotiate between different elements which may or may not support the new feature.
+
+To this end, direct parsing of video/raw caps by the elements should be discouraged, and likewise direct access to buffer data.  Instead gstvideo API should be used to parse caps into a video descriptor struct, and then accessor functions to return information like row/pixel stride, get offset to various position in buffer (ie. find ptr to beginning of 2nd field of right frame of video, which may or may not be interlaced and/or stereo)..
+
+Note that existing {{{gst-libs/gst/video/video.[ch]}}} should be replaced as it does not scale well to add new features.  For example, functions to calculate rowstride would all need to have an additional parameter added to deal with strided buffers.
+
+Some features like rowstride can be added somewhat transparently, because it is only a matter of calculation of certain positions within the raw data.  Others, like stereo, probably require the element to have a fundamental understanding of the format.  Maybe this can be handled, and allow certain room for extension in the future with a features bitmask. ie. something like:
+
+{{{#!c
+#define MY_RAW_FEATURES  (GST_VIDEO_INTERLACED | GST_VIDEO_STRIDED) /* but not GST_VIDEO_STEREO */
+
+...
+  GstVideo desc;
+  gst_video_parse_caps (&desc, caps);
+  if (desc.features & ~MY_RAW_FEATURES) {
+     ... I don't support this ...
+     return FALSE;
+  }
+}}}
+(a bitmask does limit number of features that could be added.. but how many possible features could there be?)
+
+Open points:
+ * some formats, like I420, could have two differing definitions of rowstride. (1) U and V planes have same stride in bytes as Y, or (2) U and V planes have 1/2 stride as Y.
+ * in some cases, it might be nice to have some flexibility to allow support for non-packed planar/semi-planar formats.  In some cases where decoder requires padding or cropping for edges, or certain alignment requirements, the U and V planes may not start immediately after the previous frame.
