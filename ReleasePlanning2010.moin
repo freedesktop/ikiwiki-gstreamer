@@ -29,8 +29,10 @@ This is a tentative schedule for releases for the first few months of 2010:
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Jul 16 || '''Core/Base/Good/gst-ffmpeg/gst-python thaw''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Aug 09 || '''Good/Ugly/Bad/-gl freeze''' ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Aug XX || '''Good 0.10.25, Ugly 0.10.16, Bad 0.10.20, plugins-gl 0.10.2 release''' ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Aug XX+1 || '''Good/Ugly/Bad/-gl thaw''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Sep 02 || '''Good 0.10.25, Ugly 0.10.16, Bad 0.10.20, plugins-gl 0.10.2 release''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Sep XX || '''gst-plugins-gl 0.10.2 release''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Sep 03 || '''Good/Ugly/Bad thaw''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Sep XX || '''gst-plugins-gl thaw''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Sep/Oct || '''Core/Base/Good freeze''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Sep/Oct || '''Core 0.10.31, Base 0.10.31, Good 0.10.26 release''' ||
