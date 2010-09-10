@@ -31,9 +31,11 @@ see [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/design/draft-buf
 
  * subclass the various types
    * allows to get rid of the extra {event,message,query}-type field
+     ''(tpm: not so sure we want that, switch/case on type constants is cheap, comparing GTypes not so much)''
    * static items (flush-event, qos-message} can have explicit member fields
    * most gst_xxx_parse methods can be dropped/deprecated
    * main benefit is that we get a new instance with a single g_slice_new call, instead of 2 g_slice_new + 1 malloc as it is now.
+     ''(tpm: that can be solved differently, e.g. by allowing static/embedded GstStructures, or just using GVariant, or somesuch)''
 
 ==== registry ====
 
