@@ -27,6 +27,14 @@ There was a meeting discussing Gstreamer 1.0 at the Gran Canaria Desktop Summit 
 
 see [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/design/draft-buffer2.txt|gstreamer/docs/design/draft-buffer2.txt]]
 
+==== events/messages/queries ====
+
+ * subclass the various types
+   * allows to get rid of the extra {event,message,query}-type field
+   * static items (flush-event, qos-message} can have explicit member fields
+   * most gst_xxx_parse methods can be dropped/deprecated
+   * main benefit is that we get a new instance with a single g_slice_new call, instead of 2 g_slice_new + 1 malloc as it is now.
+
 ==== registry ====
 
  * registry API needs to change a bit; we should rely less on structures and hide more things behind accessor API, so that we can better use things like an mmap()ed binary registry (instead of doing lots of parsing and copying all data into memory at startup). GVariant should be useful here.
