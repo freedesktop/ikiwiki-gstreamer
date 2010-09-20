@@ -5,6 +5,9 @@ The caps themselves (to replace {{{video/x-raw-{yuv,rgb,gray,etc} }}}) should su
  * interlaced buffer layout possibilities
  * stereo buffer layout possibilities
  * combinations of the above
+ * use fourcc's, or some fourcc-like value for rgb/grey caps (maybe string.. quarks for fast '==' comparison)
+   * note that if all raw video formats are supported w/ some fourcc-like value, then perhaps the caps name should just be {{{video/x-raw}}}
+   * what about bayer?
 
 And should be flexible enough to support addition of new features later.  Which means some way to negotiate between different elements which may or may not support the new feature.
 
@@ -30,6 +33,10 @@ Some features like rowstride can be added somewhat transparently, because it is 
 Open points:
  * some formats, like I420, could have two differing definitions of rowstride. (1) U and V planes have same stride in bytes as Y, or (2) U and V planes have 1/2 stride as Y.
  * in some cases, it might be nice to have some flexibility to allow support for non-packed planar/semi-planar formats.  In some cases where decoder requires padding or cropping for edges, or certain alignment requirements, the U and V planes may not start immediately after the previous frame.
+
+= Interlaced caps =
+
+= RGB/grey caps =
 
 = Stereo video support in an existing branch =
 
