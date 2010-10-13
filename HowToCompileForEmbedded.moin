@@ -13,7 +13,7 @@ make install
 
 === gstreamer ===
 {{{
-./configure --prefix="$prefix" --disable-nls --disable-static --enable-binary-registry --disable-loadsave --with-html-dir=/tmp/dump
+./configure --prefix="$prefix" --disable-nls --disable-static --disable-gobject-cast-checks --enable-binary-registry --disable-loadsave --disable-trace --with-html-dir=/tmp/dump
 make install
 }}}
 
