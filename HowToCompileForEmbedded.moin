@@ -17,7 +17,7 @@ make install
 make install
 }}}
 
-=== liboil ===
+=== orc (replaces liboil) ===
 {{{
 ./configure --prefix="$prefix" --disable-static --with-html-dir=/tmp/dump
 make install
