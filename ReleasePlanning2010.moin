@@ -34,9 +34,9 @@ This is a tentative schedule for releases for the first few months of 2010:
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Sep 04 || '''gst-plugins-gl 0.10.2 release''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Sep 05 || '''gst-plugins-gl thaw''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Oct 8-11 || '''Core/Base/Good/python freeze''' ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Oct 25 || '''Core 0.10.31, Base 0.10.31, Good 0.10.26, gst-python 0.10.20 release''' ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Oct 26|| '''Core/Base/Good/python thaw''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Oct 15 || '''Core/Base/Good/python freeze''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Oct 29 || '''Core 0.10.31, Base 0.10.31, Good 0.10.26, gst-python 0.10.20 release''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Oct 30|| '''Core/Base/Good/python thaw''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Nov XX || '''Good/Ugly/Bad freeze''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Nov XX || '''Good 0.10.27, Ugly 0.10.17, Bad 0.10.21 release''' ||
