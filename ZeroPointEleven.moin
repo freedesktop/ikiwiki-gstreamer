@@ -2,14 +2,19 @@
 
 This page is a somewhat random collection of things to look at for 0.11. More can be found in gstreamer/docs/random/, gstreamer/docs/design/, FIXME-0.11 comments inside the sources and in [[https://bugzilla.gnome.org/buglist.cgi?query_format=advanced&short_desc=0.11&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&bug_status=NEEDINFO&short_desc_type=allwordssubstr&product=GStreamer|bugzilla]].
 
-"0.11" describes a future development version of GStreamer where API and ABI changes can (and will) happen. There is no timeline yet for when 0.11 will happen. There is still a lot more that can be achieved with the current 0.10 API.
+"0.11" describes a future development version of GStreamer where API and ABI changes can (and will) happen. There is only a rough timeline for when 0.11 will happen ("by the end of 2011). Details can be found in Wim Tayman's keynote (video expected to be online in the first week of November 2010, summary and further links in [[http://blogs.gnome.org/uraeus/2010/10/29/summary-of-gstreamer-conference-2010/|Christian's summary of the GStreamer conference blog post]]).  There is still a lot more that can be achieved with the current 0.10 API.
 
-It is expected that the transition from 0.10 to 0.11/0.12 will be much easier on application and plugin developers than the transition from 0.8 to 0.10 was.
+It is expected that the transition from 0.10 to 0.11/1.0 will be much easier on application and plugin developers than the transition from 0.8 to 0.10 was.
 
 === GStreamer 1.0 "summit" ===
 
 There was a meeting discussing Gstreamer 1.0 at the Gran Canaria Desktop Summit in July 2009. Thomas took some notes which can be found here: [[GStreamerSummitGranCanaria2009Notes|GStreamer summit notes]]
 
+=== GStreamer Conference ===
+
+The first ever GStreamer conference took part in Cambridge (UK) on 25th October 2010. Wim Taymans announced the plan for GStreamer 1.0 in his keynote, with a retrospective of some of the things that will be improved ([[http://people.freedesktop.org/~wtay/gstreamer-conf-2010.pdf|slides here]].
+
+The following list is more of a collection of things to remember, for the big picture overview see Wim's keynote.
 
 === core ===
 
@@ -41,7 +46,7 @@ see [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/design/draft-buf
 
  * registry API needs to change a bit; we should rely less on structures and hide more things behind accessor API, so that we can better use things like an mmap()ed binary registry (instead of doing lots of parsing and copying all data into memory at startup). GVariant should be useful here.
  * move things over to dynamic types that can be unregistered again?
- * consider GstMiniObject for GstPlugin and GstPluginFeatures. These types (and their known sub classes) don't use signals and properties. This would save memory and make startup faster.
+ * consider GstMiniObject for GstPlugin and GstPluginFeatures. These types (and their known sub classes) don't use signals and properties. This would save memory and make startup faster. Avoid parsing of registry, use GVariant-based cache.
 
 ==== tags ====
 
