@@ -15,13 +15,19 @@ The first batch of videos is now online and can be found on the [[http://gstconf
  * [[http://people.collabora.co.uk/~slomo/GStreamer_WebM.pdf|Sebastian Dröge: GStreamer and WebM]]
  * [[http://dl.dropbox.com/u/219349/flumotion_gstreamer_conference.pdf|Zaheer Abbas Merali: Flumotion - Open Source Streaming]]
  * [[http://people.freedesktop.org/~robclark/gstcon2010.pdf|Rob Clark: GStreamer and OMAP4]]
- * [[http://www.slideshare.net/philn2/webkit-html5-media-and-gstreamer-on-multiple-platforms|Philippe Normand: HTML5 Media support in WebKit with GStreamer]]
+ * [[http://gstreamer.freedesktop.org/conference/slides/webkit.pdf|Philippe Normand: HTML5 Media support in WebKit with GStreamer]]
  * [[http://people.freedesktop.org/~thaytan/gstinteract-0.10.1.tar.gz|Jan Schmidt: Interactivity in GStreamer pipelines]]
  * [[http://www.elinux.org/images/6/61/Arun-pulse-elce2010.pdf|Arun Raghavan: Pulse Audio in the Embedded World]] (ELC-E)
  * [[http://www.elinux.org/images/a/a4/Android_and_Gstreamer.ppt|Benjamin Gaignard: Android and GStreamer]] (ELC-E)
  * [[http://www.elinux.org/images/d/d1/MeeGoMultimedia.pdf|Stefan Kost: Meego Multimedia]] (ELC-E)
  * [[http://www.elinux.org/ELC_Europe_2010_Presentations|Embedded Linux Conference Europe 2010 slides]]
  * [[https://docs.google.com/leaf?id=0BzV4szKbuvKwYzQwZDlhNjktMTVlOC00ZDczLThiZjQtZTRlMjcyYzRlZWIy&sort=name&layout=list&num=50|Andrey Nechypurenko and Maksym Parkachov: Adaptive video streaming with Ice and GStreamer]] ([[https://docs.google.com/leaf?id=0BzV4szKbuvKwYzQwZDlhNjktMTVlOC00ZDczLThiZjQtZTRlMjcyYzRlZWIy&sort=name&layout=list&num=50|pdf]], [[https://docs.google.com/leaf?id=0BzV4szKbuvKwNTEwYTQwOGUtNzAzNi00NjQ5LTk2MjEtMWIzYTQzNjVkZTRh&sort=name&layout=list&num=50|zip bundle with screencasts]])
+ * [[http://gstreamer.freedesktop.org/conference/slides/GStreamerISMD.pdf|Josep Torra: - Intel SMD elements in GStreamer]]
+ * [[http://gstreamer.freedesktop.org/conference/slides/automatedwebcasting_ubicast.pdf|Florent Thierry - Using gstreamer for building automated webcasting systems]]
+ * [[http://gstreamer.freedesktop.org/conference/slides/dlna-zeeshan-ali.pdf| Zeeshan Ali - Implementing DLNA using GStreamer]]
+ * [[http://gstreamer.freedesktop.org/conference/slides/gstaxis.pdf| Jonas Holmberg - GStreamer on Axis devices]]
+ * [[http://gstreamer.freedesktop.org/conference/slides/landell.pdf| Luciana Fujii - Landell -live streaming for the masses]]
+
 
 == Blogs posts about the conference ==
 
