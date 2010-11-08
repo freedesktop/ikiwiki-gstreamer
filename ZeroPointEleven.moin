@@ -20,7 +20,7 @@ The following list is more of a collection of things to remember, for the big pi
 
 ==== caps ====
 
- * speed up negotiation by incrementally build caps
+ * speed up negotiation by incrementally building caps
  * need way to handle e.g. width=[16,1024] with multiples of 8, or at least make e.g. videoscale ! videoenc negotiate right in cases like that
  * need way to make clear whether a codec is strictly fixed framerate or not, so people don't feed e.g. variable framerate video into theoraenc (or just make those do what videorate does automagically behind the scenes?)
  * Make GstStructure and GstCaps 100% opaque, so we can change the implementation details
@@ -31,13 +31,13 @@ The following list is more of a collection of things to remember, for the big pi
 
 ==== miniobject ====
 
- * We don't really need subclasses for buffers, events, queries, caps, messages,... a simple boxed type would speed up type checking and
+ * We don't need subclasses for buffers, events, queries, caps, messages,... a simple boxed type would speed up type checking and
    make things easier.
  * need to make GstCaps a miniobject
 
 ==== buffers ====
 
- * We need to be able to carry more extra information in buffer metadata.
+ * We need to be able to carry extra buffer metadata.
 
 see [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/design/draft-buffer2.txt|gstreamer/docs/design/draft-buffer2.txt]]
 
