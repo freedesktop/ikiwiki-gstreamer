@@ -55,6 +55,7 @@ see [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/design/draft-buf
 
  * registry API needs to change a bit; we should rely less on structures and hide more things behind accessor API, so that we can better use things like an mmap()ed binary registry (instead of doing lots of parsing and copying all data into memory at startup). GVariant should be useful here.
  * move things over to dynamic types that can be unregistered again?
+     ''(ocrete: Farsight2 used to have un-registrable (even unloadable) plugins, it was a real pain)''
  * consider GstMiniObject for GstPlugin and GstPluginFeatures. These types (and their known sub classes) don't use signals and properties. This would save memory and make startup faster. Avoid parsing of registry, use GVariant-based cache.
 
 ==== tags ====
