@@ -2,19 +2,30 @@
 
 = CameraBin TODO =
 
-At some point we'd like to move CameraBin to gst-plugins-good. CameraBin already has unit tests and documentation. It is currently in use on Nokia N900 and is considered for cheese. This page lists things that should be done before declaring it stable.
 
-== Planned Changes ==
+= CameraBin 2 =
 
-=== camera-source api ===
-The embedded world has complex camera drivers that offer more functionality that classic v4l2. E.g. they might have parallel outputs at the same time. The idea here is to make a more complex camerasource api. This could be implemented as a linux-camera-source (as a bin), reusing what we have in CameraBin, or be implemented on top of a different api providing these features as a monolithic block (e.g. gst-omx based camera-source).
+Current camerabin is a single element and has some complex code with input/output-selectors for controlling the flow of buffers. Making it more modularized and with less -selectors would simplify the code a lot. We hope caps negotiation will be simplified, too. And more tricky features could be implemented inside still/video capturing modules(bins). We could also switch a whole bin for another one with a different implementation.
+
+Even though the new camerabin will provide the same basic functions from the current one, it will be built from ground up again with a different design. We should make it camerabin2 and take it in parallel with camerabin. This way we avoid major regressions and api changes hassle to applications using current camerabin. When they feel ready, the switch to camerabin2 wouldn't be hard. Also, we can keep bugfixing on old camerabin and keeping everything using it working.
+
+== Modules ==
+
+CameraBin2 will have 4 internal modules (bins), it should be possible to use any of them outside of camerabin2 (applications, like Empathy and Cheese could make use of those):
 
 {{attachment:CameraBin2.png}}.
 
+=== CameraSrc ===
+ * It's a bin with 3 output pads for parallel flow (video recording, image capture and viewfinder)
+ * Need to do some baseclass probably, and one element that would adapt current video source elements with a single srcpad (v4l2src, videotestsrc).
+ * Might implement gstreamer's Photography interface 
+
+The embedded world has complex camera drivers that offer more functionality that classic v4l2. E.g. they might have parallel outputs at the same time. The idea here is to make a more complex camerasource api. This could be implemented as a linux-camera-source (as a bin), reusing what we have in CameraBin, or be implemented on top of a different api providing these features as a monolithic block (e.g. gst-omx based camera-source).
+
 This should be done as a baseclass (subclassing a GstBin), with the following features:
  * 3 static source pads: image, viewfinder, video (as GstGhostpads)
- * 2 sometimes source pads: image_preview, video_preview
- * mandatory interfaces to proxy (photography, colorbalance, ...)?
+ * Previewing using 2 sometimes source pads (image_preview, video_preview) or Messages
+ * Do we want to proxy interfaces or application uses them directly from the elements? (photography, colorbalance, ...)
 This would be the potential class hierarchy:
 {{{
 GstBin
@@ -26,8 +37,32 @@ GstBin
 If the actual camera plugin is already implemented extending e.g. GstPushSrc, then one would still subclass a new element from GstBaseCameraSrc and
 insert the GstPushSrc based camera element there. In the most simple case the wrapper for a powerful hardware based camera source proxies gobject properties and links the internal element pads to the bins ghostpads. We would definitely want to have a GstSimpleV4l2CameraSrc as a reference implementation and also providing legacy/fallback support.
 
-=== dataflow ===
-Right now (2009.11.11) we have a link from videobin back to viewfinder to so what we record. When we do the camera-source baseclass, we should move the input-selector to the GstSimpleV4l2CameraSrc implementation or even get rid of the selectors and provide paralell dataflow if needed.
+=== Image Capture Bin ===
+ * Handles eos/tags between buffers/image captures
+ * Possibility of multiple implementations:
+   * A sequential encoding implementation using queues
+   * Parallel encoding (pool of pipelines)
+   * Other ones for trickier cases (e.g. panorama pictures) How to guarantee a basic common API here? Do we need to guarantee it? 
+   * Need to do tagging to multiple encoders. e.g. We use jifmux for jpg, what are we using for png? 
+
+=== Video Recording Bin ===
+ * The audiosrc is inside this bin
+ * Newsegment/timestamp handling on recordings was tricky/buggy in current camerabin
+ * For consistency we could allow multiple implementations here, too. Even though we don't have use cases for it.
+ * Encodebin could work here 
+
+=== Viewfinder Bin ===
+ * Contains the videosink and any image processing filters/analyzers the application might set
+ * How useful is it outside of camerabin? It's simply a branch of elements. (Hot-swapping of effects?)
+
+= CameraBin =
+
+== TODO ==
+
+At some point we'd like to move CameraBin to gst-plugins-good. CameraBin already has unit tests and documentation. It is currently in use on Nokia N900 and is considered for cheese. This page lists things that should be done before declaring it stable.
+
+== dataflow ==
+In current CameraBin we have a link from videobin back to viewfinder to so what we record. When we do the camera-source baseclass, we should move the input-selector to the GstSimpleV4l2CameraSrc implementation or even get rid of the selectors and provide paralell dataflow if needed.
 Keeping the viewfinder active is important for the cases where one has analyzers in e.g. the viewfinder-slot to get continuous analysis results in videorecording or continuous shooting.
 
 Open items here:
@@ -35,19 +70,19 @@ Open items here:
    * only let n frames through (n=0...)
    * drop frames to produce a certain output rate
 
-=== focusing ===
+== focusing ==
 We need more focus mode. Right now the API can start AF and get a signal when AF is done. There are also camera subsystems providing continuous focusing, where we would just lock the AF on half press, adjust frame and shot.
 
-=== continuous shooting ===
+== continuous shooting ==
 We would set the queue to leaky and block the capture pad. In contrast to single capture mode, we would keep capture-setting frozen and let a frame through, each time the capture button is pressed.
 
-=== bracketing ===
+== bracketing ==
 Lock settings, take various shots with some settings changed, merge single images with some filter. We can use the !GstController for scheduling the parameter changes. Some issues with that though:
  * the camerabin pipeline is always running - we need a newsegment on the image capture pipeline, so that timestamps start with zero
  * the camerasrc is a live-src, thus it is hard to align the control-changes with frame times ( see [[https://bugzilla.gnome.org/show_bug.cgi?id=610338|bug 610338]] and [[https://bugzilla.gnome.org/show_bug.cgi?id=616173|bug 616173]]).
  * v4l2 has no api yet to do timestamped CID changes
 
-=== recording timestamps ===
+== recording timestamps ==
 Try pushing a newsegment to videobin, instead of rebasing timestamps with a buffer-probe.
 
 == Open Items ==
