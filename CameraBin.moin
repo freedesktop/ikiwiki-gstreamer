@@ -35,6 +35,8 @@ If the actual camera plugin is already implemented extending e.g. GstPushSrc, th
 insert the GstPushSrc based camera element there. In the most simple case the wrapper for a powerful hardware based camera source proxies gobject properties and links the internal element pads to the bins ghostpads. We would definitely want to have a GstSimpleV4l2CameraSrc as a reference implementation and also providing legacy/fallback support.
 
 === Image Capture Bin ===
+Received the image buffers from the camera source, encodes them and saves to disk. Must have queues internally to allow further captures to be taken while others are encoding.
+
  * Handles eos/tags between buffers/image captures
  * Possibility of multiple implementations:
    * A sequential encoding implementation using queues
@@ -44,6 +46,8 @@ insert the GstPushSrc based camera element there. In the most simple case the wr
    * Need to do tagging to multiple encoders. e.g. We use jifmux for jpg, what are we using for png? 
 
 === Video Recording Bin ===
+Responsible for recording video and audio. The video buffers are generated from the camera source, audio is recorded from a internal audio source element (that might be muted by the application).
+
  * There's an audio source element in this bin (be careful with the clock selection/distribution)
  * Newsegment/timestamp handling on recordings was tricky/buggy in current camerabin
  * Encodebin could work here 
@@ -81,6 +85,7 @@ insert the GstPushSrc based camera element there. In the most simple case the wr
  * How to do effects hot swapping? cheese and empathy want it.
  * Do we want a explicit prepare-for-capture step? To be set when the user finishes setting up its preferences? 
  * Use sometimes pads or messages for previewing on the source?
+ * How to map CameraBin2 flags to the internal bins flags?
 
 == Links ==
  * Rob Clark's camerabin branch: http://gitorious.org/robclark-gstreamer/gst-plugins-bad
