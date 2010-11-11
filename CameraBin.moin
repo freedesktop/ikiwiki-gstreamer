@@ -1,8 +1,5 @@
 <<TableOfContents(3)>>
 
-= CameraBin TODO =
-
-
 = CameraBin 2 =
 
 Current camerabin is a single element and has some complex code with input/output-selectors for controlling the flow of buffers. Making it more modularized and with less -selectors would simplify the code a lot. We hope caps negotiation will be simplified, too. And more tricky features could be implemented inside still/video capturing modules(bins). We could also switch a whole bin for another one with a different implementation.
@@ -54,6 +51,36 @@ insert the GstPushSrc based camera element there. In the most simple case the wr
 === Viewfinder Bin ===
  * Contains the videosink and any image processing filters/analyzers the application might set
  * How useful is it outside of camerabin? It's simply a branch of elements. (Hot-swapping of effects?)
+
+== Use Cases ==
+ * Basic picture capture: User sets capture resolution to camerabin2, that forwards it to the camerasrc. User also sends the capture filename to camerabin2, which forwards it to the image capture branch. User then sends the capture signal and camerabin forwards it to the camerasrc. Camerasrc pushes a buffer through its imagesrc and it gets to the image encoding branch. The image encoding branch encodes, puts tags into the image and sends an EOS to the filesink so that it finishes the file. 
+
+ * Basic video capture: User sets capture resolution and fps to camerabin2 and it forwards it to the camerasrc. User sets the capture filename, which is passed to the video recording bin. When the user sends the capture start signal, camerasrc starts pushing buffers through its videosrc pad. The audiosrc inside the videobin also starts recording the audio in sync with the video buffers. The viewfinder must still keep running during this. Recording continues until the user sends the capture stop signal. At this point, eos is pushed on the video recording bin and the file is finalized. It should be possible to pause and continue the recording. It should also be possible to mute audio recording. 
+
+ * Panorama: Panorama pictures are not planned to be supported natively on camerabin2, it could, however, be implemented as a image capture module and replace the default module whenever the user would like to take panorama pics. Currently an external application has to take care of the pictures merging. From camerabin2, an application needs to be able to control camera parameters (AWB, AF and AE) so that subsequent captures use the same values. This is possible by using the 'manual' mode for these properties in the Photography interface. It is also possible to set it to 'manual' after the first capture so that the 3A values are automatically set up for the first capture and maintained as that for the other captures. 
+
+ * Continuous shooting: In this mode, camerabin2 has little to do. This is handled by the source module, by setting it to 'continuous shooting' mode it will use faster algorithms to do 3A, thus reducing shot to shot time. The rest of camerabin2 will work as usual 
+
+ * <add your favorite use case here> 
+
+== Other features ==
+ * Digital zooming (with Photography interface or gstreamer elements)
+ * Night mode adjustment (camerabin or app handles it?)
+ * Querying available capture formats
+ * Autopick framerate
+   * Highest if not specified
+   * rounding (when user selected fps isn't available) 
+ * colorspace/scalers to guarantee compatibility between elements
+ * Hot-swapping of effects elements. 
+
+== Intentionally not handled ==
+ * Cameras that generate non-raw input
+ * Hot swapping of inputs/camera. This can be done by setting it to NULL and changing. 
+
+== Open Questions ==
+ * How to do effects hot swapping? cheese and empathy want it.
+ * Do we want a explicit prepare-for-capture step? To be set when the user finishes setting up its preferences? 
+ * Use sometimes pads or messages for previewing?
 
 = CameraBin =
 
