@@ -2,9 +2,9 @@
 
 = CameraBin 2 =
 
-Current camerabin is a single element and has some complex code with input/output-selectors for controlling the flow of buffers. Making it more modularized and with less -selectors would simplify the code a lot. We hope caps negotiation will be simplified, too. And more tricky features could be implemented inside still/video capturing modules(bins). We could also switch a whole bin for another one with a different implementation.
+Current camerabin is a single element and has some complex code with input/output-selectors for controlling the flow of buffers. Making it more modularized and with less -selectors would simplify the code a lot. We hope caps negotiation will be simplified, too. And more tricky features could be implemented inside still/video capturing modules(bins). We could also switch a whole sub-bins to ones with a different implementations. The multi-pad source design enables optimizations for hardware that can stream simultaneously on all pads. 
 
-Even though the new camerabin will provide the same basic functions from the current one, it will be built from ground up again with a different design. We should make it camerabin2 and take it in parallel with camerabin. This way we avoid major regressions and api changes hassle to applications using current camerabin. When they feel ready, the switch to camerabin2 wouldn't be hard. Also, we can keep bugfixing on old camerabin and keeping everything using it working.
+Even though the new camerabin will provide the same basic functions as the current one (and have quite similar API), it will be built from ground up again with a different design. We should make it camerabin2 and take it in parallel with camerabin. This way we avoid major regressions and api changes hassle to applications using current camerabin. When they feel ready, the switch to camerabin2 wouldn't be hard. Also, we can keep bugfixing on old camerabin and keeping everything using it working.
 
 == Modules ==
 
