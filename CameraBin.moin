@@ -75,7 +75,7 @@ Responsible for recording video and audio. The video buffers are generated from 
    * Highest if not specified
    * rounding (when user selected fps isn't available) 
  * colorspace/scalers to guarantee compatibility between elements
- * Hot-swapping of effects elements. 
+ * Hot-swapping of effects elements.
 
 == Intentionally not handled ==
  * Cameras that generate non-raw input
@@ -86,6 +86,11 @@ Responsible for recording video and audio. The video buffers are generated from 
  * Do we want a explicit prepare-for-capture step? To be set when the user finishes setting up its preferences? 
  * Use sometimes pads or messages for previewing on the source?
  * How to map CameraBin2 flags to the internal bins flags?
+ * Detection of video sources? (Improve autovideosrc? This would be nice for Cheese)
+ * Effects performance
+   * Camerabin can do effects on all branches with a single element. Camerabin2 would need one effect element per branch.
+   * Proper benchmarking needed here.
+   * Providing effects on the source bin of camerabin2 if it supports it would help here.
 
 == Links ==
  * Rob Clark's camerabin branch: http://gitorious.org/robclark-gstreamer/gst-plugins-bad
