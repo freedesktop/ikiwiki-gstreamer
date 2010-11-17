@@ -29,6 +29,7 @@ The following list is more of a collection of things to remember, for the big pi
    * in practice we only allow/handle a few selected types, so may just as well make that more explicit, and the API nicer
    * can keep using GValue internally, but are free to change the implementation if something better comes along (e.g. GVariant, or something home-grown)
  * Be able to negotiate buffer sizes along the pipeline. For example, in VoIP calls, the other side tells us the "packet time", ie, the length of the packets in milli-seconds. Being able to request that the source make packets of this length would allow to reduce latency while avoiding the extra overhead from smaller buffer.
+ * Move codec profile and level to caps. This will simplify use-cases such as having a h/w encoder/decoder upto a certain profile/level and s/w fallback for others (or even multiple implementations of varying speed/quality).
 
 ==== miniobject ====
 
