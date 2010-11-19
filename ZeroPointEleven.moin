@@ -51,6 +51,7 @@ see [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/design/draft-buf
    * most gst_xxx_parse methods can be dropped/deprecated
    * main benefit is that we get a new instance with a single g_slice_new call, instead of 2 g_slice_new + 1 malloc as it is now.
      ''(tpm: that can be solved differently, e.g. by allowing static/embedded GstStructures, or just using GVariant, or somesuch)''
+ * Query API: get rid of the whole query-format-may-change thing, it's awkward API and not used anywhere (nor really necessary, is it?)
 
 ==== registry ====
 
@@ -67,6 +68,18 @@ see [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/design/draft-buf
  * we don't really have a way to distinguish transient/non-transient/fixed/non-fixed tags, ie. those which apply to the stream as a whole and are more or less fixed and those that only temporarily apply to the stream or parts of the stream (such as: per-video-frame metadata, current average bitrate for VBR streams etc.); there will be more occasions where we will want to be able to distinguish these and/or choose different delivery mechanisms; posting tag messages 30-times a second may not be ideal, for example
  * API and design for rewriting/filtering tags: pretty hard to do right now, and we don't have API to make a GstTagSetter e.g. remove certain tags (other than reading the tags first and then setting new tags with REPLACE_ALL mode, but that's problematic and inconvenient if you want to change the tags on the fly, since you'd have to hook up event handlers in the streaming thread etc. etc. - it's all either impossible or very inconvenient currently)
 
+==== pipeline parser ====
+
+ * split gst_launch_parse() into separate library, doesn't really need to be in core
+ * rewrite parse_launch in C? (if we don't do it now, we'll never be able to do it, since it'll be impossible to rewrite it from scratch and maintain the exact same behaviour; is the current code really maintainable? How many people understand it?)
+   * StefanKost: will it become any easier to understand if its written in plain C?
+
+==== error handling ====
+
+ * add GError * arguments to all synchronous API that may fail, so you get automatic exceptions for bindings
+   * Tim: imho metadata annotation to throw an exception on FALSE/NULL returns would be sufficient, but it was categorically stated that this is the wrong approach and GError is the expected way to report exceptions
+ * gst_preset_{load|save} should have a GError * argument.
+
 ==== miscellaneous ====
 
  * get rid of the abomination that is GstImplementsInterface
@@ -79,13 +92,8 @@ see [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/design/draft-buf
  * refcount-dependent writability/mutability of buffers/queries/structures is very awkward for language bindings (e.g. C++) 
  * ideally our _new() functions are no more than a thin wrapper around g_object_new() (much better for bindings)
  * get rid of GST_FORMAT_DEFAULT (replace with GST_FORMAT_FRAME or GST_FORMAT_SAMPLE or whatever if need be)
- * Query API: get rid of the whole query-format-may-change thing, it's awkward API and not used anywhere (nor really necessary, is it?)
- * split gst_launch_parse() into separate library, doesn't really need to be in core
- * rewrite parse_launch in C? (if we don't do it now, we'll never be able to do it, since it'll be impossible to rewrite it from scratch and maintain the exact same behaviour; is the current code really maintainable? How many people understand it?)
  * GstBufferClass needs padding
  * GST_STATE_TRANSITION() makes a GstStateChange, rename either of them (probably easier to rename GstStateChange to GstStateTransition, than renaming all the macros).
- * gst_preset_{load|save} should have a GError * argument.
- * add GError * arguments to all synchronous API that may fail, so you get automatic exceptions for bindings (Tim: imho metadata annotation to throw an exception on FALSE/NULL returns would be sufficient, but it was categorically stated that this is the wrong approach and GError is the expected way to report exceptions)
  * Define what codec_data should mean for each format, try to be as consistent as possible.
  * base controller functionality in GstObject, only have the controlsources in a lib
  * unit tests shouldn't use check symbols directly
