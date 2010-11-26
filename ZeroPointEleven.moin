@@ -80,6 +80,13 @@ see [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/design/draft-buf
    * Tim: imho metadata annotation to throw an exception on FALSE/NULL returns would be sufficient, but it was categorically stated that this is the wrong approach and GError is the expected way to report exceptions
  * gst_preset_{load|save} should have a GError * argument.
 
+==== unit tests ====
+ * libgstcheck: prefix all functions and symbols. Have a wrapping layer that's 100% GStreamer, including environment variables etc.
+   * that's just for sanity, check's symbols were mostly exposed by accident
+   * magic global symbols aren't very nice API ('buffers')
+   * so we can put in another implementation / our own implementation of unit tests instead of using check if we want to
+ * unit tests shouldn't use check symbols directly then anymore
+
 ==== miscellaneous ====
 
  * get rid of the abomination that is GstImplementsInterface
@@ -96,15 +103,10 @@ see [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/design/draft-buf
  * GST_STATE_TRANSITION() makes a GstStateChange, rename either of them (probably easier to rename GstStateChange to GstStateTransition, than renaming all the macros).
  * Define what codec_data should mean for each format, try to be as consistent as possible.
  * base controller functionality in GstObject, only have the controlsources in a lib
- * unit tests shouldn't use check symbols directly
  * Clean up the GstBus API (add_watch can only be called once), maybe add a return value to "sync-message", etc.. Maybe depcreate add_watch in favor of "message" ?
  * remove unversioned gst-foo? (Causes people problems when debugging with gdb/valgrind, and what's the point in having them if the API / pipeline syntax / element names change from major version to major version, so that they're incompatible between major versions anyway?)
  * remove gst-xmlinspect (people should just use pygst or whatever to inspect the registry)
  * remove gst-xmllaunch
- * libgstcheck: prefix all functions and symbols. Have a wrapping layer that's 100% GStreamer, including environment variables etc.
-   * that's just for sanity, check's symbols were mostly exposed by accident
-   * magic global symbols aren't very nice API ('buffers')
-   * so we can put in another implementation / our own implementation of unit tests instead of using check if we want to
  * Create gst_element_set_state_async. It makes all state changes asynchronous and always returns GST_STATE_CHANGE_ASYNC or nothing (void).
  * Create gst_element_set_state_sync. It makes all state changes synchronous and never returns GST_STATE_CHANGE_ASYNC.
 
