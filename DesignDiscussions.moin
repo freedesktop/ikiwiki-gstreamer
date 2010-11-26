@@ -25,5 +25,7 @@ Space for drafting new features.
   * EncodingProfilesUi: Encoding profiles UI for editing, selecting, etc of encoding profiles
   * DebugHelperMenu: Menu to add to menu bar in debug version
 
- * Presets
+ * Presets (Profiles)
   * PresetDesign: Combining GStreamer element presets with devices
+
+ * ZeroPointEleven: GStreamer 0.11 / 1.0 discussions
