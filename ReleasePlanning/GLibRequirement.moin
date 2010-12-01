@@ -36,14 +36,14 @@ This will roughly result in a schedule like this:
  * check glib req in April 2010 => 2.20
  * '''0.10.30''', released around 16-Jul-2010: GLib 2.20
  * check glib req in July 2010 => 2.20
- * '''0.10.31''', scheduled for release around xx-Oct-2010: GLib 2.20
- * check glib req in October 2010 => 2.22
- * '''0.10.32''', scheduled for release around xx-Dec-2010: GLib 2.22
- * check ...
+ * '''0.10.31''', released around 30-Nov-2010: GLib 2.20
+ * check glib req in November 2010 => 2.22
+ * '''0.10.32''', scheduled for release around Dec-2010/Jan-2011: GLib 2.22
+ * check glib req in December 2010 / January 2011 => 2.22
 
 ===  GLib major versions release dates (for reference) ===
 
-[[ftp://ftp.gnome.org/pub/GNOME/sources/glib/|(glib source directory on ftp.gnome.org)]]
+[[http://ftp.gnome.org/pub/GNOME/sources/glib/|(glib source directory on ftp.gnome.org)]]
 
  * '''2.12.1''': 22-Jul-2006
  * '''2.14.1''': 16-Sep-2007
@@ -52,7 +52,8 @@ This will roughly result in a schedule like this:
  * '''2.20.1''': 10-Apr-2009
  * '''2.22.1''': 30-Sep-2009
  * '''2.24.1''': 03-May-2010
- * '''2.26.1''': ???
+ * '''2.26.1''': 14-Nov-2010
+ * '''2.28.1''': tbc
 
 === See Also ===
 
