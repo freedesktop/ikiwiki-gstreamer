@@ -95,6 +95,7 @@ Responsible for recording video and audio. The video buffers are generated from 
 == Links ==
  * Rob Clark's camerabin branch: http://gitorious.org/robclark-gstreamer/gst-plugins-bad
    * Refactored camerabin to this new design
+ * Log of camerabin2 meeting on 07/12/2010 (dd/mm/yyyy): http://people.collabora.co.uk/~thiagoss/camerabin2_20101207.log
 
 = CameraBin =
 
