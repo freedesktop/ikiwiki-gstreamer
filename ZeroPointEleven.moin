@@ -4,7 +4,7 @@ This page is a somewhat random collection of things to look at for 0.11. More ca
 
 "0.11" describes a future development version of GStreamer where API and ABI changes can (and will) happen. There is only a rough timeline for when 0.11 will happen ("by the end of 2011). Details can be found in [[http://gstconf.ubicast.tv/videos/keynote-gstreamer-current-and-future-development/|Wim Tayman's GStreamer conference keynote]], the [[http://article.gmane.org/gmane.comp.video.gstreamer.devel/31909/|announcement on the mailing-list]] and in [[http://blogs.gnome.org/uraeus/2010/10/29/summary-of-gstreamer-conference-2010/|Christian's summary of the GStreamer conference blog post]]). There is still a lot more that can be achieved with the current 0.10 API.
 
-There's now a 0.11 branch for most modules. See Wim's [[http://article.gmane.org/gmane.comp.video.gstreamer.devel/32366|0.11 development mail]. '''Everyone with git commit access please checkout this [[http://thread.gmane.org/gmane.comp.video.gstreamer.devel/32366/focus=32367|word of caution about git-push default seettings]] now and fix your git-push default to something more conservative.
+There's now a 0.11 branch for most modules. See Wim's [[http://article.gmane.org/gmane.comp.video.gstreamer.devel/32366|0.11 development mail]]. '''Everyone with git commit access please checkout this [[http://thread.gmane.org/gmane.comp.video.gstreamer.devel/32366/focus=32367|word of caution about git-push default seettings]] now and fix your git-push default to something more conservative'''.
 
 It is expected that the transition from 0.10 to 0.11/1.0 will be much easier on application and plugin developers than the transition from 0.8 to 0.10 was.
 
