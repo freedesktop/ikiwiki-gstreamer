@@ -17,6 +17,14 @@ This wiki serves as a scratchpad for tasks, design discussions and the like.
  * SubmittingPatches: where and how to submit patches
  * General documentation about GStreamer libraries and plugins can be found on the [[http://gstreamer.freedesktop.org/documentation/|GStreamer Documentation Page]]
 
+== Links ==
+
+ * [[http://gstreamer.freedesktop.org/wiki/GStreamerConference2010|GStreamer Conference 2010 slides and videos]]
+ * [[http://build.gstreamer.org|GStreamer build bot]]
+ * [[http://lrn.no-ip.info|GStreamer Windows MingW build bot]]
+ * [[http://gstreamer.freedesktop.org/wiki/ReleasePlanning2010|Release Planning 2010]]
+ * [[http://gstreamer.freedesktop.org/wiki/ZeroPointEleven|GStreamer 0.11/1.0]]
+
 == Starting points ==
 
  * RecentChanges: see where people are currently working
