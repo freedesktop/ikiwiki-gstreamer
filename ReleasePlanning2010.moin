@@ -39,7 +39,7 @@ This is a tentative schedule for releases for the first few months of 2010:
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Dec  2 || '''Core/Base/Good/python thaw''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ~Dec 31 || '''Core/Base/Good/Ugly/Bad freeze''' ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> ... || '''continued on ReleasePlanning2011 page... ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ... || continued on ReleasePlanning2011 page... ||
 
 gst-ffmpeg, gst-python, and gnonlin releases may be done in any of these cycles as well.
 
