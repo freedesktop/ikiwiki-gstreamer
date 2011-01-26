@@ -53,7 +53,7 @@ see [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/design/draft-buf
    * most gst_xxx_parse methods can be dropped/deprecated
    * main benefit is that we get a new instance with a single g_slice_new call, instead of 2 g_slice_new + 1 malloc as it is now.
      ''(tpm: that can be solved differently, e.g. by allowing static/embedded GstStructures, or just using GVariant, or somesuch)''
-     ''(ensonic: the GstStructures alone is one g_slice_new + g_malloc for the array, we could solve that by having a static GstStructure that cannot grow at runtime)
+     ''(ensonic: the GstStructures alone is one g_slice_new + g_malloc for the array, we could solve that by having a static GstStructure that cannot grow at runtime)''
  * Query API: get rid of the whole query-format-may-change thing, it's awkward API and not used anywhere (nor really necessary, is it?)
  * EOS: end-of-stream events are one of a variety of potential "stream division" events, such as the 0.8-style new-media event, or new-chapter events.  Proper fragmentation of encoded streams requires passing around fragmentation information, particularly between the encoder, muxer, and filesink.
 
