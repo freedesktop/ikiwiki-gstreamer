@@ -1,6 +1,11 @@
 ##acl MoinPagesEditorGroup:read,write,delete,revert All:read
 #format wiki
 #language en
+
+Also see:
+ * '''[[http://gstreamer.freedesktop.org/documentation/|GStreamer documentation overview]]'''
+ * '''[[http://gstreamer.freedesktop.org/data/doc/gstreamer/head/faq/html/index.html|Non-wiki GStreamer FAQ]]'''
+
 <<TableOfContents(2)>>
 
 = General =
