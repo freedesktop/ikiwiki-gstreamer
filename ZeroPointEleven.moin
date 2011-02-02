@@ -115,6 +115,7 @@ see [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/design/draft-buf
  * Create gst_element_set_state_sync. It makes all state changes synchronous and never returns GST_STATE_CHANGE_ASYNC.
  * fix all *_uri_type() functions up to take GstURIType and not an int/guint (needs fixes in header include order)
  * proper signalling and handling of sparse streams (e.g. subtitles)
+ * should fix pad template names, e.g. foo_%d doesn't make sense since we never want a pad called `foo_-1` really, do we?
 
 === gst-plugins-base ===
 
