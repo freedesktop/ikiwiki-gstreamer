@@ -31,7 +31,7 @@ Modules not included:
  * GStreamer Editing Services - released when maintainer sees fit
  * GStreamer openmax - released when maintainer sees fit
  * GStreamer OpenGL support - released when maintainer sees fit
- * GStreamer rtsp - released when maintainer sees fit
+ * GStreamer RTSP server - released when maintainer sees fit
  * QT-GStreamer - released when maintainer sees fit
 
 == Release procedure for Core/Base/Python ==
