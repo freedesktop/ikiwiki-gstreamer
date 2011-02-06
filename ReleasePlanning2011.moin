@@ -23,11 +23,16 @@ At the moment there are 7 GStreamer modules included in the schedule:
  * GStreamer Ugly Plugins
  * GStreamer FFmpeg
  * GStreamer Python Bindings
+Each module will see a release every 3 months. For an explanation of the freezes please see [[ReleasePlanning/Freezes|here]].
+
 Modules not included:
 
  * Gnonlin - released by Edward Hervey as he sees fit
- * GStreamer OpenGL support - doesn't exist yet :)
-Each module will see a release every 3 months. For an explanation of the freezes please see [[ReleasePlanning/Freezes|here]].
+ * GStreamer Editing Services - released when maintainer sees fit
+ * GStreamer openmax - released when maintainer sees fit
+ * GStreamer OpenGL support - released when maintainer sees fit
+ * GStreamer rtsp - released when maintainer sees fit
+ * QT-GStreamer - released when maintainer sees fit
 
 == Release procedure for Core/Base/Python ==
 The release procedure is to freeze the modules, and then make a series of pre-release tarballs. 2 weeks later, the final release is done. At the discretion of the release manager, this may happen after only one week if no bugs are found, and we can all go to the pub.
