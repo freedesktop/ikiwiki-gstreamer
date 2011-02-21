@@ -116,6 +116,8 @@ see [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/design/draft-buf
  * fix all *_uri_type() functions up to take GstURIType and not an int/guint (needs fixes in header include order)
  * proper signalling and handling of sparse streams (e.g. subtitles)
  * should fix pad template names, e.g. foo_%d doesn't make sense since we never want a pad called `foo_-1` really, do we?
+   * especially fix those that use foo_%2d (avi)
+ * should we get rid of pad-probes (people can use identity with handoff callbacks), pad-probes cause overhead in data-flow and need extra api
 
 === gst-plugins-base ===
 
