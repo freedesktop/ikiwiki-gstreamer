@@ -63,6 +63,7 @@ see [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/design/draft-buf
  * move things over to dynamic types that can be unregistered again?
      ''(ocrete: Farsight2 used to have un-registrable (even unloadable) plugins, it was a real pain)''
  * consider GstMiniObject for GstPlugin and GstPluginFeatures. These types (and their known sub classes) don't use signals and properties. This would save memory and make startup faster. Avoid parsing of registry, use GVariant-based cache.
+ * do we need multiple registries? We could make the GstRegistry a singleton. Then we can drop gst_registry_get_default() and drop the registry arg from all the methods.
 
 ==== tags ====
 
