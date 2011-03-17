@@ -38,8 +38,11 @@ This will roughly result in a schedule like this:
  * check glib req in July 2010 => 2.20
  * '''0.10.31''', released around 30-Nov-2010: GLib 2.20
  * check glib req in November 2010 => 2.22
- * '''0.10.32''', scheduled for release around Dec-2010/Jan-2011: GLib 2.22
- * check glib req in December 2010 / January 2011 => 2.22
+ * '''0.10.32''', release around 21-Jan-2011: GLib 2.22
+ * check glib req in January 2011 => 2.22
+ * '''0.10.33''', scheduled for release in April 2011: Glib 2.22
+ * check glib req in April 2011 => 2.22 or 2.24 (probably 2.24)
+ * '''0.10.34''', scheduled for release mid-2011: GLib 2.22 or 2.24 (probably 2.24)
 
 ===  GLib major versions release dates (for reference) ===
 
@@ -53,7 +56,8 @@ This will roughly result in a schedule like this:
  * '''2.22.1''': 30-Sep-2009
  * '''2.24.1''': 03-May-2010
  * '''2.26.1''': 14-Nov-2010
- * '''2.28.1''': tbc
+ * '''2.28.1''': 18-Feb-2011
+ * '''2.30.1''': tbc
 
 === See Also ===
 
