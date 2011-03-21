@@ -1,13 +1,13 @@
-=DLNA Magic Transcoding=
+= DLNA Magic Transcoding =
 
-One of the key features of Rygel (as a DLNA media server) is on the fly transcoding of content to formats that the client/player can handle. The idea is basically to make a DLNA media server (like Rygel) completely abstracted from transcoding so that it only has to choose a (DLNA) profile to transcode to and rest is handled by gstreamer and gupnp-dlna. Please refer to this email I send to gupnp and rygel mailing-lists in June 2010 in which I explained the idea in detail. Its under #2 but as #1 is a prerequisite to #2, you might want to read the whole email. Things have changed since then and here is what you need to know also:
+One of the key features of [[http://live.gnome.org/Rygel|Rygel]] (as a DLNA media server) is on the fly transcoding of content to formats that the client/player can handle. The idea is basically to make a DLNA media server (like Rygel) completely abstracted from transcoding so that it only has to choose a (DLNA) profile to transcode to and rest is handled by gstreamer and gupnp-dlna. Please refer to [[http://lists.o-hand.com/gupnp/0915.html|this email]] I sent to gupnp and rygel mailing-lists in June 2010 in which I explained the idea in detail. You might want to skip to "#2 Fully automatic transcoding". Things have changed since then and here is what you need to know also:
 
-* If you follow the whole thread, all the work went into a separate libarary called gupnp-dlna and not gupnp-av.
+* If you follow the whole thread, all the work went into a separate new libarary called [[http://gitorious.org/gupnp/gupnp-dlna|gupnp-dlna]] and not gupnp-av.
 
-* gst-convenince has already been completely merged into relavent gstreamer components, mostly the pbutils library in gst-plugins-base.
+* gst-convenince has already been completely merged into relavent gstreamer components, mostly in the pbutils library in gst-plugins-base.
+
+* 'DLNA profile detection' part mentioned in the mail pretty much already in place and working. There is still not enough profiles covered though.
+
+* We already [[http://gitorious.org/gupnp/gupnp-dlna/blobs/master/libgupnp-dlna/gupnp-dlna-profile.h#line72|have the needed API]] (to fetch GStreamer profile given a DLNA profile) in gupnp-dlna. The task would now be mostly about getting it actually working by fixing various gstreamer elements (encoders and muxers of our choosing based on popularity).
 
 * Arun has mostly been working on some other projects for past many months and his work was continued by Parthasarathi Susarla first and now Luis de Bethencourt.
-
-* Much of 'DLNA profile detection' is already in place and working.
-
-* We already have the needed API (to fetch GStreamer profile given a DLNA profile) in gupnp-dlna. The task would now be mostly about getting it actually working by fixing various gstreamer elements (encoders and muxers of our choosing based on popularity).
