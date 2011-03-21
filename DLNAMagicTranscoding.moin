@@ -11,3 +11,8 @@ One of the key features of [[http://live.gnome.org/Rygel|Rygel]] (as a DLNA medi
  * We already [[http://gitorious.org/gupnp/gupnp-dlna/blobs/master/libgupnp-dlna/gupnp-dlna-profile.h#line72|have the needed API]] (to fetch GStreamer profile given a DLNA profile) in gupnp-dlna. The task would now be mostly about getting it actually working by fixing various gstreamer elements (encoders and muxers of our choosing based on popularity).
 
  * Arun has mostly been working on some other projects for past many months and his work was continued by Parthasarathi Susarla first and now Luis de Bethencourt.
+
+=== Mentors ===
+
+Zeeshan Ali (Khattak) <zeeshanak gnome org> (IRC nick: zeenix)
+Luis de Bethencourt <luis debethencourt com> (IRC nick: luisbg)
