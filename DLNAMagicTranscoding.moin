@@ -1,5 +1,8 @@
 = DLNA Magic Transcoding =
 
+
+== Description ==
+
 One of the key features of [[http://live.gnome.org/Rygel|Rygel]] (as a DLNA media server) is on the fly transcoding of content to formats that the client/player can handle. The idea is basically to make a DLNA media server (like Rygel) completely abstracted from transcoding so that it only has to choose a (DLNA) profile to transcode to and rest is handled by gstreamer and gupnp-dlna. Please refer to [[http://lists.o-hand.com/gupnp/0915.html|this email]] I sent to gupnp and rygel mailing-lists in June 2010 in which I explained the idea in detail. You might want to skip to "#2 Fully automatic transcoding". Things have changed since then and here is what you need to know also:
 
  * If you follow the whole thread, all the work went into a separate new libarary called [[http://gitorious.org/gupnp/gupnp-dlna|gupnp-dlna]] and not gupnp-av.
@@ -12,7 +15,8 @@ One of the key features of [[http://live.gnome.org/Rygel|Rygel]] (as a DLNA medi
 
  * Arun has mostly been working on some other projects for past many months and his work was continued by Parthasarathi Susarla first and now Luis de Bethencourt.
 
-=== Mentors ===
+== Mentors ==
 
 Zeeshan Ali (Khattak) <zeeshanak gnome org> (IRC nick: zeenix)
+
 Luis de Bethencourt <luis debethencourt com> (IRC nick: luisbg)
