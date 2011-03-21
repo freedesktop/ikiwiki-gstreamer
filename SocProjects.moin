@@ -5,6 +5,7 @@
   * [[PluginsForEditing]]: Wrapping much-needed audio/video filters as gstreamer plugins.
   * VDPAU & VA plugins : Wrap GPU-accelerated decoder/filter libraries. See [[http://bugzilla.gnome.org/show_bug.cgi?id=561225|#561225]] for the generic idea.
  * applications
+  * [[DLNAMagicTranscoding]]: DLNA Magic Transcoding
   * [[Pitivi]]: Improve Pitivi
   * JokosherTelepathy - Extend Jokosher's telepathy support to allow for recording of VoIP calls and add support for tubes.
   * JokosherScoreEditing - Add support for displaying and editing musical scores within Jokosher.
