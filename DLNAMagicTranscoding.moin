@@ -7,11 +7,11 @@ One of the key features of [[http://live.gnome.org/Rygel|Rygel]] (as a DLNA medi
 
  * If you follow the whole thread, all the work went into a separate new library called [[http://gitorious.org/gupnp/gupnp-dlna|gupnp-dlna]] and not gupnp-av.
 
- * gst-convenince has already been completely merged into relavent gstreamer components, mostly in the pbutils library in gst-plugins-base.
+ * gst-convenience has already been completely merged into relevant GStreamer components, mostly in the pbutils library in gst-plugins-base.
 
  * 'DLNA profile detection' part mentioned in the mail pretty much already in place and working. There is still not enough profiles covered though.
 
- * We already [[http://gitorious.org/gupnp/gupnp-dlna/blobs/master/libgupnp-dlna/gupnp-dlna-profile.h#line72|have the needed API]] (to fetch GStreamer profile given a DLNA profile) in gupnp-dlna. The task would now be mostly about getting it actually working by fixing various gstreamer elements (encoders and muxers of our choosing based on popularity).
+ * We already have the [[http://gitorious.org/gupnp/gupnp-dlna/blobs/master/libgupnp-dlna/gupnp-dlna-profile.h#line72| needed API]] (to fetch GStreamer profile given a DLNA profile) in gupnp-dlna. The task would now be mostly about getting it actually working by fixing various gstreamer elements (encoders and muxers of our choosing based on popularity).
 
  * Arun has mostly been working on some other projects for past many months and his work was continued by Parthasarathi Susarla first and now Luis de Bethencourt.
 
