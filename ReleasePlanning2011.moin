@@ -10,9 +10,11 @@ This is a tentative schedule for releases for the first few months of 2011:
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ~Jan 20 || '''Core 0.10.32, Base 0.10.32, Good 0.10.27, Ugly 0.10.17, Bad 0.10.21, gst-python 0.10.21, gnonlin 0.10.16 release''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ~Jan 21 || '''Core/Base/Good/Ugly/Bad/python/gnonlin thaw''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Mar 23 || '''Core/Base/Good freeze''' ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Apr 7 || '''Core 0.10.33, Base 0.10.33, Good 0.10.28 release''' ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> Apr 8 || '''Core/Base/Good thaw''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Mar 8 || '''Good 0.10.28 release''' (one patch ad-hoc release to fix build issue) ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Apr 1 || '''Core/Base/Good freeze''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Apr 15 || '''Core 0.10.33, Base 0.10.33, Good 0.10.28 release''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Apr 16 || '''Core/Base/Good thaw''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
 
 gst-ffmpeg, gst-python, and gnonlin releases may be done in any of these cycles as well.
