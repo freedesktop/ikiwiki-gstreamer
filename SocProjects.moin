@@ -1,6 +1,7 @@
 = List of Summer of Code project ideas for students =
 
  * plugins
+  * [[WebP]] : Project to create a decoder and encoder for WebP image format
   * [[IXMF]]: Project to create decoder and/or encoder for the IXMF audio format
   * [[PluginsForEditing]]: Wrapping much-needed audio/video filters as gstreamer plugins.
   * VDPAU & VA plugins : Wrap GPU-accelerated decoder/filter libraries. See [[http://bugzilla.gnome.org/show_bug.cgi?id=561225|#561225]] for the generic idea.
@@ -22,9 +23,13 @@
 = Other Organizations =
 Other organizations that have project ideas related to GStreamer:
 
- * http://code.google.com/soc/2010/ffmpeg/about.html FFmpeg
- * http://code.google.com/soc/2010/gnome/about.html GNOME
- * http://code.google.com/soc/2010/xiph/about.html Xiph.org
+ * http://wiki.multimedia.cx/index.php?title=FFmpeg_/_Libav_Summer_Of_Code_2011
+ * http://live.gnome.org/SummerOfCode2011/Ideas
+ * http://community.kde.org/GSoC/2011/Ideas
+ * https://github.com/fosslc/freeseer/issues/labels/summer%20code
+
+
+
 Back to TaskList
 
 ----
