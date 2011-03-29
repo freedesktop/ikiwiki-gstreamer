@@ -13,7 +13,6 @@
   * [[DLNAMagicTranscoding]]: DLNA Magic Transcoding
   * [[Closed_Captioning_support]]: Subtitles for the hearing impaired
   * [[TamasKorodi/IVC_multichannel_grabber_card_support|Multichannel_grabber_card_support]] : Multichannel video grabber card support and more baseclasses
-  * [[TopicBasedDocumentation]]: Merge a most of Application writers manaual and Plugin writers Guide to api docs and start a topic based guide 
   * [[GeneratedFormatTestdata]]: Generate robustness testdata for demuxer/parser tests
   * [[Video3DSupport]]: Make GStreamer ready for stereoscopic video
  * bindings
