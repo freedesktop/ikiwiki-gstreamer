@@ -1,15 +1,8 @@
 [[http://www.pitivi.org|PiTiVi]] is an open source video editor.
 
-The current status of PiTiVi, what's done and what needs to be done is detailed on the pitivi wiki ([[http://www.pitivi.org/wiki/Roadmap]])
+The current status of PiTiVi, what's done and what needs to be done is detailed on the pitivi wiki ([[http://wiki.pitivi.org/wiki/Google_Summer_of_Code]])
 
-Amongst the things to be done which are high priority:
-
- * Titling
- * Capture
- * Effects
- * Fade-in/-out # currently partially done in git
- * Transitions (fade + smpte) # currently partially done in git
- * ...
+Check out the PiTiVi page on the PiTiVi wiki for some ideas for PiTiVi related Summer of Code projects.
 
 == Resources ==
 
