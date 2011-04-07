@@ -1,0 +1,11 @@
+= List of previous Summer of Code project ideas =
+
+These projects have been worked on already and are here for reference.
+
+ * plugins
+  * VDPAU & VA plugins : Wrap GPU-accelerated decoder/filter libraries. See [[http://bugzilla.gnome.org/show_bug.cgi?id=561225|#561225]] for the generic idea.
+ * applications
+  * JokosherTelepathy - Extend Jokosher's telepathy support to allow for recording of VoIP calls and add support for tubes.
+  * JokosherScoreEditing - Add support for displaying and editing musical scores within Jokosher.
+ * framework
+  * [[Video3DSupport]]: Make GStreamer ready for stereoscopic video
