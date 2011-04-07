@@ -4,20 +4,18 @@
   * [[WebP]] : Project to create a decoder and encoder for WebP image format
   * [[IXMF]]: Project to create decoder and/or encoder for the IXMF audio format
   * [[PluginsForEditing]]: Wrapping much-needed audio/video filters as gstreamer plugins.
-  * VDPAU & VA plugins : Wrap GPU-accelerated decoder/filter libraries. See [[http://bugzilla.gnome.org/show_bug.cgi?id=561225|#561225]] for the generic idea.
  * applications
   * [[Pitivi]]: Improve Pitivi
-  * JokosherTelepathy - Extend Jokosher's telepathy support to allow for recording of VoIP calls and add support for tubes.
-  * JokosherScoreEditing - Add support for displaying and editing musical scores within Jokosher.
  * framework
   * [[DLNAMagicTranscoding]]: DLNA Magic Transcoding
   * [[Closed_Captioning_support]]: Subtitles for the hearing impaired
   * [[TamasKorodi/IVC_multichannel_grabber_card_support|Multichannel_grabber_card_support]] : Multichannel video grabber card support and more baseclasses
   * [[GeneratedFormatTestdata]]: Generate robustness testdata for demuxer/parser tests
-  * [[Video3DSupport]]: Make GStreamer ready for stereoscopic video
  * bindings
   * [[RobinHorvath/Gstreamer-java_enhancement|Gstreamer-Java enhancement]] : GStreamer Java binding enhancement, GStreamer and GStreamer-Java Mac OS and Windows port
   * [[GStreamerSharp|gstreamer-sharp]] : Finish/improve the GStreamer C# bindings
+
+We have a [[PreviousSocProjets|list of previous projects]] for reference.
 
 = Other Organizations =
 Other organizations that have project ideas related to GStreamer:
