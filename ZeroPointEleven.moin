@@ -122,6 +122,7 @@ see [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/design/draft-buf
    * especially fix those that use foo_%2d (avi)
  * should we get rid of pad-probes (people can use identity with handoff callbacks), pad-probes cause overhead in data-flow and need extra api
    * tpm: pad-probes are much more powerful than the handoff callback (can drop buffers/events), but should maybe be implemented differently anyway, since a big problem with using GObject signals here is that the callback can't modify the buffer or buffer metadata (safely), since the refcount will be increased during the signal emission; but maybe that'll be fixed by not linking writability to the refcount in 0.11
+ * asynchronous gst_init()
 
 === gst-plugins-base ===
 
