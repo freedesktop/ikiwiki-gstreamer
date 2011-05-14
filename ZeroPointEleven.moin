@@ -65,6 +65,7 @@ see [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/design/draft-buf
  * consider GstMiniObject for GstPlugin and GstPluginFeatures. These types (and their known sub classes) don't use signals and properties. This would save memory and make startup faster. Avoid parsing of registry, use GVariant-based cache.
  * do we need multiple registries? We could make the GstRegistry a singleton. Then we can drop gst_registry_get_default() and drop the registry arg from all the methods.
      ''(robclark: in the past we had discussed having a special 2nd registry for low power audio playback (ie. mp3 player), and launching audio player app w/ env var to point it at the 2nd registry.. so wouldn't need multiple registries in one process, but would still need a way to have multiple registries existing in the filesystem.  Not sure how/if that would be impacted by your proposal.)''
+ * maybe separate the type registration in gst_element_register() from the element registration, so it can be done in a delayed fashion (e.g. after resolving element factory or plugin "replaces"-type relationships)
 
 ==== tags ====
 
