@@ -141,6 +141,7 @@ see [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/design/draft-buf
  * change GstPropertyProbe to be more useful and generic and move into core(?). I would be good if a probe could return multiple things, e.g. a "device" probe could return description strings in addition to the various devices found (so we can get rid of the silly device-name thing we do currently)
  * GstMixer is not thread-safe at all; return newly-allocated lists with ref'ed objects etc.; make GstMixerTrack derive from GstObject instead of GObject (so we can lock easily, and set the mixer as parent object); make functions return failure/success
  * add volume/stream-volume to GstAudioSink so that it's always available
+ * make interfaces like GstUriHandler, GstTuner etc. register canonical properties (which the classes that implement it would need to wrap then)
 
 ==== miscellaneous ====
 
