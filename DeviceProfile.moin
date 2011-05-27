@@ -1,9 +1,8 @@
 = Device Profiles =
 
-To create the higher level device profiles we start from the XML format defined in the [[http://programmer-art.org/projects/arista-transcoder|Arista]] transcoder. There are a few changes in the XML example below though from what Arista does today. First of all we replace all element names with GStreamer Caps and secondly we replace all element attribute settings with preset calls. Finally we expand the XML format to include all allowed choices for a given device, so that the application can offer the user other valid choices if they want to. Many GStreamer Caps are listed in the GstreamerCaps list.
+To origin for these higher level device profiles is the XML format defined in the [[http://programmer-art.org/projects/arista-transcoder|Arista]] transcoder, they have been changed quite extensively though as the underlaying featureset in GStreamer has evolved. There are a few changes in the XML example below though from what Arista does today. First of all we replace all element names with GStreamer Caps and secondly we replace all element attribute settings with preset calls. Finally we expand the XML format to include all allowed choices for a given device, so that the application can offer the user other valid choices if they want to. Many GStreamer Caps are listed in the GstreamerCaps list.
 
-To try to keep the discussion clear we always refer to these files as 'profiles' and the element specific GStreamer files as 'presets'. The presets called in this XML file in each pass are discussed in PresetDesign
-
+To try to keep the discussion clear we always refer to these files as 'profiles' and the element specific GStreamer files as 'presets'. These files are meant to provide all information needed to create a usable caps profile for encodebin.
 {{{
 <?xml version="1.0"?>
 
