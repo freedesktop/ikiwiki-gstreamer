@@ -1,6 +1,8 @@
 Presets are a fairly straightforward idea conceptually, but have lot of practical issues with them. These pages are meant to outline the various 
 levels of presets we are trying to put together and discuss some of the practical implications.
 
+'''Part of this page is out of date as part of what we used to use presets for, like codec profiles are now put into the caps instead, presets are still useful for certain things though, but be aware that part of this page might refer to out of date things''';
+
 '''GStreamer presets interface''';
 Design details and more on the [[http://gstreamer.freedesktop.org/data/doc/gstreamer/head/gstreamer/html/GstPreset.html|GStreamer presets interface]] can be found on the Buzztard [[http://www.buzztard.org/index.php/Preset_handling_interface|Preset Interface]] pages.
 
@@ -104,10 +106,3 @@ element = gst.element_factory_make("x264enc")
 dingdong = element.load_preset("Profile Baseline")
 print dingdong
 }}}
-
-
-'''Device level presets''';
-
-The GStreamer presets described above takes care of settings on a per element basis. But there are quite a lot of values that doesn't 
-make sense to set in this level and we also need to combine the element based presets to a device level preset in order to have a preset
-for encoding a video for a iPod for instance. We look at that on the DeviceProfile page.
