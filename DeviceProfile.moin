@@ -20,71 +20,35 @@ To try to keep the discussion clear we always refer to these files as 'profiles'
     
     <profiles>
         <profile>
-            <name>Low</name> # This is a low quality output setting
+            <name>Normal</name> # You can have multiple profiles, Low, Normal and High, in this example we only include Normal
             <container>video/quicktime,variant=apple</container>
             <extension>m4v</extension>
             <audio>
-                <name>audio/mpeg,mpegversion=4</name>
-                <presets>
-                    <preset>Quality Low</preset>
-                    <preset>Profile Low Complexity</preset>
-                 </presets>
-                <channels>1, 2</channels>
-                <samplerate>44100</samplerate>
+                <caps>audio/mpeg,mpegversion=4, channels=2, rate=44100, base-profile=lc </caps>
             </audio>
             <video>
-                <name>video/x-h264</name>
-                <border>N</border>
-                <passes>1</passes>
-                    <presets>
-                        <preset>Quality Low</preset>
-                        <preset>Profile Baseline</preset>
-                    </presets>
-                <width>320, 640</width>
-                <height>240, 480</height>
-                <framerate>1, 25</framerate>
-            </video>
-        </profile>
-        <profile>
-            <name>Normal</name>
-            <container>video/quicktime,variant=apple</container>
-            <extension>m4v</extension>
-            <audio>
-                <name>audio/mpeg,mpegversion=4</name>
-                <presets>
-                    <preset>Quality Normal</preset>
-                    <preset>Profile Low Complexity</preset> 
-                </presets>
-                <channels>1, 2</channels>
-                <samplerate>44100</samplerate>
-            </audio>
-            <video>
-                <name>video/x-h264</name>
+                <caps>video/x-h264</caps>
                 <border>N</border>
                 <passes>2</passes> # Number of passes in multipass encoding
-                <presets>
-                    <preset>Quality Normal</preset>
-                    <preset>Profile Baseline</preset>
-                </presets>
-                <width>320, 640</width>
-                <height>240, 480</height>
-                <framerate>1, 30</framerate>
+                <width>320, 640</width> # range supported by device, as we want to avoid upscaling when possible
+                <height>240, 480</height> # range supported by device, as we want to avoid upscaling when possible
+                <framerate>1, 30</framerate> # range supported by device, as we want to avoid increasing rate when possible
             </video>
         </profile>
     </profiles>
 </device>
 }}}
 
-The general idea here is that you can combine any number of GStreamer element presets to build the device profile. They are set in the order specified (e.g. if quality_normal sets bframes=3 and then you set profile_baseline which sets bframes=0, you will get bframes=0, so it's always a good idea to put quality values before codec profile values).
+The general idea here is to enable the creation of a caps string that will enable encodebin to create the video we need. For fixed values they can
+just go into the caps, for others they need to be specified as a range and the program logic needs to handle it.
 
 Using this simple format the profiles for PSP, Nokia devices, the computer, etc are almost identical to the above and require no further modifications to the element presets.
 
-One question which needs further thought it how to deal with variations within a device type, maybe 'iPod' is too generic for instance. We could also add another gstreamer preset for varation values if needed.
+One question which needs further thought it how to deal with variations within a device type, maybe 'iPod' is too generic for instance. We could also add another gstreamer preset for variation values if needed.
 
-Also - what about handling multiple passes - the above can handle it by defining more <pass> elements but we'd need element profiles like e.g. 'quality_normal_2pass' and I guess setting a bitrate.
+Also - what about handling multiple passes - the above can handle it by defining more <pass>
 
-We also need to come up with a nice, but hopefully not to verbose way of including information about all supported codecs and containers formats in addition 
-to our recommended one.
+We also need to come up with a nice, but hopefully not to verbose way of including information about all supported codecs and containers formats in addition to our recommended one.
 
 == Comments ==
 This proposal is being discussed on the [[http://mail.gnome.org/mailman/listinfo/gnome-multimedia|GNOME Multimedia mailing list]]
