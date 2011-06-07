@@ -57,6 +57,7 @@ see [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/design/draft-buf
      ''(ensonic: the GstStructures alone is one g_slice_new + g_malloc for the array, we could solve that by having a static GstStructure that cannot grow at runtime)''
  * Query API: get rid of the whole query-format-may-change thing, it's awkward API and not used anywhere (nor really necessary, is it?)
  * EOS: end-of-stream events are one of a variety of potential "stream division" events, such as the 0.8-style new-media event, or new-chapter events.  Proper fragmentation of encoded streams requires passing around fragmentation information, particularly between the encoder, muxer, and filesink.
+ * make gst_event_new_*() and _parse() more consistent with regard to whether ownership is taken and or a copy returned (also for queries, messages, structs)
 
 ==== registry ====
 
