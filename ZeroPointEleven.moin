@@ -41,9 +41,10 @@ The following list is more of a collection of things to remember, for the big pi
 
 ==== buffers ====
 
- * We need to be able to carry extra buffer metadata.
-
-see [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/design/draft-buffer2.txt|gstreamer/docs/design/draft-buffer2.txt]]
+ * We need to be able to carry extra buffer metadata, see [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/design/draft-buffer2.txt|gstreamer/docs/design/draft-buffer2.txt]]
+ * Get rid of DISCONT flag?
+   * do we need to differentiate between different types of DISCONTs? (gap in data vs. time continuity)
+   * do we want an event instead, to avoid the check in the chain func?
 
 ==== events/messages/queries ====
 
