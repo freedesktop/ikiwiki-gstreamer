@@ -17,7 +17,7 @@ This is a tentative schedule for releases for the first few months of 2011:
 ||<bgcolor="#c5d2c8" style="text-align: center;"> May 13 || '''Core 0.10.34, Base 0.10.34 release (to fix critical multiqueue regression)''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> May 14 || '''Core/Base/Good/Ugly/Bad thaw''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> June 15 || '''Core/Base 0.11.0 release'' (unstable development series) ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> June 15 || '''Core/Base 0.11.0 release''' (unstable development series) ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ~July/August || '''next round of Core/Base/Good/Ugly/Bad 0.10.x releases''' ||
 
