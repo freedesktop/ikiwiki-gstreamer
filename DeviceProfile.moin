@@ -27,7 +27,7 @@ To try to keep the discussion clear we always refer to these files as 'profiles'
                 <caps>audio/mpeg,mpegversion=4, channels=2, rate=44100, base-profile=lc </caps>
             </audio>
             <video>
-                <caps>video/x-h264</caps>
+                <caps>video/x-h264, profile=main</caps>
                 <border>N</border>
                 <passes>2</passes> # Number of passes in multipass encoding
                 <width>320, 640</width> # range supported by device, as we want to avoid upscaling when possible
