@@ -160,7 +160,12 @@ The following list is more of a collection of things to remember, for the big pi
 
 == Elements being ported ==
 
-If you are starting to port an element, please make a note here, to avoid duplicate work:
+If you are starting to port an element, please make a note here, to avoid duplicate work.
+
+Useful links:
+ * [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/random/porting-to-0.11.txt?h=0.11|porting-to-0.11.txt]]
+ * [[http://lists.freedesktop.org/archives/gstreamer-devel/2011-April/031128.html|GStreamer 0.11 status - part 1]]
+ * [[http://lists.freedesktop.org/archives/gstreamer-devel/2011-June/031891.html| GStreamer 0.11 status = part 2]]
 
 ||<style="text-align: center;"> '''Element/Plugin''' || '''Who''' || '''Date started''' || '''Done?''' ||
 || asfdemux || Thiago || 2011-06-14 || ||
