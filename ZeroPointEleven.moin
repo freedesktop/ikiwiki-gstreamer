@@ -156,3 +156,12 @@ The following list is more of a collection of things to remember, for the big pi
 === gst-plugins-good ===
 
  * avoid using sometimes pads in e.g. id3demux, wavparse etc., just set the caps when we have them
+
+
+== Elements being ported ==
+
+If you are starting to port an element, please make a note here, to avoid duplicate work:
+
+||<style="text-align: center;"> '''Element/Plugin''' || '''Who''' || '''Date started''' || '''Done?''' ||
+|| asfdemux || Thiago || 2011-06-14 || ||
+|| ... || ... || ... || ||
