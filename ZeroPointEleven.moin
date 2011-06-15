@@ -171,4 +171,6 @@ Useful links:
 || asfdemux || Thiago || 2011-06-14 || ||
 || auparse || luisbg || 2011-06-15 || ||
 || matroskademux || Debarshi || 2011-06-15 || ||
+|| alawenc || luisbg || 2011-06-15 || ||
+|| alawdec || luisbg || 2011-06-15 || ||
 || ... || ... || ... || ||
