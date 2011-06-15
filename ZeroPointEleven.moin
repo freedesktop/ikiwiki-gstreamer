@@ -160,7 +160,7 @@ The following list is more of a collection of things to remember, for the big pi
 
 == Elements being ported ==
 
-If you are starting to port an element, please make a note here, to avoid duplicate work.
+If you are starting to port an element, please make a note here, to avoid duplicate work, '''and let people on IRC know''' (to make sure the plugin needs porting at all, and maybe be made aware of anything that needs to be changed etc.).
 
 Useful links:
  * [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/random/porting-to-0.11.txt?h=0.11|porting-to-0.11.txt]]
