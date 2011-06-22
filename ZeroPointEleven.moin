@@ -106,6 +106,7 @@ The following list is more of a collection of things to remember, for the big pi
    * uri could be interface property of GstUriHandler
  * need to fix and document assumptions about filename encodings, in accordance with GLib (ie: on win32: should always be utf8, *nix: bunch of bytes, no particular encoding with extras/exceptions)
  * gst_uri_handler_get_uri() should return a copy, not thread-safe
+ * check why GstUriHandler::get_{type,protocols}_full() takes a GType and not the object (ie. ask twi about commit 9d3de77b)
  * use GstStructure in plugin- and element-descriptions to provide extensibility without breaking things
  * refcount-dependent writability/mutability of buffers/queries/structures is very awkward for language bindings (e.g. C++) 
  * ideally our _new() functions are no more than a thin wrapper around g_object_new() (much better for bindings)
