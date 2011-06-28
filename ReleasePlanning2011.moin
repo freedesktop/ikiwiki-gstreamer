@@ -14,10 +14,12 @@ This is a tentative schedule for releases for the first few months of 2011:
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Apr 14 || '''Core/Base/Good/Ugly/Bad freeze''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> May 10 || '''Core 0.10.33, Base 0.10.33, Good 0.10.29, Ugly 0.10.18, Bad 0.10.22 release''' ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> May 13 || '''Core 0.10.34, Base 0.10.34 release (to fix critical multiqueue regression)''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> May 13 || '''Core 0.10.34, Base 0.10.34 release''' (to fix critical multiqueue regression) ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> May 14 || '''Core/Base/Good/Ugly/Bad thaw''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> June 15 || '''Core/Base 0.11.0 release''' (unstable development series) ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> June 15 || '''Core 0.10.35, Base 0.10.35, Good 0.10.30 release''' (to handle GLib 2.29.x atomic ops API change) ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Juli 6 || '''Core/Base 0.11.0 release''' (unstable development series) ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ~July/August || '''next round of Core/Base/Good/Ugly/Bad 0.10.x releases''' ||
 
