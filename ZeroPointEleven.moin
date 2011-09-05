@@ -175,11 +175,5 @@ Useful links:
  * [[http://lists.freedesktop.org/archives/gstreamer-devel/2011-June/031891.html| GStreamer 0.11 status = part 2]]
 
 ||<style="text-align: center;"> '''Element/Plugin''' || '''Who''' || '''Date started''' || '''Done?''' ||
-|| matroskademux || Debarshi || 2011-06-15 || ||
-|| alawenc || luisbg || 2011-06-15 || ||
-|| alawdec || luisbg || 2011-06-15 || ||
-|| isomp4 || mnauw || 2011-06-17 || ||
-|| matroskamux || mnauw || 2011-06-17 || ||
-|| rtpasfdepay || Thiago || 2011-06-18 || x ||
-|| jpeg || Thiago || 2011-06-20 ||  ||
-|| ... || ... || ... || ||
+|| what || you || when || ||
+|| ...  || ... || ...  || ||
