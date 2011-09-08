@@ -152,6 +152,7 @@ The following list is more of a collection of things to remember, for the big pi
  * add volume/stream-volume to GstAudioSink so that it's always available
  * make interfaces like GstUriHandler, GstTuner etc. register canonical properties (which the classes that implement it would need to wrap then)
  * audio: don't put arrays of channel position enums in caps, causes all kinds of problems, makes for hard to follow code, and is unwieldy. Instead, make channel-positions a bitmask that defines which channels are set and provide utility functions to re-order (Wim started this, but punted it for a later date)
+ * video: should we make fields in interlacing video more explicit, like for multiview? Allow multiple arrangements (interleaved, two fields packed in one frame, fields as separate buffers?)
 
 ==== miscellaneous ====
 
