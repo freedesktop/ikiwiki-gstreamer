@@ -142,6 +142,7 @@ The following list is more of a collection of things to remember, for the big pi
  * fix subparse/subtitle caps to subtitle/x-*
  * fix qtdemux/mp4/m4a/3gp caps detection/typefinding
  * fix ogg typefinding to match new mime/media types
+ * better typefinding system/registration (pass more info to typefinder when registering, like min/max ranks, whether it scans, min. size, from start/end, whether it accesses the middle, etc. etc.) plus find better way to do the scanning-for-stuff business without that awful DataScanCtx crutch.
 
 ==== libraries ====
 
