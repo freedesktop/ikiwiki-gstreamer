@@ -147,7 +147,7 @@ The following list is more of a collection of things to remember, for the big pi
 
 ==== libraries ====
 
- * merge libgstcdda into libgstaudio
+ * merge libgstcdda into libgstaudio ('''tpm:''': done locally, but need to figure out what to do with the CDDA tags, if we want to add a dependency on libgsttag just for that... or maybe move tags to core, or make tags something that's registered in the registry)
  * merge audio bits from libgstinterfaces into libgstaudio
  * merge video bits from libgstinterfaces into libgstvideo
  * change GstPropertyProbe to be more useful and generic and move into core(?). I would be good if a probe could return multiple things, e.g. a "device" probe could return description strings in addition to the various devices found (so we can get rid of the silly device-name thing we do currently)
