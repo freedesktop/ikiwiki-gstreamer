@@ -135,7 +135,7 @@ The following list is more of a collection of things to remember, for the big pi
    * tpm: pad-probes are much more powerful than the handoff callback (can drop buffers/events), but should maybe be implemented differently anyway, since a big problem with using GObject signals here is that the callback can't modify the buffer or buffer metadata (safely), since the refcount will be increased during the signal emission; but maybe that'll be fixed by not linking writability to the refcount in 0.11
  * asynchronous gst_init()
  * GstChildProxy: make gst_child_proxy_get_child_by_name a vmethod, then it can be overriden to not only work for GstObjects
- * review entire GstIndex API (should we do this differently? There were some screwy bits. Also see bug #529017)
+ * review entire GstIndex API (should we do this differently? There were some screwy bits. Also see bug #529017) (also: #656825)
 
 === gst-plugins-base ===
 
