@@ -106,7 +106,7 @@ The following list is more of a collection of things to remember, for the big pi
 
  * --(get rid of the abomination that is GstImplementsInterface)--
    * interfaces should implement a method gst_xxx_is_available() instead (do we need a base iface?)
- * clean up macros in interface headers, should be GST_FO_BAR_GET_INTERFACE, not _GET_IFACE or _GET_CLASS (or at least be consistent); also, interface structures should not be called GstFooBarClass
+ * --(clean up macros in interface headers, should be GST_FO_BAR_GET_INTERFACE, not _GET_IFACE or _GET_CLASS (or at least be consistent); also, interface structures should not be called GstFooBarClass)--
  * we need to be strict and clear about where URIs are used and where filenames and enforce both
    * uri could be interface property of GstUriHandler
  * URI interface: add GError args to URI setter, so we can tell whether the URI was rejected because it's not supported or because it was malformed
