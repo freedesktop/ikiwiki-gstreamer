@@ -19,168 +19,404 @@ There was a meeting discussing GStreamer 1.0 at the Gran Canaria Desktop Summit 
 
 The first ever GStreamer conference took part in Cambridge (UK) on 25th October 2010. Wim Taymans announced the plan for GStreamer 1.0 in his keynote, with a retrospective of some of the things that will be improved ([[http://people.freedesktop.org/~wtay/gstreamer-conf-2010.pdf|slides here]]).
 
-The following list is more of a collection of things to remember, for the big picture overview see Wim's keynote.
 
-=== core ===
+=== List of issues to fix/look at before 1.0 ===
 
-==== caps ====
+This looks worse than it is, most things should be fairly easy!
 
- * speed up negotiation by incrementally building caps
- * need way to handle e.g. width=[16,1024] with multiples of 8, or at least make e.g. videoscale ! videoenc negotiate right in cases like that
- * need way to make clear whether a codec is strictly fixed framerate or not, so people don't feed e.g. variable framerate video into theoraenc (or just make those do what videorate does automagically behind the scenes?)
- * Make GstStructure and GstCaps 100% opaque, so we can change the implementation details
- * maybe even internalise the GValue usage and provide explicit API to get/set structure fields:
-   * more discoverable, less confusing (GValue seems to confuse people in a caps/structure context)
-   * in practice we only allow/handle a few selected types, so may just as well make that more explicit, and the API nicer
-   * can keep using GValue internally, but are free to change the implementation if something better comes along (e.g. GVariant, or something home-grown)
- * Be able to negotiate buffer sizes along the pipeline. For example, in VoIP calls, the other side tells us the "packet time", ie, the length of the packets in milli-seconds. Being able to request that the source make packets of this length would allow to reduce latency while avoiding the extra overhead from smaller buffer.
- * rethink [[ZeroPointElevenRawCaps|Raw Caps]]
- * --(get rid of fourccs in caps and GST_TYPE_FOURCC in general (mostly replaced by strings now anyway, like in video format caps))--
 
-==== miniobject ====
-
- * We don't need subclasses for buffers, events, queries, caps, messages,... a simple boxed type would speed up type checking and
-   make things easier.
- * need to make GstCaps a miniobject
-
-==== buffers ====
-
- * --(We need to be able to carry extra buffer metadata, see [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/design/draft-buffer2.txt|gstreamer/docs/design/draft-buffer2.txt]])--
- * Get rid of DISCONT flag?
-   * do we need to differentiate between different types of DISCONTs? (gap in data vs. time continuity)
-   * do we want an event instead, to avoid the check in the chain func?
- * should we allow 0-sized buffers and mandate that all elements be able to handle them?
-
-==== events/messages/queries ====
-
- * subclass the various types
-   * allows to get rid of the extra {event,message,query}-type field
-     ''(tpm: not so sure we want that, switch/case on type constants is cheap, comparing GTypes not so much)''
-   * static items (flush-event, qos-message} can have explicit member fields
-   * most gst_xxx_parse methods can be dropped/deprecated
-   * main benefit is that we get a new instance with a single g_slice_new call, instead of 2 g_slice_new + 1 malloc as it is now.
-     ''(tpm: that can be solved differently, e.g. by allowing static/embedded GstStructures, or just using GVariant, or somesuch)''
-     ''(ensonic: the GstStructures alone is one g_slice_new + g_malloc for the array, we could solve that by having a static GstStructure that cannot grow at runtime)''
- * Query API: get rid of the whole query-format-may-change thing, it's awkward API and not used anywhere (nor really necessary, is it?)
- * EOS: end-of-stream events are one of a variety of potential "stream division" events, such as the 0.8-style new-media event, or new-chapter events.  Proper fragmentation of encoded streams requires passing around fragmentation information, particularly between the encoder, muxer, and filesink.
- * make gst_event_new_*() and _parse() more consistent with regard to whether ownership is taken and or a copy returned (also for queries, messages, structs)
-
-==== registry ====
-
- * registry API needs to change a bit; we should rely less on structures and hide more things behind accessor API, so that we can better use things like an mmap()ed binary registry (instead of doing lots of parsing and copying all data into memory at startup). GVariant should be useful here.
- * move things over to dynamic types that can be unregistered again?
-     ''(ocrete: Farsight2 used to have un-registrable (even unloadable) plugins, it was a real pain)''
- * consider GstMiniObject for GstPlugin and GstPluginFeatures. These types (and their known sub classes) don't use signals and properties. This would save memory and make startup faster. Avoid parsing of registry, use GVariant-based cache.
- * do we need multiple registries? We could make the GstRegistry a singleton. Then we can drop gst_registry_get_default() and drop the registry arg from all the methods.
-     ''(robclark: in the past we had discussed having a special 2nd registry for low power audio playback (ie. mp3 player), and launching audio player app w/ env var to point it at the 2nd registry.. so wouldn't need multiple registries in one process, but would still need a way to have multiple registries existing in the filesystem.  Not sure how/if that would be impacted by your proposal.)''
- * maybe separate the type registration in gst_element_register() from the element registration, so it can be done in a delayed fashion (e.g. after resolving element factory or plugin "replaces"-type relationships)
-
-==== tags ====
-
- * maybe tag messages/events should work similarly to how eos works, ie. tag readers don't post tags on the bugs themselves, but just send them downstream in form of events and only the sinks post tag messages? This fixes timing problems when tags change mid-stream like with icydemux - if there's buffering between icydemux and the sink the player will get the new tags while the old song is still playing
- * GST_TAG_LANGUAGE_CODE: use ISO-639-2 instead of ISO-639-1. Enforce this. Provide 639-1 => 639-2 table in libgsttag (ideally we'd require iso-codes and provide language_name=>code and code=>language_name functions too).
- * add GST_TAG_LANGUAGE for freeform language description, if setter doesn't know the code
- * we don't really have a way to distinguish transient/non-transient/fixed/non-fixed tags, ie. those which apply to the stream as a whole and are more or less fixed and those that only temporarily apply to the stream or parts of the stream (such as: per-video-frame metadata, current average bitrate for VBR streams etc.); there will be more occasions where we will want to be able to distinguish these and/or choose different delivery mechanisms; posting tag messages 30-times a second may not be ideal, for example
- * API and design for rewriting/filtering tags: pretty hard to do right now, and we don't have API to make a GstTagSetter e.g. remove certain tags (other than reading the tags first and then setting new tags with REPLACE_ALL mode, but that's problematic and inconvenient if you want to change the tags on the fly, since you'd have to hook up event handlers in the streaming thread etc. etc. - it's all either impossible or very inconvenient currently)
-
-==== pipeline parser ====
-
- * split gst_launch_parse() into separate library, doesn't really need to be in core
- * rewrite parse_launch in C? (if we don't do it now, we'll never be able to do it, since it'll be impossible to rewrite it from scratch and maintain the exact same behaviour; is the current code really maintainable? How many people understand it?)
-   * StefanKost: will it become any easier to understand if its written in plain C?
-
-==== error handling ====
-
- * add GError * arguments to all synchronous API that may fail, so you get automatic exceptions for bindings
-   * Tim: imho metadata annotation to throw an exception on FALSE/NULL returns would be sufficient, but it was categorically stated that this is the wrong approach and GError is the expected way to report exceptions
- * gst_preset_{load|save} should have a GError * argument.
-
-==== unit tests ====
- * libgstcheck: prefix all functions and symbols. Have a wrapping layer that's 100% GStreamer, including environment variables etc.
-   * that's just for sanity, check's symbols were mostly exposed by accident
-   * magic global symbols aren't very nice API ('buffers')
-   * so we can put in another implementation / our own implementation of unit tests instead of using check if we want to
- * unit tests shouldn't use check symbols directly then anymore
-
-==== miscellaneous ====
-
- * --(get rid of the abomination that is GstImplementsInterface)--
-   * interfaces should implement a method gst_xxx_is_available() instead (do we need a base iface?)
- * --(clean up macros in interface headers, should be GST_FO_BAR_GET_INTERFACE, not _GET_IFACE or _GET_CLASS (or at least be consistent); also, interface structures should not be called GstFooBarClass)--
- * we need to be strict and clear about where URIs are used and where filenames and enforce both
-   * uri could be interface property of GstUriHandler
- * URI interface: add GError args to URI setter, so we can tell whether the URI was rejected because it's not supported or because it was malformed
- * need to fix and document assumptions about filename encodings, in accordance with GLib (ie: on win32: should always be utf8, *nix: bunch of bytes, no particular encoding with extras/exceptions)
- * gst_uri_handler_get_uri() should return a copy, not thread-safe
- * check why GstUriHandler::get_{type,protocols}_full() takes a GType and not the object (ie. ask twi about commit 9d3de77b)
- * use GstStructure in plugin- and element-descriptions to provide extensibility without breaking things
- * refcount-dependent writability/mutability of buffers/queries/structures is very awkward for language bindings (e.g. C++) 
- * ideally our _new() functions are no more than a thin wrapper around g_object_new() (much better for bindings)
- * get rid of GST_FORMAT_DEFAULT (replace with GST_FORMAT_FRAME or GST_FORMAT_SAMPLE or whatever if need be)
- * GstBufferClass needs padding
- * GST_STATE_TRANSITION() makes a GstStateChange, rename either of them (probably easier to rename GstStateChange to GstStateTransition, than renaming all the macros).
- * Define what codec_data should mean for each format, try to be as consistent as possible.
- * base controller functionality in GstObject, only have the controlsources in a lib
- * Clean up the GstBus API (add_watch can only be called once), maybe add a return value to "sync-message", etc.. Maybe depcreate add_watch in favor of "message" ?
- * remove unversioned gst-foo? (Causes people problems when debugging with gdb/valgrind, and what's the point in having them if the API / pipeline syntax / element names change from major version to major version, so that they're incompatible between major versions anyway?)
- * --(remove gst-xmlinspect (people should just use pygst or whatever to inspect the registry)--)
- * --(remove gst-xmllaunch)--
- * Create gst_element_set_state_async. It makes all state changes asynchronous and always returns GST_STATE_CHANGE_ASYNC or nothing (void).
- * Create gst_element_set_state_sync. It makes all state changes synchronous and never returns GST_STATE_CHANGE_ASYNC.
- * fix all *_uri_type() functions up to take GstURIType and not an int/guint (needs fixes in header include order)
- * proper signalling and handling of sparse streams (e.g. subtitles)
- * should fix pad template names, e.g. foo_%d doesn't make sense since we never want a pad called `foo_-1` really, do we?
+ * buffer timestamping
+   * MUST-FIX: how to express DTS / PTS (just two ts fields on buffer?)
+ * add GError or GstPadErrorContext to gst_pad_push() etc.
+   * WANT-FIX, but can always be done later with queries and keeping error state privately in GstPadPrivate
+   * can't use GError here - would need to add refcounting for GErrors to GLib, and next GLib release is probably too late for us
+ * why do we export the core debug categories? (GST_CAT_*) - tidy up in general maybe?
+   * WANT-FIX, TRIVIAL
+ * make plugin features light-weight (how to do that? Maybe just scrap the inheritance and do them all as boxed)
+   * MUST-FIX: make opaque
+   * WANT-FIX: GObject? GMiniObject? Just Boxed?
+ * GstPadTemplates are currently full-fledged objects! (with unused pad-created signal..) Make them light-weight, we're creating LOADS of them when loading the registry [really? no, we're creating static pad templates..].. ideally make it so that we can embed them in element/factory instance structs and/or so that they're cachable and we can maybe even share the template between the factory and the element?) - basically: why not make all GstPadTemplates effectively GstStaticPadTemplates, ie. just simple structs? - slomo: maybe just get rid of static pad templates (and static caps?!) and only use GstPadTemplate objects?
+   * WANT-FIX
+ * weirdness with buffer/event/miniobject hierarchy and BOXED type registration (can't express the hierarchy using GType...)
+   * MUST-FIX (Edward will work on that, to add annotations to g-i to express hierarchy for structs/boxed types)
+ * caps/structures:
+   * WANT-FIX
+   * hide gstvalue stuff from caps by adding dedicated API for lists/arrays/etc.? Add GstCapsStructure which only takes certain allowed types; could get rid off all the GstValue registration and table indirection for compare/subtraction/intersection/etc., just do switch/case
+     * conclusion: hide GValue for now from API, add explicit per-type setters + convenience functions for arrays, lists etc.
+   * maybe even add explicit list/array types for the types supported (ints, floats, buffers, ...)
+   * WANT-FIX: put a GstCaps pointer into GstStaticCaps instead of "deriving" from GstCaps? (what's the point? does it matter? would make atomic stuff much easier)
+   * WANT-FIX: instead of having a private pointer in the public GstCaps struct, hide that, and have a 'private' internal extended GstCaps struct with the private details, since we don't allow subclassing from it anyway, do we?
+ * device probing, get rid of GstPropertyProbe (we need a proper device discovery/listing API by type that makes properties and caps available and creates a suitable element given a discovered device object)
+   * MUST-FIX: remove + add replacement later
+ * have we solved the problem for bindings that writability of things like buffers, caps, queries etc. depends on refcounts?
+   * MUST-FIX
+   * ds: read/write lock + refcounted read reservation; write_unlock() returns read reservation
+   * (that for buffers, but would also solve things for structures, caps, queries etc.)
+ * GstCaps:
+   * MUST-FIX, EASY: should really look at this
+   * GST_CAPS_NONE: what's the point of that? where would it be used?
+   * GST_CAPS_ANY, GST_CAPS_EMPTY, GST_CAPS_NONE => make singleton; bit weird that macro returns a ref... not consistent with rest of API
+ * subtitle overlays
+   * WANT-FIX: metadata, but how: probably need different metas for different formats (ayuv, rgba, pango markup, etc.)
+ * combine/merge/reshuffle libraries
+   * MUST-FIX
+   * want fewer mini-libs
+ * combine/merge/reshuffle plugins
+   * MUST-FIX
+   * https://bugzilla.gnome.org/show_bug.cgi?id=559431
+ * get rid of libgstriff, or at least the data driving. Just parse headers and let caller do the rest
+   * WANT-FIX: clean-up aggressively
+   * get rid of funcs that drive data reading (pull etc.) (are those still used anywhere?)
+   * should just parse header structure really, like codec parser lib
+   * merge with some other lib? (containerutils lib?)
+ * review interfaces in -base libs
+   * MUST-FIX
+   * colorbalance: disable for now, move into libgstvideo
+   * mixer: disable for now, move into libgstaudio
+     * needs cleaning up (signals, messages, structs, min/max thing, etc.)
+     * thread safety: needs to return refs of tracks etc.
+     * remove its use in sources where it's abused to select input routings/sources/jacks
+ * might need new interface for that at some point
+   * navigation => libgstvideo
+     * clean up? (ask Jan) "looks weird", key stuff should be changed in 0.11?
+   * streamvolume => libgstaudio
+   * tuner => ?
+     * needs cleaning up, but what/how exactly?
+     * remove for now
+     * needs to be brought into the 21st century and accommodate e.g. DVB
+     * should provide/require properties for misc stuff (e.g. "norm")
+   * MUST FIX: add booleans or whatnot for implements-interface stuff
+ * review caps
+   * MUST-FIX
+   * review all caps, write document that lists/explains all known ones
+   * raw audio/video caps also need more reviewing
+   * audio/video strings should go into pbutils (says slomo too)
+   * possibly extend pbutils with querying caps -> info struct API or so?
+   * all other caps, profiles, levels, mime types, quicktime caps (qt/mp4/m4a/3gp), parsed/framed, subs, etc.
+   * subtitle caps (esp. video/x-dvd-subpicture => subtitle/x-xyz or so)
+   * text/plain => subtitle/x-text,xyz=markup,charset=foo ?
+   * xvid/divx caps -> mpeg4 caps, possibly with flavour if needed
+   * application/x-ogm-{video|audio|sub} => audio/x-ogm, video/x-ogm, subtitle/x-ogm (+fix typefinding)
+   * h263 caps: make profiles/levels string fields in the caps (h263parse)
+     * https://bugzilla.gnome.org/show_bug.cgi?id=658438
+   * mpeg-4 caps: make profiles/levels string fields in the caps (parser, typefinder [it's right in codec utils apparently])
+     * https://bugzilla.gnome.org/show_bug.cgi?id=658438
+   * define what codec_data should mean for each format, try to be as consistent as possible
+     * WANT-FIX, TRIVIAL:
+     * rename "codec_data" to "codec-data" everywhere
+     * rename "stream-header" to "stream-headers" everywhere and only allow an array of buffers (not a single buffer)
+     * document codec-data vs. stream-headers
+ * codec-data is just out-of-band data for the codec
+ * stream-headers is stuff that e.g. a tcp/http sink should send to a client before sending whatever other data it's got pending
+ * stream-headers should always also be pushed as buffers at the beginning 
+   * channel layouts in caps: move to fixed order with flags in caps? (or register layouts and refer to them by name?)
+     * ability to pass channel matrices (caps? buffer metadata?)
+     * should move to a bitfield really - do we worry about inefficiencies if re-ordering is needed (in interleaved mode)? (in non-interleaved mode that can be done with GstMemory)
+     * MUST-FIX: think about this
+     * bitfield + "strategy" (mpeg, aac, smpte, etc.)
+ * make all examples gtk3-only (0.10 too)
+   * TRIVIAL, CAN DO LATER
+ * fix libgstcheck API + exports
+   * MUST-FIX: declare interface as unstable with header guards
+ * typefinder API for typefinding functions:
+   * MUST-FIX: at least look at it
+   * we should be able to come up with a better way for typefinders to get to the data
+   * can we do something clever with GstMemory?
+   * can we do the horrible DataScanCtx better somehow and integrate with API?
+   * MUST-FIX: should drop requirement that the result of peek stays around for entire time the typefinder is active
+ * typefinder registration API:
+   * MUST-FIX: at least look at it
+   * would like to be able to pass more information to typefind system, such as
+     * flags (is this a scanning typefinder or not, aware of multiple passes, does it look at the end/middle, if random access is wanted/needed)
+     * max rank this will ever return
+ * typefind function signature:
+   * MUST-FIX: at least allow for optional GstTypeFindContext argument (with gpointer typedef for now), so we can pass a context with more info to typefinders later
+     * with info such as: first pass/second pass, max rank found so far, if random access is available
+ * bit/bytereader: check if it's not faster to increment data pointer as we go along, instead of doing reader->data[reader->pos] for every read
+   * MUST-FIX, TRIVIAL
+ * can we add the GType of a pad to pad templates? That way gst-inspect could detect GstPad subclasses in videomixer + muxers and print special properties available for those)
+   * CAN BE DONE LATER
+ * fix image tags (currently disabled because caps on buffers are no more..)
+   * MUST FIX
+   * https://bugzilla.gnome.org/show_bug.cgi?id=661634
+ * does totem/playbin screenshotting also need fixing?
+   * (might be broken because caps are no longer on buffers)
+   * convert utility api in gstvideo
+   * MUST-FIX: check if anything is missing here
+ * tag messages should be posted by sinks and not elements upstream
+   * MUST-FIX, TRIVIAL
+   * see sink_message event
+   * remove/modify gst_element_found_tags[_for_pad]()
+   * rationale: this fixes e.g. timing problems when tags change mid-stream like with icydemux - if there's buffering between icydemux and the sink the player will get the new tags while the old song is still playing
+ * new events:
+   * MUST-FIX (can't be just added later, 1-N/N-N elements like demuxers need to know about that) (not absolute must-fix, but would be good to start)
+   * GST_EVENT_STREAM_ACTIVATE:
+     * slomo has started this
+   * GST_EVENT_DRAIN (or modified FLUSH event):
+     * like flush, but doesn't reset everything
+ * define GST_FLOW_RESEND in connection with RECONFIGURE event:
+   * MUST-FIX (remove or define, can't really be added later)
+   * just makes things nicer if downstream sends a reconfigure event for some reason, then the chain func upstream gets to know about it directly and can possibly re-send the buffer, so we don't necessarily lose a buffer when reconfiguring
+   * https://bugzilla.gnome.org/show_bug.cgi?id=326875
+ * add GST_FLOW_DROPPED: like FLOW_OK
+   * MUST-FIX, can't be added later
+   * use case: base classes; if element sends a header and it gets dropped it knows that it needs to resend it before sending more data
+   * could be sent if QoS drops the frame
+   * https://bugzilla.gnome.org/show_bug.cgi?id=322947
+ * rename GST_SEEK_TYPE_CUR to something else so that people don't think they can seek from the current position (or remove it, or change semantics?)
+   * MUST FIX, TRIVIAL
+ * mark segment argument to gst_event_new_segment() as const (same for other event/message funcs)
+   * MUST FIX, TRIVIAL
+   * make gst_event_new_*() and _parse() more consistent with regard to whether ownership is taken and or a copy returned (also for queries, messages, structs)
+ * g_value_list_*() + g_value_array_*() - enforce that all values are of the same type? (can use a field in GValue to store the GType)
+   * MUST FIX, TRIVIAL
+   * also see bug 322587
+ * rename GstRingBuffer => GstAudioRingBuffer + GstBaseAudioSrc => GstAudioBaseSrc or GstAudioSrcBase
+   * MUST FIX, TRIVIAL
+ * get rid of the boolean return in plugin_init() or element_register()?
+   * WANT FIX, TRIVIAL
+ * review interfaces and elements
+   * MUST FIX: review all elements
+   * whether signals + properties are useful
+   * whether they should send messages instead of signals
+ * what about GstTagSetter? It's very primitive, doesn't work well on muxers (how to set container tags + per-stream tags, etc., one needs to set per-stream tags via taginject really)
+   * CAN BE DONE LATER
+ * fully async state changes? esp. in case of e.g. filesrc ! typefind ! ...  (imagine file on NFS drive)
+   * MUST-FIX: async upward state changes
+   * MUST-FIX: open() in basesrc not in state change func
+   * MUST-FIX: typefind should not start typefinding via state change / pad activate function (same for tagdemux, and check wavparse?)
+ * GstIndex: disable or remove for now: not suitable for bindings, problems with API (writer ID stuff, locking, etc.)
+   * MUST-FIX: "a catastrophy" (slomo)
+   * also see bugs #529017 and #656825
+ * gstvideo: frame IDs need to made meaningful (3D + interlaced + both)
+   * MUST-FIX
+ * systematic core API review
+   * MUST-FIX
+ * systematic base API review
+   * MUST-FIX
+ * collectpaps2:
+   * MUST-FIX (add -2 to  0.10 and rename to collectpads in 0.11)
+ * pad functions (add destroy notify + pass parent to pad func)
+   * MUST-FIX
+ * controller:
+   * MUST-FIX: make bindings friendly (if you touch multiple things you just get a gpointer and must interpret it differently depending on the type of the property)
+   * WANT-FIX: clean-up in general (see FIXMEs in code)
+   * WANT-FIX: move GstController into core, make control sources plugin features (to be configured via signal_emit)
+   * WANT-FIX: triggers should be moved into their own control source
+     * https://bugzilla.gnome.org/show_bug.cgi?id=610338
+ * libgstvideo:
+   * MUST-FIX: interlaced video - must support non-interleaved fields for interlaced video
+   * (no need to support pushing 1 single field individually in a buffer, or is there?)
+   * MUST-FIX: think about how to express pre-multiplied alpha
+ * libgstnet - move "somewhere else" (no more microlibs) into -base/core? (adds libgio dependency, but do we care?)
+ * libgstaudio:
+   * MUST-FIX:
+   * add vfunc to audio format struct to convert to 'normal format' (just like with libgstvideo)
+   * remove vfuncs from structs, why not just put them into utility functions instead?
+ * make pad blocking in all modes (pull/push) on all pads (src/sink)
+   * WANT-FIX, EASY?
+   * might already work
+   * https://bugzilla.gnome.org/show_bug.cgi?id=644907
+ * re-think sparse stream handling, newsegment updating to fill gaps likely doesn't work any more
+   * MUST-FIX, EASY?
+   * should rethink how to move time along / signal downstream that there's a gap for sparse streams like subtitles
+   * currently using newsegment updates, should think of something else (events? dummy buffers?)
+ * sticky events solve dynamic element removal/addition for downstream elements, but what if one wants to change the source?
+   * MUST-FIX: try/think about this
+   * (stefan needs this / complained about it)
+   * (but camerabin people too)
+   * possibly it even works already, someone needs to investigate
+ * add EVENT_CUSTOM_DOWNSTREAM_STICKY
+   * WANT-FIX, TRIVIAL
+ * sticky events: some sticky events can occur multiple times
+   * MUST-FIX
+   * e.g.: tags (can't just merge, sorry), sink_messages, custom_downstream_sticky
+ * GstUriHandler
+   * WANT-FIX: allow per-protocol ranks (also affects elementfactory)
+   * MUST-FIX, TRIVIAL: pass GstURIHandler * handler to _get_type() and get_protocol() methods, get rid of _full() methods in interface
+   * MUST-FIX, TRIVIAL: the interface should have a "uri" property (there's also a bug about that)
+   * MUST-FIX, TRIVIAL: add GError * argument to gst_uri_handler_set_uri(), also needs custom error codes then to signal whether the protocol wasn't supported, or the URI malformed
+   * MUST-FIX, TRIVIAL: gst_uri_handler_get_uri() should return a copy (thread-safety)
+   * WANT-FIX: need to document and enforce file name/path character encodings: on *nix it's just a bunch of bytes, on win32 it must be utf8
+   * MUST-FIX, TRIVIAL: make gst_element_factory_get_uri_type() and gst_uri_handler_get_uri_type() return a GstURIType (needs some header include order wrangling)
+   * MAYBE-FIX, TRIVIAL: rename GstURIFoo to GstUriFoo?
+ * buffer flags:
+   * WANT-FIX: change from signalling DELTA_UNIT to KEY_UNIT ?
+   * MUST-FIX: review buffer flags (marker flag? document use cases! h264 byte-stream?)
+ * API cosmetics:
+   * MUST-FIX, TRIVIAL
+   * rename GstProbeType => GstPadProbeType
+   * rename GstProbeReturn => GstPadProbeReturn etc.
+ * GstAdapter:
+   * MUST-FIX: look again at why _unmap() flushes too - it's convenient, but weird, let's make it so that caller has to flush explicitly
+ * ranges: allow for "steps" (e.g. width = [ 32, 1024, 16 ])
+   * WANT-FIX (COULD BE ADDED LATER?)
+   * allow third parameter for ranges: that expresses step size
+ * video caps:
+   * MUST-FIX, EASY:
+   * define "framerate" field more strictly. 0/1 = variable/unknown framerate, anything else = fixed framerate
+   * v4l2src should set framerate=0/1 for webcams and optionally add a "max-framerate" field to signal this downstream (so v4l2src ! videorate ! ... doesn't negotiate to 25fps by default if 15fps was set on the driver)
+   * this means a codec can express that it requires a fixed framerate by adding framerate = [ 1/MAX, MAX/1 ] to template caps
+ * add event to signal start of stream fragment (EVENT_SOS? EVENT_START?)
+   * MUST-FIX, EASY? (can't be added later)
+   * use cases: streamsynchronizer in playbin2 to align different stream segments, hlssink, multifilesink, etc.
+ * registry, plugin features, * factories:
+   * MUST-FIX, EASY:
+   * make more opaque
+   * use mini objects
+ * rename gst_registry_get_default() to gst_registry_get() ?
+   * easy, more glib-ish
+ * tags:
+   * WANT-FIX, TRIVIAL: GST_TAG_LANGUAGE_CODE: use ISO-639-2 instead of ISO-639-1. Enforce this. Provide 639-1 => 639-2 table in libgsttag (ideally we'd require iso-codes and provide language_name=>code and code=>language_name functions too).
+   * WANT-FIX: TRIVIAL: add GST_TAG_LANGUAGE for free-form string
+ * gst_filter_*() should be removed or renamed or be made private
+   * MUST-FIX, TRIVIAL
+ * more functions should have a GError argument
+   * MAYBE-FIX, TRIVIAL
+   * e.g. gst_preset_{load|save} (+delete/rename?)
+   * add GError * arguments to all synchronous API that may fail, so you get automatic exceptions for bindings
+     * Tim: imho metadata annotation to throw an exception on FALSE/NULL returns would be sufficient, but it was categorically stated that this is the wrong approach and GError is the expected way to report exceptions
+ * check all _new() functions (of GObjects) to make sure they're just a thin wrapper around g_object_new(), this is needed for bindings
+   * WANT-FIX, TRIVIAL
+   * e.g. gst_ghost_pad_new(), gst_bin_new(), gst_pipeline_new()
+   * gst_controller_new() needs fixing too, esp. if we move it to core
+ * GST_FORMAT_DEFAULT: rename/split into GST_FORMAT_FRAME, GST_FORMAT_SAMPLE, or somesuch?
+   * MAYBE-FIX, TRIVIAL
+ * check all header files to make sure there's padding where there should be padding
+   * MUST-FIX, EASY
+   * mini objects don't need padding any more now, but proper objects and many other helper structs 
+ * make state change macros/enums a bit more consistent, clean up
+   * WANT-FIX, EASY
+   * e.g. GST_STATE_TRANSITION() makes a GstStateChange, rename either of them (probably easier to rename GstStateChange to GstStateTransition, than renaming all the macros).
+ * GstBus:
+   * WANT-FIX, TRIVIAL: add return value to "sync-message" signal
+   * MAYBE-FIX: clean up the GstBus API (add_watch can only be called once), maybe deprecate add_watch in favour of "message" ?
+   * rename _ad_watch
+ * pad templates:
+   * MUST-FIX, TRIVIAL: fix pad template names, e.g. foo_%d doesn't make sense since we never want a pad called foo_-1
    * especially fix those that use foo_%2d (avi)
- * should we get rid of pad-probes (people can use identity with handoff callbacks), pad-probes cause overhead in data-flow and need extra api
-   * tpm: pad-probes are much more powerful than the handoff callback (can drop buffers/events), but should maybe be implemented differently anyway, since a big problem with using GObject signals here is that the callback can't modify the buffer or buffer metadata (safely), since the refcount will be increased during the signal emission; but maybe that'll be fixed by not linking writability to the refcount in 0.11
- * asynchronous gst_init()
- * GstChildProxy: make gst_child_proxy_get_child_by_name a vmethod, then it can be overriden to not only work for GstObjects
- * review entire GstIndex API (should we do this differently? There were some screwy bits. Also see bug #529017) (also: #656825)
+   * should all be %u
+   * especially: rtpmanager
+   * also consistently use underscores in pad template names, i.e. sink_%d and not sink%d
+     * https://bugzilla.gnome.org/show_bug.cgi?id=637430
+ * GstAudioSink/Src should implement GstStreamVolume interface (and do volume scaling for raw audio)
+   * MUST-FIX, EASY: can't change it later because sub-classes will overwrite "volume" property otherwise
+   * should have utility funcs in gstaudio to do volume scaling for misc formats
+ * add stream selection interface so playbin can proxy stuff to sources
+   * CAN BE DONE LATER
+   * (jan's idea)
+ * GstTagDemux: convert src pad to always pad and just set caps once known
+ * Request Pads:
+   * MUST-FIX, TRIVIAL: gst-launch requesting pads but not releasing them - ds did some changes which broke stuff, get them into 0.11 (see bug 402562)
+   * WANT-FIX: gst_element_link() and other functions implicitly create request pads. Let's not do that (see bug 402497)
+ * make sure we don't use long/unsinged long/glong/gulong in the API anywhere
+   * MUST-FIX, TRIVIAL
+   * e.g. gst_pad_add_probe, gst_pad_remove_probe
+ * check _new functions, must be gst_foo_bar_new_xyz, not gst_foo_bar_xyz_new()
+   * MUST-FIX, TRIVIAL
+   * otherwise g-i doesn't recognise it as constructor
+   * gst_structure_empty_new() =>gst_structure_new_empty()
+   * gst_structure_id_empty_new() = gst_structure_new_id_empty() (or new_empty_id()?)
+   * gst_structure_id_new() => _new_id()
+   * gst_buffer_list_sized_new() => gst_buffer_list_new_sized()
+ * GstMeta sub-classes:
+   * MUST-FIX, TRIVIAL
+   * rename GstMetaFoo to GstFooMeta, needed by g-i and bindings to properly detect name spaces, and the right thing
+ * GstNetBuffer:
+   * MUST-FIX, EASY
+   * rename library, merge with net utils from core maybe? Or put somewhere else (no micro library please)
+   * rename gst_netaddress_xyz() => gst_net_address_xyz()
+   * (also rename meta, see general GstMeta bullet point)
+   * can we put pointers into GstMeta? If yes, use GIO's address object instead!
+     * or use GIO in API and provide conversion to/from meta
+   * also: add multicast support! (bug #358154)
+ * GstElement:
+   * MUST-FIX, TRIVIAL
+   * somehow signal that an element class provides a clock, or will do stuff with an index
+   * either via element flags, or add interfaces
+   * https://bugzilla.gnome.org/show_bug.cgi?id=529017
+ * Base classes:
+   * MUST-FIX, EASY
+   * event vfuncs to be more binding friendly and intuitive, need to chain up
+   * check base sink / base parse, rtp payloader/depayloader classes
+   * https://bugzilla.gnome.org/show_bug.cgi?id=657305
+ * GstPad:
+   * WANT-FIX, EASY?
+   * unlink takes object lock while calling unlink function, see https://bugzilla.gnome.org/show_bug.cgi?id=637430
 
-=== gst-plugins-base ===
 
- * gnomevfssrc/giosrc: default to iradio-mode=true and remove all iradio-* properties (same in souphttpsrc, neonhttpsrc etc.); post iradio tags on the bus
- * application/x-ogm-{video|audio|sub} => audio/x-ogm, video/x-ogm, subtitle/x-ogm
- * fix subparse/subtitle caps to subtitle/x-*
- * fix qtdemux/mp4/m4a/3gp caps detection/typefinding
- * fix ogg typefinding to match new mime/media types
- * better typefinding system/registration (pass more info to typefinder when registering, like min/max ranks, whether it scans, min. size, from start/end, whether it accesses the middle, etc. etc.) plus find better way to do the scanning-for-stuff business without that awful DataScanCtx crutch.
+==== Plugins ====
 
-==== libraries ====
+ * remove parsing/seeking/etc. from mad
+   * MUST-FIX, TRIVIAL
+ * rename mad -> madmp3dec or so?
+   * MUST-FIX, TRIVIAL
+ * remove lame now that we have lamemp3enc?
+   * MUST-FIX, TRIVIAL
+ * systematically check each and every plugin/element
+   * MUST-FIX
+   * must make a checklist
+   * check names of elements/plugins/API
+ * rename:
+   * MUST-FIX
+     * videomixer2 -> videomixer (TRIVIAL)
+     * queue2 -> queue (but what about leaky properties? FIXME)
+ * adder/interleave:
+   * MUST-FIX
+   * synchronise input by default (similar to baseaudiosink)
+ * ogg + elements:
+   * MUST-FIX:
+   * don't abuse buffer offset/offset_end for granulepos, put in buffer metadata if still needed (ideally muxer should do that based on timestamps)
+ *  filesrc/filesink
+   * WANT-FIX
+   * use gio: portability
+   * maybe just move gio plugin to core?
+ * fix subparse (caps, also split up, maybe make a base class)
+   * typefinding should go into typefinders
+   * MUST-FIX: separate elements per subtitle type, no more typefinding of input
+ * flacdec: port to GstAudioDecoder and remove all the pull-based stuff
+   * WANT-FIX, WORK-IN-PROGRESS
+ * jpegdec: get rid of all the copy/indirect crap, alloc with ROUND_UP16 alignment
+   * CAN DO LATER
+ * pulseaudiobin: get rid, not needed in 0.11 (decodebin should react to reconfigure events)
+   * MUST-FIX
+ * playbin/decodebin
+   * MUST-FIX
+   * should reconfigure themselves on reconfigure event
+   * if caps change upstream (e.g. HLS) rest downstream needs to be reconfigured (e.g. mpegtsdemux would not create new pads, but change AC-3 stream to MP3)
+     * in MXF, the format can change within the stream (internally implements pitivi-style timeline)
+   * port streamsynchronizer to 0.11 and make it work as is
+     * and MUST-FIX: make sure we can do all the hackish stuff properly in 0.11 (e.g. force preroll in a sink somehow without sending 0-size buffers)
+ * fix/check pad template names in all plugins (and change %d => %u)
+ * GstChildProxy:
+   * WANT-FIX
+   * _get_child_by_name() is very inefficient in some cases, should be an interface vmethod that could (optionally) be implement, e.g. in cases where the bin knows about the names
+   * (note: we  don't care about non-GstObject use cases)
+   * maybe make add_child/remove_add also return the name of the object added/removed
+   * thread-safety needs fixing, there should also be an iterator-based API, and/or add API to get cookie
+ * gio/souphttpsrc/neonhttpsrc, etc.:
+   * WANT-FIX, EASY
+   * default to iradio-mode=true, get rid of iradio-mode property
+   * remove all iradio-{name,genre,url,title} properties and post tags instead
+ * check all elements for whether they have sometimes srcpads that should be converted to always src pads (with caps just set once known)
+   * WANT-FIX, EASY
+   * we didn't do that originally because decodebin couldn't handle that
+   * e.g. wavpackparse, aiffparse, etc.
 
- * merge libgstcdda into libgstaudio ('''tpm:''': done locally, but need to figure out what to do with the CDDA tags, if we want to add a dependency on libgsttag just for that... or maybe move tags to core, or make tags something that's registered in the registry)
- * merge audio bits from libgstinterfaces into libgstaudio
- * merge video bits from libgstinterfaces into libgstvideo
- * change GstPropertyProbe to be more useful and generic and move into core(?). I would be good if a probe could return multiple things, e.g. a "device" probe could return description strings in addition to the various devices found (so we can get rid of the silly device-name thing we do currently)
- * GstMixer is not thread-safe at all; return newly-allocated lists with ref'ed objects etc.; make GstMixerTrack derive from GstObject instead of GObject (so we can lock easily, and set the mixer as parent object); make functions return failure/success
- * add volume/stream-volume to GstAudioSink so that it's always available
- * make interfaces like GstUriHandler, GstTuner etc. register canonical properties (which the classes that implement it would need to wrap then)
- * audio: don't put arrays of channel position enums in caps, causes all kinds of problems, makes for hard to follow code, and is unwieldy. Instead, make channel-positions a bitmask that defines which channels are set and provide utility functions to re-order (Wim started this, but punted it for a later date)
- * video: should we make fields in interlacing video more explicit, like for multiview? Allow multiple arrangements (interleaved, two fields packed in one frame, fields as separate buffers?)
- * audio: rename GstRingBuffer to GstAudioRingBuffer ?
-
-==== miscellaneous ====
-
- * use consistent parsed/framed field in caps (framed vs. parsed etc.)
- * be stricter about parsed/framed requirements (esp. for decoders), ie. require a parser by default for most framed formats (or just have parser libraries so all plugins can easily parse stuff themselves as and when required)
- * be smarter/more concise about framerates in caps? e.g. when transcoding from a variable frame rate codec to e.g. theora, we should either error out or be able to warn if there's no videorate between decoder+encoder, or theoraenc (and any other encoders that need it) should do the videorate stuff internally (taking into account disconts in the input if needed). Same for audiorate+audio encoders? (see e.g. bug 590859)
- * put more info into caps so it can be negotiated, e.g. the various h264 formats/framings; put profiles and levels into caps
- * gdp: make GDP output typefindable
-
-=== gst-plugins-good ===
-
- * avoid using sometimes pads in e.g. id3demux, wavparse etc., just set the caps when we have them
-
-
-== Elements being ported ==
-
-If you are starting to port an element, please make a note here, to avoid duplicate work, '''and let people on IRC know''' (to make sure the plugin needs porting at all, and maybe be made aware of anything that needs to be changed etc.).
-
-Useful links:
- * [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/random/porting-to-0.11.txt?h=0.11|porting-to-0.11.txt]]
- * [[http://lists.freedesktop.org/archives/gstreamer-devel/2011-April/031128.html|GStreamer 0.11 status - part 1]]
- * [[http://lists.freedesktop.org/archives/gstreamer-devel/2011-June/031891.html| GStreamer 0.11 status = part 2]]
-
-||<style="text-align: center;"> '''Element/Plugin''' || '''Who''' || '''Date started''' || '''Done?''' ||
-|| what || you || when || ||
-|| ...  || ... || ...  || ||
+ * check "bitrate" property of all encoders, should be in bits per second, not kbits/sec or so.
+   * MUST-FIX, TRIVIAL
+   * https://bugzilla.gnome.org/show_bug.cgi?id=337409
+ * check all elements to make sure they don't have properties of long/unsigned long type
+   * MUST-FIX, TRIVIAL
+ * oggmux:
+   * MUST-FIX, TRVIAL
+   * separate video and audio sink pad templates
+ * audioiirfilter:
+   * MUST-FIX, TRIVIAL: nonstandard definition of 'a' and 'b' coefficients for IIR filters
+   * https://bugzilla.gnome.org/show_bug.cgi?id=632664
+ * playbin/uridecodebin:
+   * MUST-FIX, TRIVIAL: "connection-speed" should be a guint64 instead of a guint (as it's kbps)
+ * RTP elements:
+   * MUST-FIX, TRIVIAL: rename gstrtp* to rtp*
+   * jitterbuffer and ssrdemux padnames have a %d instead of %u
+     * https://bugzilla.gnome.org/show_bug.cgi?id=660157 (whatever this means)
