@@ -33,7 +33,8 @@ This looks worse than it is, most things should be fairly easy!
    * can't use GError here - would need to add refcounting for GErrors to GLib, and next GLib release is probably too late for us
  * why do we export the core debug categories? (GST_CAT_*) - tidy up in general maybe?
    * WANT-FIX, TRIVIAL
-   * we export core categories for baseclasses or generic topics, whats the question here anyway?
+   * ensonic: we export core categories for baseclasses or generic topics, whats the question here anyway?
+     * tpm: only CAT_QOS + CAT_PERFORMANCE are ever used really (and CAT_SCHEDULING twice in libgstbase). And of core, base, good, ugly, bad there are only a handful of usages of those at all anyway. Oh, and PERFORMANCE is not in the public headers (you did that), so has to be retrieved by name anyway. The question is if we shouldn't just hide them all from private headers given that they're essentially not used anywhere but a handful of places (where they could easily be replaced by the CATEGORY_GET thing) (however, this is about the least important item ever, so don't really care)
  * make plugin features light-weight (how to do that? Maybe just scrap the inheritance and do them all as boxed)
    * MUST-FIX: make opaque
    * WANT-FIX: GObject? GMiniObject? Just Boxed?
