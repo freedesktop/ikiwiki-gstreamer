@@ -316,7 +316,7 @@ This looks worse than it is, most things should be fairly easy!
    * MUST-FIX, TRIVIAL
    * e.g. gst_pad_add_probe, gst_pad_remove_probe
  * check _new functions, must be gst_foo_bar_new_xyz, not gst_foo_bar_xyz_new()
-   * MUST-FIX, TRIVIAL
+   * MUST-FIX, TRIVIAL (wtay: I'll do this)
    * otherwise g-i doesn't recognise it as constructor
    * gst_structure_empty_new() =>gst_structure_new_empty()
    * gst_structure_id_empty_new() = gst_structure_new_id_empty() (or new_empty_id()?)
