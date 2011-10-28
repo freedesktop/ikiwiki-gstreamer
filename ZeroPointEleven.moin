@@ -138,6 +138,7 @@ This looks worse than it is, most things should be fairly easy!
  * can we add the GType of a pad to pad templates? That way gst-inspect could detect GstPad subclasses in videomixer + muxers and print special properties available for those)
    * CAN BE DONE LATER
  * fix image tags (currently disabled because caps on buffers are no more..)
+   * (wtay: I'll do this)
    * MUST FIX
    * https://bugzilla.gnome.org/show_bug.cgi?id=661634
  * does totem/playbin screenshotting also need fixing?
