@@ -27,6 +27,7 @@ This looks worse than it is, most things should be fairly easy!
 
  * buffer timestamping
    * MUST-FIX: how to express DTS / PTS (just two ts fields on buffer?)
+   * FIXED: added pts and dts to buffers
  * add GError or GstPadErrorContext to gst_pad_push() etc.
    * WANT-FIX, but can always be done later with queries and keeping error state privately in GstPadPrivate
    * can't use GError here - would need to add refcounting for GErrors to GLib, and next GLib release is probably too late for us
@@ -154,6 +155,7 @@ This looks worse than it is, most things should be fairly easy!
      * slomo has started this
    * GST_EVENT_DRAIN (or modified FLUSH event):
      * like flush, but doesn't reset everything
+     * FIXED: flush-stop event has boolean to reset time or not
  * define GST_FLOW_RESEND in connection with RECONFIGURE event:
    * MUST-FIX (remove or define, can't really be added later)
    * just makes things nicer if downstream sends a reconfigure event for some reason, then the chain func upstream gets to know about it directly and can possibly re-send the buffer, so we don't necessarily lose a buffer when reconfiguring
