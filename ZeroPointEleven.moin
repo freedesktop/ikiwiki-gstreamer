@@ -33,6 +33,7 @@ This looks worse than it is, most things should be fairly easy!
    * can't use GError here - would need to add refcounting for GErrors to GLib, and next GLib release is probably too late for us
  * why do we export the core debug categories? (GST_CAT_*) - tidy up in general maybe?
    * WANT-FIX, TRIVIAL
+   * we export core categories for baseclasses or generic topics, whats the question here anyway?
  * make plugin features light-weight (how to do that? Maybe just scrap the inheritance and do them all as boxed)
    * MUST-FIX: make opaque
    * WANT-FIX: GObject? GMiniObject? Just Boxed?
