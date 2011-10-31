@@ -275,8 +275,8 @@ This looks worse than it is, most things should be fairly easy!
  * tags:
    * WANT-FIX, TRIVIAL: GST_TAG_LANGUAGE_CODE: use ISO-639-2 instead of ISO-639-1. Enforce this. Provide 639-1 => 639-2 table in libgsttag (ideally we'd require iso-codes and provide language_name=>code and code=>language_name functions too).
    * WANT-FIX: TRIVIAL: add GST_TAG_LANGUAGE for free-form string
- * gst_filter_*() should be removed or renamed or be made private
-   * MUST-FIX, TRIVIAL
+ * ---(gst_filter_*() should be removed or renamed or be made private)---
+   * ---(MUST-FIX, TRIVIAL)---
  * more functions should have a GError argument
    * MAYBE-FIX, TRIVIAL
    * e.g. gst_preset_{load|save} (+delete/rename?)
