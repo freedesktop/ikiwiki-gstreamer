@@ -251,8 +251,8 @@ This looks worse than it is, most things should be fairly easy!
    * MUST-FIX: review buffer flags (marker flag? document use cases! h264 byte-stream?)
  * API cosmetics:
    * MUST-FIX, TRIVIAL
-   * rename GstProbeType => GstPadProbeType
-   * rename GstProbeReturn => GstPadProbeReturn etc.
+   * ---(rename GstProbeType => GstPadProbeType)---
+   * ---(rename GstProbeReturn => GstPadProbeReturn etc.)---
  * GstAdapter:
    * MUST-FIX: look again at why _unmap() flushes too - it's convenient, but weird, let's make it so that caller has to flush explicitly
  * ranges: allow for "steps" (e.g. width = [ 32, 1024, 16 ])
