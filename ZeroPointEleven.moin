@@ -200,7 +200,7 @@ This looks worse than it is, most things should be fairly easy!
    * MUST-FIX
  * systematic base API review
    * MUST-FIX
- * collectpaps2:
+ * collectpads2:
    * MUST-FIX (add -2 to  0.10 and rename to collectpads in 0.11)
  * pad functions (add destroy notify + pass parent to pad func)
    * MUST-FIX
@@ -380,8 +380,8 @@ This looks worse than it is, most things should be fairly easy!
  * fix subparse (caps, also split up, maybe make a base class)
    * typefinding should go into typefinders
    * MUST-FIX: separate elements per subtitle type, no more typefinding of input
- * flacdec: port to GstAudioDecoder and remove all the pull-based stuff
-   * WANT-FIX, WORK-IN-PROGRESS
+ * ---(flacdec: port to GstAudioDecoder and remove all the pull-based stuff)---
+   ---(* WANT-FIX, WORK-IN-PROGRESS)---
  * jpegdec: get rid of all the copy/indirect crap, alloc with ROUND_UP16 alignment
    * CAN DO LATER
  * pulseaudiobin: get rid, not needed in 0.11 (decodebin should react to reconfigure events)
