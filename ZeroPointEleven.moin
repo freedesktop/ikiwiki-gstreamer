@@ -148,9 +148,9 @@ This looks worse than it is, most things should be fairly easy!
    * convert utility api in gstvideo
    * MUST-FIX: check if anything is missing here
  * ---(tag messages should be posted by sinks and not elements upstream)---
-   * MUST-FIX, TRIVIAL
-   * ---(see sink_message event)---
-   * remove/modify gst_element_found_tags[_for_pad]()
+   * ---(MUST-FIX, TRIVIAL)---
+   * ---(see sink_message event)--- Added to basesink
+   * ---(remove/modify gst_element_found_tags[_for_pad]())--- removed now
    * rationale: this fixes e.g. timing problems when tags change mid-stream like with icydemux - if there's buffering between icydemux and the sink the player will get the new tags while the old song is still playing
  * new events:
    * MUST-FIX (can't be just added later, 1-N/N-N elements like demuxers need to know about that) (not absolute must-fix, but would be good to start)
