@@ -147,9 +147,9 @@ This looks worse than it is, most things should be fairly easy!
    * (might be broken because caps are no longer on buffers)
    * convert utility api in gstvideo
    * MUST-FIX: check if anything is missing here
- * tag messages should be posted by sinks and not elements upstream
+ * ---(tag messages should be posted by sinks and not elements upstream)---
    * MUST-FIX, TRIVIAL
-   * see sink_message event
+   * ---(see sink_message event)---
    * remove/modify gst_element_found_tags[_for_pad]()
    * rationale: this fixes e.g. timing problems when tags change mid-stream like with icydemux - if there's buffering between icydemux and the sink the player will get the new tags while the old song is still playing
  * new events:
