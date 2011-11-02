@@ -347,6 +347,9 @@ This looks worse than it is, most things should be fairly easy!
  * GstPad:
    * WANT-FIX, EASY?
    * unlink takes object lock while calling unlink function, see https://bugzilla.gnome.org/show_bug.cgi?id=637430
+ * GThread:
+   * MUST-FIX: don't use GThread API that's been deprecated in the latest GLib release, especially not in headers
+   * see https://bugzilla.gnome.org/show_bug.cgi?id=662207
 
 
 ==== Plugins ====
