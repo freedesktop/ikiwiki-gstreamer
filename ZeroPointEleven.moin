@@ -26,8 +26,7 @@ This looks worse than it is, most things should be fairly easy!
 
 
  * buffer timestamping
-   * MUST-FIX: how to express DTS / PTS (just two ts fields on buffer?)
-   * FIXED: added pts and dts to buffers
+   * ---(MUST-FIX: how to express DTS / PTS (just two ts fields on buffer?))--- FIXED: added pts and dts to buffers
  * add GError or GstPadErrorContext to gst_pad_push() etc.
    * WANT-FIX, but can always be done later with queries and keeping error state privately in GstPadPrivate
    * can't use GError here - would need to add refcounting for GErrors to GLib, and next GLib release is probably too late for us
@@ -170,9 +169,9 @@ This looks worse than it is, most things should be fairly easy!
    * could be sent if QoS drops the frame
    * https://bugzilla.gnome.org/show_bug.cgi?id=322947
  * rename GST_SEEK_TYPE_CUR to something else so that people don't think they can seek from the current position (or remove it, or change semantics?)
-   * MUST FIX, TRIVIAL
+   * ---(MUST FIX, TRIVIAL)--- FIXED: GST_SEEK_TYPE_CUR was removed
  * mark segment argument to gst_event_new_segment() as const (same for other event/message funcs)
-   * MUST FIX, TRIVIAL
+   * ---(MUST FIX, TRIVIAL)---
    * make gst_event_new_*() and _parse() more consistent with regard to whether ownership is taken and or a copy returned (also for queries, messages, structs)
  * g_value_list_*() + g_value_array_*() - enforce that all values are of the same type? (can use a field in GValue to store the GType)
    * MUST FIX, TRIVIAL
@@ -216,9 +215,9 @@ This looks worse than it is, most things should be fairly easy!
    * MUST-FIX: think about how to express pre-multiplied alpha
  * libgstnet - move "somewhere else" (no more microlibs) into -base/core? (adds libgio dependency, but do we care?)
  * libgstaudio:
-   * MUST-FIX:
-   * add vfunc to audio format struct to convert to 'normal format' (just like with libgstvideo)
-   * remove vfuncs from structs, why not just put them into utility functions instead?
+   * ---(MUST-FIX:)---
+   * ---(add vfunc to audio format struct to convert to 'normal format' (just like with libgstvideo))---
+   * ---(remove vfuncs from structs, why not just put them into utility functions instead?)---
  * make pad blocking in all modes (pull/push) on all pads (src/sink)
    * WANT-FIX, EASY?
    * might already work
@@ -318,24 +317,24 @@ This looks worse than it is, most things should be fairly easy!
  * make sure we don't use long/unsinged long/glong/gulong in the API anywhere
    * MUST-FIX, TRIVIAL
    * e.g. gst_pad_add_probe, gst_pad_remove_probe
- * check _new functions, must be gst_foo_bar_new_xyz, not gst_foo_bar_xyz_new()
-   * MUST-FIX, TRIVIAL (wtay: I'll do this)
-   * otherwise g-i doesn't recognise it as constructor
-   * gst_structure_empty_new() =>gst_structure_new_empty()
-   * gst_structure_id_empty_new() = gst_structure_new_id_empty() (or new_empty_id()?)
-   * gst_structure_id_new() => _new_id()
-   * gst_buffer_list_sized_new() => gst_buffer_list_new_sized()
- * GstMeta sub-classes:
-   * MUST-FIX, TRIVIAL
-   * rename GstMetaFoo to GstFooMeta, needed by g-i and bindings to properly detect name spaces, and the right thing
+ * ---(check _new functions, must be gst_foo_bar_new_xyz, not gst_foo_bar_xyz_new())---
+   * ---(MUST-FIX, TRIVIAL)---
+   * ---(otherwise g-i doesn't recognise it as constructor)---
+   * ---(gst_structure_empty_new() =>gst_structure_new_empty())---
+   * ---(gst_structure_id_empty_new() = gst_structure_new_id_empty() (or new_empty_id()?))---
+   * ---(gst_structure_id_new() => _new_id())---
+   * ---(gst_buffer_list_sized_new() => gst_buffer_list_new_sized())---
+ * ---(GstMeta sub-classes:)---
+   * ---(MUST-FIX, TRIVIAL)---
+   * ---(rename GstMetaFoo to GstFooMeta, needed by g-i and bindings to properly detect name spaces, and the right thing)---
  * GstNetBuffer:
    * MUST-FIX, EASY
    * rename library, merge with net utils from core maybe? Or put somewhere else (no micro library please)
-   * rename gst_netaddress_xyz() => gst_net_address_xyz()
-   * (also rename meta, see general GstMeta bullet point)
+   * ---(rename gst_netaddress_xyz() => gst_net_address_xyz())---
+   * ---((also rename meta, see general GstMeta bullet point))---
    * can we put pointers into GstMeta? If yes, use GIO's address object instead!
      * or use GIO in API and provide conversion to/from meta
-   * also: add multicast support! (bug #358154)
+   * ---(also: add multicast support! (bug #358154))---
  * GstElement:
    * MUST-FIX, TRIVIAL
    * somehow signal that an element class provides a clock, or will do stuff with an index
