@@ -156,9 +156,8 @@ This looks worse than it is, most things should be fairly easy!
    * MUST-FIX (can't be just added later, 1-N/N-N elements like demuxers need to know about that) (not absolute must-fix, but would be good to start)
    * GST_EVENT_STREAM_ACTIVATE:
      * slomo has started this
-   * GST_EVENT_DRAIN (or modified FLUSH event):
-     * like flush, but doesn't reset everything
-     * FIXED: flush-stop event has boolean to reset time or not
+   * ---(GST_EVENT_DRAIN (or modified FLUSH event))--- fixed with boolean on FLUSH_STOP event
+     * ---(like flush, but doesn't reset everything)---
  * define GST_FLOW_RESEND in connection with RECONFIGURE event:
    * MUST-FIX (remove or define, can't really be added later)
    * just makes things nicer if downstream sends a reconfigure event for some reason, then the chain func upstream gets to know about it directly and can possibly re-send the buffer, so we don't necessarily lose a buffer when reconfiguring
