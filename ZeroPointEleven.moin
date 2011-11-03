@@ -350,6 +350,8 @@ This looks worse than it is, most things should be fairly easy!
  * GThread:
    * MUST-FIX: don't use GThread API that's been deprecated in the latest GLib release, especially not in headers
    * see https://bugzilla.gnome.org/show_bug.cgi?id=662207
+ * RTP:
+   * MUST-FIX: Rewrite the RTP parsing library, it is really ugly with new buffer memory
 
 
 ==== Plugins ====
