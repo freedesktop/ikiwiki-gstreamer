@@ -326,13 +326,14 @@ This looks worse than it is, most things should be fairly easy!
  * ---(GstMeta sub-classes:)---
    * ---(MUST-FIX, TRIVIAL)---
    * ---(rename GstMetaFoo to GstFooMeta, needed by g-i and bindings to properly detect name spaces, and the right thing)---
- * GstNetBuffer:
-   * MUST-FIX, EASY
-   * rename library, merge with net utils from core maybe? Or put somewhere else (no micro library please)
+ * ---(GstNetBuffer:)---
+   * ---(MUST-FIX, EASY)--- Moved to net utils from core
+   * ---(rename library, merge with net utils from core maybe? Or put somewhere else (no micro library please))---
    * ---(rename gst_netaddress_xyz() => gst_net_address_xyz())---
    * ---((also rename meta, see general GstMeta bullet point))---
    * can we put pointers into GstMeta? If yes, use GIO's address object instead!
      * or use GIO in API and provide conversion to/from meta
+     (wtay: we can add pointers but we don't want to allocate a new GInetAddress for each udp buffers)
    * ---(also: add multicast support! (bug #358154))---
  * GstElement:
    * MUST-FIX, TRIVIAL
