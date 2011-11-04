@@ -296,13 +296,12 @@ This looks worse than it is, most things should be fairly easy!
    * WANT-FIX, TRIVIAL: add return value to "sync-message" signal
    * MAYBE-FIX: clean up the GstBus API (add_watch can only be called once), maybe deprecate add_watch in favour of "message" ?
    * rename _ad_watch
- * pad templates:
-   * MUST-FIX, TRIVIAL: fix pad template names, e.g. foo_%d doesn't make sense since we never want a pad called foo_-1
-   * especially fix those that use foo_%2d (avi)
-   * should all be %u
-   * especially: rtpmanager
-   * also consistently use underscores in pad template names, i.e. sink_%d and not sink%d
-     * https://bugzilla.gnome.org/show_bug.cgi?id=637430
+ * ---(pad templates:)---
+   * ---(MUST-FIX, TRIVIAL: fix pad template names, e.g. foo_%d doesn't make sense since we never want a pad called foo_-1)---
+   * ---(especially fix those that use foo_%2d (avi))---
+   * ---(should all be %u)---
+   * ---(especially: rtpmanager)---
+   * ---(also consistently use underscores in pad template names, i.e. sink_%d and not sink%d)---
  * GstAudioSink/Src should implement GstStreamVolume interface (and do volume scaling for raw audio)
    * MUST-FIX, EASY: can't change it later because sub-classes will overwrite "volume" property otherwise
    * should have utility funcs in gstaudio to do volume scaling for misc formats
