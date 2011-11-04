@@ -353,6 +353,9 @@ This looks worse than it is, most things should be fairly easy!
    * see https://bugzilla.gnome.org/show_bug.cgi?id=662207
  * RTP:
    * MUST-FIX: Rewrite the RTP parsing library, it is really ugly with new buffer memory
+ * Caps:
+   * MUST-FIX: Make getcaps and acceptcaps with QUERY instead
+   * this would allow us to add iterators later
 
 
 ==== Plugins ====
