@@ -204,8 +204,10 @@ This looks worse than it is, most things should be fairly easy!
    * MUST-FIX
  * controller:
    * MUST-FIX: make bindings friendly (if you touch multiple things you just get a gpointer and must interpret it differently depending on the type of the property)
+     * (ensonic) who is 'you' in the above comment?
    * WANT-FIX: clean-up in general (see FIXMEs in code)
-   * WANT-FIX: move GstController into core, make control sources plugin features (to be configured via signal_emit)
+   * --- WANT-FIX: move GstController into core ---
+   * WANT_FIX: make control sources plugin features (to be configured via signal_emit)
    * WANT-FIX: triggers should be moved into their own control source
      * https://bugzilla.gnome.org/show_bug.cgi?id=610338
  * libgstvideo:
