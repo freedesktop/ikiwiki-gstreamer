@@ -222,7 +222,7 @@ This looks worse than it is, most things should be fairly easy!
  * ---(make pad blocking in all modes (pull/push) on all pads (src/sink))---
    * ---(WANT-FIX, EASY?)---
    * ---(might already work)---
-   * https://bugzilla.gnome.org/show_bug.cgi?id=644907, still needs extra flags to block up or downstream only
+   * ---(https://bugzilla.gnome.org/show_bug.cgi?id=644907)---
  * re-think sparse stream handling, newsegment updating to fill gaps likely doesn't work any more
    * MUST-FIX, EASY?
    * should rethink how to move time along / signal downstream that there's a gap for sparse streams like subtitles
