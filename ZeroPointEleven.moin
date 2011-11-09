@@ -355,8 +355,7 @@ This looks worse than it is, most things should be fairly easy!
  * RTP:
    * MUST-FIX: Rewrite the RTP parsing library, it is really ugly with new buffer memory
  * Caps:
-   * MUST-FIX: Make getcaps and acceptcaps with QUERY instead
-   * this would allow us to add iterators later
+   * MUST-FIX: Make getcaps ---(and acceptcaps)--- with QUERY instead
 
 
 ==== Plugins ====
