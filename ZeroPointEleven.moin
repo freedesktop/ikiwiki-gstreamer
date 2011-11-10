@@ -247,8 +247,8 @@ This looks worse than it is, most things should be fairly easy!
    * MUST-FIX, TRIVIAL: make gst_element_factory_get_uri_type() and gst_uri_handler_get_uri_type() return a GstURIType (needs some header include order wrangling)
    * MAYBE-FIX, TRIVIAL: rename GstURIFoo to GstUriFoo?
  * buffer flags:
-   * WANT-FIX: change from signalling DELTA_UNIT to KEY_UNIT ?
-   * MUST-FIX: review buffer flags (marker flag? document use cases! h264 byte-stream?)
+   * ---(WANT-FIX: change from signalling DELTA_UNIT to KEY_UNIT ?)---
+   * CAN-BE-DONE-LATER: review buffer flags (marker flag? document use cases! h264 byte-stream?)
  * API cosmetics:
    * MUST-FIX, TRIVIAL
    * ---(rename GstProbeType => GstPadProbeType)---
