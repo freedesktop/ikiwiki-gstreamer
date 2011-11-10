@@ -341,11 +341,11 @@ This looks worse than it is, most things should be fairly easy!
    * somehow signal that an element class provides a clock, or will do stuff with an index
    * either via element flags, or add interfaces
    * https://bugzilla.gnome.org/show_bug.cgi?id=529017
- * Base classes:
-   * MUST-FIX, EASY
-   * event vfuncs to be more binding friendly and intuitive, need to chain up
-   * check base sink / base parse, rtp payloader/depayloader classes
-   * https://bugzilla.gnome.org/show_bug.cgi?id=657305
+ * ---(Base classes:)---
+   * ---(MUST-FIX, EASY)---
+   * ---(event vfuncs to be more binding friendly and intuitive, need to chain up)---
+   * ---(check base sink / base parse, rtp payloader/depayloader classes)---
+   * ---(https://bugzilla.gnome.org/show_bug.cgi?id=657305)---
  * GstPad:
    * WANT-FIX, EASY?
    * unlink takes object lock while calling unlink function, see https://bugzilla.gnome.org/show_bug.cgi?id=637430
