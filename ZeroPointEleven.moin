@@ -206,7 +206,7 @@ This looks worse than it is, most things should be fairly easy!
    * MUST-FIX: make bindings friendly (if you touch multiple things you just get a gpointer and must interpret it differently depending on the type of the property)
      * (ensonic) who is 'you' in the above comment?
    * WANT-FIX: clean-up in general (see FIXMEs in code)
-   * --- WANT-FIX: move GstController into core ---
+   * ---(WANT-FIX: move GstController into core)---
    * WANT_FIX: make control sources plugin features (to be configured via signal_emit)
    * WANT-FIX: triggers should be moved into their own control source
      * https://bugzilla.gnome.org/show_bug.cgi?id=610338
@@ -247,14 +247,14 @@ This looks worse than it is, most things should be fairly easy!
    * MUST-FIX, TRIVIAL: make gst_element_factory_get_uri_type() and gst_uri_handler_get_uri_type() return a GstURIType (needs some header include order wrangling)
    * MAYBE-FIX, TRIVIAL: rename GstURIFoo to GstUriFoo?
  * buffer flags:
-   * ---(WANT-FIX: change from signalling DELTA_UNIT to KEY_UNIT ?)---
+   * ---(WANT-FIX: change from signalling DELTA_UNIT to KEY_UNIT ? )---
    * CAN-BE-DONE-LATER: review buffer flags (marker flag? document use cases! h264 byte-stream?)
  * API cosmetics:
-   * MUST-FIX, TRIVIAL
+   * --( MUST-FIX, TRIVIAL )---
    * ---(rename GstProbeType => GstPadProbeType)---
    * ---(rename GstProbeReturn => GstPadProbeReturn etc.)---
- * GstAdapter:
-   * MUST-FIX: look again at why _unmap() flushes too - it's convenient, but weird, let's make it so that caller has to flush explicitly
+ * ---(GstAdapter:)---
+   * --( MUST-FIX: look again at why _unmap() flushes too - it's convenient, but weird, let's make it so that caller has to flush explicitly )---
  * ranges: allow for "steps" (e.g. width = [ 32, 1024, 16 ])
    * WANT-FIX (COULD BE ADDED LATER?)
    * allow third parameter for ranges: that expresses step size
