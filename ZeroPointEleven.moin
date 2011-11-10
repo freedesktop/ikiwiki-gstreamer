@@ -36,7 +36,7 @@ This looks worse than it is, most things should be fairly easy!
      * tpm: only CAT_QOS + CAT_PERFORMANCE are ever used really (and CAT_SCHEDULING twice in libgstbase). And of core, base, good, ugly, bad there are only a handful of usages of those at all anyway. Oh, and PERFORMANCE is not in the public headers (you did that), so has to be retrieved by name anyway. The question is if we shouldn't just hide them all from private headers given that they're essentially not used anywhere but a handful of places (where they could easily be replaced by the CATEGORY_GET thing) (however, this is about the least important item ever, so don't really care)
         * ensonic: +1 for removing them from the headers.
  * make plugin features light-weight (how to do that? Maybe just scrap the inheritance and do them all as boxed)
-   * MUST-FIX: make opaque
+   * ---(MUST-FIX: make opaque)---
    * WANT-FIX: GObject? GMiniObject? Just Boxed?
  * GstPadTemplates are currently full-fledged objects! (with unused pad-created signal..) Make them light-weight, we're creating LOADS of them when loading the registry [really? no, we're creating static pad templates..].. ideally make it so that we can embed them in element/factory instance structs and/or so that they're cachable and we can maybe even share the template between the factory and the element?) - basically: why not make all GstPadTemplates effectively GstStaticPadTemplates, ie. just simple structs? - slomo: maybe just get rid of static pad templates (and static caps?!) and only use GstPadTemplate objects?
    * WANT-FIX
@@ -172,9 +172,9 @@ This looks worse than it is, most things should be fairly easy!
  * mark segment argument to gst_event_new_segment() as const (same for other event/message funcs)
    * ---(MUST FIX, TRIVIAL)---
    * make gst_event_new_*() and _parse() more consistent with regard to whether ownership is taken and or a copy returned (also for queries, messages, structs)
- * g_value_list_*() + g_value_array_*() - enforce that all values are of the same type? (can use a field in GValue to store the GType)
-   * MUST FIX, TRIVIAL
-   * also see bug 322587
+ * ---(g_value_list_*() + g_value_array_*() - enforce that all values are of the same type? (can use a field in GValue to store the GType))---
+   * ---(MUST FIX, TRIVIAL)---
+   * ---(also see bug 322587)---
  * rename GstRingBuffer => GstAudioRingBuffer + GstBaseAudioSrc => GstAudioBaseSrc or GstAudioSrcBase
    * MUST FIX, TRIVIAL
  * get rid of the boolean return in plugin_init() or element_register()?
@@ -421,9 +421,9 @@ This looks worse than it is, most things should be fairly easy!
    * https://bugzilla.gnome.org/show_bug.cgi?id=337409
  * check all elements to make sure they don't have properties of long/unsigned long type
    * MUST-FIX, TRIVIAL
- * oggmux:
-   * MUST-FIX, TRVIAL
-   * separate video and audio sink pad templates
+ * ---(oggmux:)---
+   * ---(MUST-FIX, TRVIAL)---
+   * ---(separate video and audio sink pad templates)---
  * audioiirfilter:
    * MUST-FIX, TRIVIAL: nonstandard definition of 'a' and 'b' coefficients for IIR filters
    * https://bugzilla.gnome.org/show_bug.cgi?id=632664
