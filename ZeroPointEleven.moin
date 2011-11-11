@@ -175,8 +175,8 @@ This looks worse than it is, most things should be fairly easy!
  * ---(g_value_list_*() + g_value_array_*() - enforce that all values are of the same type? (can use a field in GValue to store the GType))---
    * ---(MUST FIX, TRIVIAL)---
    * ---(also see bug 322587)---
- * rename GstRingBuffer => GstAudioRingBuffer + GstBaseAudioSrc => GstAudioBaseSrc or GstAudioSrcBase
-   * MUST FIX, TRIVIAL
+ * ---(rename GstRingBuffer => GstAudioRingBuffer + GstBaseAudioSrc => GstAudioBaseSrc or GstAudioSrcBase)---
+   * ---(MUST FIX, TRIVIAL)---
  * get rid of the boolean return in plugin_init() or element_register()?
    * WANT FIX, TRIVIAL
  * review interfaces and elements
