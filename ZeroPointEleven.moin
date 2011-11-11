@@ -213,7 +213,7 @@ This looks worse than it is, most things should be fairly easy!
  * libgstvideo:
    * MUST-FIX: interlaced video - must support non-interleaved fields for interlaced video
    * (no need to support pushing 1 single field individually in a buffer, or is there?)
-   * MUST-FIX: think about how to express pre-multiplied alpha
+   * CAN-BE-DONE-LATER: think about how to express pre-multiplied alpha
  * libgstnet - move "somewhere else" (no more microlibs) into -base/core? (adds libgio dependency, but do we care?)
  * libgstaudio:
    * ---(MUST-FIX:)---
@@ -258,11 +258,11 @@ This looks worse than it is, most things should be fairly easy!
  * ranges: allow for "steps" (e.g. width = [ 32, 1024, 16 ])
    * WANT-FIX (COULD BE ADDED LATER?)
    * allow third parameter for ranges: that expresses step size
- * video caps:
-   * MUST-FIX, EASY:
-   * define "framerate" field more strictly. 0/1 = variable/unknown framerate, anything else = fixed framerate
-   * v4l2src should set framerate=0/1 for webcams and optionally add a "max-framerate" field to signal this downstream (so v4l2src ! videorate ! ... doesn't negotiate to 25fps by default if 15fps was set on the driver)
-   * this means a codec can express that it requires a fixed framerate by adding framerate = [ 1/MAX, MAX/1 ] to template caps
+ * ---(video caps:)---
+   * ---(MUST-FIX, EASY:)---
+   * ---(define "framerate" field more strictly. 0/1 = variable/unknown framerate, anything else = fixed framerate)---
+   * ---(v4l2src should set framerate=0/1 for webcams and optionally add a "max-framerate" field to signal this downstream (so v4l2src ! videorate ! ... doesn't negotiate to 25fps by default if 15fps was set on the driver))---
+   * ---(this means a codec can express that it requires a fixed framerate by adding framerate = [ 1/MAX, MAX/1 ] to template caps)---
  * add event to signal start of stream fragment (EVENT_SOS? EVENT_START?)
    * MUST-FIX, EASY? (can't be added later)
    * use cases: streamsynchronizer in playbin2 to align different stream segments, hlssink, multifilesink, etc.
