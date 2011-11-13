@@ -360,12 +360,12 @@ This looks worse than it is, most things should be fairly easy!
 
 ==== Plugins ====
 
- * remove parsing/seeking/etc. from mad
-   * MUST-FIX, TRIVIAL
+ * ---(remove parsing/seeking/etc. from mad)---
+   * ---(MUST-FIX, TRIVIAL)---
  * rename mad -> madmp3dec or so?
    * MUST-FIX, TRIVIAL
- * remove lame now that we have lamemp3enc?
-   * MUST-FIX, TRIVIAL
+ * ---(remove lame now that we have lamemp3enc?)---
+   * ---(MUST-FIX, TRIVIAL)---
  * systematically check each and every plugin/element
    * MUST-FIX
    * must make a checklist
