@@ -117,8 +117,8 @@ This looks worse than it is, most things should be fairly easy!
      * should move to a bitfield really - do we worry about inefficiencies if re-ordering is needed (in interleaved mode)? (in non-interleaved mode that can be done with GstMemory)
      * MUST-FIX: think about this
      * bitfield + "strategy" (mpeg, aac, smpte, etc.)
- * make all examples gtk3-only (0.10 too)
-   * TRIVIAL, CAN DO LATER
+ * ---(make all examples gtk3-only (0.10 too) )---
+   * ---(TRIVIAL, CAN DO LATER, has nothing to do with GStreamers API, done for gst-plugins-base now, for -good it's just a change of the requirement in configure.ac)---
  * fix libgstcheck API + exports
    * MUST-FIX: declare interface as unstable with header guards
  * typefinder API for typefinding functions:
