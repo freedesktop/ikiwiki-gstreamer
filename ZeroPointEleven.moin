@@ -239,10 +239,10 @@ This looks worse than it is, most things should be fairly easy!
    * e.g.: tags (can't just merge, sorry), sink_messages, custom_downstream_sticky
  * GstUriHandler
    * WANT-FIX: allow per-protocol ranks (also affects elementfactory)
-   * MUST-FIX, TRIVIAL: pass GstURIHandler * handler to _get_type() and get_protocol() methods, get rid of _full() methods in interface
+   * MUST-FIX, TRIVIAL: pass GstURIHandler * handler to _get_type() and get_protocol() methods, ---(get rid of _full methods in interface)---
    * MUST-FIX, TRIVIAL: the interface should have a "uri" property (there's also a bug about that)
-   * MUST-FIX, TRIVIAL: add GError * argument to gst_uri_handler_set_uri(), also needs custom error codes then to signal whether the protocol wasn't supported, or the URI malformed
-   * MUST-FIX, TRIVIAL: gst_uri_handler_get_uri() should return a copy (thread-safety)
+   * ---(MUST-FIX, TRIVIAL: add GError * argument to gst_uri_handler_set_uri(), also needs custom error codes then to signal whether the protocol wasn't supported, or the URI malformed)---
+   * ---(MUST-FIX, TRIVIAL: gst_uri_handler_get_uri should return a copy for thread-safety)---
    * WANT-FIX: need to document and enforce file name/path character encodings: on *nix it's just a bunch of bytes, on win32 it must be utf8
    * MUST-FIX, TRIVIAL: make gst_element_factory_get_uri_type() and gst_uri_handler_get_uri_type() return a GstURIType (needs some header include order wrangling)
    * MAYBE-FIX, TRIVIAL: rename GstURIFoo to GstUriFoo?
