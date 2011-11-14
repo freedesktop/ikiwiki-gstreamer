@@ -310,7 +310,7 @@ This looks worse than it is, most things should be fairly easy!
  * add stream selection interface so playbin can proxy stuff to sources
    * CAN BE DONE LATER
    * (jan's idea)
- * GstTagDemux: convert src pad to always pad and just set caps once known
+ * ---(GstTagDemux: convert src pad to always pad and just set caps once known)---
  * Request Pads:
    * MUST-FIX, TRIVIAL: gst-launch requesting pads but not releasing them - ds did some changes which broke stuff, get them into 0.11 (see bug 402562)
    * WANT-FIX: gst_element_link() and other functions implicitly create request pads. Let's not do that (see bug 402497)
