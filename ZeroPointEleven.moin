@@ -52,7 +52,7 @@ This looks worse than it is, most things should be fairly easy!
  * device probing, get rid of GstPropertyProbe (we need a proper device discovery/listing API by type that makes properties and caps available and creates a suitable element given a discovered device object)
    * MUST-FIX: remove + add replacement later
  * have we solved the problem for bindings that writability of things like buffers, caps, queries etc. depends on refcounts?
-   * MUST-FIX
+   * POST-1.0
    * ds: read/write lock + refcounted read reservation; write_unlock() returns read reservation
    * (that for buffers, but would also solve things for structures, caps, queries etc.)
  * GstCaps:
@@ -200,7 +200,7 @@ This looks worse than it is, most things should be fairly easy!
    * MUST-FIX
  * collectpads2:
    * MUST-FIX (add -2 to  0.10 and rename to collectpads in 0.11)
- * pad functions (add destroy notify + pass parent to pad func)
+ * pad functions (add destroy notify + ---(pass parent to pad func)---)
    * MUST-FIX
  * controller:
    * MUST-FIX: make bindings friendly (if you touch multiple things you just get a gpointer and must interpret it differently depending on the type of the property)
@@ -236,7 +236,7 @@ This looks worse than it is, most things should be fairly easy!
    * WANT-FIX, TRIVIAL
  * sticky events: some sticky events can occur multiple times
    * MUST-FIX
-   * e.g.: tags (can't just merge, sorry), sink_messages, custom_downstream_sticky
+   * e.g.: tags (demuxer vs decoder tags can't be merged), sink_messages, custom_downstream_sticky
  * GstUriHandler
    * WANT-FIX: allow per-protocol ranks (also affects elementfactory)
    * MUST-FIX, TRIVIAL: pass GstURIHandler * handler to _get_type() and get_protocol() methods, ---(get rid of _full methods in interface)---
@@ -288,9 +288,9 @@ This looks worse than it is, most things should be fairly easy!
    * gst_controller_new() needs fixing too, esp. if we move it to core
  * GST_FORMAT_DEFAULT: rename/split into GST_FORMAT_FRAME, GST_FORMAT_SAMPLE, or somesuch?
    * MAYBE-FIX, TRIVIAL
- * check all header files to make sure there's padding where there should be padding
-   * MUST-FIX, EASY
-   * mini objects don't need padding any more now, but proper objects and many other helper structs 
+ * ---(check all header files to make sure there's padding where there should be padding)---
+   * ---(MUST-FIX, EASY)---
+   * ---(mini objects don't need padding any more now, but proper objects and many other helper structs )---
  * make state change macros/enums a bit more consistent, clean up
    * WANT-FIX, EASY
    * e.g. GST_STATE_TRANSITION() makes a GstStateChange, rename either of them (probably easier to rename GstStateChange to GstStateTransition, than renaming all the macros).
@@ -312,7 +312,7 @@ This looks worse than it is, most things should be fairly easy!
    * (jan's idea)
  * ---(GstTagDemux: convert src pad to always pad and just set caps once known)---
  * Request Pads:
-   * MUST-FIX, TRIVIAL: gst-launch requesting pads but not releasing them - ds did some changes which broke stuff, get them into 0.11 (see bug 402562)
+   * WANT-FIX, TRIVIAL: gst-launch requesting pads but not releasing them - ds did some changes which broke stuff, get them into 0.11 (see bug 402562)
    * WANT-FIX: gst_element_link() and other functions implicitly create request pads. Let's not do that (see bug 402497)
  * make sure we don't use long/unsinged long/glong/gulong in the API anywhere
    * MUST-FIX, TRIVIAL
@@ -355,7 +355,7 @@ This looks worse than it is, most things should be fairly easy!
  * RTP:
    * MUST-FIX: Rewrite the RTP parsing library, it is really ugly with new buffer memory
  * Caps:
-   * MUST-FIX: Make getcaps ---(and acceptcaps)--- with QUERY instead
+   * MUST-FIX: ---(Make getcaps and acceptcaps with QUERY instead)---
 
 
 ==== Plugins ====
