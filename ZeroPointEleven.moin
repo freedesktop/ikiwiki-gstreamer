@@ -356,6 +356,9 @@ This looks worse than it is, most things should be fairly easy!
    * MUST-FIX: Rewrite the RTP parsing library, it is really ugly with new buffer memory
  * Caps:
    * MUST-FIX: ---(Make getcaps and acceptcaps with QUERY instead)---
+ * Pad activation
+   * MUST-FIX: rework pad activation, make it possible to add more scheduling modes later
+   * also improve the scheduling query to allow for more scheduling modes later.
 
 
 ==== Plugins ====
