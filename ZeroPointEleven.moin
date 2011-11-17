@@ -52,7 +52,7 @@ This looks worse than it is, most things should be fairly easy!
  * device probing, get rid of GstPropertyProbe (we need a proper device discovery/listing API by type that makes properties and caps available and creates a suitable element given a discovered device object)
    * MUST-FIX: remove + add replacement later
  * have we solved the problem for bindings that writability of things like buffers, caps, queries etc. depends on refcounts?
-   * POST-1.0
+   * POST-1.0 '''major issue though, check if we can't do something for 1.0'''
    * ds: read/write lock + refcounted read reservation; write_unlock() returns read reservation
    * (that for buffers, but would also solve things for structures, caps, queries etc.)
  * GstCaps:
