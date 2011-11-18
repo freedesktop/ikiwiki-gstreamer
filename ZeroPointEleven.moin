@@ -359,7 +359,7 @@ This looks worse than it is, most things should be fairly easy!
  * Pad activation
    * WANT-FIX: rework pad activation, make it possible to add more scheduling modes later, tried this, makes the
                code less readable
-   * NEED-FIX improve the scheduling query to allow for more scheduling modes later.
+   * MUST-FIX improve the scheduling query to allow for more scheduling modes later.
 
 
 ==== Plugins ====
