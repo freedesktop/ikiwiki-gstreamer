@@ -200,8 +200,8 @@ This looks worse than it is, most things should be fairly easy!
    * WANT-FIX
  * collectpads2:
    * MUST-FIX (add -2 to  0.10 and rename to collectpads in 0.11)
- * pad functions (add destroy notify + ---(pass parent to pad func)---)
-   * MUST-FIX
+ * ---(pad functions (add destroy notify + pass parent to pad func)---)
+   * ---(MUST-FIX)---
  * controller:
    * MUST-FIX: make bindings friendly (if you touch multiple things you just get a gpointer and must interpret it differently depending on the type of the property)
      * (ensonic) who is 'you' in the above comment?
