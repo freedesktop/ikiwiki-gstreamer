@@ -227,16 +227,14 @@ This looks worse than it is, most things should be fairly easy!
    * MUST-FIX, EASY?
    * should rethink how to move time along / signal downstream that there's a gap for sparse streams like subtitles
    * currently using newsegment updates, should think of something else (events? dummy buffers?)
- * sticky events solve dynamic element removal/addition for downstream elements, but what if one wants to change the source?
-   * MUST-FIX: try/think about this
-   * (stefan needs this / complained about it)
-   * (but camerabin people too)
-   * possibly it even works already, someone needs to investigate
+ * ---(sticky events solve dynamic element removal/addition for downstream elements, but what if one wants to change the source?)---
+   * ---(MUST-FIX: try/think about this)--- should work, what's the problem?
+   * ---(possibly it even works already, someone needs to investigate)---
  * add EVENT_CUSTOM_DOWNSTREAM_STICKY
    * WANT-FIX, TRIVIAL
- * sticky events: some sticky events can occur multiple times
-   * MUST-FIX
-   * e.g.: tags (demuxer vs decoder tags can't be merged), sink_messages, custom_downstream_sticky
+ * ---(sticky events: some sticky events can occur multiple times)---
+   * ---(MUST-FIX)---
+   * ---(e.g.: tags (demuxer vs decoder tags can't be merged), sink_messages, custom_downstream_sticky)---
  * GstUriHandler
    * WANT-FIX: allow per-protocol ranks (also affects elementfactory)
    * MUST-FIX, TRIVIAL: pass GstURIHandler * handler to _get_type() and get_protocol() methods, ---(get rid of _full methods in interface)---
