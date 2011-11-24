@@ -409,10 +409,10 @@ This looks worse than it is, most things should be fairly easy!
    * (note: we  don't care about non-GstObject use cases)
    * maybe make add_child/remove_add also return the name of the object added/removed
    * thread-safety needs fixing, there should also be an iterator-based API, and/or add API to get cookie
- * gio/souphttpsrc/neonhttpsrc, etc.:
-   * WANT-FIX, EASY
-   * default to iradio-mode=true, get rid of iradio-mode property
-   * remove all iradio-{name,genre,url,title} properties and post tags instead
+ * ---(gio/souphttpsrc/neonhttpsrc, etc.:)---
+   * ---(WANT-FIX, EASY)---
+   * ---(default to iradio-mode=true, get rid of iradio-mode property)---
+   * ---(remove all iradio-{name,genre,url,title} properties and post tags instead)---
  * check all elements for whether they have sometimes srcpads that should be converted to always src pads (with caps just set once known)
    * WANT-FIX, EASY
    * we didn't do that originally because decodebin couldn't handle that
