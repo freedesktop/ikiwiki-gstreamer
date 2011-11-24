@@ -431,7 +431,7 @@ This looks worse than it is, most things should be fairly easy!
    * https://bugzilla.gnome.org/show_bug.cgi?id=632664
  * playbin/uridecodebin:
    * MUST-FIX, TRIVIAL: "connection-speed" should be a guint64 instead of a guint (as it's kbps)
- * RTP elements:
-   * MUST-FIX, TRIVIAL: rename gstrtp* to rtp*
+ * ---(RTP elements:)---
+   * ---(MUST-FIX, TRIVIAL: rename gstrtp* to rtp*)---
    * ---(jitterbuffer and ssrdemux padnames have a %d instead of %u)---
      * ---(https://bugzilla.gnome.org/show_bug.cgi?id=660157 (whatever this means))---
