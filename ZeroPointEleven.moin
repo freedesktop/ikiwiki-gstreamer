@@ -429,8 +429,8 @@ This looks worse than it is, most things should be fairly easy!
  * audioiirfilter:
    * MUST-FIX, TRIVIAL: nonstandard definition of 'a' and 'b' coefficients for IIR filters
    * https://bugzilla.gnome.org/show_bug.cgi?id=632664
- * playbin/uridecodebin:
-   * MUST-FIX, TRIVIAL: "connection-speed" should be a guint64 instead of a guint (as it's kbps)
+ * ---(playbin/uridecodebin:)---
+   * ---(MUST-FIX, TRIVIAL: "connection-speed" should be a guint64 instead of a guint (as it's kbps))---
  * ---(RTP elements:)---
    * ---(MUST-FIX, TRIVIAL: rename gstrtp* to rtp*)---
    * ---(jitterbuffer and ssrdemux padnames have a %d instead of %u)---
