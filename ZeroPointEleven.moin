@@ -422,7 +422,7 @@ This looks worse than it is, most things should be fairly easy!
    * MUST-FIX, TRIVIAL
    * https://bugzilla.gnome.org/show_bug.cgi?id=337409
  * check all elements to make sure they don't have properties of long/unsigned long type
-   * MUST-FIX, TRIVIAL
+   * MUST-FIX, TRIVIAL: {{{gst-inspect-0.11 -a >/dev/null}}}
  * ---(oggmux:)---
    * ---(MUST-FIX, TRVIAL)---
    * ---(separate video and audio sink pad templates)---
