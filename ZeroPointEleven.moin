@@ -230,8 +230,8 @@ This looks worse than it is, most things should be fairly easy!
  * ---(sticky events solve dynamic element removal/addition for downstream elements, but what if one wants to change the source?)---
    * ---(MUST-FIX: try/think about this)--- should work, what's the problem?
    * ---(possibly it even works already, someone needs to investigate)---
- * add EVENT_CUSTOM_DOWNSTREAM_STICKY
-   * WANT-FIX, TRIVIAL
+ * ---(add EVENT_CUSTOM_DOWNSTREAM_STICKY)---
+   * ---(WANT-FIX, TRIVIAL)---
  * ---(sticky events: some sticky events can occur multiple times)---
    * ---(MUST-FIX)---
    * ---(e.g.: tags (demuxer vs decoder tags can't be merged), sink_messages, custom_downstream_sticky)---
