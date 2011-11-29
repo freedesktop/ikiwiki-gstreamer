@@ -192,6 +192,7 @@ This looks worse than it is, most things should be fairly easy!
  * GstIndex: disable or remove for now: not suitable for bindings, problems with API (writer ID stuff, locking, etc.)
    * WANT-FIX: "a catastrophy" (slomo)
    * also see bugs #529017 and #656825
+   * needs substantial rewriting of baseparse seeking code etc
  * gstvideo: frame IDs need to made meaningful (3D + interlaced + both)
    * CAN BE DONE LATER
  * systematic core API review
