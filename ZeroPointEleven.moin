@@ -335,11 +335,11 @@ This looks worse than it is, most things should be fairly easy!
      * or use GIO in API and provide conversion to/from meta
      (wtay: we can add pointers but we don't want to allocate a new GInetAddress for each udp buffers)
    * ---(also: add multicast support! (bug #358154))---
- * GstElement:
-   * MUST-FIX, TRIVIAL
-   * somehow signal that an element class provides a clock, or will do stuff with an index
-   * either via element flags, or add interfaces
-   * https://bugzilla.gnome.org/show_bug.cgi?id=529017
+ * ---(GstElement:)---
+   * ---(MUST-FIX, TRIVIAL)---
+   * ---(somehow signal that an element class provides a clock, or will do stuff with an index)---
+   * ---(either via element flags, or add interfaces)---
+   * ---(https://bugzilla.gnome.org/show_bug.cgi?id=529017)---
  * ---(Base classes:)---
    * ---(MUST-FIX, EASY)---
    * ---(event vfuncs to be more binding friendly and intuitive, need to chain up)---
