@@ -74,7 +74,7 @@ This looks worse than it is, most things should be fairly easy!
    * merge with some other lib? (containerutils lib?)
  * review interfaces in -base libs
    * MUST-FIX
-   * colorbalance: disable for now, move into libgstvideo
+   * ---(colorbalance: disable for now, move into libgstvideo)---
    * mixer: disable for now, move into libgstaudio
      * needs cleaning up (signals, messages, structs, min/max thing, etc.)
      * thread safety: needs to return refs of tracks etc.
