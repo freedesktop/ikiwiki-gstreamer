@@ -75,14 +75,14 @@ This looks worse than it is, most things should be fairly easy!
  * review interfaces in -base libs
    * MUST-FIX
    * ---(colorbalance: disable for now, move into libgstvideo)---
-   * mixer: disable for now, move into libgstaudio
+   * ---(mixer: disable for now, move into libgstaudio)---
      * needs cleaning up (signals, messages, structs, min/max thing, etc.)
      * thread safety: needs to return refs of tracks etc.
      * remove its use in sources where it's abused to select input routings/sources/jacks
  * might need new interface for that at some point
    * navigation => libgstvideo
      * clean up? (ask Jan) "looks weird", key stuff should be changed in 0.11?
-   * streamvolume => libgstaudio
+   * ---(streamvolume => libgstaudio)---
    * tuner => ?
      * needs cleaning up, but what/how exactly?
      * remove for now
