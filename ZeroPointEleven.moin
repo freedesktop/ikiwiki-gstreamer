@@ -143,10 +143,10 @@ This looks worse than it is, most things should be fairly easy!
    * (wtay: I'll do this)
    * MUST FIX
    * https://bugzilla.gnome.org/show_bug.cgi?id=661634
- * does totem/playbin screenshotting also need fixing?
-   * (might be broken because caps are no longer on buffers)
-   * convert utility api in gstvideo
-   * MUST-FIX: check if anything is missing here
+ * ---(does totem/playbin screenshotting also need fixing?)---
+   * ---(might be broken because caps are no longer on buffers)--- GstSample was added
+   * ---(convert utility api in gstvideo)---
+   * ---(MUST-FIX: check if anything is missing here)---
  * ---(tag messages should be posted by sinks and not elements upstream)---
    * ---(MUST-FIX, TRIVIAL)---
    * ---(see sink_message event)--- Added to basesink
