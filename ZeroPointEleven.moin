@@ -350,6 +350,11 @@ This looks worse than it is, most things should be fairly easy!
  * GThread:
    * MUST-FIX: don't use GThread API that's been deprecated in the latest GLib release, especially not in headers
    * see https://bugzilla.gnome.org/show_bug.cgi?id=662207
+   * don't expose deprecated GstStaticRecMutex in public headers
+   * don't expose deprecated GStaticMutex in public headers
+   * don't expose g_cond_wait in public headers
+   * {{{git grep -e g_cond_wait -e GStaticRecMutex GStaticMutex | grep \\.h}}} for a quick (probably incomplete) overview
+   * Note: GLib 2.32 is going to be released in February 2012
  * RTP:
    * WANT-FIX: Rewrite the RTP parsing library, it is really ugly with new buffer memory
  * ---(Caps:)---
