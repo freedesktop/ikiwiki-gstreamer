@@ -185,8 +185,8 @@ This looks worse than it is, most things should be fairly easy!
  * what about GstTagSetter? It's very primitive, doesn't work well on muxers (how to set container tags + per-stream tags, etc., one needs to set per-stream tags via taginject really)
    * CAN BE DONE LATER
  * fully async state changes? esp. in case of e.g. filesrc ! typefind ! ...  (imagine file on NFS drive)
-   * MUST-FIX: async upward state changes
-   * MUST-FIX: open() in basesrc not in state change func
+   * WANT-FIX: async upward state changes, needs substantial basesrc rewriting, can do later in basesrc2
+   * WANT-FIX: open() in basesrc not in state change func, also likely basesrc2
    * MUST-FIX: typefind should not start typefinding via state change / pad activate function (same for tagdemux, and check wavparse?)
  * GstIndex: disable or remove for now: not suitable for bindings, problems with API (writer ID stuff, locking, etc.)
    * WANT-FIX: "a catastrophy" (slomo)
