@@ -244,7 +244,7 @@ This looks worse than it is, most things should be fairly easy!
    * ---(MUST-FIX, TRIVIAL: add GError * argument to gst_uri_handler_set_uri(), also needs custom error codes then to signal whether the protocol wasn't supported, or the URI malformed)---
    * ---(MUST-FIX, TRIVIAL: gst_uri_handler_get_uri should return a copy for thread-safety)---
    * WANT-FIX: need to document and enforce file name/path character encodings: on *nix it's just a bunch of bytes, on win32 it must be utf8
-   * MUST-FIX, TRIVIAL: make gst_element_factory_get_uri_type() and gst_uri_handler_get_uri_type() return a GstURIType (needs some header include order wrangling)
+   * ---(MUST-FIX, TRIVIAL: make gst_element_factory_get_uri_type() and gst_uri_handler_get_uri_type() return a GstURIType (needs some header include order wrangling))---
    * MAYBE-FIX, TRIVIAL: rename GstURIFoo to GstUriFoo?
  * buffer flags:
    * ---(WANT-FIX: change from signalling DELTA_UNIT to KEY_UNIT ? )---
