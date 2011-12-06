@@ -162,7 +162,7 @@ This looks worse than it is, most things should be fairly easy!
    * ---(just makes things nicer if downstream sends a reconfigure event for some reason, then the chain func upstream gets to know about it directly and can possibly re-send the buffer, so we don't necessarily lose a buffer when reconfiguring)---
    * ---(https://bugzilla.gnome.org/show_bug.cgi?id=326875)--- 
  * add GST_FLOW_DROPPED: like FLOW_OK
-   * WANT-FIX, can't be added later
+   * ENHANCEMENT POST-1.0
    * use case: base classes; if element sends a header and it gets dropped it knows that it needs to resend it before sending more data
    * could be sent if QoS drops the frame
    * https://bugzilla.gnome.org/show_bug.cgi?id=322947
