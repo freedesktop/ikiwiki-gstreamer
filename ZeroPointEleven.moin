@@ -205,6 +205,7 @@ This looks worse than it is, most things should be fairly easy!
  * controller:
    * MUST-FIX: make bindings friendly (if you touch multiple things you just get a gpointer and must interpret it differently depending on the type of the property)
      * (ensonic) who is 'you' in the above comment?
+     * (ensonic) GstValueArray is now gone, still we pass the values as a gpointer, using a GValueArray would cause quite an overhead, for elements that want to apply sample-by-sample changes this is good, it apps (using bindings) want to get a preview of a control curve, they better loop over the time themself
    * WANT-FIX: clean-up in general (see FIXMEs in code)
    * ---(WANT-FIX: move GstController into core)---
    * WANT_FIX: make control sources plugin features (to be configured via signal_emit)
