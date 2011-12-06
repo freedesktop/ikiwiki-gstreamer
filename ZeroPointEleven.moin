@@ -207,6 +207,7 @@ This looks worse than it is, most things should be fairly easy!
      * (ensonic) who is 'you' in the above comment?
      * (ensonic) GstValueArray is now gone, still we pass the values as a gpointer, using a GValueArray would cause quite an overhead, for elements that want to apply sample-by-sample changes this is good, it apps (using bindings) want to get a preview of a control curve, they better loop over the time themself
    * WANT-FIX: clean-up in general (see FIXMEs in code)
+     * suggest_next_syn would need playback_direction (two FIXMEs)
    * ---(WANT-FIX: move GstController into core)---
    * WANT_FIX: make control sources plugin features (to be configured via signal_emit)
    * WANT-FIX: triggers should be moved into their own control source
