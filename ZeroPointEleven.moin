@@ -157,12 +157,12 @@ This looks worse than it is, most things should be fairly easy!
      * slomo has started this
    * ---(GST_EVENT_DRAIN (or modified FLUSH event))--- fixed with boolean on FLUSH_STOP event
      * ---(like flush, but doesn't reset everything)---
- * define GST_FLOW_RESEND in connection with RECONFIGURE event:
-   * MUST-FIX (remove or define, can't really be added later)
-   * just makes things nicer if downstream sends a reconfigure event for some reason, then the chain func upstream gets to know about it directly and can possibly re-send the buffer, so we don't necessarily lose a buffer when reconfiguring
-   * https://bugzilla.gnome.org/show_bug.cgi?id=326875
+ * ---(define GST_FLOW_RESEND in connection with RECONFIGURE event:)---
+   * ---(MUST-FIX (remove or define, can't really be added later))--- Removed
+   * ---(just makes things nicer if downstream sends a reconfigure event for some reason, then the chain func upstream gets to know about it directly and can possibly re-send the buffer, so we don't necessarily lose a buffer when reconfiguring)---
+   * ---(https://bugzilla.gnome.org/show_bug.cgi?id=326875)--- 
  * add GST_FLOW_DROPPED: like FLOW_OK
-   * MUST-FIX, can't be added later
+   * WANT-FIX, can't be added later
    * use case: base classes; if element sends a header and it gets dropped it knows that it needs to resend it before sending more data
    * could be sent if QoS drops the frame
    * https://bugzilla.gnome.org/show_bug.cgi?id=322947
