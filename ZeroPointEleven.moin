@@ -239,7 +239,7 @@ This looks worse than it is, most things should be fairly easy!
    * ---(e.g.: tags (demuxer vs decoder tags can't be merged), sink_messages, custom_downstream_sticky)---
  * GstUriHandler
    * WANT-FIX: allow per-protocol ranks (also affects elementfactory)
-   * MUST-FIX, TRIVIAL: pass GstURIHandler * handler to _get_type() and get_protocol() methods, ---(get rid of _full methods in interface)---
+   * ---(MUST-FIX, TRIVIAL: pass GstURIHandler * handler to _get_type() and get_protocol() methods. No, it needs to be the GType, we don't have an instance in the registry )--- ---(get rid of _full methods in interface)---
    * MUST-FIX, TRIVIAL: the interface should have a "uri" property (there's also a bug about that)
    * ---(MUST-FIX, TRIVIAL: add GError * argument to gst_uri_handler_set_uri(), also needs custom error codes then to signal whether the protocol wasn't supported, or the URI malformed)---
    * ---(MUST-FIX, TRIVIAL: gst_uri_handler_get_uri should return a copy for thread-safety)---
