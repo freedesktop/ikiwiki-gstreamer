@@ -21,7 +21,7 @@ This is a tentative schedule for releases for the first few months of 2011:
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> July 6 || '''Core/Base 0.11.0 release''' (unstable development series) ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> December 11 || '''stable Core/Base/Good/Ugly/Bad 0.10.x pre-releases''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> December 11 || stable Core/Base/Good/Ugly/Bad 0.10.x pre-releases ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> end-December / early-January || '''Core 0.10.36, Base 0.10.36, Good 0.10.31, Ugly 0.10.19, Bad 0.10.23 stable releases''' ||
 
 gst-ffmpeg, gst-python, and gnonlin releases may be done in any of these cycles as well.
