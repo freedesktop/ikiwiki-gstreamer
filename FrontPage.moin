@@ -2,14 +2,12 @@
 #format wiki
 #language en
 #pragma section-numbers off
-
 = GStreamer Wiki =
-
 This wiki serves as a scratchpad for tasks, design discussions and the like.
 
 == General ==
-
  * ReleasePlanning: schedule for code freezes and planning for dates
+ * [[GStreamerHackfest2012]]: Hackfest/Codesprint in Malaga, Spain - January 2012
  * DesignDiscussions: drafting new features
  * TaskList: standalone tasks for anyone to take, Google SoC planning
  * [[FAQ]]: frequently asked questions
@@ -18,7 +16,6 @@ This wiki serves as a scratchpad for tasks, design discussions and the like.
  * General documentation about GStreamer libraries and plugins can be found on the [[http://gstreamer.freedesktop.org/documentation/|GStreamer Documentation Page]]
 
 == Links ==
-
  * [[http://gstreamer.freedesktop.org/wiki/GStreamerConference2010|GStreamer Conference 2010 slides and videos (now with all videos)]]
  * [[http://build.gstreamer.org|GStreamer build bot]]
  * [[http://lrn.no-ip.info|GStreamer Windows MingW build bot]]
@@ -27,9 +24,7 @@ This wiki serves as a scratchpad for tasks, design discussions and the like.
  * [[http://gstreamer.freedesktop.org/wiki/ZeroPointEleven|GStreamer 0.11/1.0]]
  * [[http://gstreamer.freedesktop.org/wiki/DeviceProfile|GStreamer device profile format discussion]]
 
-
 == Starting points ==
-
  * RecentChanges: see where people are currently working
  * WikiSandBox: feel free to change this page and experiment with editing
  * FindPage: search or browse the database in various ways
@@ -38,5 +33,4 @@ This wiki serves as a scratchpad for tasks, design discussions and the like.
  * HowToCompileForEmbedded: tips about how to do compile GStreamer for embedded devices
 
 == Random ==
-
  * HowToUseThisSite: help about this wiki
