@@ -12,13 +12,21 @@
 (!) The goal of this hackfest is to kickstart the effort of porting applications to GStreamer 1.0 and fix remaining issues hindering such ports, be that bugs in binding code, missing plugins, broken pluging etc.
 
 === Agenda, goals ===
-(!) Port a wide variety of GStreamer applications to 0.11/1.0 (!) Make sure gobject introspection annotations are correct (!) Port any needed plugins from 0.10 to 0.11 (!) Identify and fix any general GStreamer 0.11 bugs that will hinder application porting (!) Make sure application developers are aware of new core features and possibilities in GStreamer 1.0
+(!) Port a wide variety of GStreamer applications to 0.11/1.0
+
+(!) Make sure gobject introspection annotations are correct
+
+(!) Port any needed plugins from 0.10 to 0.11
+
+(!) Identify and fix any general GStreamer 0.11 bugs that will hinder application porting
+
+(!) Make sure application developers are aware of new core features and possibilities in GStreamer 1.0
 
 === Measuring your success ===
-(!) If we can have initial ports done of the top 10 GNOME and KDE applications using GStreamer that would be a great success factor for the hackfest and allow us to be confident the transition from 0.10.x to 1.0.x will be smooth and easy.
+(!) If we can have initial ports done of the top 10 GNOME, KDE and server applications using GStreamer that would be a great success factor for the hackfest and allow us to be confident the transition from 0.10.x to 1.0.x will be smooth and easy.
 
 === Attendants ===
-Please add your name here if you are interested in attending. We will be offering some travel sponsorship for this event, hopefully in collaboration  with the GNOME Foundation and KDE E.v.
+Please add your name here if you are interested in attending even if you are not sure you will be able to, as we want to meaure general interest.. We will be offering some travel sponsorship for this event, hopefully in collaboration  with the GNOME Foundation and KDE E.v.
 
 (!) Wim Taymans
 
@@ -30,12 +38,12 @@ Please add your name here if you are interested in attending. We will be offerin
 == Current sponsors === (!) GStreamer Project
 
 == How to get there ==
-(!)  Inside Europe you can get cheap flights to Malaga with Ryanair and Easyjet. 
+(!)  Inside Europe you can get cheap flights to Malaga with Ryanair and Easyjet.
 
 == Accommodation and food ==
 (!) TBD
 
 === Previous discussions, organization threads, drafts, relevant links, etc ===
 (!) <list of any resource like mailing lists, forums, wiki pages, etc where this has been discussed so far>
-||<tablewidth="70%"#E6EAF0> (!) '''Note to organizers'''<<BR>>it is expected that you have contacted relevant teams or groups for your hackfest prior to proposing it, for example if you plan to do an Art hackfest, contact the Art team for ideas.<<BR>> ||
+
 
