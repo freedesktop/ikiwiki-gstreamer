@@ -72,4 +72,14 @@ If you don't have a wiki account (and don't want to create one), you can email c
 (!) TBD
 
 === Previous discussions, organization threads, drafts, relevant links, etc ===
-(!) <list of any resource like mailing lists, forums, wiki pages, etc where this has been discussed so far>
+(!) Floating refs in GI - https://bugzilla.gnome.org/show_bug.cgi?id=657202
+
+(!) GError marshaling GI - https://bugzilla.gnome.org/show_bug.cgi?id=666098
+
+GStreamer 0.11 status reports
+
+(!) Status 3 -  http://lists.freedesktop.org/archives/gstreamer-devel/2011-August/032588.html
+
+(!) Status 2 - http://lists.freedesktop.org/archives/gstreamer-devel/2011-June/031891.html
+
+(!) Status 1 - http://lists.freedesktop.org/archives/gstreamer-devel/2011-April/031128.html
