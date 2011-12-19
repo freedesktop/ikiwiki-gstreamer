@@ -213,8 +213,8 @@ This looks worse than it is, most things should be fairly easy!
    * WANT-FIX: triggers should be moved into their own control source
      * https://bugzilla.gnome.org/show_bug.cgi?id=610338
  * libgstvideo:
-   * MUST-FIX: interlaced video - must support non-interleaved fields for interlaced video
-   * (no need to support pushing 1 single field individually in a buffer, or is there?)
+   * ---(MUST-FIX: interlaced video - must support non-interleaved fields for interlaced video)---
+   * ---((no need to support pushing 1 single field individually in a buffer, or is there?))---
    * CAN-BE-DONE-LATER: think about how to express pre-multiplied alpha
  * libgstnet - move "somewhere else" (no more microlibs) into -base/core? (adds libgio dependency, but do we care?)
  * libgstaudio:
