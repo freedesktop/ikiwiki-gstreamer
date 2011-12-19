@@ -187,7 +187,7 @@ This looks worse than it is, most things should be fairly easy!
  * fully async state changes? esp. in case of e.g. filesrc ! typefind ! ...  (imagine file on NFS drive)
    * WANT-FIX: async upward state changes, needs substantial basesrc rewriting, can do later in basesrc2
    * WANT-FIX: open() in basesrc not in state change func, also likely basesrc2
-   * MUST-FIX: typefind should not start typefinding via state change / pad activate function (same for tagdemux, and check wavparse?)
+   * MUST-FIX: typefind should not start typefinding via state change / pad activate function (same for tagdemux ---(, and check wavparse?)---)
  * GstIndex: disable or remove for now: not suitable for bindings, problems with API (writer ID stuff, locking, etc.)
    * WANT-FIX: "a catastrophy" (slomo)
    * also see bugs #529017 and #656825
