@@ -206,12 +206,12 @@ This looks worse than it is, most things should be fairly easy!
    * MUST-FIX: make bindings friendly (if you touch multiple things you just get a gpointer and must interpret it differently depending on the type of the property)
      * (ensonic) who is 'you' in the above comment?
      * (ensonic) GstValueArray is now gone, still we pass the values as a gpointer, using a GValueArray would cause quite an overhead, for elements that want to apply sample-by-sample changes this is good, it apps (using bindings) want to get a preview of a control curve, they better loop over the time themself
+   * ---(MIST-FIX: remove deprecated and unimplemented interpolation modes)---
    * WANT-FIX: clean-up in general (see FIXMEs in code)
-     * suggest_next_syn would need playback_direction (two FIXMEs)
+     * suggest_next_sync would need playback_direction (two FIXMEs), we could also pass direction to gst_object_sync_values (the place of the other FIXME)
    * ---(WANT-FIX: move GstController into core)---
    * WANT_FIX: make control sources plugin features (to be configured via signal_emit)
-   * WANT-FIX: triggers should be moved into their own control source
-     * https://bugzilla.gnome.org/show_bug.cgi?id=610338
+   * ---(WANT-FIX: triggers should be moved into their own control source)---
  * libgstvideo:
    * ---(MUST-FIX: interlaced video - must support non-interleaved fields for interlaced video)---
    * ---((no need to support pushing 1 single field individually in a buffer, or is there?))---
