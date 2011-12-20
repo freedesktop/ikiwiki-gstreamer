@@ -56,9 +56,9 @@ This looks worse than it is, most things should be fairly easy!
    * ds: read/write lock + refcounted read reservation; write_unlock() returns read reservation
    * (that for buffers, but would also solve things for structures, caps, queries etc.)
  * GstCaps:
-   * MUST-FIX, EASY: should really look at this
-   * GST_CAPS_NONE: what's the point of that? where would it be used?
-   * GST_CAPS_ANY, GST_CAPS_EMPTY, GST_CAPS_NONE => make singleton; bit weird that macro returns a ref... not consistent with rest of API
+   * ---(MUST-FIX, EASY: should really look at this)---
+   * ---(GST_CAPS_NONE: what's the point of that? where would it be used?)--- it's used when making pads that you don't want to link with anything
+   * ---(GST_CAPS_ANY, GST_CAPS_EMPTY, GST_CAPS_NONE => make singleton; bit weird that macro returns a ref... not consistent with rest of API)--- made singleton
  * subtitle overlays
    * WANT-FIX: metadata, but how: probably need different metas for different formats (ayuv, rgba, pango markup, etc.)
  * combine/merge/reshuffle libraries
