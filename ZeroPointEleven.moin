@@ -49,8 +49,8 @@ This looks worse than it is, most things should be fairly easy!
    * maybe even add explicit list/array types for the types supported (ints, floats, buffers, ...)
    * WANT-FIX: put a GstCaps pointer into GstStaticCaps instead of "deriving" from GstCaps? (what's the point? does it matter? would make atomic stuff much easier)
    * WANT-FIX: instead of having a private pointer in the public GstCaps struct, hide that, and have a 'private' internal extended GstCaps struct with the private details, since we don't allow subclassing from it anyway, do we?
- * device probing, get rid of GstPropertyProbe (we need a proper device discovery/listing API by type that makes properties and caps available and creates a suitable element given a discovered device object)
-   * MUST-FIX: remove + add replacement later
+ * ---(device probing, get rid of GstPropertyProbe (we need a proper device discovery/listing API by type that makes properties and caps available and creates a suitable element given a discovered device object))---
+   * ---(MUST-FIX: remove + add replacement later)---
  * have we solved the problem for bindings that writability of things like buffers, caps, queries etc. depends on refcounts?
    * POST-1.0 '''major issue though, check if we can't do something for 1.0'''
    * ds: read/write lock + refcounted read reservation; write_unlock() returns read reservation
