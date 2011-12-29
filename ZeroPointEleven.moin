@@ -369,12 +369,8 @@ This looks worse than it is, most things should be fairly easy!
 
 ==== Plugins ====
 
- * ---(remove parsing/seeking/etc. from mad)---
-   * ---(MUST-FIX, TRIVIAL)---
  * rename mad -> madmp3dec or so?
    * MUST-FIX, TRIVIAL
- * ---(remove lame now that we have lamemp3enc?)---
-   * ---(MUST-FIX, TRIVIAL)---
  * systematically check each and every plugin/element
    * WANT-FIX
    * must make a checklist
@@ -396,12 +392,8 @@ This looks worse than it is, most things should be fairly easy!
  * fix subparse (caps, also split up, maybe make a base class)
    * typefinding should go into typefinders
    * CAN-BE-DONE-LATER: separate elements per subtitle type, no more typefinding of input
- * ---(flacdec: port to GstAudioDecoder and remove all the pull-based stuff)---
-   ---(* WANT-FIX, WORK-IN-PROGRESS)---
  * jpegdec: get rid of all the copy/indirect crap, alloc with ROUND_UP16 alignment
    * CAN DO LATER
- * pulseaudiobin: get rid, not needed in 0.11 (decodebin should react to reconfigure events)
-   * CAN-BE-DONE-LATER
  * playbin/decodebin
    * CAN-BE-DONE-LATER
    * should reconfigure themselves on reconfigure event
@@ -409,36 +401,42 @@ This looks worse than it is, most things should be fairly easy!
      * in MXF, the format can change within the stream (internally implements pitivi-style timeline)
    * port streamsynchronizer to 0.11 and make it work as is
      * and CAN-BE-DONE-LATER: make sure we can do all the hackish stuff properly in 0.11 (e.g. force preroll in a sink somehow without sending 0-size buffers)
- * ---(fix/check pad template names in all plugins (and change %d => %u))---
  * GstChildProxy:
    * WANT-FIX
    * _get_child_by_name() is very inefficient in some cases, should be an interface vmethod that could (optionally) be implement, e.g. in cases where the bin knows about the names
    * (note: we  don't care about non-GstObject use cases)
    * maybe make add_child/remove_add also return the name of the object added/removed
    * thread-safety needs fixing, there should also be an iterator-based API, and/or add API to get cookie
- * ---(gio/souphttpsrc/neonhttpsrc, etc.:)---
-   * ---(WANT-FIX, EASY)---
-   * ---(default to iradio-mode=true, get rid of iradio-mode property)---
-   * ---(remove all iradio-{name,genre,url,title} properties and post tags instead)---
  * check all elements for whether they have sometimes srcpads that should be converted to always src pads (with caps just set once known)
    * WANT-FIX, EASY
    * we didn't do that originally because decodebin couldn't handle that
    * e.g. wavpackparse, aiffparse, etc.
-
  * check "bitrate" property of all encoders, should be in bits per second, not kbits/sec or so.
    * MUST-FIX, TRIVIAL
    * https://bugzilla.gnome.org/show_bug.cgi?id=337409
  * check all elements to make sure they don't have properties of long/unsigned long type
    * MUST-FIX, TRIVIAL: {{{gst-inspect-0.11 -a >/dev/null}}}
- * ---(oggmux:)---
-   * ---(MUST-FIX, TRVIAL)---
-   * ---(separate video and audio sink pad templates)---
  * audioiirfilter:
    * MUST-FIX, TRIVIAL: nonstandard definition of 'a' and 'b' coefficients for IIR filters
    * https://bugzilla.gnome.org/show_bug.cgi?id=632664
+
+=== Done ===
+
+==== Plugins ====
+
+ * ---(pulseaudiobin: get rid, not needed in 0.11, decodebin should react to reconfigure events)---
+ * ---(remove parsing/seeking/etc. from mad)---
+ * ---(remove lame now that we have lamemp3enc?)---
+ * ---(flacdec: port to GstAudioDecoder and remove all the pull-based stuff)---
+ * ---(fix/check pad template names in all plugins (and change %d => %u))---
+ * ---(gio/souphttpsrc/neonhttpsrc, etc.:)---
+   * ---(default to iradio-mode=true, get rid of iradio-mode property)---
+   * ---(remove all iradio-{name,genre,url,title} properties and post tags instead)---
+ * ---(oggmux:)---
+   * ---(separate video and audio sink pad templates)---
  * ---(playbin/uridecodebin:)---
-   * ---(MUST-FIX, TRIVIAL: "connection-speed" should be a guint64 instead of a guint (as it's kbps))---
+   * ---("connection-speed" should be a guint64 instead of a guint (as it's kbps))---
  * ---(RTP elements:)---
-   * ---(MUST-FIX, TRIVIAL: rename gstrtp* to rtp*)---
+   * ---(rename gstrtp* to rtp*)---
    * ---(jitterbuffer and ssrdemux padnames have a %d instead of %u)---
      * ---(https://bugzilla.gnome.org/show_bug.cgi?id=660157 (whatever this means))---
