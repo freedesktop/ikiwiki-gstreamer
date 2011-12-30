@@ -158,10 +158,6 @@ This looks worse than it is, most things should be fairly easy!
    * WANT-FIX: async upward state changes, needs substantial basesrc rewriting, can do later in basesrc2
    * WANT-FIX: open() in basesrc not in state change func, also likely basesrc2
    * MUST-FIX: typefind should not start typefinding via state change / pad activate function (same for tagdemux ---(, and check wavparse?)---)
- * GstIndex: disable or remove for now: not suitable for bindings, problems with API (writer ID stuff, locking, etc.)
-   * WANT-FIX: "a catastrophy" (slomo)
-   * also see bugs #529017 and #656825
-   * needs substantial rewriting of baseparse seeking code etc
  * gstvideo: frame IDs need to made meaningful (3D + interlaced + both)
    * CAN BE DONE LATER
  * systematic core API review
@@ -427,6 +423,10 @@ This looks worse than it is, most things should be fairly easy!
    * ---(WANT-FIX: rework pad activation, make it possible to add more scheduling modes later, tried this, makes the
                code less readable)---
    * ---(MUST-FIX improve the scheduling query to allow for more scheduling modes later. )---
+ * ---(GstIndex: disable or remove for now: not suitable for bindings, problems with API: writer ID stuff, locking, etc.)---
+   * ---(WANT-FIX: "a catastrophy" according to slomo)---
+   * ---(also see bugs #529017 and #656825)---
+   * ---(needs substantial rewriting of baseparse seeking code etc)---
 
 ==== Plugins ====
 
