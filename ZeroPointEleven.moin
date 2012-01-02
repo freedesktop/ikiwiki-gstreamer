@@ -24,9 +24,6 @@ The first ever GStreamer conference took part in Cambridge (UK) on 25th October 
 
 This looks worse than it is, most things should be fairly easy!
 
- * make plugin features light-weight (how to do that? Maybe just scrap the inheritance and do them all as boxed)
-   * ---(MUST-FIX: make opaque)---
-   * WANT-FIX: GObject? GMiniObject? Just Boxed?
  * GstPadTemplates are currently full-fledged objects! (with unused pad-created signal..) Make them light-weight, we're creating LOADS of them when loading the registry [really? no, we're creating static pad templates..].. ideally make it so that we can embed them in element/factory instance structs and/or so that they're cachable and we can maybe even share the template between the factory and the element?) - basically: why not make all GstPadTemplates effectively GstStaticPadTemplates, ie. just simple structs? - slomo: maybe just get rid of static pad templates (and static caps?!) and only use GstPadTemplate objects?
    * WANT-FIX
  * weirdness with buffer/event/miniobject hierarchy and BOXED type registration (can't express the hierarchy using GType...)
@@ -130,21 +127,11 @@ This looks worse than it is, most things should be fairly easy!
  * add event to signal start of stream fragment (EVENT_SOS? EVENT_START?)
    * MUST-FIX, EASY? (can't be added later)
    * use cases: streamsynchronizer in playbin2 to align different stream segments, hlssink, multifilesink, etc.
- * registry, plugin features, * factories:
-   * MUST-FIX, EASY:
-   * make more opaque
-   * use mini objects
- * rename gst_registry_get_default() to gst_registry_get() ?
-   * easy, more glib-ish
  * more functions should have a GError argument
    * MAYBE-FIX, TRIVIAL
    * e.g. gst_preset_{load|save} (+delete/rename?)
    * add GError * arguments to all synchronous API that may fail, so you get automatic exceptions for bindings
      * Tim: imho metadata annotation to throw an exception on FALSE/NULL returns would be sufficient, but it was categorically stated that this is the wrong approach and GError is the expected way to report exceptions
- * check all _new() functions (of GObjects) to make sure they're just a thin wrapper around g_object_new(), this is needed for bindings
-   * WANT-FIX, TRIVIAL
-   * e.g. gst_ghost_pad_new(), gst_bin_new(), gst_pipeline_new()
-   * gst_controller_new() needs fixing too, esp. if we move it to core
  * GST_FORMAT_DEFAULT: rename/split into GST_FORMAT_FRAME, GST_FORMAT_SAMPLE, or somesuch?
    * MAYBE-FIX, TRIVIAL
  * ---(check all header files to make sure there's padding where there should be padding)---
@@ -189,9 +176,6 @@ This looks worse than it is, most things should be fairly easy!
  * ogg + elements:
    * CAN-BE-DONE-LATER:
    * don't abuse buffer offset/offset_end for granulepos, put in buffer metadata if still needed (ideally muxer should do that based on timestamps)
- * fix subparse (caps, also split up, maybe make a base class)
-   * typefinding should go into typefinders
-   * CAN-BE-DONE-LATER: separate elements per subtitle type, no more typefinding of input
  * playbin/decodebin
    * CAN-BE-DONE-LATER
    * should reconfigure themselves on reconfigure event
@@ -249,6 +233,10 @@ This looks worse than it is, most things should be fairly easy!
    * WANT-FIX
  * buffer flags:
    * review buffer flags (marker flag? document use cases! h264 byte-stream?)
+ * check all _new() functions (of GObjects) to make sure they're just a thin wrapper around g_object_new(), this is needed for bindings
+   * WANT-FIX, TRIVIAL
+   * e.g. gst_ghost_pad_new(), gst_bin_new(), gst_pipeline_new()
+   * gst_controller_new() needs fixing too, esp. if we move it to core
 
 === POST-1.0 ===
 
@@ -313,6 +301,18 @@ This looks worse than it is, most things should be fairly easy!
  * ranges: allow for "steps" (e.g. width = [ 32, 1024, 16 ]): ''Vincent has worked on this'' (code in bugzilla?)
    * WANT-FIX (COULD BE ADDED LATER?)
    * allow third parameter for ranges: that expresses step size
+ * fix subparse (caps, also split up, maybe make a base class): ''Tim has started on this''
+   * typefinding should go into typefinders
+   * CAN-BE-DONE-LATER: separate elements per subtitle type, no more typefinding of input
+ * registry, plugin features, * factories: ''Tim will look at that''
+   * MUST-FIX, EASY:
+   * make more opaque
+   * use mini objects
+   * make plugin features light-weight (how to do that? Maybe just scrap the inheritance and do them all as boxed)
+   * ---(MUST-FIX: make opaque)---
+   * WANT-FIX: GObject? GMiniObject? Just Boxed?
+ * rename gst_registry_get_default() to gst_registry_get() ? ''Tim will do this''
+   * more glib-ish and more correct
 
 === DONE ===
 
