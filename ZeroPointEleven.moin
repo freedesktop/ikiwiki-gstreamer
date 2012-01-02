@@ -81,11 +81,6 @@ This looks worse than it is, most things should be fairly easy!
        * codec-data is just out-of-band data for the codec
        * stream-headers is stuff that e.g. a tcp/http sink should send to a client before sending whatever other data it's got pending
        * stream-headers should always also be pushed as buffers at the beginning 
-   * channel layouts in caps: move to fixed order with flags in caps? (or register layouts and refer to them by name?)
-     * ---(ability to pass channel matrices (caps? buffer metadata?))--- with metadata
-     * should move to a bitfield really - do we worry about inefficiencies if re-ordering is needed (in interleaved mode)? (in non-interleaved mode that can be done with GstMemory)
-     * MUST-FIX: think about this
-     * bitfield + "strategy" (mpeg, aac, smpte, etc.)
  * typefinder API for typefinding functions:
    * MUST-FIX: at least look at it
    * we should be able to come up with a better way for typefinders to get to the data
@@ -129,17 +124,6 @@ This looks worse than it is, most things should be fairly easy!
    * WANT-FIX
  * collectpads2:
    * MUST-FIX (add -2 to  0.10 and rename to collectpads in 0.11)
- * controller:
-   * this is work-in-progress and/or mostly done. Stefan is working on it (28 Dec 2011)
-   * MUST-FIX: make bindings friendly (if you touch multiple things you just get a gpointer and must interpret it differently depending on the type of the property)
-     * (ensonic) who is 'you' in the above comment?
-     * (ensonic) GstValueArray is now gone, still we pass the values as a gpointer, using a GValueArray would cause quite an overhead, for elements that want to apply sample-by-sample changes this is good, it apps (using bindings) want to get a preview of a control curve, they better loop over the time themself
-   * ---(MUST-FIX: remove deprecated and unimplemented interpolation modes)---
-   * WANT-FIX: clean-up in general (see FIXMEs in code)
-     * suggest_next_sync would need playback_direction (two FIXMEs), we could also pass direction to gst_object_sync_values (the place of the other FIXME)
-   * ---(WANT-FIX: move GstController into core)---
-   * WANT_FIX: make control sources plugin features (to be configured via signal_emit)
-   * ---(WANT-FIX: triggers should be moved into their own control source)---
  * libgstvideo:
    * CAN-BE-DONE-LATER: think about how to express pre-multiplied alpha
  * re-think sparse stream handling, newsegment updating to fill gaps likely doesn't work any more
@@ -314,6 +298,24 @@ This looks worse than it is, most things should be fairly easy!
    * use gio: portability
    * maybe just move gio plugin to core?
 
+=== WORK IN PROGRESS ===
+
+ * controller: ''Stefan is working on this''
+   * this is work-in-progress and/or mostly done. Stefan is working on it (28 Dec 2011)
+   * MUST-FIX: make bindings friendly (if you touch multiple things you just get a gpointer and must interpret it differently depending on the type of the property)
+     * (ensonic) who is 'you' in the above comment?
+     * (ensonic) GstValueArray is now gone, still we pass the values as a gpointer, using a GValueArray would cause quite an overhead, for elements that want to apply sample-by-sample changes this is good, it apps (using bindings) want to get a preview of a control curve, they better loop over the time themself
+   * ---(MUST-FIX: remove deprecated and unimplemented interpolation modes)---
+   * WANT-FIX: clean-up in general (see FIXMEs in code)
+     * suggest_next_sync would need playback_direction (two FIXMEs), we could also pass direction to gst_object_sync_values (the place of the other FIXME)
+   * ---(WANT-FIX: move GstController into core)---
+   * WANT_FIX: make control sources plugin features (to be configured via signal_emit)
+   * ---(WANT-FIX: triggers should be moved into their own control source)---
+ * audio channel layouts in caps and in general: ''Sebastian is working on this''
+   * move to fixed order with flags in caps? (or register layouts and refer to them by name?)
+   * ---(ability to pass channel matrices (caps? buffer metadata?))--- with metadata
+   * should move to a bitfield really - do we worry about inefficiencies if re-ordering is needed (in interleaved mode)? (in non-interleaved mode that can be done with GstMemory)
+   * bitfield + "strategy" (mpeg, aac, smpte, etc.)?
 
 === Done ===
 
