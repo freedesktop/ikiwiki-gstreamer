@@ -24,10 +24,6 @@ The first ever GStreamer conference took part in Cambridge (UK) on 25th October 
 
 This looks worse than it is, most things should be fairly easy!
 
-
- * add GError or GstPadErrorContext to gst_pad_push() etc.
-   * WANT-FIX, but can always be done later with queries and keeping error state privately in GstPadPrivate
-   * can't use GError here - would need to add refcounting for GErrors to GLib, and next GLib release is probably too late for us
  * why do we export the core debug categories? (GST_CAT_*) - tidy up in general maybe?
    * WANT-FIX, TRIVIAL
    * ensonic: we export core categories for baseclasses or generic topics, whats the question here anyway?
@@ -41,10 +37,6 @@ This looks worse than it is, most things should be fairly easy!
  * weirdness with buffer/event/miniobject hierarchy and BOXED type registration (can't express the hierarchy using GType...)
    * MUST-FIX (Edward will work on that, to add annotations to g-i to express hierarchy for structs/boxed types)
  * caps/structures:
-   * WANT-FIX
-   * hide gstvalue stuff from caps by adding dedicated API for lists/arrays/etc.? Add GstCapsStructure which only takes certain allowed types; could get rid off all the GstValue registration and table indirection for compare/subtraction/intersection/etc., just do switch/case
-     * conclusion: hide GValue for now from API, add explicit per-type setters + convenience functions for arrays, lists etc.
-   * maybe even add explicit list/array types for the types supported (ints, floats, buffers, ...)
    * WANT-FIX: put a GstCaps pointer into GstStaticCaps instead of "deriving" from GstCaps? (what's the point? does it matter? would make atomic stuff much easier)
    * WANT-FIX: instead of having a private pointer in the public GstCaps struct, hide that, and have a 'private' internal extended GstCaps struct with the private details, since we don't allow subclassing from it anyway, do we?
  * have we solved the problem for bindings that writability of things like buffers, caps, queries etc. depends on refcounts?
@@ -59,11 +51,6 @@ This looks worse than it is, most things should be fairly easy!
  * combine/merge/reshuffle plugins
    * WANT-FIX
    * https://bugzilla.gnome.org/show_bug.cgi?id=559431
- * get rid of libgstriff, or at least the data driving. Just parse headers and let caller do the rest
-   * WANT-FIX: clean-up aggressively
-   * get rid of funcs that drive data reading (pull etc.) (are those still used anywhere?)
-   * should just parse header structure really, like codec parser lib
-   * merge with some other lib? (containerutils lib?)
  * review interfaces in -base libs
    * MUST-FIX
    * ---(colorbalance: disable for now, move into libgstvideo)---
@@ -109,8 +96,6 @@ This looks worse than it is, most things should be fairly easy!
      * should move to a bitfield really - do we worry about inefficiencies if re-ordering is needed (in interleaved mode)? (in non-interleaved mode that can be done with GstMemory)
      * MUST-FIX: think about this
      * bitfield + "strategy" (mpeg, aac, smpte, etc.)
- * fix libgstcheck API + exports
-   * MUST-FIX: declare interface as unstable with header guards
  * typefinder API for typefinding functions:
    * MUST-FIX: at least look at it
    * we should be able to come up with a better way for typefinders to get to the data
@@ -152,12 +137,6 @@ This looks worse than it is, most things should be fairly easy!
    * WANT FIX: review all elements
    * whether signals + properties are useful
    * whether they should send messages instead of signals
- * what about GstTagSetter? It's very primitive, doesn't work well on muxers (how to set container tags + per-stream tags, etc., one needs to set per-stream tags via taginject really)
-   * CAN BE DONE LATER
- * fully async state changes? esp. in case of e.g. filesrc ! typefind ! ...  (imagine file on NFS drive)
-   * WANT-FIX: async upward state changes, needs substantial basesrc rewriting, can do later in basesrc2
-   * WANT-FIX: open() in basesrc not in state change func, also likely basesrc2
-   * MUST-FIX: typefind should not start typefinding via state change / pad activate function (same for tagdemux ---(, and check wavparse?)---)
  * gstvideo: frame IDs need to made meaningful (3D + interlaced + both)
    * CAN BE DONE LATER
  * systematic core API review
@@ -246,8 +225,6 @@ This looks worse than it is, most things should be fairly easy!
    * don't expose g_cond_wait in public headers
    * {{{git grep -e g_cond_wait -e GStaticRecMutex GStaticMutex | grep \\.h}}} for a quick (probably incomplete) overview
    * Note: GLib 2.32 is going to be released in February 2012
- * RTP:
-   * WANT-FIX: Rewrite the RTP parsing library, it is really ugly with new buffer memory
 
 ==== Plugins ====
 
@@ -301,6 +278,35 @@ This looks worse than it is, most things should be fairly easy!
  * audioiirfilter:
    * MUST-FIX, TRIVIAL: nonstandard definition of 'a' and 'b' coefficients for IIR filters
    * https://bugzilla.gnome.org/show_bug.cgi?id=632664
+
+=== Probably not going to happen ===
+
+ ''Note: the goal of this section is to aid prioritising of other desired changes''
+
+ * RTP:
+   * WANT-FIX: Rewrite the RTP parsing library, it is really ugly with new buffer memory
+ * add GError or GstPadErrorContext to gst_pad_push() etc.
+   * WANT-FIX, but can always be done later with queries and keeping error state privately in GstPadPrivate
+   * can't use GError here - would need to add refcounting for GErrors to GLib, and next GLib release is probably too late for us
+ * what about GstTagSetter? It's very primitive, doesn't work well on muxers (how to set container tags + per-stream tags, etc., one needs to set per-stream tags via taginject really)
+   * CAN BE DONE LATER
+ * fully async state changes? esp. in case of e.g. filesrc ! typefind ! ...  (imagine file on NFS drive)
+   * WANT-FIX: async upward state changes, needs substantial basesrc rewriting, can do later in basesrc2
+   * WANT-FIX: open() in basesrc not in state change func, also likely basesrc2
+   * MUST-FIX: typefind should not start typefinding via state change / pad activate function (same for tagdemux ---(, and check wavparse?)---)
+ * caps/structures:
+   * WANT-FIX
+   * hide gstvalue stuff from caps by adding dedicated API for lists/arrays/etc.? Add GstCapsStructure which only takes certain allowed types; could get rid off all the GstValue registration and table indirection for compare/subtraction/intersection/etc., just do switch/case
+     * conclusion: hide GValue for now from API, add explicit per-type setters + convenience functions for arrays, lists etc.
+   * maybe even add explicit list/array types for the types supported (ints, floats, buffers, ...)
+ * fix libgstcheck API + exports
+   * MUST-FIX: declare interface as unstable with header guards
+ * get rid of libgstriff, or at least the data driving. Just parse headers and let caller do the rest
+   * WANT-FIX: clean-up aggressively
+   * get rid of funcs that drive data reading (pull etc.) (are those still used anywhere?)
+   * should just parse header structure really, like codec parser lib
+   * merge with some other lib? (containerutils lib?)
+
 
 === Done ===
 
