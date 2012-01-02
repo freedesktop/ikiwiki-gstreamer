@@ -225,7 +225,7 @@ This looks worse than it is, most things should be fairly easy!
    * MUST-FIX, TRIVIAL: nonstandard definition of 'a' and 'b' coefficients for IIR filters
    * https://bugzilla.gnome.org/show_bug.cgi?id=632664
 
-=== Low priority tasks ===
+=== LOW PRIORITY TASKS ===
 
  * make state change macros/enums a bit more consistent, clean up
    * WANT-FIX, EASY
@@ -256,7 +256,7 @@ This looks worse than it is, most things should be fairly easy!
    * whether they should send messages instead of signals
 
 
-=== Post-1.0 tasks ===
+=== POST-1.0 TASKS ===
 
  * jpegdec: get rid of all the copy/indirect crap, alloc with ROUND_UP16 alignment
  * subtitle overlays (GstVideoOverlayComposition etc.)
@@ -266,7 +266,7 @@ This looks worse than it is, most things should be fairly easy!
    * https://bugzilla.gnome.org/show_bug.cgi?id=559431
 
 
-=== Probably not going to happen in time for 1.0 ===
+=== PROBABLY NOT GOING TO HAPPEN IN TIME FOR 1.0 ===
 
  ''Note: the goal of this section is to aid prioritising of other desired changes''
 
@@ -317,7 +317,7 @@ This looks worse than it is, most things should be fairly easy!
    * should move to a bitfield really - do we worry about inefficiencies if re-ordering is needed (in interleaved mode)? (in non-interleaved mode that can be done with GstMemory)
    * bitfield + "strategy" (mpeg, aac, smpte, etc.)?
 
-=== Done ===
+=== DONE ===
 
 ==== Core + Libs ====
 
