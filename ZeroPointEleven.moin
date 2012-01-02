@@ -95,10 +95,6 @@ This looks worse than it is, most things should be fairly easy!
  * typefind function signature:
    * MUST-FIX: at least allow for optional GstTypeFindContext argument (with gpointer typedef for now), so we can pass a context with more info to typefinders later
      * with info such as: first pass/second pass, max rank found so far, if random access is available
- * bit/bytereader: check if it's not faster to increment data pointer as we go along, instead of doing reader->data[reader->pos] for every read
-   * CAN-BE-DONE-LATER, TRIVIAL
- * can we add the GType of a pad to pad templates? That way gst-inspect could detect GstPad subclasses in videomixer + muxers and print special properties available for those)
-   * CAN BE DONE LATER
  * new events:
    * MUST-FIX (can't be just added later, 1-N/N-N elements like demuxers need to know about that) (not absolute must-fix, but would be good to start)
    * GST_EVENT_STREAM_ACTIVATE:
@@ -109,7 +105,7 @@ This looks worse than it is, most things should be fairly easy!
    * ---(https://bugzilla.gnome.org/show_bug.cgi?id=326875)--- 
    * '''slomo, please ACK''' (tpm)
  * add GST_FLOW_DROPPED: like FLOW_OK
-   * ENHANCEMENT POST-1.0
+   * ENHANCEMENT POST-1.0 (can this really be added later? we check for OK explicitly in sooo many places)
    * use case: base classes; if element sends a header and it gets dropped it knows that it needs to resend it before sending more data
    * could be sent if QoS drops the frame
    * https://bugzilla.gnome.org/show_bug.cgi?id=322947
@@ -118,10 +114,6 @@ This looks worse than it is, most things should be fairly easy!
    * make gst_event_new_*() and _parse() more consistent with regard to whether ownership is taken and or a copy returned (also for queries, messages, structs)
  * gstvideo: frame IDs need to made meaningful (3D + interlaced + both)
    * CAN BE DONE LATER
- * systematic core API review
-   * WANT-FIX
- * systematic base API review
-   * WANT-FIX
  * collectpads2:
    * MUST-FIX (add -2 to  0.10 and rename to collectpads in 0.11)
  * libgstvideo:
@@ -135,11 +127,6 @@ This looks worse than it is, most things should be fairly easy!
    * MUST-FIX, TRIVIAL: the interface should have a "uri" property (there's also a bug about that)
    * WANT-FIX: need to document and enforce file name/path character encodings: on *nix it's just a bunch of bytes, on win32 it must be utf8
    * MAYBE-FIX, TRIVIAL: rename GstURIFoo to GstUriFoo?
- * buffer flags:
-   * CAN-BE-DONE-LATER: review buffer flags (marker flag? document use cases! h264 byte-stream?)
- * ranges: allow for "steps" (e.g. width = [ 32, 1024, 16 ])
-   * WANT-FIX (COULD BE ADDED LATER?)
-   * allow third parameter for ranges: that expresses step size
  * add event to signal start of stream fragment (EVENT_SOS? EVENT_START?)
    * MUST-FIX, EASY? (can't be added later)
    * use cases: streamsynchronizer in playbin2 to align different stream segments, hlssink, multifilesink, etc.
@@ -254,9 +241,16 @@ This looks worse than it is, most things should be fairly easy!
    * WANT FIX: review all elements
    * whether signals + properties are useful
    * whether they should send messages instead of signals
+ * bit/bytereader: check if it's not faster to increment data pointer as we go along, instead of doing reader->data[reader->pos] for every read
+   * Sebastian has implemented this, partially at least, and says it's not actually faster
+ * systematic core API review
+   * WANT-FIX
+ * systematic base API review
+   * WANT-FIX
+ * buffer flags:
+   * review buffer flags (marker flag? document use cases! h264 byte-stream?)
 
-
-=== POST-1.0 TASKS ===
+=== POST-1.0 ===
 
  * jpegdec: get rid of all the copy/indirect crap, alloc with ROUND_UP16 alignment
  * subtitle overlays (GstVideoOverlayComposition etc.)
@@ -264,6 +258,7 @@ This looks worse than it is, most things should be fairly easy!
    * currently disabled in 0.11
  * combine/merge/reshuffle plugins
    * https://bugzilla.gnome.org/show_bug.cgi?id=559431
+ * can we add the GType of a pad to pad templates? That way gst-inspect could detect GstPad subclasses in videomixer + muxers and print special properties available for those)
 
 
 === PROBABLY NOT GOING TO HAPPEN IN TIME FOR 1.0 ===
@@ -294,7 +289,6 @@ This looks worse than it is, most things should be fairly easy!
    * should just parse header structure really, like codec parser lib
    * merge with some other lib? (containerutils lib?)
  *  filesrc/filesink
-   * CAN-BE-DONE-LATER
    * use gio: portability
    * maybe just move gio plugin to core?
 
@@ -316,6 +310,9 @@ This looks worse than it is, most things should be fairly easy!
    * ---(ability to pass channel matrices (caps? buffer metadata?))--- with metadata
    * should move to a bitfield really - do we worry about inefficiencies if re-ordering is needed (in interleaved mode)? (in non-interleaved mode that can be done with GstMemory)
    * bitfield + "strategy" (mpeg, aac, smpte, etc.)?
+ * ranges: allow for "steps" (e.g. width = [ 32, 1024, 16 ]): ''Vincent has worked on this'' (code in bugzilla?)
+   * WANT-FIX (COULD BE ADDED LATER?)
+   * allow third parameter for ranges: that expresses step size
 
 === DONE ===
 
