@@ -24,11 +24,6 @@ The first ever GStreamer conference took part in Cambridge (UK) on 25th October 
 
 This looks worse than it is, most things should be fairly easy!
 
- * why do we export the core debug categories? (GST_CAT_*) - tidy up in general maybe?
-   * WANT-FIX, TRIVIAL
-   * ensonic: we export core categories for baseclasses or generic topics, whats the question here anyway?
-     * tpm: only CAT_QOS + CAT_PERFORMANCE are ever used really (and CAT_SCHEDULING twice in libgstbase). And of core, base, good, ugly, bad there are only a handful of usages of those at all anyway. Oh, and PERFORMANCE is not in the public headers (you did that), so has to be retrieved by name anyway. The question is if we shouldn't just hide them all from private headers given that they're essentially not used anywhere but a handful of places (where they could easily be replaced by the CATEGORY_GET thing) (however, this is about the least important item ever, so don't really care)
-        * ensonic: +1 for removing them from the headers.
  * make plugin features light-weight (how to do that? Maybe just scrap the inheritance and do them all as boxed)
    * ---(MUST-FIX: make opaque)---
    * WANT-FIX: GObject? GMiniObject? Just Boxed?
@@ -43,14 +38,9 @@ This looks worse than it is, most things should be fairly easy!
    * POST-1.0 '''major issue though, check if we can't do something for 1.0'''
    * ds: read/write lock + refcounted read reservation; write_unlock() returns read reservation
    * (that for buffers, but would also solve things for structures, caps, queries etc.)
- * subtitle overlays
-   * WANT-FIX: metadata, but how: probably need different metas for different formats (ayuv, rgba, pango markup, etc.)
  * combine/merge/reshuffle libraries
    * WANT-FIX
    * want fewer mini-libs
- * combine/merge/reshuffle plugins
-   * WANT-FIX
-   * https://bugzilla.gnome.org/show_bug.cgi?id=559431
  * review interfaces in -base libs
    * MUST-FIX
    * ---(colorbalance: disable for now, move into libgstvideo)---
@@ -131,12 +121,6 @@ This looks worse than it is, most things should be fairly easy!
  * mark segment argument to gst_event_new_segment() as const (same for other event/message funcs)
    * ---(MUST FIX, TRIVIAL)---
    * make gst_event_new_*() and _parse() more consistent with regard to whether ownership is taken and or a copy returned (also for queries, messages, structs)
- * get rid of the boolean return in plugin_init() or element_register()?
-   * WANT FIX, TRIVIAL
- * review interfaces and elements
-   * WANT FIX: review all elements
-   * whether signals + properties are useful
-   * whether they should send messages instead of signals
  * gstvideo: frame IDs need to made meaningful (3D + interlaced + both)
    * CAN BE DONE LATER
  * systematic core API review
@@ -195,13 +179,6 @@ This looks worse than it is, most things should be fairly easy!
  * ---(check all header files to make sure there's padding where there should be padding)---
    * ---(MUST-FIX, EASY)---
    * ---(mini objects don't need padding any more now, but proper objects and many other helper structs )---
- * make state change macros/enums a bit more consistent, clean up
-   * WANT-FIX, EASY
-   * e.g. GST_STATE_TRANSITION() makes a GstStateChange, rename either of them (probably easier to rename GstStateChange to GstStateTransition, than renaming all the macros).
- * GstBus:
-   * WANT-FIX, TRIVIAL: add return value to "sync-message" signal
-   * MAYBE-FIX: clean up the GstBus API (add_watch can only be called once), maybe deprecate add_watch in favour of "message" ?
-   * rename _ad_watch
  * GstAudioSink/Src should implement GstStreamVolume interface (and do volume scaling for raw audio)
    * MUST-FIX, EASY: can't change it later because sub-classes will overwrite "volume" property otherwise
    * should have utility funcs in gstaudio to do volume scaling for misc formats
@@ -211,9 +188,6 @@ This looks worse than it is, most things should be fairly easy!
  * Request Pads:
    * WANT-FIX, TRIVIAL: gst-launch requesting pads but not releasing them - ds did some changes which broke stuff, get them into 0.11 (see bug 402562)
    * WANT-FIX: gst_element_link() and other functions implicitly create request pads. Let's not do that (see bug 402497)
- * make sure we don't use long/unsinged long/glong/gulong in the API anywhere
-   * MUST-FIX, TRIVIAL
-   * ---(e.g. gst_pad_add_probe, gst_pad_remove_probe)---
  * GstPad:
    * WANT-FIX, EASY?
    * unlink takes object lock while calling unlink function, see https://bugzilla.gnome.org/show_bug.cgi?id=637430
@@ -244,15 +218,9 @@ This looks worse than it is, most things should be fairly easy!
  * ogg + elements:
    * CAN-BE-DONE-LATER:
    * don't abuse buffer offset/offset_end for granulepos, put in buffer metadata if still needed (ideally muxer should do that based on timestamps)
- *  filesrc/filesink
-   * CAN-BE-DONE-LATER
-   * use gio: portability
-   * maybe just move gio plugin to core?
  * fix subparse (caps, also split up, maybe make a base class)
    * typefinding should go into typefinders
    * CAN-BE-DONE-LATER: separate elements per subtitle type, no more typefinding of input
- * jpegdec: get rid of all the copy/indirect crap, alloc with ROUND_UP16 alignment
-   * CAN DO LATER
  * playbin/decodebin
    * CAN-BE-DONE-LATER
    * should reconfigure themselves on reconfigure event
@@ -266,20 +234,55 @@ This looks worse than it is, most things should be fairly easy!
    * (note: we  don't care about non-GstObject use cases)
    * maybe make add_child/remove_add also return the name of the object added/removed
    * thread-safety needs fixing, there should also be an iterator-based API, and/or add API to get cookie
- * check all elements for whether they have sometimes srcpads that should be converted to always src pads (with caps just set once known)
-   * WANT-FIX, EASY
-   * we didn't do that originally because decodebin couldn't handle that
-   * e.g. wavpackparse, aiffparse, etc.
  * check "bitrate" property of all encoders, should be in bits per second, not kbits/sec or so.
    * MUST-FIX, TRIVIAL
    * https://bugzilla.gnome.org/show_bug.cgi?id=337409
- * check all elements to make sure they don't have properties of long/unsigned long type
-   * MUST-FIX, TRIVIAL: {{{gst-inspect-0.11 -a >/dev/null}}}
  * audioiirfilter:
    * MUST-FIX, TRIVIAL: nonstandard definition of 'a' and 'b' coefficients for IIR filters
    * https://bugzilla.gnome.org/show_bug.cgi?id=632664
 
-=== Probably not going to happen ===
+=== Low priority tasks ===
+
+ * make state change macros/enums a bit more consistent, clean up
+   * WANT-FIX, EASY
+   * e.g. GST_STATE_TRANSITION() makes a GstStateChange, rename either of them (probably easier to rename GstStateChange to GstStateTransition, than renaming all the macros).
+ * GstBus:
+   * WANT-FIX, TRIVIAL: add return value to "sync-message" signal
+   * MAYBE-FIX: clean up the GstBus API (add_watch can only be called once), maybe deprecate add_watch in favour of "message" ?
+   * rename _ad_watch
+ * why do we export the core debug categories? (GST_CAT_*) - tidy up in general maybe?
+   * WANT-FIX, TRIVIAL
+   * ensonic: we export core categories for baseclasses or generic topics, whats the question here anyway?
+     * tpm: only CAT_QOS + CAT_PERFORMANCE are ever used really (and CAT_SCHEDULING twice in libgstbase). And of core, base, good, ugly, bad there are only a handful of usages of those at all anyway. Oh, and PERFORMANCE is not in the public headers (you did that), so has to be retrieved by name anyway. The question is if we shouldn't just hide them all from private headers given that they're essentially not used anywhere but a handful of places (where they could easily be replaced by the CATEGORY_GET thing) (however, this is about the least important item ever, so don't really care)
+        * ensonic: +1 for removing them from the headers.
+ * check all elements to make sure they don't have properties of long/unsigned long type
+   * MUST-FIX, TRIVIAL: {{{gst-inspect-0.11 -a >/dev/null}}}
+ * check all elements for whether they have sometimes srcpads that should be converted to always src pads (with caps just set once known)
+   * WANT-FIX, EASY
+   * we didn't do that originally because decodebin couldn't handle that
+   * e.g. wavpackparse, aiffparse, etc.
+ * make sure we don't use long/unsinged long/glong/gulong in the API anywhere
+   * MUST-FIX, TRIVIAL
+   * ---(e.g. gst_pad_add_probe, gst_pad_remove_probe)---
+ * get rid of the boolean return in plugin_init() or element_register()?
+   * WANT FIX, TRIVIAL
+ * review interfaces and elements
+   * WANT FIX: review all elements
+   * whether signals + properties are useful
+   * whether they should send messages instead of signals
+
+
+=== Post-1.0 tasks ===
+
+ * jpegdec: get rid of all the copy/indirect crap, alloc with ROUND_UP16 alignment
+ * subtitle overlays (GstVideoOverlayComposition etc.)
+   * metadata, but how: probably need different metas for different formats (ayuv, rgba, pango markup, etc.)
+   * currently disabled in 0.11
+ * combine/merge/reshuffle plugins
+   * https://bugzilla.gnome.org/show_bug.cgi?id=559431
+
+
+=== Probably not going to happen in time for 1.0 ===
 
  ''Note: the goal of this section is to aid prioritising of other desired changes''
 
@@ -306,6 +309,10 @@ This looks worse than it is, most things should be fairly easy!
    * get rid of funcs that drive data reading (pull etc.) (are those still used anywhere?)
    * should just parse header structure really, like codec parser lib
    * merge with some other lib? (containerutils lib?)
+ *  filesrc/filesink
+   * CAN-BE-DONE-LATER
+   * use gio: portability
+   * maybe just move gio plugin to core?
 
 
 === Done ===
