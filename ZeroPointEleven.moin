@@ -293,11 +293,6 @@ This looks worse than it is, most things should be fairly easy!
    * ---(WANT-FIX: move GstController into core)---
    * WANT_FIX: make control sources plugin features (to be configured via signal_emit)
    * ---(WANT-FIX: triggers should be moved into their own control source)---
- * audio channel layouts in caps and in general: ''Sebastian is working on this''
-   * move to fixed order with flags in caps? (or register layouts and refer to them by name?)
-   * ---(ability to pass channel matrices (caps? buffer metadata?))--- with metadata
-   * should move to a bitfield really - do we worry about inefficiencies if re-ordering is needed (in interleaved mode)? (in non-interleaved mode that can be done with GstMemory)
-   * bitfield + "strategy" (mpeg, aac, smpte, etc.)?
  * ranges: allow for "steps" (e.g. width = [ 32, 1024, 16 ]): ''Vincent has worked on this'' (code in bugzilla?)
    * WANT-FIX (COULD BE ADDED LATER?)
    * allow third parameter for ranges: that expresses step size
@@ -310,9 +305,7 @@ This looks worse than it is, most things should be fairly easy!
    * use mini objects
    * make plugin features light-weight (how to do that? Maybe just scrap the inheritance and do them all as boxed)
    * ---(MUST-FIX: make opaque)---
-   * WANT-FIX: GObject? GMiniObject? Just Boxed?
- * rename gst_registry_get_default() to gst_registry_get() ? ''Tim will do this''
-   * more glib-ish and more correct
+   * WANT-FIX: GObject? GMiniObject? Just Boxed? - keep as normal GObjects
 
 === DONE ===
 
@@ -439,6 +432,13 @@ This looks worse than it is, most things should be fairly easy!
  * tags:
    * ---(GST_TAG_LANGUAGE_CODE: use ISO-639-2 instead of ISO-639-1. Enforce this. Provide 639-1 => 639-2 table in libgstta; ideally we'd require iso-codes and provide language_name=>code and code=>language_name functions too)---
    * ---(add GST_TAG_LANGUAGE_NAME for free-form string)---
+ * ---(rename gst_registry_get_default() to gst_registry_get() ?)---
+   * ---(more glib-ish and more correct)---
+ * ---(audio channel layouts in caps and in general)---
+   * ---(move to fixed order with flags in caps? (or register layouts and refer to them by name?))---
+   * ---(ability to pass channel matrices (caps? buffer metadata?))--- with metadata
+   * ---(should move to a bitfield really - do we worry about inefficiencies if re-ordering is needed (in interleaved mode)? (in non-interleaved mode that can be done with GstMemory))---
+   * ---(bitfield + "strategy" (mpeg, aac, smpte, etc.)? )---
 
 ==== Plugins ====
 
