@@ -192,9 +192,6 @@ This looks worse than it is, most things should be fairly easy!
  * check "bitrate" property of all encoders, should be in bits per second, not kbits/sec or so.
    * MUST-FIX, TRIVIAL
    * https://bugzilla.gnome.org/show_bug.cgi?id=337409
- * audioiirfilter:
-   * MUST-FIX, TRIVIAL: nonstandard definition of 'a' and 'b' coefficients for IIR filters
-   * https://bugzilla.gnome.org/show_bug.cgi?id=632664
 
 === LOW PRIORITY TASKS ===
 
@@ -458,3 +455,4 @@ This looks worse than it is, most things should be fairly easy!
    * ---(rename gstrtp* to rtp*)---
    * ---(jitterbuffer and ssrdemux padnames have a %d instead of %u)---
      * ---(https://bugzilla.gnome.org/show_bug.cgi?id=660157 (whatever this means))---
+ * ---(audioiirfilter: nonstandard definition of 'a' and 'b' coefficients for IIR filters)---
