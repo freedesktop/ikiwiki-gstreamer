@@ -66,10 +66,6 @@ This looks worse than it is, most things should be fairly easy!
    * text/plain => subtitle/x-text,xyz=markup,charset=foo ?
    * xvid/divx caps -> mpeg4 caps, possibly with flavour if needed
    * application/x-ogm-{video|audio|sub} => audio/x-ogm, video/x-ogm, subtitle/x-ogm (+fix typefinding)
-   * h263 caps: make profiles/levels string fields in the caps (h263parse)
-     * https://bugzilla.gnome.org/show_bug.cgi?id=658438
-   * mpeg-4 caps: make profiles/levels string fields in the caps (parser, typefinder [it's right in codec utils apparently])
-     * https://bugzilla.gnome.org/show_bug.cgi?id=658438
    * define what codec_data should mean for each format, try to be as consistent as possible
      * WANT-FIX, TRIVIAL:
      * rename "codec_data" to "codec-data" everywhere
@@ -456,3 +452,7 @@ This looks worse than it is, most things should be fairly easy!
    * ---(jitterbuffer and ssrdemux padnames have a %d instead of %u)---
      * ---(https://bugzilla.gnome.org/show_bug.cgi?id=660157 (whatever this means))---
  * ---(audioiirfilter: nonstandard definition of 'a' and 'b' coefficients for IIR filters)---
+ * ---(h263 caps: make profiles/levels string fields in the caps (h263parse) )---
+   * ---(https://bugzilla.gnome.org/show_bug.cgi?id=658438)---
+ * ---(mpeg-4 caps: make profiles/levels string fields in the caps (parser, typefinder [it's right in codec utils apparently]) )---
+   * ---(did not find anything to fix here)---
