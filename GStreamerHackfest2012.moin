@@ -137,3 +137,9 @@ GStreamer 0.11 status reports
 (!) Status 2 - http://lists.freedesktop.org/archives/gstreamer-devel/2011-June/031891.html
 
 (!) Status 1 - http://lists.freedesktop.org/archives/gstreamer-devel/2011-April/031128.html
+
+Other GStreamer 0.11 resources:
+
+(!) Porting guide: http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/random/porting-to-0.11.txt?h=0.11
+
+(!) ZeroPointEleven wiki page
