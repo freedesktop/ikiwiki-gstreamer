@@ -7,27 +7,26 @@
  * applications
   * [[Pitivi]]: Improve Pitivi
  * framework
-  * [[DLNAMagicTranscoding]]: DLNA Magic Transcoding
   * [[Closed_Captioning_support]]: Subtitles for the hearing impaired
   * [[TamasKorodi/IVC_multichannel_grabber_card_support|Multichannel_grabber_card_support]] : Multichannel video grabber card support and more baseclasses
   * [[GeneratedFormatTestdata]]: Generate robustness testdata for demuxer/parser tests
  * bindings
   * [[RobinHorvath/Gstreamer-java_enhancement|Gstreamer-Java enhancement]] : GStreamer Java binding enhancement, GStreamer and GStreamer-Java Mac OS and Windows port
   * [[GStreamerSharp|gstreamer-sharp]] : Finish/improve the GStreamer C# bindings
+  * Port GStreamer applications and/or plugins from 0.10 to 0.11/1.0
 
 We have a [[PreviousSocProjets|list of previous projects]] for reference.
 
 = Other Organizations =
 Other organizations that have project ideas related to GStreamer:
 
- * http://wiki.multimedia.cx/index.php?title=FFmpeg_/_Libav_Summer_Of_Code_2011
- * http://live.gnome.org/SummerOfCode2011/Ideas
- * http://community.kde.org/GSoC/2011/Ideas
- * https://github.com/fosslc/freeseer/issues/labels/summer%20code
+ * http://live.gnome.org/SummerOfCode2012/Ideas
+ * http://community.kde.org/GSoC/2012/Ideas
+
 
 
 
 Back to TaskList
 
 ----
- . [[CategoryGSOC2010]]
+ . [[CategoryGSOC2012]]
