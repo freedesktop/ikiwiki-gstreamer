@@ -20,7 +20,7 @@ MODULES="gstreamer gst-plugins-base gst-plugins-good gst-plugins-ugly gst-plugin
 
 # note: we use ~/gst because that's what the gst-uninstalled script
 # uses by default, so don't just change that to something else
-UNINSTALLED_ROOT=~/tmp/uninstalled
+UNINSTALLED_ROOT=~/gst
 
 echo "==========================================================================================="
 echo "Creating new GStreamer uninstalled environment for branch $BRANCH in $UNINSTALLED_ROOT ... "
