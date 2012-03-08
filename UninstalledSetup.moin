@@ -8,7 +8,8 @@ All of this relies heavily on libtool, so how well this works depends a bit on h
 
 (An alternative to using an uninstalled setup is jhbuild)
 
-Run this script to create a basic uninstalled setup and checkout (without actually compiling the modules though):
+Run this script to create a basic uninstalled setup and checkout for the 0.11 branch (without actually compiling the modules though):
+
 {{{
 #!/bin/sh
 
