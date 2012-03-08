@@ -78,3 +78,14 @@ echo
 echo "==========================================================================================="
 
 }}}
+
+
+By default git versions of GStreamer are compiled with {{{-Werror}}}, which means the build will abort with an error if anything causes a compiler warning.
+
+If this happens, for whatever reason, please file a bug with the details (warning message etc.). You can work around it either by doing:
+
+{{{
+make ERROR_CFLAGS='' ERROR_CXXFLAGS=''
+}}}
+
+or by passing {{{--disable-fatal-warnings}}} to ./autogen.sh
