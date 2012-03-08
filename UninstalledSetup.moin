@@ -1,0 +1,79 @@
+It is possible to hack on or develop against a so-called 'uninstalled' version of GStreamer.
+
+This means you can just checkout and build a copy of GStreamer somewhere in your home directory and test it without affecting your system installation.
+
+If needed, you can also install newer versions of libraries GStreamer requires into the uninstalled directory without those libraries affecting your system installation. This is particularly useful if you want to play with the latest GStreamer 0.11, but don't have a bleeding edge GLib version yet.
+
+All of this relies heavily on libtool, so how well this works depends a bit on how your distro patches libtool, but it should work fine at least with debian sid and most versions of ubuntu.
+
+(An alternative to using an uninstalled setup is jhbuild)
+
+Run this script to create a basic uninstalled setup and checkout (without actually compiling the modules though):
+{{{
+#!/bin/sh
+
+set -e
+
+BRANCH="0.11"
+MODULES="gstreamer gst-plugins-base gst-plugins-good gst-plugins-ugly gst-plugins-bad gst-ffmpeg"
+
+# note: we use ~/gst because that's what the gst-uninstalled script
+# uses by default, so don't just change that to something else
+UNINSTALLED_ROOT=~/tmp/uninstalled
+
+echo "==========================================================================================="
+echo "Creating new GStreamer uninstalled environment for branch $BRANCH in $UNINSTALLED_ROOT ... "
+echo "==========================================================================================="
+
+mkdir -p $UNINSTALLED_ROOT
+mkdir -p $UNINSTALLED_ROOT/$BRANCH
+
+mkdir -p $UNINSTALLED_ROOT/$BRANCH/prefix
+
+
+cd $UNINSTALLED_ROOT/$BRANCH
+
+for m in $MODULES
+do
+  git clone git://anongit.freedesktop.org/gstreamer/$m
+  cd $m
+  git checkout -b $BRANCH origin/$BRANCH
+  cd ..
+done
+
+cd $UNINSTALLED_ROOT
+ln -s $BRANCH/gstreamer/scripts/gst-uninstalled gst-$BRANCH
+chmod +x gst-$BRANCH
+
+cd ~
+
+echo "==========================================================================================="
+echo
+echo "Done. Created new GStreamer uninstalled environment for branch $BRANCH in $UNINSTALLED_ROOT"
+echo
+echo "To enter the uninstalled environment do: cd $UNINSTALLED_ROOT; ./gst-$BRANCH"
+echo
+echo "To leave the uninstalled environment do: exit"
+echo
+echo "To check the uninstalled environment do: printenv | grep GST"
+echo "    (loads of output = you're in the uninstalled environment)"
+echo
+echo "==========================================================================================="
+echo
+echo "Now compile all GStreamer modules one by one by first switching into"
+echo "the uninstalled environment and then doing:"
+echo
+echo "    cd $MODULE; ./autogen.sh; make"
+echo
+echo "First gstreamer, then gst-plugins-base, then the other modules."
+echo "You do not need to do 'make install'"
+echo
+echo "==========================================================================================="
+echo
+echo "If your system GLib is too old, you can install a newer version"
+echo "into --prefix=$UNINSTALLED_ROOT/$BRANCH/prefix and it should be picked up"
+echo "by autogen.sh/configure"
+echo
+echo "==========================================================================================="
+
+}}}
