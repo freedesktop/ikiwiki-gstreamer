@@ -7,8 +7,11 @@ This GSoC project is about testing/finishing/improving these bindings.
 Useful skills for this project would be general knowledge about GStreamer and Lua, even better would be knowledge about Lua bindings in general and GObject-Introspection based bindings in specific. Also knowledge about libffi may be required.
 
 == Resources ==
+
 [[https://github.com/pavouk/lgi]]
+
 [[http://live.gnome.org/GObjectIntrospection]]
+
 [[http://sourceware.org/libffi/]]
 
 '''Mentor: Tiago Katcipis''
