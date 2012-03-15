@@ -13,6 +13,7 @@
   * [[TamasKorodi/IVC_multichannel_grabber_card_support|Multichannel_grabber_card_support]] : Multichannel video grabber card support and more baseclasses
   * [[GeneratedFormatTestdata]]: Generate robustness testdata for demuxer/parser tests
  * bindings
+  * [[SocProjects/GStreamerLua|Gstreamer-Lua]] : Gstreamer Lua binding enhancement
   * [[RobinHorvath/Gstreamer-java_enhancement|Gstreamer-Java enhancement]] : GStreamer Java binding enhancement, GStreamer and GStreamer-Java Mac OS and Windows port
   * [[GStreamerSharp|gstreamer-sharp]] : Finish/improve the GStreamer C# bindings
   * Port GStreamer applications and/or plugins from 0.10 to 0.11/1.0
