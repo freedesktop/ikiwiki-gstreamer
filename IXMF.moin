@@ -7,6 +7,7 @@ be a big step forward for GStreamer in terms of being considered for game use if
 == Resources ==
 
  * http://www.iasig.org/wg/ixwg/index.shtml - Specification of the format and more information
+ * http://gitorious.org/gst/ixmf - Plugin code repository
 
 '''Mentor: Thiago Soussa Santos - thiagoss on IRC'''
 
