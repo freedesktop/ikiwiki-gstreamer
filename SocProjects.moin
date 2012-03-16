@@ -5,6 +5,7 @@
   * [[IXMF]]: Project to create decoder and/or encoder for the IXMF audio format
   * [[PluginsForEditing]]: Wrapping much-needed audio/video filters as gstreamer plugins.
   * [[SrtpSupport]]: Write plugins to support sRTP (and maybe zRTP)
+  * [[ChapterSupport]]: Implement chapter support in more plugins
  * applications
   * [[Pitivi]]: Improve Pitivi
   * [[Buzztard]]: Improve Buzztard
