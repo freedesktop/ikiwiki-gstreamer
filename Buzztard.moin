@@ -1,0 +1,27 @@
+Buzztard is a music composer.
+
+== Project ideas ==
+
+ * Port to 0.11
+ * Port from InterpolationController to own controller class (need link to buzztard wiki)
+
+== Resources ==
+
+ * http://www.buzztard.org/
+
+== Skills needed ==
+
+ * C
+ * Gtk
+ * the more GStreamer experience the better
+
+Students interested in doing a Google Summer of code project around buzztard should join the #buzztard channel on irc.freenode.net. You should be
+able to find someone online at almost any time to discuss your project idea there.
+
+'''Mentor: Stefan Sauer (buzztard author) aka ensonic on IRC '''
+
+Back to [[TaskList]] 
+
+----
+[[CategoryGSOC2012]]
+CategoryTasks
