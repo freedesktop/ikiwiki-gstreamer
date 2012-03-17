@@ -1,7 +1,5 @@
 = Implement chapter support in more plugins =
-
 == Background ==
-
 [[https://bugzilla.gnome.org/show_bug.cgi?id=540890|Bug 540890]] provides a new API to GStreamer for chapter support in media files. [[https://bugzilla.gnome.org/show_bug.cgi?id=481070|Bug 481070]] implements that API for the matroska format. We need simillar patches for other plugins and make use of that in tools:
 
 === Tools ===
@@ -9,13 +7,12 @@
  * gst-launch should have a option simillar to "-t" for tags to show chapters
 
 == Resources ==
-
  * Riff-format: http://www.neurophys.wisc.edu/auditory/riff-format.txt, see "Cue-Points Chunk"
- * Mp4-Format: http://xhelmboyx.tripod.com/formats/mp4-layout.txt, see "chapterlist"
+ * Mp4-Format: http://xhelmboyx.tripod.com/formats/mp4-layout.txt, see "chapterlist"; also this may be useful:  http://developer.apple.com/mac/library/documentation/QuickTime/QTFF/index.html, see "Chapter List"
 
-'''Mentor: ''' 
+'''Mentor: '''
 
-Back to [[TaskList]]  
+Back to TaskList
 
 ----
 [[CategoryGSOC2012]] CategoryTasks
