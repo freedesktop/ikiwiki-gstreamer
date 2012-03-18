@@ -2,8 +2,9 @@ Buzztard is a music composer.
 
 == Project ideas ==
 
- * Port to 0.11
  * Port from InterpolationController to own controller class (need link to buzztard wiki)
+ * Use EncodeBin for Song Rendering
+ * Port to 0.11
 
 == Resources ==
 
