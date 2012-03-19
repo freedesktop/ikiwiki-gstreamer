@@ -4,6 +4,7 @@ Buzztard is a music composer.
 
  * Port from InterpolationController to own controller class (see [[http://wiki.buzztard.org/index.php/Gst-controller_queues|buzztard wiki]])
  * Use EncodeBin for Song Rendering (see [[http://wiki.buzztard.org/index.php/Song_rendering#gstreamer_encodebin|buzztard wiki]])
+ * Audio recording for wave-table
  * Port to 0.11
 
 == Resources ==
