@@ -5,6 +5,7 @@
   * [[PluginsForEditing]]: Wrapping much-needed audio/video filters as gstreamer plugins.
   * [[SrtpSupport]]: Write plugins to support sRTP (and maybe zRTP)
   * [[ChapterSupport]]: Implement chapter support in more plugins
+  * [[OpencvGestureDetection]] : Implement an opencv plugin for gesture detection (eg: hand gesture)
  * applications
   * [[Pitivi]]: Improve Pitivi
   * [[Buzztard]]: Improve Buzztard
