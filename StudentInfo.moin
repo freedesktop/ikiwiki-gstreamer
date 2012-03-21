@@ -29,7 +29,7 @@ we will fail you and you don't get paid.
 
 = How to file the application =
 Google got a page with instructions on how you as a student file the application here:
-http://socghop.appspot.com/document/show/gsoc_program/google/gsoc2010/userguide#depth_students
+http://www.google-melange.com/gsoc/dashboard/google/gsoc2012
 
 = Before GSoC starts =
 To be ready to go if we're chosen to participate, you can read the [[http://gstreamer.freedesktop.org/documentation/|documentation]] and prepare the development environment. For the later learn about the [[http://git-scm.com/|git]] version control system, clone the [[http://gstreamer.freedesktop.org/dev/|gstreamer modules]] and ensure that you can build and run the development version (e.g. in an UninstalledSetup).
