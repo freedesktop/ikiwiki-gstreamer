@@ -7,7 +7,8 @@ The idea of the project is to add a plugin to gst-plugins-bad/ext/opencv for ges
 
 == Resources ==
 
-http://opencv.willowgarage.com/wiki/
+ * http://opencv.willowgarage.com/wiki/
+ * A handful of information is available in the following blog post: http://www.andol.info/hci/1661.htm
 
 
 '''Mentor: Sreerenj Balachandran - sree on IRC'''
