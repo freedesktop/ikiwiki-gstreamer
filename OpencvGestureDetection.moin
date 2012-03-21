@@ -1,0 +1,18 @@
+= OpenCV Plugin for gesture detection  =
+
+== Background ==
+
+The idea of the project is to add a plugin to gst-plugins-bad/ext/opencv for gesture(eg:hand) detection.
+ * synthesize navigation-events (use case: control media player using gestures)
+
+== Resources ==
+
+http://opencv.willowgarage.com/wiki/
+
+
+'''Mentor: Sreerenj Balachandran - sree on IRC'''
+
+Back to [[TaskList]]  
+
+----
+[[CategoryGSOC2009]] CategoryTasks
