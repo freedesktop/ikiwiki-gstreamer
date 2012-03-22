@@ -4,8 +4,8 @@ Buzztard is a music composer.
 
  * Port from InterpolationController to own controller class (see [[http://wiki.buzztard.org/index.php/Gst-controller_queues|buzztard wiki]])
  * Use EncodeBin for Song Rendering (see [[http://wiki.buzztard.org/index.php/Song_rendering#gstreamer_encodebin|buzztard wiki]])
- * Audio recording for wave-table
- * Use the audio-sink from the setting in the wave-table player instead of using the defaults via playbin2
+ * Audio recording for [[http://buzztard.git.sourceforge.net/git/gitweb.cgi?p=buzztard/buzztard;a=blob;f=src/lib/core/wave.c;hb=HEAD#l29|wave-table]]
+ * Improve bt-dec, the buzztard song decoder that can be used in playbin2
  * Port to 0.11
 
 == Resources ==
