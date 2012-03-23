@@ -6,6 +6,7 @@ Buzztard is a music composer.
  * Use EncodeBin for Song Rendering (see [[http://wiki.buzztard.org/index.php/Song_rendering#gstreamer_encodebin|buzztard wiki]])
  * Audio recording for [[http://buzztard.git.sourceforge.net/git/gitweb.cgi?p=buzztard/buzztard;a=blob;f=src/lib/core/wave.c;hb=HEAD#l29|wave-table]]
  * Improve bt-dec, the buzztard song decoder that can be used in playbin2
+ * Write a audio-synthesizer baseclass to ease porting the plugins in gst-buzztard to 0.11 (will be used for simsyn, fluidsynth and the sources in bml)
  * Port to 0.11
 
 == Resources ==
