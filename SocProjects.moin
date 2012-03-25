@@ -20,6 +20,7 @@ The list below is just some suggestions made by various members of the GStreamer
   * [[RobinHorvath/Gstreamer-java_enhancement|Gstreamer-Java enhancement]] : GStreamer Java binding enhancement, GStreamer and GStreamer-Java Mac OS and Windows port
   * [[GStreamerSharp|gstreamer-sharp]] : Finish/improve the GStreamer C# bindings
   * Port GStreamer applications and/or plugins from 0.10 to 0.11/1.0
+  * [[RolandElek/AutomaticLowLevelJavaBindingGeneration|Automatic low-level Java binding generation]] : Automatically generate the low-level layer of gstreamer-java
 
 We have a [[PreviousSocProjets|list of previous projects]] for reference.
 
