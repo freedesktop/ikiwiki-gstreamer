@@ -1,19 +1,24 @@
-Links to external gstreamer plugin modules (in alphabetical order) :
+Links to external GStreamer plugin modules (in alphabetical order) :
 
-= gladstone =
-GladSToNe is an educational tool for learning about hi-performance audio handling for real-time transmissions. The goal of the project is to use the open source model to improve the psycho acoustics, noise shaping and speed of audio transmissions over IP. Contains a G729 codec plugin.
- * http://code.google.com/p/gladstone/
- * http://www.ohloh.net/p/gladstone
+== gladstone ==
+GladSToNe is an educational tool for learning about hi-performance audio handling for real-time transmissions. The goal of the project is to use the open source model to improve the psycho acoustics, noise shaping and speed of audio transmissions over IP. Contains a G729 codec plugin, '''g729enc''' for encoding and '''g729dec''' for decoding.
 
-= gst-buzztard =
-Extra interfaces for audio plugins + a few plugin using them. Contains a wrapper for buzz-machine plugins.
+ * [[http://code.google.com/p/gladstone/|Project page on Google Code]]
+ * [[http://gitorious.org/gladstone|Code repository on Gitorious]]
+ * [[http://www.ohloh.net/p/gladstone|Profile on ohloh.net]]
+
+== gst-buzztard ==
+Extra interfaces for audio plugins + a few plugin using them. Contains a wrapper for buzz-machine plugins. '''audiodelay''' add an echo effect to audio, the '''bml''' plugin wraps buzz-machine plugins, '''fluidsynth''' is an audio synthesizer, and '''simsyn''' is a simple monophonic audio synthesizer.
+
  * http://buzztard.svn.sourceforge.net/viewvc/buzztard/trunk/gst-buzztard/
 
-= gst-opencv =
-A group of GStreamer plugins allowing for easy integration of OpenCV computer vision and image processing techniques with GStreamer applications.
- * http://github.com/Elleo/gst-opencv
- * https://www.ohloh.net/p/gst-opencv
+== gst-plugins-elphel ==
+Elphel camera-related plugins, including '''jp462bayer''' which converts color and monochrome JP46 Elphel bitstreams to Bayer raw format, and '''bayer2rgb2''' which converts raw Bayer streams to RGB images using libdc1394 debayering algorithms.
 
-= pocketsphinx =
-Speech recognition plugin based on CMU sphinx.
- * http://cmusphinx.sourceforge.net/wiki/gstreamer
+ * [[http://code.google.com/p/gst-plugins-elphel/|Project page on Google Code]] - including SVN repository
+
+== pocketsphinx ==
+Speech recognition plugin based on CMU sphinx. '''pocketsphinx''' takes audio as input and produces text on output, and '''vader''' marks utterance start and end points in an audio stream.
+
+ * [[http://cmusphinx.sourceforge.net/wiki/gstreamer|Using PocketSphinx with GStreamer and Python (or Vala)]] - includes example code
+ * [[http://cmusphinx.svn.sourceforge.net/viewvc/cmusphinx/trunk/pocketsphinx/src/gst-plugin/|SVN repository on Sourceforge]]
