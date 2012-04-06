@@ -8,14 +8,15 @@ All of this relies heavily on libtool, so how well this works depends a bit on h
 
 (An alternative to using an uninstalled setup is jhbuild)
 
-Run this script to create a basic uninstalled setup and checkout for the 0.11 branch (without actually compiling the modules though):
+Run this script to create a basic uninstalled setup and checkout for the master branch (=0.11/1.0) or 0.10 branch (without actually compiling the modules though):
 
 {{{
 #!/bin/sh
 
 set -e
 
-BRANCH="0.11"
+# set BRANCH to "master" for 0.11/1.0 hacking
+BRANCH="0.10"
 MODULES="gstreamer gst-plugins-base gst-plugins-good gst-plugins-ugly gst-plugins-bad gst-ffmpeg"
 
 # note: we use ~/gst because that's what the gst-uninstalled script
