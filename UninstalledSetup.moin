@@ -65,7 +65,7 @@ echo
 echo "Now compile all GStreamer modules one by one by first switching into"
 echo "the uninstalled environment and then doing:"
 echo
-echo "    cd $MODULE; ./autogen.sh; make"
+echo "    cd <MODULE>; ./autogen.sh; make"
 echo
 echo "First gstreamer, then gst-plugins-base, then the other modules."
 echo "You do not need to do 'make install'"
