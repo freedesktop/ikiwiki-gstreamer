@@ -1,3 +1,5 @@
+'''Outdated''': ''GstBaseParse'' was introduced in gstreamer-0.10.33. The text below may or may not reflect the current implementation. Read [[http://gstreamer.freedesktop.org/data/doc/gstreamer/head/gstreamer-libs/html/gstreamer-libs-GstBaseParse.html|the current documentation]] for more information.
+
 We need a base class for general parsers as most current parsers share a lot of rather complex code.
 
 Implementation has started at [[http://bugzilla.gnome.org/show_bug.cgi?id=518857|bug 518857]].
