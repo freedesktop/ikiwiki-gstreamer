@@ -23,45 +23,44 @@ If you have created a new plugin, please submit a patch that adds it to gst-plug
 
 ==== General information on how we like our patches ====
 
-Please always submit patches in 'unified context' format to make sure they are human-readable. This is the default if you are using 'git diff' or 'git format-patch' to create a patch.  Otherwise, you can achieve this by passing the '-u' option to diff. Additionally, it would be quite helpful if you could also pass the '-p' option, which adds useful information to each individual patch chunk (such as the C function name). This makes patches much easier to review.
+Please submit patches in {{{git format-patch}}} format, as attachement to a bug in bugzilla.
+
+The easiest way to create such patches is to create one or more local commits for your changes in a local git repository. This can be a git clone checkout of the module in question, or you could create a git repository in any directory that has the source code, e.g. the directory created when unpacking the source tarball (using {{{git init}}}, then {{{git add .}}} and {{{git commit -m 'import tarball as initial revision'}}}).
+
+Once you have a git repository with the original code in in it, you can make your modifications and create a local commit with e.g. {{{git commit path/to/file1.[ch]}}}. This will pop up an editor where you can create your commit message. It should look like:
+
+{{{
+exampledemux: fix seeking without index in push mode
+
+Without an index we would refuse to seek in push mode. Make
+seeking without an index work by estimating the position
+to seek to. It might not be 100% accurate, but better than
+nothing.
+
+https://bugzilla.gnome.org/show_bug.cgi?id=987654
+}}}
+
+Then exit the editor, and you should have a commit.
+
+Check the commit with {{{git show}}} or {{{git log -p}}}.
+
+Make sure the author is correctly set to your full name and e-mail address.
+
+You can make changes to the last commit using:
+
+  * {{{git commit --amend}}} to fix up the commit message, or
+  * {{{git commit --amend --author='John You <john@you.com>'}}} to fix up the author, or
+  * {{{git add path/to/file1.[ch]; git commit --amend}}} to incorporate fixes made to the files into the last commit
+
+Once everything looks fine, create the patch file for the last commit with: {{{git format-patch -1}}}
+
+If you have multiple commits, pass -2, -3, etc.
+
+This should create one or more patch files named 0001-blahblah, 0002-blehblah etc. in the current directory. Attach these to a bug report in bugzilla.
 
 Please make sure your patches are as terse and precise as possible. Do not include 'clean-ups' or non-functional changes, since they distract from the real changes and make things harder to review (if you feel there are things to clean-up, please submit the clean-ups as a separate patch that does not contain any functional changes).
 
-Try to stick to the GStreamer coding style (run [[http://webcvs.freedesktop.org/gstreamer/gstreamer/tools/gst-indent?view=markup|gst-indent]] over your .c or .cpp files, but not the header files, if you want your code auto-indented before making the patch).
-
-Please do not include a ChangeLog entry with your patch (feel free to suggest a wording for the ChangeLog entry in the bug report though).
-
-
-==== Creating a diff of a single file from local changes ====
-
-{{{
-$ git diff path/to/file.c > mypatch.diff
-}}}
-
-or, if you are not working within a git repository (you should!):
-
-{{{
-$ diff -u -p gst-plugins-foo-0.10.n-original/path/to/file.c gst-plugins-foo-0.10.n-modified/path/to/file.c > mypatch.diff
-}}}
-
-
-==== Creating a diff of multiple files or a whole directory ====
-
-{{{
-$ git diff gst/foodemux/file1.c gst/foodemux/file1.h > foodemuxpatch.diff
-}}}
-
-If you specify a directory, 'git diff' will create a patch for all modified files in the directory and all sub-directories:
-
-{{{
-$ git diff gst/foodemux/ > foodemuxpatch.diff
-}}}
-
-The same goes for diff (note the -r option):
-
-{{{
-$ diff -u -p -r gst-plugins-foo-0.10.n-original/gst/foodemux/ gst-plugins-foo-0.10.n-modified/gst/foodemux/ > mypatch.diff
-}}}
+Try to stick to the GStreamer coding style. Run [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/tools/gst-indent|gst-indent]] over your .c or .cpp files, but not the header files, if you want your code auto-indented before making the patch (requires GNU indent installed).
 
 ==== Create a diff from a git commit ====
 
