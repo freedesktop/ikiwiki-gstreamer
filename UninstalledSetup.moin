@@ -39,7 +39,9 @@ for m in $MODULES
 do
   git clone git://anongit.freedesktop.org/gstreamer/$m
   cd $m
-  git checkout -b $BRANCH origin/$BRANCH
+  if test "$BRANCH" != "master"; then
+    git checkout -b $BRANCH origin/$BRANCH
+  fi
   cd ..
 done
 
