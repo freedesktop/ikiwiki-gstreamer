@@ -35,6 +35,10 @@ Elphel camera-related plugins, including '''jp462bayer''' which converts color a
 
  * [[http://code.google.com/p/gst-plugins-elphel/|Project page on Google Code]] - including SVN repository
 
+== GstStabilizer ==
+Python plugin using OpenCV to stabilize video.
+
+ * https://github.com/guijemont/GstStabilizer
 == PiTiVi ==
 [[http://www.pitivi.org/ PiTiVi]] is a Python-based non-linear editor, and includes several Python plugins
  * [[http://git.pitivi.org/?p=pitivi.git;a=tree;f=pitivi/elements Git|repository browser]]
@@ -44,6 +48,15 @@ Speech recognition plugin based on CMU sphinx. '''pocketsphinx''' takes audio as
 
  * [[http://cmusphinx.sourceforge.net/wiki/gstreamer|Using PocketSphinx with GStreamer and Python (or Vala)]] - includes example code
  * [[http://cmusphinx.svn.sourceforge.net/viewvc/cmusphinx/trunk/pocketsphinx/src/gst-plugin/|SVN repository on Sourceforge]]
+
+{{{#!wiki comment/dotted
+Perhaps use a table instead?
+
+||'''Name'''||'''Description'''||'''Website'''||'''Source'''||
+||gladstone||Contains a G729 codec plugin||http://code.google.com/p/gladstone/ ||http://gitorious.org/gladstone||
+||gst-buzztard||Contains a wrapper for buzz-machine plugins.|| || http://buzztard.svn.sourceforge.net/viewvc/buzztard/trunk/gst-buzztard/||
+
+}}}
 
 = Commercial =
  * [[http://entropywave.com/products/codecs-for-oems/|Entropy Wave codec package]]
