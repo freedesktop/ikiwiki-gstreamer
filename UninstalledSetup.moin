@@ -10,6 +10,8 @@ All of this relies heavily on libtool, so how well this works depends a bit on h
 
 There is a [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/scripts/create-uninstalled-setup.sh|small script]] to create a basic uninstalled setup and checkout for the master branch (=0.11/1.0) or 0.10 branch (without actually compiling the modules though), you can get it from here: http://cgit.freedesktop.org/gstreamer/gstreamer/tree/scripts/create-uninstalled-setup.sh .
 
+'''Important: you may need to install a fairly large number of packages in order to build a fully-featured GStreamer with plugins.''' Check out the BuildDependenciesFedora page or the BuildDependenciesDebianUbuntu page for some hints.
+
 By default git versions of GStreamer are compiled with {{{-Werror}}}, which means the build will abort with an error if anything causes a compiler warning.
 
 If this happens, for whatever reason, please file a bug with the details (warning message etc.). You can work around it either by doing:
