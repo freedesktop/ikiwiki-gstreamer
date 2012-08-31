@@ -1,9 +1,11 @@
 == GStreamer Conference 2012 Slides ==
 
- * [[http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2012/GStreamer_NVESD.odp | Stephen Burks and Joshua Doe ]]
+ * [[http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2012/GStreamer_NVESD.odp | Stephen Burks and Joshua Doe - GStreamer for engineering video processing Applications ]]
 
  * [[http://t.co/2UZwEwMj |Jason Gerard DeRose - Improving GStreamer Quality]]
 
  * [[attachment:aurena-presentation.pdf | Jan Schmidt - Multi-room playout (Home Area entertainment)]] [[https://github.com/thaytan/aurena | GitHub Aurena sources]]
 
  * [[attachment:playing_in_the_sandbox.pdf | Guillaume Emont - Playing in the Sandbox]]
+ * [[http://people.igalia.com/vjaquez/talks/gstconf2012.pdf | Víctor M. Jáquez L. - Development of hardware-based elements for GStreamer v1.0]] [[https://gitorious.org/vjaquez-misc/kmsdce-talk | Sources ]]
+ * [[http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2012/hv_v4l2_gstreamer2012.odp | Hans Verkuil - V4L2 status report]]
