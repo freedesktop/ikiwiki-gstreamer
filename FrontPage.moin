@@ -8,7 +8,6 @@ This wiki serves as a scratchpad for tasks, design discussions and the like.
 == General ==
  * [[Plugins]] and MorePlugins: listings of official and external plugin modules
  * ReleasePlanning: schedule for code freezes and planning for dates
- * [[GStreamerHackfest2012]]: Hackfest/Codesprint in Malaga, Spain - January 2012
  * DesignDiscussions: drafting new features
  * TaskList: standalone tasks for anyone to take, Google SoC planning
  * [[FAQ]]: frequently asked questions
@@ -17,7 +16,10 @@ This wiki serves as a scratchpad for tasks, design discussions and the like.
  * General documentation about GStreamer libraries and plugins can be found on the [[http://gstreamer.freedesktop.org/documentation/|GStreamer Documentation Page]]
 
 == Links ==
- * [[http://gstreamer.freedesktop.org/wiki/GStreamerConference2010|GStreamer Conference 2010 slides and videos (now with all videos)]]
+ * [[GStreamerConference2012|GStreamer Conference 2012 (San Diego) - slides and videos]]
+ * [[GStreamerHackfest2012|GStreamer 1.0 Hackfest 2012 (Malaga)]]
+ * [[GStreamerConference2011|GStreamer Conference 2011 (Prague) - slides and videos]]
+ * [[GStreamerConference2010|GStreamer Conference 2010 (Cambridge) slides and videos]]
  * [[http://git.pitivi.org:8010/waterfall|GStreamer build bot]]
  * [[http://lrn.no-ip.info|GStreamer Windows MingW build bot]]
  * [[http://gstreamer.freedesktop.org/wiki/ReleasePlanning2010|Release Planning 2010]]
