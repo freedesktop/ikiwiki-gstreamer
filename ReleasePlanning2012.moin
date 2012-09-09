@@ -10,6 +10,8 @@ This is a tentative schedule for releases for the remainder of 2012:
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> Aug 08 || '''Core/Base/Good/Ugly/Bad/gst-libav 0.11.93 release''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ~Sep 12 || '''Core/Base/Good/Ugly/Bad/gst-libav 0.11.94 release''' ? ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ~Sep 17 || '''Core/Base/Good/Ugly/Bad/gst-libav 0.11.99 release (1.0 release candidate)''' ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ~Sep 17 || git master frozen for release, important bug fixes only ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ~Sep 22 || '''Core/Base/Good/Ugly/Bad/gst-libav 1.0.0''' release off git master ||
