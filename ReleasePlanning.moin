@@ -2,9 +2,9 @@
 
 === Upcoming Releases ===
 
-For information about upcoming GStreamer releases, see the [[ReleasePlanning2011|2011 Release Schedule]].
+For information about upcoming GStreamer releases, see the [[ReleasePlanning2012|2012 Release Schedule]].
 
-Information about the different types of [[ReleasePlanning/Freezes|Freezes]]
+Information about the different types of [[ReleasePlanning/Freezes|Freezes]] (out of date).
 
 Information about the most likely [[ReleasePlanning/GLibRequirement|version of GLib required]] for upcoming releases.
 
@@ -17,3 +17,4 @@ For information about historical releases, see the older release planning pages:
  * [[ReleasePlanning2009-1|2009 Release Schedule Jan-June]]
  * [[ReleasePlanning2009-2|2009 Release Schedule July-Dec]]
  * [[ReleasePlanning2010|2010 Release Schedule]]
+ * [[ReleasePlanning2011|2011 Release Schedule]]
