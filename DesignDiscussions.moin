@@ -5,17 +5,12 @@
 Space for drafting new features.
 
  * Core:
-  * BufferMetadata: variable extra data keept with buffers.
-  * NewCapsFields: discuss new caps fields
-  * NewGstVideo: discuss replacement for gst-libs/gst/video API for caps parsing/building of raw yuv/rgb types
+  * ---(BufferMetadata: variable extra data keept with buffers)--- (obsolete)
+  * ---(NewCapsFields: discuss new caps fields)--- (obsolete)
+  * ---(NewGstVideo: discuss replacement for gst-libs/gst/video API for caps parsing/building of raw yuv/rgb types)--- (obsolete)
 
  * Base classes:
-  * GstBaseParse: parser base class
-  * GstBaseDemux: demuxer base class
-  * GstBaseDecode: decoder base class
-  * GstBaseMux: muxer base class
-  * GstBaseEncode: encoder base class
-  * GstTagMux: tag muxer base class
+  * ---(GstBaseParse: parser base class)--- (obsolete)
 
  * Bins:
   * CameraBin : still and video camera capture
