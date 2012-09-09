@@ -1,0 +1,91 @@
+= GStreamer release schedule for 2012 =
+
+Proposed release schedule / roadmap for the year 2012.
+
+== Summary Schedule ==
+This is a tentative schedule for releases for the remainder of 2012:
+||<style="text-align: center;"> '''Date''' || '''Task''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Feb 20 || '''Core 0.10.36, Base 0.10.36, Good 0.10.31, Ugly 0.10.19, Bad 0.10.23 stable releases''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> Aug 08 || '''Core/Base/Good/Ugly/Bad/gst-libav 0.11.93 release''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ~Sep 17 || '''Core/Base/Good/Ugly/Bad/gst-libav 0.11.99 release (1.0 release candidate)''' ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ~Sep 17 || git master frozen for release, important bug fixes only ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ~Sep 22 || '''Core/Base/Good/Ugly/Bad/gst-libav 1.0.0''' release off git master ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ~Sep 22 || git master still frozen, bug fixes only ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ~Sep 29 || Core/Base/Good/Ugly/Bad/gst-libav 1.0.1 bug-fix release off git master ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ~Sep 29 || git master open for commits again, bug fixes only ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ~Oct 14 || Core/Base/Good/Ugly/Bad/gst-libav 1.0.2 bug-fix release off git master ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ~Oct 28 || Core/Base/Good/Ugly/Bad/gst-libav 1.0.3 bug-fix release off git master ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ~Oct 29 || git 1.0 branch created for further 1.0.x bug-fixing  ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ~Oct 29 || git master becomes 1.1.x, open for new development and bug-fixing ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ~Nov 11 || Core/Base/Good/Ugly/Bad/gst-libav 1.0.4 bug-fix release off 1.0 branch ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ~Nov 25 || Core/Base/Good/Ugly/Bad/gst-libav 1.0.5 bug-fix release off 1.0 branch ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ~Dec 09 || Core/Base/Good/Ugly/Bad/gst-libav 1.0.6 bug-fix release off 1.0 branch ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ~December ? || '''Core/Base/Good/Ugly/Bad/gst-libav 1.2.0''' release off git master ||
+
+gst-libav, gst-python, gnonlin and gst-editing-services releases may be done ad-hoc or in any of these cycles as well.
+
+== New Versioning Scheme ==
+
+All 1.x.y versions will carry a -1.0 API version suffix.
+
+ * 1.0.0, 1.0.1, 1.0.2, 1.0.3... stable release and follow-up bug-fix releases
+ * 1.1.0, 1.1.1, 1.1.2, 1.1.3... pre-releases, development version leading up to 1.2.0
+ * 1.2.0, 1.2.1, 1.2.2, 1.2.3... stable release and follow-up bug-fix releases
+ * 1.3.0, ..
+ * 1.4.0, ..
+ * ...
+
+2.0.0 would be the next ABI break, with "-2.0" as API version suffix (the unstable development versions leading up to it would be 1.99.x with a -1.99 API suffix).
+
+
+== More frequent bug-fix releases ==
+
+1.x.1, 1.x.2, 1.x.3 etc. are stable follow-up bug-fix releases for the stable 1.x.0 release, for even values of x (0, 2, 4, 6..).
+
+Bug-fix releases may be made from git master or from a 1.x bug-fix branch into which fixes are cherry-picked from git master.
+
+Bug-fix releases will usually not feature new API (at best minor additions like a new utility function or property).
+
+There will be no plugin moves, renaming or plugin merges within a stable bug-fix series.
+
+
+== Process (not entirely up-to-date) ==
+
+At the moment there are six GStreamer modules included in the schedule, which are regularly released:
+
+ * GStreamer Core
+ * GStreamer Base Plugins
+ * GStreamer Good Plugins
+ * GStreamer Bad Plugins
+ * GStreamer Ugly Plugins
+ * GStreamer Libav Plugins (formerly GStreamer FFmpeg)
+
+Each module will see a major stable release (a new 1.x.0 for even x) every few months. Each major stable release will see a few follow-up 1.x.y bug-fix releases.
+
+Modules not included in the release schedule:
+
+ * Gnonlin - released ad-hoc as maintainer sees fit
+ * GStreamer Editing Services (GES) - released ad-hoc as maintainer sees fit
+ * GStreamer Openmax (gst-omx) - released ad-hoc as maintainer sees fit
+ * GStreamer OpenGL support - released ad-hoc as maintainer and/or active developers see fit
+ * GStreamer RTSP server library - released ad-hoc as maintainer sees fit
+ * GStreamer Streaming Server (GSS) - released ad-hoc as maintainer sees fit
+ * QT-GStreamer - released ad-hoc as maintainer sees fit
+
+<<Anchor(PluginMoves)>>
+
+== Plugin Moves ==
+
+From time to time, plugins improve in quality sufficiently to warrant moving them from Bad to Good or Bad to Ugly (or sometimes vice versa in cases of neglect). Such plugin moves require simultaneous releases of the modules involved so that we never ship tarballs with conflicting installed plugins.
+
+Plugin moves will only happen during a development series (1.1.x, 1.3.x, etc.) in git master, leading up to a new major stable release (1.2.0, 1.4.0, 1.6.0). No plugin moves will happen within a bug-fix release series.
