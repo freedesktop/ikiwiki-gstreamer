@@ -15,6 +15,11 @@ On Ubuntu you might try these as well in addition to the above:
 sudo apt-get build-dep gstreamer0.10-plugins-ugly-multiverse gstreamer0.10-plugins-bad-multiverse
 }}}
 
+If you are building 0.11 and still receiving errors about missing basic build tools or dependencies, try:
+{{{
+sudo apt-get install pkg-config libglib2.0-dev liborc-0.4-dev bison flex
+}}} 
+
 For gst-plugins-gl:
 {{{
 sudo apt-get install libglew1.5-dev libpng12-dev
