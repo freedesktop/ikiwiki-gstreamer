@@ -2,7 +2,9 @@
 
 GStreamer doesn't operate feature-based road map planning of any kind. People work on what they feel like working on, what they have time to work on, and what happens to come up.
 
-This road map is simply an indication of what ''might'' land in future versions. If you are a GStreamer developer, feel free to add items here that you intend or hope to work.
+This road map is simply an indication of what new features ''might'' land in future versions.
+
+If you are a GStreamer developer, feel free to add items here that you intend or hope to work.
 
 === Dates ===
 
