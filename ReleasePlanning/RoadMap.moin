@@ -23,6 +23,7 @@ These are tentative at best, [[ReleasePlanning2012|full schedule here]]:
  * buffer pool drain for v4l2src renegotiation: [[https://bugzilla.gnome.org/show_bug.cgi?id=682770|bug #682770]]
  * video/x-surface replacement and playbin re-enablement
  * hardware-accelerated video decoding (vdpau/vaapi)
+ * integrate bluetooth elements from bluez-gstreamer and port them to 1.0
  * ''fill me''
 
 === 1.4 ===
