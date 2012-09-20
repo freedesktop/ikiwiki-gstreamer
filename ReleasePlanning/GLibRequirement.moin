@@ -18,6 +18,15 @@ This will roughly result in a schedule like this:
 
 === Estimated GLib requirement of core/base versions ===
 
+==== 1.0 ====
+
+ * '''1.0.0''', to be released around 23-Sep-2012: GLib 2.32
+ * '''1.0.x''', same as 1.0.0
+ * '''1.2.0''', to be released around mid-Dec-2012: GLib 2.32 or 2.34
+ * '''1.2.x''', same as 1.2.0
+
+==== 0.10 ====
+
 (this is based on the original proposal to check after each release; Mike suggested to only check after every second release, but that doesn't really seem to change that much in practice)
 
  * '''0.10.23''', released around 20-Apr-2009: GLib 2.14
