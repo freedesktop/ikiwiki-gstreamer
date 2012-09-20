@@ -60,6 +60,7 @@ Bug-fix releases will usually not feature new API (at best minor additions like 
 
 There will be no plugin moves, renaming or plugin merges within a stable bug-fix series.
 
+There will be no upping of version requirements of libraries we depend on (e.g. GLib or libraries plugins depend on) within a stable bug-fix series.
 
 == Process (not entirely up-to-date) ==
 
