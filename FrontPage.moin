@@ -8,6 +8,7 @@ This wiki serves as a scratchpad for tasks, design discussions and the like.
 == General ==
  * [[Plugins]] and MorePlugins: listings of official and external plugin modules
  * ReleasePlanning: schedule for code freezes and planning for dates
+ * [[ReleasePlanning/RoadMap|RoadMap]]: road map
  * DesignDiscussions: drafting new features
  * TaskList: standalone tasks for anyone to take, Google SoC planning
  * [[FAQ]]: frequently asked questions
