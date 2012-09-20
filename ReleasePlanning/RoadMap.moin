@@ -6,9 +6,9 @@ This road map is simply an indication of what new features ''might'' land in fut
 
 If you are a GStreamer developer, feel free to add items here that you intend or hope to work.
 
-=== Dates ===
+=== Schedule ===
 
-These are tentative at best:
+These are tentative at best, [[ReleasePlanning2012|full schedule here]]:
 
  * '''2012-Sep''': 1.0.0 stable
  * '''2012-Nov''': 1.1.0 development
