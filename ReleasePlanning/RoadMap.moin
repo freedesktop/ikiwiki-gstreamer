@@ -24,9 +24,16 @@ These are tentative at best, [[ReleasePlanning2012|full schedule here]]:
  * video/x-surface replacement and playbin re-enablement
  * hardware-accelerated video decoding (vdpau/vaapi)
  * integrate bluetooth elements from bluez-gstreamer and port them to 1.0
+ * GVariant registry
  * ''fill me''
+
+ * plugin moves:
+   * rtpmux from -bad to -good
+   * camerabin from -bad to -good (incl. basecamerabin library and photography interface)
+   * consolidate tag-related elements in a new -base/gst/tag/ plugin (id3mux from -bad, icydemux, ape*, id3*, etc.)
 
 === 1.4 ===
 
  * device discovery and probing, GstPropertyProbe replacement: [[https://bugzilla.gnome.org/show_bug.cgi?id=678402|bug #678402]]
+ * gst-plugins-bad split ?
  * ''fill me''
