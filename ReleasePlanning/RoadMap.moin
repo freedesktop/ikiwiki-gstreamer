@@ -29,7 +29,7 @@ These are tentative at best, [[ReleasePlanning2012|full schedule here]]:
 
  * plugin moves:
    * rtpmux from -bad to -good
-   * camerabin from -bad to -good (incl. basecamerabin library and photography interface)
+   * camerabin from -bad to -base (incl. basecamerabin library and photography interface)
    * consolidate tag-related elements in a new -base/gst/tag/ plugin (id3mux from -bad, icydemux, ape*, id3*, etc.)
 
 === 1.4 ===
