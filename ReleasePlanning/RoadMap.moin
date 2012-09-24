@@ -32,8 +32,12 @@ These are tentative at best, [[ReleasePlanning2012|full schedule here]]:
    * camerabin from -bad to -base (incl. basecamerabin library and photography interface)
    * consolidate tag-related elements in a new -base/gst/tag/ plugin (id3mux from -bad, icydemux, ape*, id3*, etc.)
 
+ * [[https://bugzilla.gnome.org/buglist.cgi?product=GStreamer&target_milestone=1.1.x|Show all bugs with target milestone 1.1.x]]
+
 === 1.4 ===
 
  * device discovery and probing, GstPropertyProbe replacement: [[https://bugzilla.gnome.org/show_bug.cgi?id=678402|bug #678402]]
  * gst-plugins-bad split ?
  * ''fill me''
+
+ * [[https://bugzilla.gnome.org/buglist.cgi?product=GStreamer&target_milestone=1.3.x|Show all bugs with target milestone 1.3.x]]
