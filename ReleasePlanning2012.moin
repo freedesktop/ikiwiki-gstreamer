@@ -26,9 +26,9 @@ This is a tentative schedule for releases for the remainder of 2012:
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ~Oct 14 || Core/Base/Good/Ugly/Bad/gst-libav 1.0.2 bug-fix release off git master ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> ~Oct 28 || Core/Base/Good/Ugly/Bad/gst-libav 1.0.3 bug-fix release off git master ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> ~Oct 29 || git 1.0 branch created for further 1.0.x bug-fixing  ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> ~Oct 29 || git master becomes 1.1.x, open for new development and bug-fixing ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ~Oct 28 || Core/Base/Good/Ugly/Bad/gst-libav 1.0.3 bug-fix release off git master or 1.0 branch ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ~Oct 16-29 || git 1.0 branch created for further 1.0.x bug-fixing  ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ~Oct 16-29 || git master becomes 1.1.x, open for new development and bug-fixing ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ~Nov 11 || Core/Base/Good/Ugly/Bad/gst-libav 1.0.4 bug-fix release off 1.0 branch ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
