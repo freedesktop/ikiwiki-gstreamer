@@ -25,6 +25,8 @@ These are tentative at best, [[ReleasePlanning2012|full schedule here]]:
  * hardware-accelerated video decoding (vdpau/vaapi)
  * integrate bluetooth elements from bluez-gstreamer and port them to 1.0
  * GVariant registry
+ * RFC6051 (Rapid Synchronisation of RTP Flows): http://www.ietf.org/rfc/rfc6051.txt
+ * Initial work for RTP retransmission
  * ''fill me''
 
  * plugin moves:
