@@ -34,6 +34,7 @@ These are tentative at best, [[ReleasePlanning2012|full schedule here]]:
    * camerabin from -bad to -base (incl. basecamerabin library and photography interface)
    * consolidate tag-related elements in a new -base/gst/tag/ plugin (id3mux from -bad, icydemux, ape*, id3*, etc.)
    * move scaletempo from -bad to -good
+   * move VP8 RTP payloader/depayloader to -good
 
  * [[https://bugzilla.gnome.org/buglist.cgi?product=GStreamer&target_milestone=1.1.x|Show all open bugs with target milestone 1.1.x]]
  * [[https://bugzilla.gnome.org/buglist.cgi?product=GStreamer&target_milestone=1.1.x&target_milestone=1.1.1&target_milestone=1.1.2&target_milestone=1.1.3&target_milestone=1.1.4&target_milestone=1.1.5&target_milestone=1.1.6&target_milestone=1.1.7&target_milestone=1.1.8&target_milestone=1.1.9&bug_status=RESOLVED|Show all resolved bugs with target milestone 1.1.x]]
