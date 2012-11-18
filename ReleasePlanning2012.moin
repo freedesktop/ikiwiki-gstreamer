@@ -35,7 +35,9 @@ This is a tentative schedule for releases for the remainder of 2012:
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ~Dec 16 || '''Core/Base/Good/Ugly/Bad/gst-libav 1.0.5''' bug-fix release off 1.0 branch ||
 ||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
-||<bgcolor="#c5d2c8" style="text-align: center;"> ~December ? || '''Core/Base/Good/Ugly/Bad/gst-libav 1.2.0''' release off git master ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ~December || '''Core/Base/Good/Ugly/Bad/gst-libav 1.1.1''' development release off git master ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ... || ... ||
+||<bgcolor="#c5d2c8" style="text-align: center;"> ~December ? || '''Core/Base/Good/Ugly/Bad/gst-libav 1.2.0''' stable release off git master ||
 
 gst-libav, gst-python, gnonlin and gst-editing-services releases may be done ad-hoc or in any of these cycles as well.
 
