@@ -10,6 +10,7 @@ If you do that then any kind of project you can think of using GStreamer has a g
   * [[SrtpSupport]]: Write plugins to support sRTP (and maybe zRTP)
   * [[ChapterSupport]]: Implement chapter support in more plugins
   * [[OpencvGestureDetection]] : Implement an opencv plugin for gesture detection (eg: hand gesture)
+  8 [[Moovit]]: Implement a wrapper plugin for the Moovit GPU accelerated library
  * applications
   * [[Pitivi]]: Improve Pitivi
   * [[Buzztard]]: Improve Buzztard
