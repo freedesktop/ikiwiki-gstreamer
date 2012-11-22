@@ -1,0 +1,15 @@
+= Moovit  =
+
+== Background ==
+To edit HD video it would be good to have more GPU based elements. Movit, a free C++ library for video effects processing that completely relies on GPU.
+
+== Resources ==
+
+http://libregraphicsworld.org/blog/entry/introducing-movit-free-library-for-gpu-side-video-processing
+
+'''Mentor: #pitivi on IRC'''
+
+Back to [[TaskList]]  
+
+----
+[[CategoryGSOC2013]] CategoryTasks
