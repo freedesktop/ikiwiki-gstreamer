@@ -1,53 +1,60 @@
 {{http://www.petraxcountertops.ca/image/QuestionMark.jpg}}
 
-= GStreamer 1.0 applications and bindings Hackfest/Sprint =
-'''Location to be determined - Current options include Latvia and Brno (both with offers of free hosting) and maybe Milan'''
+= GStreamer Hackfest/Sprint =
 
-'''Primary contact:''' (!) ChristianSchaller <<BR>>'''Secondary contact:''' (!) TimMüller
+'''Location to be determined''' - Current options include Latvia and Brno (both with offers of free hosting) and maybe Milan. Should be easy to reach, with reasonably-priced accommodation available, and ideally a free or at least cheap venue.
+
+'''Primary contact:''' ChristianSchaller <<BR>>'''Secondary contact:''' TimMüller
 
 == Relevant GNOME/KDE/Other team ==
-(!) Multimedia
+
+ * Multimedia
+ * application developers
+ * binding developers
 
 == Description ==
-(!) The goal of this hackfest is to follow-up on the pre-1.0 hackfest and try to fill in any gaps still open and set some initial goals for the GStreamer 1.0 lifecycle.
+
+The goal of this hackfest is to follow up on last year's GStreamer 1.0 hackfest, try to fill in any gaps that are still open, and to discuss or hack on anything and everything GStreamer-related. Maybe even fix a few bugs.
 
 === Agenda, goals ===
-(!) GStreamer 1.0 roadmap and todo list
 
-=== Measuring your success ===
-(!) World Domination
+ * GStreamer [[ReleasePlanning/RoadMap|RoadMap]]
+ * add your goals here
 
 === Attendants ===
+
 Please add your name here if you are interested in attending even if you are not sure you will be able to, as we want to meaure general interest.. We will be offering some travel sponsorship for this event, hopefully in collaboration  with the GNOME Foundation and KDE E.v. 
 
 Please add your name and project affiliation below:
 
-(!) Wim Taymans, GStreamer 1.0 lead designer and maintainer
+ * Wim Taymans, GStreamer 1.0 lead designer and maintainer
 
-(!) Christian Schaller, Transmageddon
+ * Christian Schaller, Transmageddon
 
-(!) Tim Müller, GStreamer Core, Totem
+ * Tim Müller, GStreamer developer, Totem developer
 
 
 If you don't have a wiki account (and don't want to create one), you can email christian(.)schaller(at)gmail(.)com and I can add your name myself.
 
 === Venue ===
 
+ * TBD
 
 === Costs ===
+
 There is no attendance cost and the GStreamer project is not looking for any external sponsorship for the event in terms of help to cover venue rent or similar.
+
 We might get some companies to sponsor lunches and maybe dinners specifically, so we might go around to the usual suspects to ask for that.
 
 === Current sponsors ===
 
-
-
 == How to get there ==
 
+ * TBD
 
 == Accommodation and food ==
-We aim to provide free lunch at the venue and at least one dinner. 
 
+We aim to provide free lunch at the venue and at least one dinner. 
 
 
 === Previous discussions, organization threads, drafts, relevant links, etc ===
