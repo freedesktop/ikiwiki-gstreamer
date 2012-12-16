@@ -30,10 +30,10 @@ These are tentative at best, [[ReleasePlanning2012|full schedule here]]:
  * ''fill me''
 
  * plugin moves:
-   * rtpmux from -bad to -good
+   * ---(rtpmux from -bad to -good)---
    * camerabin from -bad to -base (incl. basecamerabin library and photography interface)
    * consolidate tag-related elements in a new -base/gst/tag/ plugin (id3mux from -bad, icydemux, ape*, id3*, etc.)
-   * move scaletempo from -bad to -good
+   * ---(move scaletempo from -bad to -good)---
    * move VP8 RTP payloader/depayloader to -good
 
  * [[https://bugzilla.gnome.org/buglist.cgi?product=GStreamer&target_milestone=1.1.x|Show all open bugs with target milestone 1.1.x]]
