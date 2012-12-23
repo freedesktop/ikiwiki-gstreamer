@@ -18,6 +18,7 @@ The goal of this hackfest is to follow up on last year's GStreamer 1.0 hackfest,
  * Fix GNonLin for 1.x
  * Fix the deadlocks and most serious bugs in stack affecting Pitivi (Jeff will provide testing samples and reproduceability)
  * Make a Pitivi release (or at least a testing/preview release)
+ * Port Buzztard to GStreamer 1.x
  * add your goals here
 
 === Attendants ===
@@ -40,6 +41,8 @@ Please add your name and project affiliation below:
  * Jeff Fortin, Pitivi
 
  * Thibault Saunier, Pitivi and GES
+
+ * Stefan Sauer, GStreamer & Buzztard developer
 
 If you don't have a wiki account (and don't want to create one), you can email christian(.)schaller(at)gmail(.)com and I can add your name myself.
 
