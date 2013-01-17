@@ -19,6 +19,7 @@ The goal of this hackfest is to follow up on last year's GStreamer 1.0 hackfest 
  * Fix the deadlocks and most serious bugs in stack affecting Pitivi (Jeff will provide testing samples and reproduceability)
  * Make a Pitivi release (or at least a testing/preview release)
  * Port Buzztard to GStreamer 1.x
+ * Get gst-python to a releasable state
  * add your goals here
 
 === Attendants ===
@@ -45,6 +46,8 @@ Please add your name and project affiliation below:
  * Stefan Sauer, GStreamer & Buzztard developer
  
  * Edward Hervey, GStreamer and GES
+ 
+ * Alessandro Decina, GStreamer
 
 If you don't have a wiki account (and don't want to create one), you can email christian(.)schaller(at)gmail(.)com and I can add your name myself.
 
