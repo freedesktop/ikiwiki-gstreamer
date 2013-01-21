@@ -24,15 +24,6 @@ Space for drafting new features.
 
  * Presets (Profiles)
   * PresetDesign: Combining GStreamer element presets with devices
-
----- /!\ '''Edit conflict - other version:''' ----
   * DeviceProfiles: device encoding profiles for GStreamer
 
  * ZeroPointEleven: GStreamer 0.11 / 1.0 discussions
-
----- /!\ '''Edit conflict - your version:''' ----
-  * DeviceProfile: device encoding profiles for GStreamer
-
- * ZeroPointEleven: GStreamer 0.11 / 1.0 discussions
-
----- /!\ '''End of edit conflict''' ----
