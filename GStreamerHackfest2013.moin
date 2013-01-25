@@ -21,6 +21,7 @@ The goal of this hackfest is to follow up on last year's GStreamer 1.0 hackfest 
  * Port Buzztard to GStreamer 1.x
  * Get gst-python to a releasable state
  * Extend encodebin API to allow for profile selection
+ * Device enumeration and monitoring API
  * add your goals here
 
 === Attendants ===
@@ -51,6 +52,8 @@ Please add your name and project affiliation below:
  * Alessandro Decina, GStreamer
 
  * Peteris Krisjanis, GStreamer and Jokosher
+
+ * Olivier Crête, GStreamer, Farstream, etc
 
 If you don't have a wiki account (and don't want to create one), you can email christian(.)schaller(at)gmail(.)com and I can add your name myself.
 
