@@ -22,6 +22,7 @@ The goal of this hackfest is to follow up on last year's GStreamer 1.0 hackfest 
  * Get gst-python to a releasable state
  * Extend encodebin API to allow for profile selection
  * Device enumeration and monitoring API
+ * Hardware codecs and GL integration
  * add your goals here
 
 === Attendants ===
@@ -35,7 +36,7 @@ Please add your name and project affiliation below:
 
  * Tim Müller, GStreamer developer (need accommodation)
 
- * Sebastian Dröge, GStreamer developer
+ * Sebastian Dröge, GStreamer developer (need accomodation)
 
  * ---(Jan Schmidt, Senior mischief maker)---
 
