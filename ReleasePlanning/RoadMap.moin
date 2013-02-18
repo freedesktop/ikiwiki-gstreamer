@@ -21,12 +21,12 @@ These are tentative at best, [[ReleasePlanning2013|full schedule here]]:
 === 1.2 ===
 
  * buffer pool drain for v4l2src renegotiation: [[https://bugzilla.gnome.org/show_bug.cgi?id=682770|bug #682770]]
- * video/x-surface replacement and playbin re-enablement
- * hardware-accelerated video decoding (vdpau/vaapi)
+ * video/x-surface replacement and playbin re-enablement (probably not this cycle)
+ * hardware-accelerated video decoding (vdpau/vaapi) (probably not this cycle)
  * integrate bluetooth elements from bluez-gstreamer and port them to 1.0: [[https://bugzilla.gnome.org/show_bug.cgi?id=690582|bug #690582]]
- * GVariant registry
- * RFC6051 (Rapid Synchronisation of RTP Flows): http://www.ietf.org/rfc/rfc6051.txt
- * Initial work for RTP retransmission
+ * GVariant registry (probably not this cycle)
+ * RFC6051 (Rapid Synchronisation of RTP Flows): http://www.ietf.org/rfc/rfc6051.txt (probably not this cycle)
+ * Initial work for RTP retransmission (probably not this cycle)
  * ''fill me''
 
  * plugin moves:
