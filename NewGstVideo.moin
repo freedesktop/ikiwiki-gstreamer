@@ -1,0 +1,54 @@
+Collection of thoughts on new raw video caps and utility API for building/parsing these caps.
+
+The caps themselves (to replace {{{video/x-raw-{yuv,rgb,gray,etc} }}}) should support:
+ * stride
+ * interlaced buffer layout possibilities
+ * stereo buffer layout possibilities
+ * combinations of the above
+ * use fourcc's, or some fourcc-like value for rgb/grey caps (maybe string.. quarks for fast '==' comparison)
+   * note that if all raw video formats are supported w/ some fourcc-like value, then perhaps the caps name should just be {{{video/x-raw}}}
+   * what about bayer?
+
+And should be flexible enough to support addition of new features later.  Which means some way to negotiate between different elements which may or may not support the new feature.
+
+To this end, direct parsing of video/raw caps by the elements should be discouraged, and likewise direct access to buffer data.  Instead gstvideo API should be used to parse caps into a video descriptor struct, and then accessor functions to return information like row/pixel stride, get offset to various position in buffer (ie. find ptr to beginning of 2nd field of right frame of video, which may or may not be interlaced and/or stereo)..
+
+Note that existing {{{gst-libs/gst/video/video.[ch]}}} should be replaced as it does not scale well to add new features.  For example, functions to calculate rowstride would all need to have an additional parameter added to deal with strided buffers.
+
+Some features like rowstride can be added somewhat transparently, because it is only a matter of calculation of certain positions within the raw data.  Others, like stereo, probably require the element to have a fundamental understanding of the format.  Maybe this can be handled, and allow certain room for extension in the future with a features bitmask. ie. something like:
+
+{{{#!c
+#define MY_RAW_FEATURES  (GST_VIDEO_INTERLACED | GST_VIDEO_STRIDED) /* but not GST_VIDEO_STEREO */
+
+...
+  GstVideo desc;
+  gst_video_parse_caps (&desc, caps);
+  if (desc.features & ~MY_RAW_FEATURES) {
+     ... I don't support this ...
+     return FALSE;
+  }
+}}}
+(a bitmask does limit number of features that could be added.. but how many possible features could there be?)
+
+Open points:
+ * some formats, like I420, could have two differing definitions of rowstride. (1) U and V planes have same stride in bytes as Y, or (2) U and V planes have 1/2 stride as Y.
+ * in some cases, it might be nice to have some flexibility to allow support for non-packed planar/semi-planar formats.  In some cases where decoder requires padding or cropping for edges, or certain alignment requirements, the U and V planes may not start immediately after the previous frame.
+
+= Interlaced caps =
+
+= RGB/grey caps =
+
+= Stereo video support in an existing branch =
+
+Stereo caps have been proposed in a Google Summer of Code development branch (see [[http://gitorious.org/video3d/video3d]]).  One of the important points in choosing how to extend existing caps to support a way to specify whether the video stream was stereo or not was the fact that we don't want existing plugins to accept silently a stereo stream and treat it as normal stream, as the interpretation of a {{{width x height}}} buffer is totally different if the buffer is stereo or not.  Therefore, the addition of a field such as {{{"stereo=true"}}} or {{{"channels=2"}}} to existing video caps was not used.
+
+Instead, the new caps use new media-types : {{{video/x-raw-{yuv,rgb,gray}-stereo}}}.  The addition of the {{{"-stereo"}}} to the media-type makes sure that existing plugins won't accept these caps.  The new caps that are to replace {{{video/x-raw-{yuv,rgb,gray,etc}}}} could add something like {{{-full}}} during integration of these new caps in order to keep compatibility with existing plugins.
+
+The only addition in the caps for the {{{"-stereo"}}} variants is a new {{{layout}}} field:
+ * GST_VIDEO3D_LAYOUT_MEMORY_CONSECUTIVE:
+ * GST_VIDEO3D_LAYOUT_ROW_INTERLEAVED:
+This might need need more variants as:
+ * GST_VIDEO3D_LAYOUT_MEMORY_CONSECUTIVE_LEFT_RIGHT:
+ * GST_VIDEO3D_LAYOUT_MEMORY_CONSECUTIVE_RIGHT_LEFT:
+ * GST_VIDEO3D_LAYOUT_ROW_INTERLEAVED_LEFT_RIGHT:
+ * GST_VIDEO3D_LAYOUT_ROW_INTERLEAVED_RIGHT_LEFT:
