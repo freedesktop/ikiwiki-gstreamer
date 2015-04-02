@@ -1,0 +1,28 @@
+
+
+# Generated Format Testdata
+
+
+## Background
+
+As one can see from the [[test coverage reports|http://gstreamer.freedesktop.org/data/coverage/lcov/]] we lack of in depth testing on the demuxers and parsers. Testing those is important to be able to deliver standard compliant and robust implementation. Shipping a huge ammount of testfiles with the tests is not feasable. 
+
+
+## Task
+
+The scope of the project would be to use a tool to generate a set of testdata form a formal format description. One such tool that could be used is [[peach fuzzer|http://peachfuzzer.com/]]. The idea here is to generate not all possible mutationl of a file (which is close to impossible), but instead create a subset that is likely to trigger the majority of bugs. To give an example, one would create variants of wav files that contain 0,1,2,17,255 audio-channels - 1 and two would be likely cases, 0 and 255 corner cases and 17 a random value in the middle. 
+
+
+## Resources
+
+* [[GStreamer test coverage|http://gstreamer.freedesktop.org/data/coverage/lcov/]] 
+* [[peach fuzzer|http://peachfuzzer.com/]] 
+**Mentor: Stefan Kost - ensonic on IRC** 
+
+Back to [[TaskList|TaskList]]   
+
+
+
+---
+
+ [[CategoryGSOC2010|CategoryGSOC2010]] [[CategoryTasks|CategoryTasks]] 
