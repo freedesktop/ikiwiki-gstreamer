@@ -1,0 +1,24 @@
+
+It is possible to hack on or develop against a so-called 'uninstalled' version of GStreamer. 
+
+This means you can just checkout and build a copy of GStreamer somewhere in your home directory and test it without affecting your system installation. 
+
+If needed, you can also install newer versions of libraries GStreamer requires into the uninstalled directory without those libraries affecting your system installation. This is particularly useful if you want to play with the latest GStreamer 0.11, but don't have a bleeding edge GLib version yet. 
+
+All of this relies heavily on libtool, so how well this works depends a bit on how your distro patches libtool, but it should work fine at least with debian sid and most versions of ubuntu. 
+
+(An alternative to using an uninstalled setup is jhbuild) 
+
+There is a [[small script|http://cgit.freedesktop.org/gstreamer/gstreamer/tree/scripts/create-uninstalled-setup.sh]] to create a basic uninstalled setup and checkout for the master branch (=0.11/1.0) or 0.10 branch (without actually compiling the modules though), you can get it from here: [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/scripts/create-uninstalled-setup.sh|http://cgit.freedesktop.org/gstreamer/gstreamer/tree/scripts/create-uninstalled-setup.sh]] . 
+
+**Important: you may need to install a fairly large number of packages in order to build a fully-featured GStreamer with plugins.** Check out the [[BuildDependenciesFedora|BuildDependenciesFedora]] page or the [[BuildDependenciesDebianUbuntu|BuildDependenciesDebianUbuntu]] page for some hints. 
+
+By default git versions of GStreamer are compiled with `-Werror`, which means the build will abort with an error if anything causes a compiler warning. 
+
+If this happens, for whatever reason, please file a bug with the details (warning message etc.). You can work around it either by doing: 
+
+
+[[!format txt """
+make ERROR_CFLAGS='' ERROR_CXXFLAGS=''
+"""]]
+or by passing `--disable-fatal-warnings` to ./autogen.sh 
