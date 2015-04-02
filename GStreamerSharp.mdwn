@@ -1,0 +1,16 @@
+
+
+# Finishing/Improving the GStreamer C#/CLI bindings
+
+3 years ago the GStreamer C#/CLI bindings were started as a GSoC project. Unfortunately they didn't reach a releaseable and usable state and nobody worked on it afterwards. This GSoC project is about finishing/improving these bindings. There are still some fundamental issues and a lot of functionality is not included yet. 
+
+Useful skills for this project would be general knowledge about GStreamer and C#, even better would be knowledge about C# bindings in general and GObject-based C# bindings in specific. 
+
+
+## Resources
+
+[[http://cgit.freedesktop.org/gstreamer/gstreamer-sharp/|http://cgit.freedesktop.org/gstreamer/gstreamer-sharp/]] [[http://www.mono-project.com/GAPI|http://www.mono-project.com/GAPI]] 
+
+**Mentor: Sebastian Dröge -- slomo or IRC** 
+
+Back to [[TaskList|TaskList]] 
