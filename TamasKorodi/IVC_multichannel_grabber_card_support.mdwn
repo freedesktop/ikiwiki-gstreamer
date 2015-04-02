@@ -1,0 +1,29 @@
+
+
+# Multichannel video grabber card support and more baseclasses
+
+Currently there are many (video) frame grabber cards and encoder/decoder cards  (mpeg-4, h.264 etc.). Most of the grabber cards have more analog (BNC) input channel. 
+
+Some of them use bttv chip(s) which is supported by the Linux kernel by default so one can use them as a v4l or v4l2 video source. But only for one channel which makes this solution mostly unusable. You can select the source channel but you can't change it (or at least in Gstreamer you should 4x25/sec  stop and play the stream). 
+
+There are frame grabber cards which has not v4l(2) driver but it's own Linux (Windows) kernel driver. In this case you should have to write a Gstreamer source element anyway. The same true for video decoder/encoder cards and such frame grabber card which gives encoded (mpeg-4, h.264 etc.) streams. 
+
+It'd be useful to create good base classes and framework for these type of cards. So generally we need such video source elements which have more output pads which are the grabbed and/or encoded streams each pad will provide one video stream from the grabber card's channels or such video source elements which has one  output pad but they use a common kernel module and/or video device card and can work together. 
+
+**Timeline I would like to follow:** 
+
+April, May: Be familiar with the gstreamer framework and the plugin writers manual it's structure, coding convention and style. Read and understand the current code. 
+
+June: Read and understand the hardware grabber card's docs and it's working, starting with the IVC-100 card (bttv chip). 
+
+July: Write a 4 channel source element for IVC-400 card with a base element which can be used as a base class for all other grabber card (ie. multi channel input element). 
+
+August: Write source elements (using the above base element) for other grabber cards (other cards probably will be: Comart's: [[HiCap|HiCap]], [[XeCap|XeCap]]; Hikvision's 40xxhci) 
+
+
+
+---
+
+ 
+
+* [[CategoryGSOC2008|CategoryGSOC2008]] 
