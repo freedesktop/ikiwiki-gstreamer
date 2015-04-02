@@ -1,0 +1,17 @@
+
+
+# Google SoC
+
+* [[SocProjects|SocProjects]]: List of suggested Summer of Code projects 
+* [[StudentInfo|StudentInfo]]: Information for students considering to apply 
+* [[SocManagement|SocManagement]]: Overview of involved people 
+
+# Other Tasks
+
+* [[MoreBaseClases|MoreBaseClases]]: Create baseclases for decoders, encoders, demuxers and muxers 
+* [[DvdPlayback|DvdPlayback]]: Ongoing work on ResinDVD to suppport full DVD playback. 
+
+
+---
+
+ [[CategoryTasks|CategoryTasks]] 
