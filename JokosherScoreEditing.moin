@@ -1,0 +1,42 @@
+= Score Editing Support For Jokosher =
+
+This would be a project to enable the editing of musical scores directly within Jokosher, allowing for their playback alongside recorded audio and the applying of LADSPA effects to the synthesised output as if it were normal recorded audio.
+
+=== MusicXML handling ===
+
+Rather than dealing with MIDI directly (which could prove very difficult) the score editor should handle all input and output via MusicXML. The musicxml2midi element can then be used in conjunction with the wildmidi element to allow for playback.
+
+In the future a midi2musicxml element (not yet written) should enable direct input to the score editor from MIDI instruments, this eventual use should be considered when making implementation decisions (e.g. it'd be a good idea if the score editor's MusicXML loading code could be reused for this purpose).
+
+=== Extending the EventViewer class ===
+
+The current EventViewer class displays an audio waveform, this could be subclassed to produce a ScoreEventViewer that renders a notation based representation of score events. It will need to scale correctly so that beats/bars in the overall time-line match with those in the score view. The rendering should be handled via Cairo as with the existing EventViewer.
+
+Some simple score editing operations might be made available to the user in this mode, but more detailed editing is likely to be done in a separate score editor window.
+
+=== Score editor ===
+
+It should be possible to open a dedicated score editor window for detailed score editing. Ideally changes made in this window should be instantly propagated to the ScoreEventViewer in the main window.
+
+It might be helpful to look at existing score editors such as MuseScore, however only a small subset of the features offered by such applications would be necessary for this project.
+
+An alternative solution might be to see if it would be possible to launch an instance of MuseScore and have it report changes via dbus or similar (either updating the MusicXML or triggering a reload of the MusicXML). This would likely involve co-ordination with the MuseScore project as the student would probably need to modify MuseScore to provide this sort of information to external applications.
+
+== Resources ==
+
+ * http://www.jokosher.org
+ * http://blog.mikeasoft.com/2010/03/19/gstreamer-musicxml2midi-release-0-1/
+ * http://www.recordare.com/xml.html
+ * http://www.musescore.org
+
+== Skills Desired ==
+
+ * Python
+ * GTK
+ * Cairo
+ * GStreamer
+ * Experience of existing score editors
+
+'''Mentor: Michael Sheldon (Elleo) or Laszlo Pandy (laszlok)'''
+
+Back to SocProjects
