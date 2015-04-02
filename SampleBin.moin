@@ -1,0 +1,90 @@
+= SampleBin =
+Event sounds and games need a convinience api to trigger short sound snippets.
+
+== Concepts ==
+=== Caching ===
+Event sounds and in-game sounds are usually relaive short audio clips (<2sec).
+Having them predecoded would allow to trigger them more or less immediately.
+We could do that by getting a filedescriptor from fileno(tmpfile()) / mkstemp("...XXXXXX")
+and using that with:
+{{{
+gnomevfssrc ! decodebin ! capsfilter ! fdsink sync=false
+}}}
+
+When playing, we would use:
+{{{
+fdsrc ! capsfilter ! volume ! audiopanorama ! adder
+}}}
+
+For uncached sounds we can use:
+{{{
+gnomevfssrc ! decodebin ! volume ! audiopanorama ! adder
+}}}
+
+When doing the cache on demand, we can do:
+{{{
+gnomevfssrc ! decodebin ! tee name=t ! queue ! capsfilter ! fdsink sync=false
+t. queue ! volume ! audiopanorama ! adder
+}}}
+
+Each pipeline-fragment should be implemented as a bin.
+
+=== Mixing ===
+Mixing is done with the adder. It will have one static conection - the background music
+or silence. This keeps the stream continous.
+
+When setting up the mixer we need to setup n playback subpipelines.
+We check if there are samples for each caching mode. Then we create n pipelines of
+each type (voice slots), if there are samples of that type (We need to create
+caching ones if there are cache after use ones).
+For each subpipeline we add a event-probe to the src pad of the audiopanorama
+(the proxy-pad of the bin in fact). This will check for eos in that bin and
+once it gets eos blocks the pad and marks the bin as free. 
+
+When playing a sound, we need to check for a free voice slot. If we found none, we could:
+* kill the one that is finished next
+* kill the one that is the most silent
+* fail
+* ...
+
+For good performance we should add gap handling to the adder.
+
+== API ==
+
+{{{
+gchar* !GstSampleBin::background-music-uri, rw, default=NULL
+// Set an uri to a media file that will be played in a loop. If %NULL silence is used.
+
+gdouble !GstSampleBin::background-music-volume, rw, default=1.0
+// Volume level for background music, unused if there is no background music
+
+
+typedef enum {
+  GST_SAMPLE_BIN_CACHE_NEVER,
+  GST_SAMPLE_BIN_CACHE_ALWAYS,
+  GST_SAMPLE_BIN_CACHE_AFTER_USE
+} !GstSampleBinCacheMode;
+
+glong gst_sample_bin_add_sound(!GstsampleBin *sbin,const gchar *uri, !GstSampleBinCacheMode cache_mode);
+// Set a sound sample clip and eventually preload. Returns a clip-id.
+
+glong gst_sample_bin_remove_sound(!GstsampleBin *sbin, glong clip_id);
+// Remove a sound-clip. All clips are removed when destroying.
+
+gst_sample_bin_play_sound(!GstsampleBin *sbin, glong clip_id, gdouble volume, gdouble pan);
+// Play the sound clip with the given volume and panorama position.
+}}}
+
+= Comments =
+
+ * can we consider mixing as a separate functionnality?
+ * background could be considered as a regular sample
+ * a sample as a (mini)object, shareable in different contexts (refcount), and with attached (dynamic?) properties (vol,pan?,loop,name..)  
+ * add and remove as part of ref/unref and internal sample/memory management
+ * playsound as a method of a sample object, with more state control?: start/stop (as props?)
+-- MarcAndreLureau <<DateTime(2008-02-12T08:47:20Z)>>
+
+ * why mixing as a separate components? it will use adder
+ * the rationale for background is, that we need something to keep adder running, and background would automatically loop on eos (segmented seek)
+ * I want volume and panorama be parameters of play action. then e.g. you can play the same sound at different volumes or pan-positions
+-- StefanKost <<DateTime(2008-02-12T09:20:43Z)>>
