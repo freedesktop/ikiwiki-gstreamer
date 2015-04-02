@@ -1,0 +1,27 @@
+
+
+## Release Planning
+
+
+### Upcoming Releases
+
+For information about upcoming GStreamer releases, see the [[2013 Release Schedule|ReleasePlanning2013]]. 
+
+Information about the different types of [[Freezes|ReleasePlanning/Freezes]] (out of date). 
+
+Information about the most likely [[version of GLib required|ReleasePlanning/GLibRequirement]] for upcoming releases. 
+
+[[RoadMap|ReleasePlanning/RoadMap]] has some details about things people may work on. 
+
+
+### Historical Release Information
+
+For information about historical releases, see the older release planning pages: 
+
+* [[2008 Release Schedule Part 1|ReleasePlanning2008-1]] 
+* [[2008 Release Schedule Part 2|ReleasePlanning2008]] 
+* [[2009 Release Schedule Jan-June|ReleasePlanning2009-1]] 
+* [[2009 Release Schedule July-Dec|ReleasePlanning2009-2]] 
+* [[2010 Release Schedule|ReleasePlanning2010]] 
+* [[2011 Release Schedule|ReleasePlanning2011]] 
+* [[2012 Release Schedule|ReleasePlanning2012]] 
