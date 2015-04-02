@@ -1,0 +1,153 @@
+
+[[!img http://cdn9.wn.com/pd/84/f5/82da7c8f9487316bd8369e8995f3_grande.jpg] 
+
+
+# GStreamer 1.0 applications and bindings Hackfest/Sprint
+
+**Malaga -Spain , 25th to 27th of January 2012** 
+
+**Primary contact:** (!) [[ChristianSchaller|ChristianSchaller]]   
+**Secondary contact:** (!) [[WimTaymans|WimTaymans]] 
+
+
+## Relevant GNOME/KDE/Other team
+
+(!) Multimedia 
+
+
+## Description
+
+(!) The goal of this hackfest is to kickstart the effort of porting applications to GStreamer 1.0 and fix remaining issues hindering such ports, be that bugs in binding code, missing plugins, broken pluging etc. 
+
+
+### Agenda, goals
+
+(!) Port a wide variety of GStreamer applications to 0.11/1.0 
+
+(!) Review of the 1.0 API 
+
+(!) Make sure gobject introspection annotations are correct 
+
+(!) Port any needed plugins from 0.10 to 0.11 
+
+(!) Identify and fix any general GStreamer 0.11 bugs that will hinder application porting 
+
+(!) Make sure application developers are aware of new core features and possibilities in GStreamer 1.0 
+
+
+### Measuring your success
+
+(!) If we can have initial ports done of the top 10 GNOME, KDE and server applications using GStreamer that would be a great success factor for the hackfest and allow us to be confident the transition from 0.10.x to 1.0.x will be smooth and easy. 
+
+
+### Attendants
+
+Please add your name here if you are interested in attending even if you are not sure you will be able to, as we want to meaure general interest.. We will be offering some travel sponsorship for this event, hopefully in collaboration  with the GNOME Foundation and KDE E.v.  
+
+Please add your name and project affiliation below: 
+
+(!) Wim Taymans, GStreamer 1.0 lead designer and maintainer 
+
+(!) Christian Schaller, Transmageddon 
+
+(!) Sebastian Dröge, GStreamer Core 
+
+(!) George Kiagiadakis, QtGStreamer/KDE 
+
+(!) Philippe Normand, WebKit/Igalia 
+
+(!) Olivier Crête, Farstream, VoIP/RTP 
+
+(!) Tim Müller, GStreamer Core, Totem 
+
+(!) Trever Fischer (tdfischer), phonon-gstreamer maintainer for Qt 
+
+(!) Jonathan Matthew, Rhythmbox (interested but it's a long way from australia) 
+
+(!) Jason DeRose, Novacut & Dmedia (PyGI with Python3, Gtk3) 
+
+(!) Peteris Krisjanis, Jokosher 
+
+(!) Edward Hervey, Python, [[PiTiVi|PiTiVi]] 
+
+(!) Thibault Saunier, Python, [[PiTiVi|PiTiVi]] 
+
+(!) Antigoni Papantoni, PiTiVI 
+
+(!) Jeff Fortin, [[PiTiVi|PiTiVi]] 
+
+(!) Thomas Vander Stichele, Flumotion 
+
+(!) Josep Torra, Totem 
+
+(!) Andoni Morales 
+
+If you don't have a wiki account (and don't want to create one), you can email christian(.)schaller(at)gmail(.)com and I can add your name myself. 
+
+
+### Venue
+
+The venue for the hackfest will be Nido. Which is a shared office space centrally located in Malaga run by Ara and Yaiza, who happen to work for Canonical. You find more information about the venue here: [[http://www.nidomalaga.com/en|http://www.nidomalaga.com/en]] 
+
+We will start at 10am each morning. 
+
+
+### Costs
+
+There is no attendance cost and the GStreamer project is not looking for any external sponsorship for the event in terms of help to cover venue rent. We might get some companies to sponsor lunches and maybe dinners specifically, so we might go around to the usual suspects to ask for that. 
+
+
+### Current sponsors
+
+(!) GStreamer Project 
+
+
+## How to get there
+
+(!)  Inside Europe you can get cheap flights to Malaga with Ryanair and Easyjet. 
+
+
+## Accommodation and food
+
+We aim to provide free lunch at the venue and at least one dinner.  
+
+Some hotel suggestions: 
+
+Etap Malaga Centro: [[http://www.etaphotel.com/es/hotel-6350-etap-malaga-centro/location.shtml|http://www.etaphotel.com/es/hotel-6350-etap-malaga-centro/location.shtml]] From 29euros per night (double bedroom) 
+
+Ibis Centro [[http://www.ibishotel.com/es/hotel-5585-ibis-malaga-centro-ciudad/index.shtml|http://www.ibishotel.com/es/hotel-5585-ibis-malaga-centro-ciudad/index.shtml]] From 39 euros per night (double bedroom) 
+
+Hotel del Pintor [[http://www.hoteldelpintor.com/|http://www.hoteldelpintor.com/]] From 49 euros (double bedroom) 
+
+Babia Hostel (can be a bit noisy at nights) [[http://www.babiahostel.com/|http://www.babiahostel.com/]] 15euros per person night in double 12euros per person night in dorm 
+
+Picasso Corner Hostel [[http://www.picassoscorner.hostel.com/|http://www.picassoscorner.hostel.com/]] From 13 euros per person in a dorm, and 18euros per person in a double 
+
+Some recommended tapas restaurants: 
+
+Taberna Mitjana: [[http://www.travbuddy.com/Taberna-Mitjana-v471550|http://www.travbuddy.com/Taberna-Mitjana-v471550]] 
+
+El Pimpi (a very very typical place in Malaga): [[http://www.tripadvisor.com/Restaurant_Review-g187438-d806282-Reviews-El_Pimpi-Malaga_Costa_del_Sol_Andalucia.html|http://www.tripadvisor.com/Restaurant_Review-g187438-d806282-Reviews-El_Pimpi-Malaga_Costa_del_Sol_Andalucia.html]] 
+
+
+### Previous discussions, organization threads, drafts, relevant links, etc
+
+(!) Floating refs in GI - [[https://bugzilla.gnome.org/show_bug.cgi?id=657202|https://bugzilla.gnome.org/show_bug.cgi?id=657202]] 
+
+(!) GError marshaling GI - [[https://bugzilla.gnome.org/show_bug.cgi?id=666098|https://bugzilla.gnome.org/show_bug.cgi?id=666098]] 
+
+GStreamer 0.11 status reports 
+
+(!) Status 4 - [[http://lists.freedesktop.org/archives/gstreamer-devel/2011-December/034438.html|http://lists.freedesktop.org/archives/gstreamer-devel/2011-December/034438.html]] 
+
+(!) Status 3 -  [[http://lists.freedesktop.org/archives/gstreamer-devel/2011-August/032588.html|http://lists.freedesktop.org/archives/gstreamer-devel/2011-August/032588.html]] 
+
+(!) Status 2 - [[http://lists.freedesktop.org/archives/gstreamer-devel/2011-June/031891.html|http://lists.freedesktop.org/archives/gstreamer-devel/2011-June/031891.html]] 
+
+(!) Status 1 - [[http://lists.freedesktop.org/archives/gstreamer-devel/2011-April/031128.html|http://lists.freedesktop.org/archives/gstreamer-devel/2011-April/031128.html]] 
+
+Other GStreamer 0.11 resources: 
+
+(!) Porting guide: [[http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/random/porting-to-0.11.txt?h=0.11|http://cgit.freedesktop.org/gstreamer/gstreamer/tree/docs/random/porting-to-0.11.txt?h=0.11]] 
+
+(!) [[ZeroPointEleven|ZeroPointEleven]] wiki page 
