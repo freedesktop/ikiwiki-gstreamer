@@ -16,6 +16,7 @@ This wiki serves as a scratchpad for tasks, design discussions and the like.
 * [[Tutorials|Tutorials]] : links to external tutorials 
 * [[SubmittingPatches|SubmittingPatches]]: where and how to submit patches 
 * General documentation about GStreamer libraries and plugins can be found on the [[GStreamer Documentation Page|http://gstreamer.freedesktop.org/documentation/]] 
+* [[HowToCompileForEmbedded|HowToCompileForEmbedded]]: tips about how to do compile GStreamer for embedded devices 
 
 ## Links
 
@@ -28,16 +29,3 @@ This wiki serves as a scratchpad for tasks, design discussions and the like.
 * [[GStreamer Windows MingW build bot|http://lrn.no-ip.info]] 
 * [[Release Planning|ReleasePlanning]]: [[2010|ReleasePlanning2010]] [[2011|ReleasePlanning2011]] [[2012|ReleasePlanning2012]] [[2013|ReleasePlanning2013]] 
 * [[GStreamer device profile format discussion|http://gstreamer.freedesktop.org/wiki/DeviceProfile]] 
-
-## Starting points
-
-* [[RecentChanges|RecentChanges]]: see where people are currently working 
-* [[WikiSandBox|WikiSandBox]]: feel free to change this page and experiment with editing 
-* [[FindPage|FindPage]]: search or browse the database in various ways 
-* [[SyntaxReference|SyntaxReference]]: quick access to wiki syntax 
-* [[SiteNavigation|SiteNavigation]]: get an overview over this site and what it contains 
-* [[HowToCompileForEmbedded|HowToCompileForEmbedded]]: tips about how to do compile GStreamer for embedded devices 
-
-## Random
-
-* [[HowToUseThisSite|HowToUseThisSite]]: help about this wiki 
