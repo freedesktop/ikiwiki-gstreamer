@@ -1,0 +1,92 @@
+
+
+# GStreamer release schedule for 2011
+
+Proposed release schedule / roadmap for the year 2011. 
+
+
+## Summary Schedule
+
+This is a tentative schedule for releases for the first few months of 2011: 
+[[!table header="no" class="mointable" data="""
+ **Date**  |  **Task** 
+ ...  |  ... 
+ Jan 5  |  **Core/Base/Good/Ugly/Bad/python/gnonlin freeze** 
+ ~Jan 20  |  **Core 0.10.32, Base 0.10.32, Good 0.10.27, Ugly 0.10.17, Bad 0.10.21, gst-python 0.10.21, gnonlin 0.10.16 release** 
+ ~Jan 21  |  **Core/Base/Good/Ugly/Bad/python/gnonlin thaw** 
+ ...  |  ... 
+ Mar 8  |  **Good 0.10.28 release** (one patch ad-hoc release to fix build issue) 
+ ...  |  ... 
+ Apr 14  |  **Core/Base/Good/Ugly/Bad freeze** 
+ May 10  |  **Core 0.10.33, Base 0.10.33, Good 0.10.29, Ugly 0.10.18, Bad 0.10.22 release** 
+ May 13  |  **Core 0.10.34, Base 0.10.34 release** (to fix critical multiqueue regression) 
+ May 14  |  **Core/Base/Good/Ugly/Bad thaw** 
+ ...  |  ... 
+ June 15  |  **Core 0.10.35, Base 0.10.35, Good 0.10.30 release** (to handle GLib 2.29.x atomic ops API change) 
+ ...  |  ... 
+ July 6  |  **Core/Base 0.11.0 release** (unstable development series) 
+ ...  |  ... 
+ December 11  |  stable Core/Base/Good/Ugly/Bad 0.10.x pre-releases 
+ end-December / early-January  |  **Core 0.10.36, Base 0.10.36, Good 0.10.31, Ugly 0.10.19, Bad 0.10.23 stable releases** 
+"""]]
+
+gst-ffmpeg, gst-python, and gnonlin releases may be done in any of these cycles as well. 
+
+
+## Process (not entirely up-to-date)
+
+At the moment there are 7 GStreamer modules included in the schedule: 
+
+* GStreamer Core 
+* GStreamer Base Plugins 
+* GStreamer Good Plugins 
+* GStreamer Bad Plugins 
+* GStreamer Ugly Plugins 
+* GStreamer FFmpeg 
+* GStreamer Python Bindings 
+Each module will see a release every 3 months. For an explanation of the freezes please see [[here|ReleasePlanning/Freezes]]. 
+
+Modules not included: 
+
+* Gnonlin - released by Edward Hervey as he sees fit 
+* GStreamer Editing Services - released when maintainer sees fit 
+* GStreamer openmax - released when maintainer sees fit 
+* GStreamer OpenGL support - released when maintainer sees fit 
+* GStreamer RTSP server - released when maintainer sees fit 
+* QT-GStreamer - released when maintainer sees fit 
+
+## Release procedure for Core/Base/Python
+
+The release procedure is to freeze the modules, and then make a series of pre-release tarballs. 2 weeks later, the final release is done. At the discretion of the release manager, this may happen after only one week if no bugs are found, and we can all go to the pub. 
+
+The modules thaw the day after the final release, just in case a paper bag release is needed. 
+
+* Day 0: Code Freeze Core/Base/Python. Make first pre-release tarballs 
+* Day 3: Make 2nd pre-releases if any blocker bugs have been identified and fixed. 
+* Day 7: Make 3rd pre-releases if any new blocker bugs have been identified and fixed. 
+* Day 14: Release new version. Good/Bad/Ugly/FFmpeg are now dependency frozen. 
+* Day 15: Code thaw for Core/Base/Python. 
+
+## Release procedure for plugin modules
+
+Plugin module releases begin with a plugin move window (4 days), then freeze and pre-releases begin. 2 weeks later the final release is done. At the discretion of the release manager, this may happen after only one week if no bugs are found. 
+
+Code & dependency freezes end the day after the final release. 
+
+* Day 0: Plugin move window opens. Commits should be done with care. 
+* Day 4: Plugin move window closes. First pre-releases made. Modules are frozen for commits. 
+* Day 9: Make 2nd pre-releases if any blocker bugs have been identified and fixed. 
+* Day 14: Release new versions 
+* Day 15: Code and dependency thaw for the newly released modules. 
+Additionally, when Good/Bad are released (together), the Bad module is branched so that later a 2nd option 'plugin moves' release of Bad can be done simultaneously with Ugly _if needed_ 
+
+We may vary the schedule to skip an FFmpeg release from time to time if it seems that nothing exciting has been changed, since releases of FFmpeg require a lot of testing due to the quantity of codecs. 
+
+<a name="PluginMoves"></a> 
+
+
+## Plugin Moves
+
+From time to time, plugins improve in quality sufficiently to warrant moving them from Bad to Good or Bad to Ugly (or sometimes vice versa in cases of neglect). Such plugin moves require simultaneous releases of the modules involved so that we never ship tarballs with conflicting installed plugins. 
+
+To support this, the schedule provides plugin move windows during which plugins can be moved. Further, after the Good/Bad release, the Bad module will be branched. If during the next Ugly/FFmpeg release phase plugin moves happen between the Bad & Ugly modules, a 2nd release of the Bad plugins will occur from the branch **with the only changes being the removal or addition of plugins from the Ugly module**. 
