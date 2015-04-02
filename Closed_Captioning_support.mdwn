@@ -1,0 +1,22 @@
+
+
+# Close Captioning Support
+
+
+## Background
+
+
+## Resources
+
+* [[http://en.wikipedia.org/wiki/Closed_Captioning|http://en.wikipedia.org/wiki/Closed_Captioning]] 
+* [[http://thread.gmane.org/gmane.comp.video.gstreamer.devel/19727|http://thread.gmane.org/gmane.comp.video.gstreamer.devel/19727]] 
+* [[http://article.gmane.org/gmane.comp.video.gstreamer.devel/24276|http://article.gmane.org/gmane.comp.video.gstreamer.devel/24276]] 
+**Mentor: Need Mentor - Add yourself** 
+
+Back to [[TaskList|TaskList]]   
+
+
+
+---
+
+ [[CategoryGSOC2008|CategoryGSOC2008]] [[CategoryTasks|CategoryTasks]] 
