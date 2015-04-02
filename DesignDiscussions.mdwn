@@ -1,0 +1,27 @@
+
+
+# Design Discussions
+[[!table header="no" class="mointable" data="""
+Note: none of the core developers do design discussions on the wiki. Bugzilla and IRC are better places to discuss design. These wiki pages are more of a scratchpad.
+"""]]
+
+Space for drafting new features. 
+
+* Core: 
+   * -<del>[[BufferMetadata|BufferMetadata]]: variable extra data keept with buffers</del>- (obsolete) 
+   * -<del>[[NewCapsFields|NewCapsFields]]: discuss new caps fields</del>- (obsolete) 
+   * -<del>[[NewGstVideo|NewGstVideo]]: discuss replacement for gst-libs/gst/video API for caps parsing/building of raw yuv/rgb types</del>- (obsolete) 
+* Base classes: 
+   * -<del>[[GstBaseParse|GstBaseParse]]: parser base class</del>- (obsolete) 
+* Bins: 
+   * [[CameraBin|CameraBin]] : still and video camera capture 
+   * [[ColorSpaceBin|ColorSpaceBin]]: a bin for colorspace conversion 
+   * [[SampleBin|SampleBin]]: bin for game and event sounds 
+* (Gtk) widget library in gst-plugins-base: 
+   * [[VideoWidget|VideoWidget]]: General Gtk video widget 
+   * [[EncodingProfilesUi|EncodingProfilesUi]]: Encoding profiles UI for editing, selecting, etc of encoding profiles 
+   * [[DebugHelperMenu|DebugHelperMenu]]: Menu to add to menu bar in debug version 
+* Presets (Profiles) 
+   * [[PresetDesign|PresetDesign]]: Combining GStreamer element presets with devices 
+   * [[DeviceProfile|DeviceProfile]]: device encoding profiles for GStreamer 
+* [[ZeroPointEleven|ZeroPointEleven]]: GStreamer 0.11 / 1.0 discussions 
