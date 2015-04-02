@@ -1,0 +1,22 @@
+
+
+# Finishing/Improving the GStreamer Lua bindings using GObject Introspection
+
+With the introduction of GObject Introspection, a interesting project was started, aiming to bind Lua code to C code, LGI. LGI uses GObject Introspection runtime information and libffi to bind Lua to any GObject project (with support to GIR) at runtime. LGI seems to be very close to work well with Gstreamer, there is already some code examples playing video and audio, but they are very simple and don't cover complex pipelines. 
+
+This GSoC project is about testing/finishing/improving these bindings. 
+
+Useful skills for this project would be general knowledge about GStreamer and Lua, even better would be knowledge about Lua bindings in general and GObject-Introspection based bindings in specific. Also knowledge about libffi may be required. 
+
+
+## Resources
+
+[[https://github.com/pavouk/lgi|https://github.com/pavouk/lgi]] 
+
+[[http://live.gnome.org/GObjectIntrospection|http://live.gnome.org/GObjectIntrospection]] 
+
+[[http://sourceware.org/libffi/|http://sourceware.org/libffi/]] 
+
+**Mentor: Tiago Katcipis_ 
+
+Back to [[TaskList|TaskList]] 
