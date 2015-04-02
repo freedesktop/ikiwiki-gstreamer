@@ -1,0 +1,55 @@
+
+The easiest way to build GStreamer is with a scratchbox environment, either scratchbox, or scratchbox2. 
+
+Set prefix to the place where you want GStreamer to be installed. 
+
+
+### glib
+
+
+[[!format txt """
+./configure --prefix="$prefix" --disable-static --with-html-dir=/tmp/dump
+make install
+"""]]
+
+### gstreamer
+
+
+[[!format txt """
+./configure --prefix="$prefix" --disable-nls --disable-static --disable-gobject-cast-checks --enable-binary-registry --disable-loadsave --disable-trace --with-html-dir=/tmp/dump
+make install
+"""]]
+
+### orc (replaces liboil)
+
+
+[[!format txt """
+./configure --prefix="$prefix" --disable-static --with-html-dir=/tmp/dump
+make install
+"""]]
+
+### gst-plugins-base
+
+
+[[!format txt """
+./configure --prefix="$prefix" --disable-nls --disable-static --with-html-dir=/tmp/dump
+make install
+"""]]
+
+### gst-plugins-good
+
+
+[[!format txt """
+./configure --prefix="$prefix" --disable-nls --disable-static --with-html-dir=/tmp/dump --with-plugins=avi,qtdemux
+make install
+"""]]
+_Note_: If you want all the plug-ins remove the **with-plugins** option, otherwise specify the ones you want 
+
+
+### gst-plugins-ugly
+
+
+[[!format txt """
+./configure --prefix="$prefix" --disable-nls --disable-static --with-html-dir=/tmp/dump --with-plugins=asfdemux
+make install
+"""]]
