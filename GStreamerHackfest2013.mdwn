@@ -1,0 +1,91 @@
+
+[[!img http://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Milano_collage.jpg/300px-Milano_collage.jpg] 
+
+
+# GStreamer Hackfest/Sprint
+
+**Location Milan, Italy - 28th to 31st March 2013** 
+
+**Primary contact:** [[ChristianSchaller|ChristianSchaller]]   
+**Secondary contact:** [[TimMüller|TimMüller]] 
+
+
+## Relevant GNOME/KDE/Other team
+
+* Multimedia 
+* application developers 
+* binding developers 
+
+## Description
+
+The goal of this hackfest is to follow up on last year's GStreamer 1.0 hackfest in Malaga, try to fill in any gaps that are still open, and to discuss or hack on anything and everything GStreamer-related. Maybe even fix a few bugs. The target this year will be a lot more core GStreamer focused as opposed to the application focus of last years hackfest. 
+
+
+### Agenda, goals
+
+* GStreamer [[RoadMap|ReleasePlanning/RoadMap]] 
+* Fix GNonLin for 1.x 
+* Fix the deadlocks and most serious bugs in stack affecting Pitivi (Jeff will provide testing samples and reproduceability) 
+* Make a Pitivi release (or at least a testing/preview release) 
+* Port Buzztard to GStreamer 1.x 
+* Get gst-python to a releasable state 
+* Extend encodebin API to allow for profile selection 
+* Device enumeration and monitoring API 
+* Hardware codecs and GL integration 
+* add your goals here 
+
+### Attendants
+
+Please add your name here if you are interested in attending even if you are not sure you will be able to, as we want to measure general interest. We will be offering some travel sponsorship for this event, hopefully in collaboration  with the GNOME Foundation and KDE E.v. 
+
+Please add your name and project affiliation below: 
+
+* Wim Taymans, GStreamer 1.0 lead designer and maintainer (need accomodation) 
+* Christian Schaller, Transmageddon 
+* Tim Müller, GStreamer developer (need accommodation) 
+* Sebastian Dröge, GStreamer developer (need accomodation) 
+* -<del>Jan Schmidt, Senior mischief maker</del>- 
+* Philippe Normand, [[WebKit|WebKit]] (need accomodation) 
+* Jeff Fortin, Pitivi (need accomodation) 
+* Thibault Saunier, Pitivi and GES (need accomodation) 
+* Nicolas Dufresne, GStreamer  (need accomodation) 
+* Stefan Sauer, GStreamer & Buzztard developer 
+* Edward Hervey, GStreamer and GES 
+* Alessandro Decina, GStreamer 
+* Peteris Krisjanis, GStreamer and Jokosher 
+* Olivier Crête, GStreamer, Farstream, etc 
+* Víctor Jáquez, [[WebKit|WebKit]] and GStreamer 
+* Arun Raghavan, Pulseaudio, GStreamer (need accommodation) 
+* Luciana Fujii, Cheese (need accommodation) 
+If you don't have a wiki account (and don't want to create one), you can email christian(.)schaller(at)gmail(.)com and I can add your name myself. 
+
+
+### Venue
+
+* Hub Milano - [[http://milan.the-hub.net/sale-riunioni-grandi-riunioni/|http://milan.the-hub.net/sale-riunioni-grandi-riunioni/]] 
+
+### Costs
+
+There is no attendance cost and the GStreamer project is looking for some sponsorship help to cover food and similar for the attendees. 
+
+We might get some companies to sponsor lunches and maybe dinners specifically, so we might go around to the usual suspects to ask for that. 
+
+
+## Travel sponsorship
+
+We have some limited funds to help with travel costs. The money will be allocated based on the focus of the hackfest and involvement level of those requesting sponsorship. 
+
+
+### Current sponsors
+
+
+## How to get there
+
+* Fly in to Milan MXP airport 
+
+## Accommodation and food
+
+We aim to provide free lunch at the venue and at least one dinner. 
+
+
+### Previous discussions, organization threads, drafts, relevant links, etc
