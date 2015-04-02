@@ -1,0 +1,62 @@
+In addition to the [[Plugins|official plugins]], there are many other open source and commercial plugins listed below (in alphabetical order) :
+
+= Open source =
+== gladstone ==
+GladSToNe is an educational tool for learning about hi-performance audio handling for real-time transmissions. The goal of the project is to use the open source model to improve the psycho acoustics, noise shaping and speed of audio transmissions over IP. Contains a G729 codec plugin, '''g729enc''' for encoding and '''g729dec''' for decoding.
+
+ * [[http://code.google.com/p/gladstone/|Project page on Google Code]]
+ * [[http://gitorious.org/gladstone|Code repository on Gitorious]]
+ * [[http://www.ohloh.net/p/gladstone|Profile on ohloh.net]]
+
+== gst-buzztard ==
+Extra interfaces for audio plugins + a few plugin using them. Contains a wrapper for buzz-machine plugins. '''audiodelay''' add an echo effect to audio, the '''bml''' plugin wraps buzz-machine plugins, '''fluidsynth''' is an audio synthesizer, and '''simsyn''' is a simple monophonic audio synthesizer.
+
+ * http://buzztard.svn.sourceforge.net/viewvc/buzztard/trunk/gst-buzztard/
+
+== gst-fluendo ==
+[[http://www.fluendo.com/|Fluendo]] provides several open source plugins, including:
+ * an MIT-licensed mp3 decoder ('''flump3dec''')
+ * an MPL-licensed MPEG Transport Stream and Program Stream demuxer ('''flutsdemux''', '''flupsdemux''')
+ * an MPL-licensed MPEG Transport Stream muxer ('''flutsmux''')
+ * an MPEG TS Timeshifter element ('''flufakeshifter''' for time shifting on fake streams, and '''flumpegshifter''' for time shifting on MPEG TS streams)
+ * an MIT-licensed iLBC decoder / encoder ('''fluilbcdec''', '''fluilbcenc''')
+ * an MIT-licensed ADPCM decoder ('''fluadpcmimaqtdec''', '''fluadpcmimadvidec''', '''fluadpcmmsdec''')
+ * an LGPL-licensed GDL sink for Intel's Sodaville and Canmore platforms ('''flugdlsink''')
+
+The code and issue tracker are hosted on Fluendo's TRAC:
+ * https://core.fluendo.com/gstreamer/trac
+
+== gstlal ==
+A suite of elements for gravitational-wave data analysis from the [[http://en.wikipedia.org/wiki/LIGO|LIGO]] project.
+ * [[https://www.lsc-group.phys.uwm.edu/daswg/projects/gstlal.html|Project page]] - including Git repository
+
+== gst-plugins-elphel ==
+Elphel camera-related plugins, including '''jp462bayer''' which converts color and monochrome JP46 Elphel bitstreams to Bayer raw format, and '''bayer2rgb2''' which converts raw Bayer streams to RGB images using libdc1394 debayering algorithms.
+
+ * [[http://code.google.com/p/gst-plugins-elphel/|Project page on Google Code]] - including SVN repository
+
+== GstStabilizer ==
+Python plugin using OpenCV to stabilize video.
+
+ * https://github.com/guijemont/GstStabilizer
+== PiTiVi ==
+[[http://www.pitivi.org/ PiTiVi]] is a Python-based non-linear editor, and includes several Python plugins
+ * [[http://git.pitivi.org/?p=pitivi.git;a=tree;f=pitivi/elements Git|repository browser]]
+
+== pocketsphinx ==
+Speech recognition plugin based on CMU sphinx. '''pocketsphinx''' takes audio as input and produces text on output, and '''vader''' marks utterance start and end points in an audio stream.
+
+ * [[http://cmusphinx.sourceforge.net/wiki/gstreamer|Using PocketSphinx with GStreamer and Python (or Vala)]] - includes example code
+ * [[http://cmusphinx.svn.sourceforge.net/viewvc/cmusphinx/trunk/pocketsphinx/src/gst-plugin/|SVN repository on Sourceforge]]
+
+{{{#!wiki comment/dotted
+Perhaps use a table instead?
+
+||'''Name'''||'''Description'''||'''Website'''||'''Source'''||
+||gladstone||Contains a G729 codec plugin||http://code.google.com/p/gladstone/ ||http://gitorious.org/gladstone||
+||gst-buzztard||Contains a wrapper for buzz-machine plugins.|| || http://buzztard.svn.sourceforge.net/viewvc/buzztard/trunk/gst-buzztard/||
+
+}}}
+
+= Commercial =
+ * [[http://entropywave.com/products/codecs-for-oems/|Entropy Wave codec package]]
