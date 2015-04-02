@@ -1,0 +1,29 @@
+
+[[PiTiVi|http://www.pitivi.org]] is an open source video editor. 
+
+The current status of [[PiTiVi|PiTiVi]], what's done and what needs to be done is detailed on the pitivi wiki ([[http://wiki.pitivi.org/wiki/Google_Summer_of_Code|http://wiki.pitivi.org/wiki/Google_Summer_of_Code]]) 
+
+Check out the [[PiTiVi|PiTiVi]] page on the [[PiTiVi|PiTiVi]] wiki for some ideas for [[PiTiVi|PiTiVi]] related Summer of Code projects. 
+
+
+## Resources
+
+* [[http://www.pitivi.org/|http://www.pitivi.org/]] 
+
+## Skills needed
+
+* Python 
+* GTK 
+* Student needs to know how to use GStreamer, plugin creation knowledge would be handy too 
+* Knowledge about video-editing 
+Students interested in doing a Google Summer of code project around [[PiTiVi|PiTiVi]] should join the #pitivi channel on irc.freenode.net. You should be able to find someone online at almost any time to discuss your project idea there. 
+
+**Mentor: Edward Hervey ([[PiTiVi|PiTiVi]] author) aka bilboed on IRC ** 
+
+Back to [[TaskList|TaskList]]  
+
+
+
+---
+
+ [[CategoryGSOC2010|CategoryGSOC2010]] [[CategoryTasks|CategoryTasks]] 
