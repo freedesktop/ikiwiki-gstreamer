@@ -1,0 +1,65 @@
+
+
+# GStreamer release schedule for Jan-June 2008
+
+In the past, GStreamer releases have been a bit haphazard, with a tendency for some modules to go a long time without seeing a release. The goal of this schedule is to provide regular releases of all modules and to help people plan their development more easily by knowing in advance when releases are going to occur. 
+
+At the moment there are 7 GStreamer modules included in the schedule: 
+
+* GStreamer Core 
+* GStreamer Base Plugins 
+* GStreamer Good Plugins 
+* GStreamer Bad Plugins 
+* GStreamer Ugly Plugins 
+* GStreamer FFmpeg 
+* GStreamer Python Bindings 
+Modules not included: 
+
+* Gnonlin - released by Edward Hervey as he sees fit 
+* GStreamer OpenGL support - doesn't exist yet :) 
+Each module will see a release every 3 months. For an explanation of the freezes please see [[here|ReleasePlanning/Freezes]]. 
+
+The cycle starts with of out-of-pattern releases of Core/Base/Python and then Good/Bad/Ugly together because all modules urgently need releases. After that, it should be possible to follow a regular pattern of Core/Base/Python then Good/Bad then Ugly/FFmpeg. The Ugly/FFmpeg release might include a second Bad release if needed due to plugin moves. See the [[Plugin Moves|ReleasePlanning2008-1]] section. 
+
+
+## Release procedure for Core/Base/Python
+
+The release procedure is to freeze the modules, and then make a series of pre-release tarballs. 2 weeks later, the final release is done. At the discretion of the release manager, this may happen after only one week if no bugs are found, and we can all go to the pub. 
+
+The modules thaw the day after the final release, just in case a paper bag release is needed. 
+
+* Day 0: Code Freeze Core/Base/Python. Make first pre-release tarballs 
+* Day 3: Make 2nd pre-releases if any blocker bugs have been identified and fixed. 
+* Day 7: Make 3rd pre-releases if any new blocker bugs have been identified and fixed. 
+* Day 14: Release new version. Good/Bad/Ugly/FFmpeg are now dependency frozen. 
+* Day 15: Code thaw for Core/Base/Python. 
+
+## Release procedure for plugin modules
+
+Plugin module releases begin with a plugin move window (4 days), then freeze and pre-releases begin. 2 weeks later the final release is done. At the discretion of the release manager, this may happen after only one week if no bugs are found. 
+
+Code & dependency freezes end the day after the final release. 
+
+* Day 0: Plugin move window opens. Commits should be done with care. 
+* Day 4: Plugin move window closes. First pre-releases made. Modules are frozen for commits. 
+* Day 9: Make 2nd pre-releases if any blocker bugs have been identified and fixed. 
+* Day 14: Release new versions 
+* Day 15: Code and dependency thaw for the newly released modules. 
+Additionally, when Good/Bad are released (together), the Bad module is branched so that later a 2nd option 'plugin moves' release of Bad can be done simultaneously with Ugly _if needed_ 
+
+We may vary the schedule to skip an FFmpeg release from time to time if it seems that nothing exciting has been changed, since releases of FFmpeg require a lot of testing, since it includes so many codecs. 
+
+<a name="PluginMoves"></a> 
+
+
+## Plugin Moves
+
+From time to time, plugins improve in quality sufficiently to warrant moving them from Bad to Good or Bad to Ugly (or sometimes vice versa in cases of neglect). Such plugin moves require simultaneous releases of the modules involved so that we never ship tarballs with conflicting installed plugins. 
+
+To support this, the schedule provides plugin move windows during which plugins can be moved. Further, after the Good/Bad release, the Bad module will be branched. If during the next Ugly/FFmpeg release phase plugin moves happen between the Bad & Ugly modules, a 2nd release of the Bad plugins will occur from the branch **with the only changes being the removal or addition of plugins from the Ugly module**. 
+
+
+### TODO
+
+* Add notes for KDE release/freeze schedules? 
+* Extend the release schedule later, to cover the rest of the year. 
