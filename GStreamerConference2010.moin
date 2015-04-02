@@ -1,0 +1,47 @@
+= GStreamer Conference 2010 =
+
+The first GStreamer conference took place in Cambridge (UK) on October 26th 2010, in conjunction with the CE Linux Conference Europe.
+
+== Videos ==
+
+'''Updated 22 March 2011: all videos are available now.'''
+
+The videos (incl. slides) of all the talks are up now:
+
+Videos of the talks that took place in the main room can be found on the [[http://gstconf.ubicast.tv/categories/conferences/|UbiCast GStreamer Conference Video Portal]].
+
+Videos of the talks that took place in the smaller room upstairs can be found on the [[http://free-electrons.com/blog/gst-2010-videos/|Free Electrons GStreamer Conference Video Site]].
+
+Videos of the GStreamer-related talks that took place as part of the ELC-E programme can be found on the [[http://free-electrons.com/blog/elce-2010-videos/|Free Electrons ELC-E Conference Video Site]].
+
+== Slides ==
+
+ * [[http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2010/slides/Wim%20Taymans%20-%20Keynote%20-%20GStreamer%20-%20Past%20Present%20Future.pdf|Wim Taymans: Keynote - GStreamer - Past, Present, Future]]
+ * [[http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2010/slides/David%20Schleef%20-%20Optimizing%20Multimedia%20with%20Orc.pdf|David Schleef: Orc]]
+ * [[http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2010/slides/Sebastian%20Droege%20-%20GStreamer%20and%20WebM.pdf|Sebastian Dröge: GStreamer and WebM]]
+ * [[http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2010/slides/Zaheer%20Abbas%20Merali%20-%20Flumotion%20-%20Open%20Source%20Streaming.pdf|Zaheer Abbas Merali: Flumotion - Open Source Streaming]]
+ * [[http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2010/slides/Rob%20Clark%20-%20GStreamer%20and%20OMAP4.pdf|Rob Clark: GStreamer and OMAP4]]
+ * [[http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2010/slides/Philippe%20Normand%20-%20HTML5%20media%20support%20in%20Webkit%20with%20GStreamer.pdf|Philippe Normand: HTML5 Media support in WebKit with GStreamer]]
+ * [[http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2010/slides/gstinteract-0.10.1.tar.gz|Jan Schmidt: Interactivity in GStreamer pipelines]] (Small DVD menu application :)
+ * [[http://www.elinux.org/images/6/61/Arun-pulse-elce2010.pdf|Arun Raghavan: Pulse Audio in the Embedded World]] (ELC-E) [[|(mirrored PDF)
+ * [[http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2010/slides/Benjamin%20Gaignard%20-%20GStreamer%20as%20Multimedia%20Framework%20in%20Android.pdf|Benjamin Gaignard: Android and GStreamer]] (ELC-E)
+ * [[http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2010/slides/Stefan%20Kost%20-%20The%20MeeGo%20Multimedia%20Stack.pdf|Stefan Kost: Meego Multimedia]] (ELC-E)
+ * [[http://www.elinux.org/ELC_Europe_2010_Presentations|Embedded Linux Conference Europe 2010 slides]]
+ * [[https://docs.google.com/leaf?id=0BzV4szKbuvKwYzQwZDlhNjktMTVlOC00ZDczLThiZjQtZTRlMjcyYzRlZWIy&sort=name&layout=list&num=50|Andrey Nechypurenko and Maksym Parkachov: Adaptive video streaming with Ice and GStreamer]] ([[https://docs.google.com/leaf?id=0BzV4szKbuvKwYzQwZDlhNjktMTVlOC00ZDczLThiZjQtZTRlMjcyYzRlZWIy&sort=name&layout=list&num=50|pdf]], [[https://docs.google.com/leaf?id=0BzV4szKbuvKwNTEwYTQwOGUtNzAzNi00NjQ5LTk2MjEtMWIzYTQzNjVkZTRh&sort=name&layout=list&num=50|zip bundle with screencasts]] [[http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2010/slides/Andrey%20Nechypurenko%20and%20Maksym%20Parkachov%20-%20Adaptive%20Video%20Streaming%20with%20Ice%20and%20GStreamer.pdf|mirrored pdf]])
+ * [[http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2010/slides/Josep%20Torra%20-%20Intel%20SMD%20elements%20in%20GStreamer.pdf|Josep Torra: - Intel SMD elements in GStreamer]]
+ * [[http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2010/slides/Florent%20Thierry%20-%20Using%20GStreamer%20for%20Building%20Automated%20Webcasting%20Systems.pdf%20|Florent Thierry - Using gstreamer for building automated webcasting systems]]
+ * [[http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2010/slides/Zeeshan%20Ali%20-%20Implementing%20DLNA%20using%20GStreamer.pdf| Zeeshan Ali - Implementing DLNA using GStreamer]]
+ * [[http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2010/slides/Jonas%20Holmberg%20-%20GStreamer%20on%20Axis%20devices.pdf| Jonas Holmberg - GStreamer on Axis devices]]
+ * [[http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2010/slides/Luciana%20Fujii%20-%20Landell%20-%20Live%20Streaming%20for%20the%20Masses.pdff| Luciana Fujii - Landell -live streaming for the masses]]
+ * [[http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2010/slides/Olivier%20Crete%20-%20Integrating%20Video%20Conferencing%20into%20Everyday%20Applications.pdf| Olivier Crête - Integrating Video Conferencing into Everyday Applications]]
+ * [[http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2010/slides/Martin%20Bisson%20-%20Stereoscopic%20Video%20and%20GStreamer.pdff| Martin Bisson - Stereoscopic video and GStreamer]] ([[http://www.martinbisson.com/voyage/presentation/|ppt and videos etc.]])
+ * [[http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2010/slides/Edward%20Hervey%20-%20GStreamer%20Editing%20Services:%20Video%20Editing%20in%20your%20pocket.pdf|Edward Hervey - GStreamer Editing Services: Video Editing in your pocket]]
+ * [[http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2010/slides/Havard%20Graff%20-%20The%20Movi-GStreamer%20Connection.pdf|Havard Graff - The Tandberg Movi - GStreamer Connection]]
+ * [[http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2010/slides/Mike%20Smith%20-%20Cross%20Platform%20Development%20with%20GStreamer%20-%20Lessons%20from%20Songbird.pdf|Mike Smith - Cross Platform Development with GStreamer: Lessons from Songbird]]
+ * 
+
+
+== Blogs posts about the conference ==
+
+ * [[http://blogs.gnome.org/uraeus/2010/10/29/summary-of-gstreamer-conference-2010/|Christian Schaller: Summary of GStreamer Conference 2010]]
+ * [[http://mindlinux.wordpress.com/2010/10/26/impressions-from-the-gstreamer-conference/|Mind's Embedded Linux Blog: Impressions from the GStreamer conference]]
