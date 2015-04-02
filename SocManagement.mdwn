@@ -1,0 +1,13 @@
+
+
+# Running of GStreamer GSOC 2012
+
+== Key people =1 
+
+* Christian Schaller - Will maintain and develop these pages and ensure we actually apply for GSOC 2012 
+* [[StefanKost|StefanKost]] - Writing the application and mentor students 
+
+## Key Tasks
+
+* Apply for GSOC 2012 
+Back to [[TaskList|TaskList]]  
