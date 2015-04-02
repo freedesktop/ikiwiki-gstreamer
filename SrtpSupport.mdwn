@@ -1,0 +1,31 @@
+
+
+# Write plugins to support sRTP (and maybe zRTP)
+
+
+## Background
+
+GStreamer now has a great RTP plugin. One of the major missing features is Secure RTP, and the related infrastructure to manage keys and other such things. The first task would be to implement some kind of element to implement RFC 3711 and integrate it into Farstream. Then other related protocols like zRTP can be implemented. 
+
+An element using the [[libsrtp library|http://srtp.sourceforge.net/srtp.html]] has been [[written|http://cgit.collabora.com/git/user/tester/gst-plugins-bad.git/log/?h=srtp-fixes]], but exhibits problems as it does not support a way to set the MKI and the authentication tag. It also does not provide re-keying facilities as the keys expire relatively fast. 
+
+A more complete solution is needed as SRTP is a requirement for WebRTC. 
+
+
+## Resources
+
+[[http://tools.ietf.org/html/rfc3711|http://tools.ietf.org/html/rfc3711]]   
+ [[http://www.freedesktop.org/wiki/Software/Farstream|http://www.freedesktop.org/wiki/Software/Farstream]]   
+ 
+
+**Mentor: Olivier Crête - ocrete on IRC**  
+
+Dafydd Harries - daf on IRC has also mentioned interest in working on this problem. 
+
+Back to [[TaskList|TaskList]]   
+
+
+
+---
+
+ [[CategoryGSOC2008|CategoryGSOC2008]] [[CategoryTasks|CategoryTasks]] 
