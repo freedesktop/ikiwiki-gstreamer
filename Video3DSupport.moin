@@ -1,0 +1,33 @@
+= Video 3D support =
+
+== Background ==
+3D Video is one of the buzzwords in home entertainment this year. TV and projectors get 3D ready. Blueray has 3D support  (via H264 MVC [1]). HDMI got 3D support (in 1.4a [2]). There are 3D still image cameras [3].
+
+== Task ==
+Videostreams in GStreamer need to be enhanced to support interleaving for stereoscopic video. Right now we have flags for interlaced video only [4]. 3D video can be packaged as interlaced or side by side. In the case of side by side, it can be left/right or top/bottom packing. Left/right is popular for images as it also allows parallel or cross-eyed viewing. Top/bottom is more efficient as one can process the video without strides. This is discussed in [[https://bugzilla.gnome.org/show_bug.cgi?id=611157|bug #611157]]
+
+Once the video buffer metadata flags have been agreed on and added, we need conversion plugins:
+ * video3d-interleave: take two input streams of same caps and produce a 3D stream with correct buffer metadata according to variant selected via element property
+ * video3d-deinterleave: take a 3D videostream and split into two separate streams
+ * video3d-anaglyph: mix-down a 3D stream to a anaglyph rendering (red-green or red-cyan)
+
+As a result of the GSoc project it would be nice to be able to capture from two same v4l2 cameras and show the result as anaglyph video on the screen.
+
+Another idea would be to write a 2d to 3d converter plugin based on the avisynth script [5].
+
+== Resources ==
+
+ 1. [[http://en.wikipedia.org/wiki/Multiview_Video_Coding|H264 Multi View Coding (MVC)]] ([[http://iphome.hhi.de/suehring/tml/ |Implementation #1]] [[http://research.nokia.com/research/mobile3d|Implementation #2]])
+ 1. [[http://www.hdmi.org/manufacturer/hdmi_1_4/3d.aspx|HDMI 1.4 3D]]
+ 1. [[http://www.fujifilm.com/products/3d/camera/finepix_real3dw1/specifications/index.html|FinePix REAL 3D W1]]
+ 1. [[http://gstreamer.freedesktop.org/data/doc/gstreamer/head/gst-plugins-base-libs/html/gst-plugins-base-libs-gstvideo.html#GST-VIDEO-BUFFER-TFF:CAPS|Video Buffer Flags]]
+ 1. [[http://3dvision-blog.com/2d-to-3d-realtime-video-conversion-with-avisynth-v0-2b/|2d to 3d converter]]
+ 1. [[http://en.wikipedia.org/wiki/Category:Stereoscopy|Stereoscopy @ Wikipedia]]
+
+'''Mentor: Stefan Kost - ensonic on IRC''' (others welcome)
+
+Back to [[TaskList]]  
+
+----
+[[CategoryGSOC2010]]
+CategoryTasks
