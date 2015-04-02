@@ -1,0 +1,28 @@
+
+
+# GStreamer Conference 2012
+
+
+## Videos
+
+Talks have been recorded and will soon be available at [[http://gstconf.ubicast.tv/channels/#gstreamer-conference-2012|http://gstconf.ubicast.tv/channels/#gstreamer-conference-2012]] 
+
+
+## Slides
+
+* [[Stephen Burks and Joshua Doe - GStreamer for engineering video processing Applications|http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2012/GStreamer_NVESD.odp]] 
+* [[Jason Gerard DeRose - Improving GStreamer Quality|http://t.co/2UZwEwMj]] 
+* [[Jan Schmidt - Multi-room playout (Home Area entertainment)|aurena-presentation.pdf]] [[GitHub Aurena sources|https://github.com/thaytan/aurena]] 
+* [[Guillaume Emont - Playing in the Sandbox|playing_in_the_sandbox.pdf]] 
+* [[Víctor M. Jáquez L. - Development of hardware-based elements for GStreamer v1.0|http://people.igalia.com/vjaquez/talks/gstconf2012.pdf]] [[Sources|https://gitorious.org/vjaquez-misc/kmsdce-talk]] 
+* [[Hans Verkuil - V4L2 status report|http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2012/hv_v4l2_gstreamer2012.odp]] 
+* [[Rob Clark - OMAP, DMABuf and GStreamer|http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2012/omap-dmabuf-gstcon2012.pdf]] 
+* [[Eric Anholt - Directions in Linux OpenGL|http://anholt.net/papers/gstreamer2012.odp]] 
+* [[Edward Hervey - Profiling and Optimisation|http://people.freedesktop.org/~bilboed/GStreamer-Conference-Profiling.pdf]] 
+* [[Tim-Philipp Müller - Keynote: GStreamer Status Report and Road Ahead|http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2012/gstreamer-conf-2012-muller-status-report-road-ahead.pdf]] 
+* [[Timothy B. Terriberry - Opus Audio Codec|http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2012/opus.pdf]] 
+* [[Takashi Iwai - ALSA development report|http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2012/gsc2012_alsa.pdf]] 
+* [[Wim Taymans - The Road to 1.0|http://people.freedesktop.org/~wtay/gstreamer-conf-2012.pdf]] 
+* [[Kipp Cannon - GStreamer for Large-Scale Scientific Signal Processing|http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2012/kcannon_gstreamer.tar.bz2]] 
+* [[Andoni Morales - The GStreamer SDK|https://github.com/ylatuya/Talks/blob/master/gstreamer_sdk_gstconf_2012/gstreamer_sdk.pdf?raw=true]] 
+* [[Rene Staedler - GStreamer Debugging|http://gstreamer.freedesktop.org/data/events/gstreamer-conference/2012/gst-debugging.pdf]] 
