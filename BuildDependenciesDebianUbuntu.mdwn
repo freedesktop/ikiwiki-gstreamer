@@ -1,0 +1,27 @@
+
+
+# Build Dependencies Debian and Ubuntu
+
+These should do the trick: 
+[[!format txt """
+sudo apt-get build-dep gstreamer0.10-plugins-base gstreamer0.10-plugins-good gstreamer0.10-plugins-ugly gstreamer0.10-plugins-bad
+sudo apt-get install cvs
+"""]]
+(cvs is required by autotools, autogen.sh will fail if you don't have it.) 
+
+You will need to make sure the deb-src lines are enabled in your `/etc/apt/sources.list` file. 
+
+On Ubuntu you might try these as well in addition to the above: 
+[[!format txt """
+sudo apt-get build-dep gstreamer0.10-plugins-ugly-multiverse gstreamer0.10-plugins-bad-multiverse
+"""]]
+If you are building 0.11 and still receiving errors about missing basic build tools or dependencies, try: 
+[[!format txt """
+sudo apt-get install pkg-config libglib2.0-dev liborc-0.4-dev bison flex
+"""]]
+ 
+
+For gst-plugins-gl: 
+[[!format txt """
+sudo apt-get install libglew1.5-dev libpng12-dev
+"""]]
