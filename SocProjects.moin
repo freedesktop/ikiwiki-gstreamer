@@ -1,0 +1,43 @@
+The list below is just some suggestions made by various members of the GStreamer community. We are more than happy for students to make proposals based on their own wishes and ideas instead of using any of these suggestions. The important part for us is that you are motivated and that you put good work into writing a good and detailed proposal and that you try to interact with us from the start. Try to early find a possible mentor and shape your proposal (e.g. using Google docs). When writing the proposal, be sure to describe what you will deliver, how this is useful and include a rough timeline how you plan to get there. Please include useful references (links to projects you worked on in the past, online references for code you wrote (create an account on [[http://ohloh.net|ohloh]] and add your contributions), links to specifications you want to implement, ...) - anything that helps to understand your proposal is well researched and you suited to achieve the goals by the end of the summer.
+
+If you do that then any kind of project you can think of using GStreamer has a good chance of being selected.
+
+= List of Summer of Code project ideas for students =
+
+ * plugins
+  * [[WebP]] : Project to create a decoder and encoder for WebP image format
+  * [[PluginsForEditing]]: Wrapping much-needed audio/video filters as gstreamer plugins.
+  * [[SrtpSupport]]: Write plugins to support sRTP (and maybe zRTP)
+  * [[ChapterSupport]]: Implement chapter support in more plugins
+  * [[OpencvGestureDetection]] : Implement an opencv plugin for gesture detection (eg: hand gesture)
+  * [[Moovit]]: Implement a wrapper plugin for the Moovit GPU accelerated library
+
+ * applications
+  * [[Pitivi]]: Improve Pitivi
+  * [[Buzztard]]: Improve Buzztard
+ * framework
+  * [[Closed_Captioning_support]]: Subtitles for the hearing impaired
+  * [[TamasKorodi/IVC_multichannel_grabber_card_support|Multichannel_grabber_card_support]] : Multichannel video grabber card support and more baseclasses
+  * [[GeneratedFormatTestdata]]: Generate robustness testdata for demuxer/parser tests
+ * bindings
+  * [[SocProjects/GStreamerLua|Gstreamer-Lua]] : Gstreamer Lua binding enhancement
+  * [[RobinHorvath/Gstreamer-java_enhancement|Gstreamer-Java enhancement]] : GStreamer Java binding enhancement, GStreamer and GStreamer-Java Mac OS and Windows port
+  * [[GStreamerSharp|gstreamer-sharp]] : Finish/improve the GStreamer C# bindings
+  * Port GStreamer applications and/or plugins from 0.10 to 0.11/1.0
+  * [[RolandElek/AutomaticLowLevelJavaBindingGeneration|Automatic low-level Java binding generation]] : Automatically generate the low-level layer of gstreamer-java
+
+We have a [[PreviousSocProjets|list of previous projects]] for reference.
+
+= Other Organizations =
+Other organizations that have project ideas related to GStreamer:
+
+ * http://live.gnome.org/SummerOfCode2012/Ideas
+ * http://community.kde.org/GSoC/2012/Ideas
+
+
+
+
+Back to TaskList
+
+----
+ . [[CategoryGSOC2012]]
